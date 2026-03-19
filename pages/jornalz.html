@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<!--
+    ===================================================================
+        NETMAX FIBRA - PÁGINA JORNALZ
+    ===================================================================
+    Objetivo: Página institucional do portal JornalZ, serviço de curadoria 
+              de notícias incluso nos planos Netmax Fibra. Apresenta os 
+              benefícios, estatísticas e funcionalidades do JornalZ.
+    Autor : Rodrigo Barbosa
+    Data  : 23/02/2026
+    ===================================================================
+-->
+<html lang="pt-BR">
+<head>
+    <!-- Define a codificação de caracteres como UTF-8 para suportar caracteres especiais -->
+    <meta charset="UTF-8">
+    <!-- Configura a viewport para responsividade em dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título da página que aparece na aba do navegador -->
+    <title>Netmax Fibra - JornalZ: Informação Inteligente</title>
+    <!-- Link para o arquivo CSS principal do site -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <!-- Link para a biblioteca Font Awesome (ícones) via CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- WHATSAPP FLOATING BUTTON - Botão flutuante do WhatsApp -->
+    <a href="https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <!-- Ícone do WhatsApp da Font Awesome -->
+        <i class="fab fa-whatsapp"></i>
+        <!-- Tooltip que aparece ao passar o mouse -->
+        <span class="whatsapp-tooltip">Fale conosco!</span>
+    </a>
+
+    <!-- HEADER PADRÃO - Cabeçalho padrão do site -->
+    <header class="header">
+        <!-- Área de destaque do logo e slogan -->
+        <div class="logo-area-highlight">
+            <!-- Imagem do logo da Netmax -->
+            <img src="../assets/images/logos/logo_netmax.JPG" alt="Logo Netmax" class="logo-netmax-big">
+            <!-- Slogan principal da empresa -->
+            <h1 class="slogan-top">A velocidade que conecta você ao mundo e ao conhecimento.</h1>
+        </div>
+        
+        <!-- CENTRAL DO ASSINANTE - Link para a área do assinante -->
+        <div class="assinante-container">
+            <a href="https://netmax.net.br/" class="assinante-link" target="_blank" rel="noopener noreferrer">
+                <!-- Ícone de usuário -->
+                <div class="assinante-icon">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <!-- Texto do link com quebra de linha -->
+                <span class="assinante-text">CENTRAL DO<br>ASSINANTE</span>
+            </a>
+        </div>
+
+        <!-- MENU DE NAVEGAÇÃO ATUALIZADO - Barra de navegação principal -->
+        <nav class="nav-menu">
+            <!-- Link para a página inicial -->
+            <a href="../index.html">PÁGINA INICIAL</a>
+            <!-- Link para a página Estante Digital -->
+            <a href="estante_digital.html">ESTANTE DIGITAL NETMAX</a>
+            <!-- Link atual (JornalZ) com destaque em amarelo e negrito -->
+            <a href="#" style="color: #FFD000; font-weight: bold;">JORNALZ</a>
+            <!-- Link para a página News Periódicos -->
+            <a href="news_periodicos.html">NEWS PERIÓDICOS</a>
+            <!-- Link para a página Netmax TV -->
+            <a href="netmax_tv.html">NETMAX TV</a>
+            <!-- Link para a página Nosso Propósito -->
+            <a href="nosso_proposito.html">NOSSO PROPÓSITO</a>
+            <!-- Link para a página Por que escolher a Netmax -->
+            <a href="por_que_escolher_a_netmax.html">POR QUE ESCOLHER A NETMAX</a>
+        </nav>
+    </header>
+
+    <!-- HERO ESPECIAL JORNALZ - Seção de destaque com chamada principal -->
+    <section class="hero hero-boosted jornalz-hero" style="padding: 80px 20px;">
+        
+        <!-- Elementos decorativos de fundo (emojis gigantes semi-transparentes) -->
+        <div style="position: absolute; top: -30px; right: -30px; font-size: 300px; opacity: 0.08; transform: rotate(15deg); color: #000; pointer-events: none; z-index: 1;">📰</div>
+        <div style="position: absolute; bottom: -80px; left: -40px; font-size: 280px; opacity: 0.08; transform: rotate(-10deg); color: #000; pointer-events: none; z-index: 1;">⚡</div>
+        <div style="position: absolute; top: 50%; left: 10%; font-size: 120px; opacity: 0.05; transform: translateY(-50%); color: #000; pointer-events: none; z-index: 1;">🌐</div>
+        
+        <!-- Container com grid de 2 colunas para organizar o conteúdo -->
+        <div style="max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; position: relative; z-index: 2;">
+            
+            <!-- Coluna da Esquerda: Textos principais -->
+            <div style="text-align: left;">
+                <!-- Badge de "BENEFÍCIO EXCLUSIVO" estilizado -->
+                <div style="display: inline-block; background: #000; color: #FFD000; font-weight: 800; padding: 8px 25px; border-radius: 40px; font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 25px; border: 2px solid #FFD000;">
+                    ⚡ INFORMAÇÃO INTELIGENTE
+                </div>
+                
+                <!-- Título principal com efeito especial na letra Z -->
+                <h1 style="font-size: 4.2rem; font-weight: 900; line-height: 1.2; margin-bottom: 20px; color: #000; text-shadow: 0 0 20px rgba(255,208,0,0.3); position: relative;">
+                    JORNAL<span style="color: #f24f00; font-size: 5rem; text-shadow: 0 0 30px #ffaa00, 0 0 60px #ff5500; animation: firePulse 1.2s infinite ease-in-out; display: inline-block; position: relative; top: -2px;">Z</span>
+                </h1>
+                
+                <!-- Subtítulo -->
+                <p style="font-size: 2rem; font-weight: 700; color: #000; margin-bottom: 20px;">
+                    O mundo em suas mãos.
+                </p>
+                
+                <!-- Descrição principal do serviço -->
+                <p style="font-size: 1.3rem; line-height: 1.6; color: #1a1a1a; margin-bottom: 30px; max-width: 600px; font-weight: 500;">
+                    Cansado de perder tempo com informações duvidosas e sites poluídos? O JornalZ é o seu portal inteligente que reúne os principais acontecimentos do Brasil e do mundo em um só lugar, com curadoria especializada.
+                </p>
+                
+                <!-- Botões de ação -->
+                <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                    <!-- BOTÃO 1: Abre o site do JornalZ em nova aba -->
+                    <button class="btn-primary pulse-btn" style="font-size: 1.3rem; padding: 15px 35px; background: #f24f00; color: #000; font-weight: 800; border: none;" onclick="window.open('https://www.jornalz.com.br/', '_blank')">
+                        📰 ACESSAR JORNALZ
+                    </button>
+                    <!-- BOTÃO 2: Rola suavemente até a seção "saiba-mais" -->
+                    <button class="btn-secondary" style="font-size: 1.3rem; padding: 15px 35px; background: #000; color: #FFD000; border: 2px solid #FFD000; font-weight: 600;" onclick="document.getElementById('saiba-mais').scrollIntoView({behavior: 'smooth'});">
+                        🔍 SAIBA MAIS
+                    </button>
+                </div>
+                
+                <!-- Selos de "INCLUSO" destacando que é gratuito para assinantes -->
+                <div style="margin-top: 40px; display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
+                    <div style="background: rgba(0,0,0,0.2); backdrop-filter: blur(5px); padding: 10px 20px; border-radius: 50px; border: 1px solid #000;">
+                        <span style="color: #000; font-weight: 700;"><i class="fas fa-check-circle" style="margin-right: 8px; color: #000;"></i> JÁ INCLUSO NO SEU PLANO</span>
+                    </div>
+                    <div style="background: rgba(255,208,0,0.2); backdrop-filter: blur(5px); padding: 10px 20px; border-radius: 50px; border: 1px solid #FFD000;">
+                        <span style="color: #000; font-weight: 700;"><i class="fas fa-rocket" style="margin-right: 8px; color: #000;"></i> SEM CUSTO ADICIONAL</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Coluna da Direita: Ilustração/Ícones -->
+            <div style="text-align: center; position: relative;">
+                <!-- Círculo decorativo com animação de rotação -->
+                <div style="width: 350px; height: 350px; margin: 0 auto; background: rgba(0,0,0,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px dashed #000; animation: rotate 30s linear infinite;">
+                    <!-- Círculo interno -->
+                    <div style="width: 280px; height: 280px; background: rgba(0,0,0,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #000;">
+                        <!-- Círculo central com estatísticas -->
+                        <div style="width: 220px; height: 220px; background: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 15px; border: 2px solid #FFD000; box-shadow: 0 0 50px rgba(255,208,0,0.3);">
+                            <i class="fas fa-newspaper" style="font-size: 5rem; color: #FFD000;"></i>
+                            <span style="color: white; font-size: 1.5rem; font-weight: 700;">+ de 50</span>
+                            <span style="color: #FFD000; font-size: 1.1rem;">Fontes Confiáveis</span>
+                            <!-- Ícones de categorias de notícias -->
+                            <div style="display: flex; gap: 15px; margin-top: 10px;">
+                                <i class="fas fa-globe-americas" style="color: #FFD000; font-size: 1.5rem;"></i>
+                                <i class="fas fa-chart-line" style="color: #FFD000; font-size: 1.5rem;"></i>
+                                <i class="fas fa-futbol" style="color: #FFD000; font-size: 1.5rem;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cards flutuantes com características do serviço -->
+                <div style="position: absolute; top: 20%; right: 0; background: #000; padding: 15px 25px; border-radius: 20px; border: 2px solid #FFD000; transform: rotate(5deg); box-shadow: 0 10px 20px rgba(0,0,0,0.3);">
+                    <i class="fas fa-search" style="color: #FFD000; margin-right: 8px;"></i>
+                    <span style="color: white;">Curadoria inteligente</span>
+                </div>
+                
+                <div style="position: absolute; bottom: 20%; left: 0; background: #000; padding: 15px 25px; border-radius: 20px; border: 2px solid #FFD000; transform: rotate(-5deg); box-shadow: 0 10px 20px rgba(0,0,0,0.3);">
+                    <i class="fas fa-bolt" style="color: #FFD000; margin-right: 8px;"></i>
+                    <span style="color: white;">Leitura limpa</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Animação de rotação definida em CSS -->
+        <style>
+            @keyframes rotate {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+        </style>
+    </section>
+
+    <!-- CONTEÚDO PRINCIPAL - Seção com informações detalhadas -->
+    <section class="ecosystem" style="padding-top: 60px;" id="saiba-mais">
+
+        <!-- O QUE É - Texto explicativo melhorado -->
+        <div class="jornalz-explicativo-box">
+            <p>⚡ INFORMAÇÃO INTELIGENTE PARA QUEM NÃO TEM TEMPO A PERDER</p>
+            <p>Chega de abrir dez abas diferentes para tentar se informar. O <strong>JornalZ</strong> é o seu portal inteligente que reúne os principais acontecimentos do Brasil e do mundo em um só lugar, com curadoria especializada para quem busca qualidade, profundidade e agilidade.</p>
+            <p>Nossa equipe e algoritmos trabalham juntos para selecionar as notícias mais relevantes do dia. Nada de exageros sensacionalistas ou informações irrelevantes. Você recebe o que realmente importa, de fontes confiáveis, em um layout minimalista e direto.</p>
+        </div>
+
+        <!-- ESTATÍSTICAS - Destaques numéricos -->
+        <div class="jornalz-stats">
+            <div class="jornalz-stat-item">
+                <div class="numero">+50</div>
+                <div class="rotulo">Fontes Confiáveis</div>
+            </div>
+            <div class="jornalz-stat-item">
+                <div class="numero">24/7</div>
+                <div class="rotulo">Atualização Contínua</div>
+            </div>
+            <div class="jornalz-stat-item">
+                <div class="numero">100%</div>
+                <div class="rotulo">Livre de Anúncios</div>
+            </div>
+        </div>
+
+        <!-- VANTAGENS - Grid de features -->
+        <h2 class="ecosystem-title" style="margin: 60px auto 30px;">
+            🚀 POR QUE O <span class="price-fire">JORNALZ</span> VAI TRANSFORMAR SUA ROTINA?
+        </h2>
+
+        <!-- Grid de cards com benefícios -->
+        <div class="jornalz-features-grid">
+            <!-- Card 1: Curadoria Inteligente -->
+            <div class="jornalz-feature-card">
+                <div class="jornalz-feature-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="jornalz-feature-content">
+                    <h3>Curadoria Inteligente</h3>
+                    <p>Nossa equipe e algoritmos trabalham juntos para selecionar as notícias mais relevantes do dia. Você recebe o que realmente importa, de fontes confiáveis, sem ruído.</p>
+                </div>
+            </div>
+            
+            <!-- Card 2: Experiência Limpa -->
+            <div class="jornalz-feature-card">
+                <div class="jornalz-feature-icon">
+                    <i class="fas fa-broom"></i>
+                </div>
+                <div class="jornalz-feature-content">
+                    <h3>Experiência Limpa</h3>
+                    <p>Esqueça telas poluídas por anúncios popping, popunders e banners intermináveis. Layout minimalista, direto e focado no que interessa: a informação de qualidade.</p>
+                </div>
+            </div>
+            
+            <!-- Card 3: Personalização Sob Medida -->
+            <div class="jornalz-feature-card">
+                <div class="jornalz-feature-icon">
+                    <i class="fas fa-sliders-h"></i>
+                </div>
+                <div class="jornalz-feature-content">
+                    <h3>Personalização Sob Medida</h3>
+                    <p>Escolha seus temas preferidos: política, economia, tecnologia, esportes, cultura, ciência. O JornalZ aprende com suas preferências e entrega um feed sob medida.</p>
+                </div>
+            </div>
+            
+            <!-- Card 4: Integração com Ecossistema Netmax -->
+            <div class="jornalz-feature-card">
+                <div class="jornalz-feature-icon">
+                    <i class="fas fa-link"></i>
+                </div>
+                <div class="jornalz-feature-content">
+                    <h3>Integração com Ecossistema Netmax</h3>
+                    <p>Comece o dia lendo uma notícia e, com um clique, mergulhe em um livro digital completo na Estante Digital ou aprofunde-se com artigos acadêmicos no NEWS Periódicos.</p>
+                </div>
+            </div>
+            
+            <!-- Card 5: Cobertura Nacional e Internacional -->
+            <div class="jornalz-feature-card">
+                <div class="jornalz-feature-icon">
+                    <i class="fas fa-globe-americas"></i>
+                </div>
+                <div class="jornalz-feature-content">
+                    <h3>Cobertura Nacional e Internacional</h3>
+                    <p>Acompanhe os desdobramentos políticos em Brasília, as inovações do Vale do Silício, os resultados do futebol europeu e os impactos da economia global no seu bolso.</p>
+                </div>
+            </div>
+            
+            <!-- Card 6: Na Velocidade da Netmax -->
+            <div class="jornalz-feature-card">
+                <div class="jornalz-feature-icon">
+                    <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <div class="jornalz-feature-content">
+                    <h3>Na Velocidade da Netmax</h3>
+                    <p>Enquanto nossa fibra entrega 1000 megas de velocidade, o JornalZ entrega a informação mais rápida e relevante. Perfeito para quem precisa estar atualizado sem perder tempo.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ONDE ACESSAR - Dispositivos compatíveis -->
+        <h2 class="ecosystem-title" style="margin: 60px auto 30px;" id="como-acessar">
+            📱 ONDE QUISER, <span class="price-fire">QUANDO QUISER</span>
+        </h2>
+
+        <!-- Ícones de dispositivos com descrição -->
+        <div class="jornalz-devices">
+            <div class="jornalz-device-item">
+                <i class="fas fa-mobile-alt"></i>
+                <span>Smartphone</span>
+                <small>No ônibus, na fila, no intervalo</small>
+            </div>
+            <div class="jornalz-device-item">
+                <i class="fas fa-laptop"></i>
+                <span>Computador</span>
+                <small>Home office com pesquisa rápida</small>
+            </div>
+            <div class="jornalz-device-item">
+                <i class="fas fa-tablet-alt"></i>
+                <span>Tablet</span>
+                <small>Leitura confortável no sofá</small>
+            </div>
+        </div>
+
+        <!-- COMO ATIVAR / CTA - Chamada para ação principal -->
+        <div class="jornalz-cta-box" id="como-acessar">
+            <h2>🎁 E O MELHOR: TUDO INCLUSO NO SEU PLANO!</h2>
+            <p>
+                Não é uma assinatura extra, não é um custo adicional. O <strong>JornalZ</strong> é mais um presente da Netmax para você, que já faz parte da nossa família.
+            </p>
+            <p style="font-size: 1.8rem; color: #FFD000; margin-bottom: 40px; font-weight: bold;">
+                Se você já é assinante, o mundo da informação inteligente te espera.
+            </p>
+            <!-- BOTÃO 2: Abre o site do JornalZ em nova aba -->
+            <button class="btn-primary pulse-btn" style="font-size: 2rem; padding: 25px 60px; background: #f24f00; color: #000; font-weight: 800; border: none; border-radius: 60px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 0 30px rgba(255,208,0,0.5);" 
+                    onmouseover="this.style.background='#FFD000'; this.style.transform='scale(1.05)';" 
+                    onmouseout="this.style.background='#f24f00'; this.style.transform='scale(1)';"
+                    onclick="window.open('https://www.jornalz.com.br/', '_blank')">
+                📰 ACESSAR JORNALZ AGORA
+            </button>
+        </div>
+
+        <!-- CHAMADA PARA ASSINATURA - Para não assinantes -->
+        <div style="background: rgba(0,0,0,0.05); padding: 50px; border-radius: 30px; margin: 40px 0;">
+            <h2 style="font-size: 2.2rem; color: #000; margin-bottom: 20px;">
+                Ainda não é assinante Netmax?
+            </h2>
+            <p style="font-size: 1.5rem; color: #333; margin-bottom: 30px;">
+                Assine agora o plano de 1000 megas por apenas <strong style="color: #f24f00; font-size: 2rem;">R$ 114,90</strong> e leve todos os benefícios inclusos: Netmax TV, Estante Digital, NEWS Periódicos e JornalZ!
+            </p>
+            <!-- BOTÃO 3: Abre link do WhatsApp para contato comercial -->
+            <button class="btn-primary pulse-btn" style="font-size: 1.8rem; padding: 20px 50px; text-decoration: none; display: inline-block; background: #f24f00; color: #000; font-weight: 800; border: none; border-radius: 60px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 0 30px rgba(255,208,0,0.5);"
+                    onmouseover="this.style.background='#FFD000'; this.style.transform='scale(1.05)';"
+                    onmouseout="this.style.background='#f24f00'; this.style.transform='scale(1)';"
+                    onclick="window.open('https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra.', '_blank')">
+                🔥 QUERO ASSINAR AGORA
+            </button>
+        </div>
+
+        <!-- PARCEIROS / CONTEÚDOS EXCLUSIVOS - Logos dos parceiros -->
+        <div class="jornalz-partner-showcase">
+            <img src="../assets/images/logos/logo_jornalz.png" alt="JornalZ" style="width: 100px;">
+            <span>+</span>
+            <img src="../assets/images/logos/logo_netmax.JPG" alt="Netmax Fibra" style="width: 100px;">
+        </div>
+
+    </section>
+
+    <!-- FOOTER PADRÃO - Rodapé do site -->
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Informações legais e de contato -->
+            <div class="footer-text">
+                <p>© 2024 Netmax Fibra - Todos os Direitos Reservados</p>
+                <p>CNPJ: 48.287.603/0001-42</p>
+                <p>Rua Rio Grande do Sul, 1460 - Bairro Santuário - Siqueira Campos - PR</p>
+            </div>
+            
+            <!-- Redes sociais -->
+            <div class="footer-social">
+                <a href="https://instagram.com/netmaxfibra" target="_blank" rel="noopener noreferrer">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/instagram.svg" alt="Instagram" width="20" height="20">
+                    <span>Instagram</span>
+                </a>
+                <a href="https://facebook.com/netmaxfibra" target="_blank" rel="noopener noreferrer">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/facebook.svg" alt="Facebook" width="20" height="20">
+                    <span>Facebook</span>
+                </a>
+                <a href="https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra." target="_blank" rel="noopener noreferrer">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/whatsapp.svg" alt="WhatsApp" width="20" height="20">
+                    <span>Fale Conosco</span>
+                </a>
+            </div>
+            
+            <!-- Direitos autorais e slogan -->
+            <div class="footer-copyright">
+                <p>Netmax Fibra - A velocidade que conecta você ao mundo e ao conhecimento.</p>
+                <p>Desenvolvido com 💛 para nossos clientes</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Link para o arquivo JavaScript (corrigido o caminho) -->
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

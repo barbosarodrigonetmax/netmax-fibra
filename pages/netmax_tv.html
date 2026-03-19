@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netmax Fibra - NETMAX TV: 100+ Canais Inclusos</title>
+    <!-- ===================================================================
+         NETMAX FIBRA - PÁGINA NETMAX TV 
+         ===================================================================
+         Objetivo: Página institucional para apresentar e ativar o serviço 
+                   NETMAX TV (mais de 100 canais via streaming) incluso nos 
+                   planos de internet da Netmax Fibra.
+         Autor : Rodrigo Barbosa
+         Data  : 23/02/2026
+         =================================================================== -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- WHATSAPP FLOATING BUTTON - Botão flutuante fixo para contato direto com a equipe comercial/suporte -->
+    <a href="https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Fale conosco!</span>
+    </a>
+
+    <!-- HEADER PADRÃO - Cabeçalho reutilizado em todas as páginas do site -->
+    <header class="header">
+        <!-- Logo e slogan principal -->
+        <div class="logo-area-highlight">
+            <img src="../assets/images/logos/logo_netmax.JPG" alt="Logo Netmax" class="logo-netmax-big">
+            <h1 class="slogan-top">A velocidade que conecta você ao mundo e ao conhecimento.</h1>
+        </div>
+        
+        <!-- CENTRAL DO ASSINANTE - Link para o portal do assinante (área restrita) -->
+        <div class="assinante-container">
+            <a href="https://netmax.net.br/" class="assinante-link" target="_blank" rel="noopener noreferrer">
+                <div class="assinante-icon">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <span class="assinante-text">CENTRAL DO<br>ASSINANTE</span>
+            </a>
+        </div>
+
+        <!-- MENU DE NAVEGAÇÃO - Barra com links para as principais seções do site -->
+        <nav class="nav-menu">
+            <a href="../index.html">PÁGINA INICIAL</a>
+            <a href="estante_digital.html">ESTANTE DIGITAL NETMAX</a>
+            <a href="jornalz.html">JORNALZ</a>
+            <a href="news_periodicos.html">NEWS PERIÓDICOS</a>
+            <!-- Link atual em destaque (amarelo) indicando a página atual -->
+            <a href="#" style="color: #FFD000; font-weight: bold;">NETMAX TV</a>
+            <a href="nosso_proposito.html">NOSSO PROPÓSITO</a>
+            <a href="por_que_escolher_a_netmax.html">POR QUE ESCOLHER A NETMAX</a>
+        </nav>
+    </header>
+
+    <!-- HERO ESPECIAL NETMAX TV - Seção de destaque com título chamativo e CTA principal -->
+    <section class="hero hero-boosted tv-hero">
+        <h1 class="hero-title">
+            📺 NETMAX TV: <span class="price-fire">MAIS DE 100 CANAIS</span>
+        </h1>
+        <p class="subtitle subtitle-premium" style="font-size: 2rem;">
+            Chega de conta cara e fios espalhados pela casa. Agora, o entretenimento completo viaja na velocidade da sua NETMAX.
+        </p>
+        <div class="hero-buttons">
+            <!-- Botão que abre o modal de ativação (JavaScript) -->
+            <button onclick="abrirModalAtivacao()" class="btn-primary pulse-btn" style="font-size: 1.8rem; padding: 20px 50px; cursor: pointer; border: none;">
+                🚀 ATIVE JÁ SUA NETMAX TV
+            </button>
+        </div>
+    </section>
+
+    <!-- CONTEÚDO PRINCIPAL - Corpo da página com explicações, vantagens e detalhes do serviço -->
+    <section class="ecosystem" style="padding-top: 60px;">
+        
+        <!-- O QUE É A NETMAX TV - Bloco reformulado com fundo gradiente e informações detalhadas -->
+        <div style="background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%); border-radius: 40px; padding: 60px 50px; margin: 60px 0; box-shadow: 0 30px 50px rgba(0,0,0,0.08); border: 1px solid rgba(255,208,0,0.3); position: relative; overflow: hidden;">
+
+            <!-- Elementos decorativos de fundo (ícones grandes e transparentes) -->
+            <div style="position: absolute; top: -20px; right: -20px; font-size: 250px; opacity: 0.03; transform: rotate(10deg); color: #FFD000; pointer-events: none;">📡</div>
+            <div style="position: absolute; bottom: -30px; left: -30px; font-size: 200px; opacity: 0.03; transform: rotate(-15deg); color: #FFD000; pointer-events: none;">⚡</div>
+
+            <!-- Cabeçalho da seção com ícone e título -->
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; margin-bottom: 40px; position: relative; z-index: 2;">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div style="background: #000; padding: 15px; border-radius: 20px; box-shadow: 0 10px 0 #FFD000;">
+                        <i class="fas fa-tv" style="color: #FFD000; font-size: 2.8rem;"></i>
+                    </div>
+                    <h2 style="font-size: 2.8rem; font-weight: 800; color: #000; margin: 0;">
+                        O Mundo <span style="color: #FFD000; text-shadow: 0 0 5px rgba(255,208,0,0.3);">Netmax TV</span>
+                    </h2>
+                </div>
+                <!-- Selo "Já incluso" -->
+                <div style="background: #000; padding: 12px 25px; border-radius: 60px; border: 2px solid #FFD000;">
+                    <span style="color: #FFD000; font-weight: 800; font-size: 1.2rem;"><i class="fas fa-check-circle" style="margin-right: 8px;"></i> JÁ INCLUSO NO SEU PLANO</span>
+                </div>
+            </div>
+
+            <!-- Grid 2 colunas: texto explicativo à esquerda e cards de benefícios à direita -->
+            <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; align-items: center; position: relative; z-index: 2;">
+
+                <!-- Coluna Esquerda: explicação detalhada -->
+                <div>
+                    <p style="font-size: 1.3rem; line-height: 1.7; color: #333; margin-bottom: 25px;">
+                        <span style="font-size: 1.6rem; font-weight: 800; color: #000; display: block; margin-bottom: 15px;">📺 A evolução da TV que veio para simplificar.</span>
+                        Chega de antenas, cabos coaxiais e pontos de TV limitados. A <strong style="color: #000;">Netmax TV</strong> é a sua nova experiência de televisão ao vivo, 100% digital e entregue pela sua conexão de internet. É a TV do futuro, disponível agora, sem complicação.
+                    </p>
+                    <p style="font-size: 1.2rem; line-height: 1.6; color: #555; margin-bottom: 30px;">
+                        Por trás da tela, a poderosa tecnologia <strong style="background: linear-gradient(135deg, #FFD000, #ffaa00); color: #000; padding: 2px 10px; border-radius: 20px;">CDNTV</strong> garante que o sinal dos seus canais favoritos chegue com a máxima qualidade, estabilidade e mínimo delay, direto para qualquer dispositivo.
+                    </p>
+
+                    <!-- Link âncora para a seção "como ativar" -->
+                    <a href="#" onclick="abrirModalAtivacao(); return false;" style="display: inline-flex; align-items: center; gap: 12px; background: #000; color: #FFD000; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.2rem; border: 2px solid #FFD000; transition: all 0.3s ease; margin-top: 10px;"
+                       onmouseover="this.style.background='#FFD000'; this.style.color='#000';" 
+                       onmouseout="this.style.background='#000'; this.style.color='#FFD000';">
+                        <i class="fas fa-play" style="font-size: 1.2rem;"></i>
+                        <span>VER COMO ATIVAR</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Coluna Direita: cards com os principais benefícios -->
+                <div style="background: #000; border-radius: 30px; padding: 35px 25px; box-shadow: 0 20px 30px rgba(255,208,0,0.25); border: 2px solid #FFD000;">
+                    
+                    <!-- Item 1: Sem taxas extras -->
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,208,0,0.2);">
+                        <div style="background: #FFD000; min-width: 55px; height: 55px; border-radius: 20px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-bolt" style="color: #000; font-size: 1.8rem;"></i>
+                        </div>
+                        <div>
+                            <h4 style="color: #FFD000; margin: 0 0 5px 0; font-size: 1.3rem;">Sem Taxas Extras</h4>
+                            <p style="color: #ccc; margin: 0; font-size: 0.95rem;">A Netmax TV é 100% inclusa. Você não paga um centavo a mais por isso.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: Fim da fiação -->
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,208,0,0.2);">
+                        <div style="background: #FFD000; min-width: 55px; height: 55px; border-radius: 20px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-wifi" style="color: #000; font-size: 1.8rem;"></i>
+                        </div>
+                        <div>
+                            <h4 style="color: #FFD000; margin: 0 0 5px 0; font-size: 1.3rem;">Fim da Fiação</h4>
+                            <p style="color: #ccc; margin: 0; font-size: 0.95rem;">Assista onde o Wi-Fi da Netmax chegar. Sem pontos fixos de TV.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: Qualidade digital -->
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div style="background: #FFD000; min-width: 55px; height: 55px; border-radius: 20px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-rocket" style="color: #000; font-size: 1.8rem;"></i>
+                        </div>
+                        <div>
+                            <h4 style="color: #FFD000; margin: 0 0 5px 0; font-size: 1.3rem;">Qualidade Digital</h4>
+                            <p style="color: #ccc; margin: 0; font-size: 0.95rem;">Imagem HD/4K e som cristalino, sem chiados ou chuviscos.*</p>
+                        </div>
+                    </div>
+
+                    <!-- Observação sobre qualidade depender do plano -->
+                    <p style="font-size: 0.7rem; color: #666; margin-top: 25px; text-align: center;">*Qualidade depende do plano de velocidade contratado.</p>
+                </div>
+            </div>
+
+            <!-- Barra de estatísticas (canais, multi-tela, etc.) -->
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 30px; margin-top: 50px; padding-top: 30px; border-top: 2px dashed rgba(0,0,0,0.1); position: relative; z-index: 2;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span style="font-size: 2.5rem; font-weight: 900; color: #FFD000;">100+</span>
+                    <span style="font-size: 1rem; color: #333; font-weight: 500;">Canais ao Vivo</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span style="font-size: 2rem; font-weight: 900; color: #FFD000;">📱💻📺</span>
+                    <span style="font-size: 1rem; color: #333; font-weight: 500;">Multi-tela Simultâneo</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span style="font-size: 2rem; font-weight: 900; color: #FFD000;">⚡</span>
+                    <span style="font-size: 1rem; color: #333; font-weight: 500;">Zero Equipamento Extra</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span style="font-size: 2rem; font-weight: 900; color: #FFD000;">24/7</span>
+                    <span style="font-size: 1rem; color: #333; font-weight: 500;">Programação Ininterrupta</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- DESTAQUE: ONDE ASSISTIR - Explicação sobre os dispositivos compatíveis -->
+        <h2 class="ecosystem-title" style="margin: 40px auto;">
+            🏠 ONDE ASSISTIR? <span class="price-fire">EM TODO LUGAR</span>
+        </h2>
+        <p style="font-size: 1.5rem; margin-bottom: 30px; color: #000; font-weight: 500;">
+            A grande utilidade da Netmax TV é a liberdade de escolha. Assista ao que quiser, onde quiser:
+        </p>
+
+        <!-- Ícones e descrição dos dispositivos -->
+        <div class="tv-devices">
+            <div class="tv-device-item">
+                <i class="fas fa-mobile-alt"></i>
+                <span>Smartphone</span>
+                <small>No ônibus, na fila, no trabalho</small>
+            </div>
+            <div class="tv-device-item">
+                <i class="fas fa-laptop"></i>
+                <span>Computador</span>
+                <small>Home office com companhia</small>
+            </div>
+            <div class="tv-device-item">
+                <i class="fas fa-tv"></i>
+                <span>Televisão</span>
+                <small>Chromecast ou App Smart TV</small>
+            </div>
+            <div class="tv-device-item">
+                <i class="fas fa-tablet-alt"></i>
+                <span>Tablet</span>
+                <small>Desenhos em HD sem ocupar a TV</small>
+            </div>
+        </div>
+
+        <!-- VANTAGENS EXCLUSIVAS - Seção com cards detalhando os benefícios -->
+        <h2 class="ecosystem-title" style="margin: 60px auto 30px;">
+            ✅ <span class="price-fire">VANTAGENS EXCLUSIVAS</span> DA NETMAX TV
+        </h2>
+
+        <div class="tv-features-grid">
+            <div class="tv-feature-card">
+                <i class="fas fa-wifi"></i>
+                <h3>Sem Fios, Sem Complicação</h3>
+                <p>Esqueça antenas externas, para-raios ou pontos de TV. Basta estar conectado à rede Wi-Fi da Netmax.</p>
+            </div>
+            <div class="tv-feature-card">
+                <i class="fas fa-satellite-dish"></i>
+                <h3>+100 Canais</h3>
+                <p>Entretenimento completo para toda a família. Esportes, filmes, séries, jornais, música e muito mais.</p>
+            </div>
+            <div class="tv-feature-card">
+                <i class="fas fa-futbol"></i>
+                <h3>Esportes ao Vivo</h3>
+                <p>Futebol ao vivo e os principais campeonatos nacionais e internacionais.</p>
+            </div>
+            <div class="tv-feature-card">
+                <i class="fas fa-film"></i>
+                <h3>Filmes e Séries</h3>
+                <p>Para maratonar nos finais de semana com a família.</p>
+            </div>
+            <div class="tv-feature-card">
+                <i class="fas fa-newspaper"></i>
+                <h3>Jornais 24h</h3>
+                <p>Informação séria e atualizada na hora que precisar.</p>
+            </div>
+            <div class="tv-feature-card">
+                <i class="fas fa-music"></i>
+                <h3>Música e Variedades</h3>
+                <p>A trilha sonora do seu dia.</p>
+            </div>
+            <div class="tv-feature-card">
+                <i class="fas fa-hd"></i>
+                <h3>Qualidade Digital de Ponta</h3>
+                <p>Sem chiados, sem chuvisco. Imagem nítida (HD, Full HD ou 4K)* e som cristalino.</p>
+                <small style="font-size: 0.8rem;">*Dependência do plano de velocidade contratado.</small>
+            </div>
+            <div class="tv-feature-card">
+                <i class="fas fa-users"></i>
+                <h3>Multi-tela</h3>
+                <p>Vários membros da família podem assistir a programas diferentes, em dispositivos diferentes, ao mesmo tempo. Adeus, brigas pelo controle remoto!</p>
+            </div>
+        </div>
+
+        <!-- CATEGORIAS DE CANAIS - Exibição dos tipos de conteúdo disponíveis -->
+        <h2 class="ecosystem-title" style="margin: 40px auto;">
+            📡 <span class="price-fire">MAIS DE 100 CANAIS</span> PARA TODA FAMÍLIA
+        </h2>
+
+        <div class="tv-channels-grid">
+            <div class="tv-channel-category">
+                <i class="fas fa-futbol"></i>
+                <h4>ESPORTES</h4>
+                <p>Futebol, vôlei, basquete, lutas e muito mais</p>
+            </div>
+            <div class="tv-channel-category">
+                <i class="fas fa-film"></i>
+                <h4>FILMES</h4>
+                <p>Canais premiuns com os maiores sucessos</p>
+            </div>
+            <div class="tv-channel-category">
+                <i class="fas fa-tv"></i>
+                <h4>SÉRIES</h4>
+                <p>Maratone as melhores séries</p>
+            </div>
+            <div class="tv-channel-category">
+                <i class="fas fa-newspaper"></i>
+                <h4>JORNAIS</h4>
+                <p>Notícias 24h ao vivo</p>
+            </div>
+            <div class="tv-channel-category">
+                <i class="fas fa-music"></i>
+                <h4>MÚSICA</h4>
+                <p>Clipes e shows exclusivos</p>
+            </div>
+            <div class="tv-channel-category">
+                <i class="fas fa-child"></i>
+                <h4>INFANTIL</h4>
+                <p>Desenhos e programação kids</p>
+            </div>
+            <div class="tv-channel-category">
+                <i class="fas fa-utensils"></i>
+                <h4>GASTRONOMIA</h4>
+                <p>Receitas e culinária</p>
+            </div>
+            <div class="tv-channel-category">
+                <i class="fas fa-globe"></i>
+                <h4>DOCUMENTÁRIOS</h4>
+                <p>Natureza, ciência e história</p>
+            </div>
+            <div class="tv-channel-category">
+                <i class="fas fa-shopping-cart"></i>
+                <h4>VARIEDADES</h4>
+                <p>Entretenimento 360°</p>
+            </div>
+            <div class="tv-channel-category">
+                <i class="fas fa-church"></i>
+                <h4>RELIGIOSO</h4>
+                <p>Conteúdo para toda família</p>
+            </div>
+        </div>
+
+        <!-- DEPOIMENTO SIMULADO - Depoimento fictício para gerar credibilidade -->
+        <div class="tv-testimonial">
+            <p>
+                "Assinei a Netmax pelos 1000 megas, mas o grande achado foi a Netmax TV. Meus filhos assistem desenhos no tablet enquanto assisto futebol na TV. E o melhor: não pago nada extra por isso!"
+            </p>
+            <div class="autor">Carlos Eduardo, assinante Netmax há 2 anos</div>
+        </div>
+
+        <!-- TECNOLOGIA CDNTV - Explicação aprofundada da tecnologia utilizada -->
+        <div style="background: linear-gradient(145deg, #0a0a0a, #1a1a1a); border-radius: 40px; padding: 60px 40px; margin: 70px 0; border: 2px solid #FFD000; box-shadow: 0 25px 40px rgba(255,208,0,0.15); position: relative; overflow: hidden;">
+            
+            <!-- Elementos decorativos de fundo -->
+            <div style="position: absolute; top: -30px; right: -30px; font-size: 200px; opacity: 0.03; transform: rotate(20deg); color: #FFD000; pointer-events: none;">📡</div>
+            <div style="position: absolute; bottom: -40px; left: -40px; font-size: 220px; opacity: 0.03; transform: rotate(-15deg); color: #FFD000; pointer-events: none;">⚡</div>
+            
+            <!-- Cabeçalho da seção -->
+            <div style="text-align: center; margin-bottom: 50px; position: relative; z-index: 2;">
+                <span style="background: #FFD000; color: #000; padding: 8px 25px; border-radius: 60px; font-weight: 800; font-size: 1.2rem; letter-spacing: 2px; display: inline-block; margin-bottom: 20px;">TECNOLOGIA EXCLUSIVA</span>
+                <h2 style="font-size: 3rem; color: white; margin: 0; display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                    <i class="fas fa-microchip" style="color: #FFD000; font-size: 3.5rem; filter: drop-shadow(0 0 15px rgba(255,208,0,0.5));"></i>
+                    <span style="background: linear-gradient(135deg, #fff, #FFD000); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">CDNTV</span>
+                </h2>
+                <p style="font-size: 1.8rem; color: #FFD000; font-weight: 300; margin-top: 10px;">O segredo da qualidade impecável</p>
+            </div>
+            
+            <!-- Grid de duas colunas: explicação e cards com vantagens técnicas -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1100px; margin: 0 auto; position: relative; z-index: 2;">
+                
+                <!-- Coluna esquerda: descrição do funcionamento -->
+                <div style="background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border-radius: 30px; padding: 35px; border: 1px solid rgba(255,208,0,0.3);">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
+                        <div style="background: #FFD000; width: 50px; height: 50px; border-radius: 20px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-satellite-dish" style="color: #000; font-size: 1.8rem;"></i>
+                        </div>
+                        <h3 style="color: white; font-size: 1.8rem; margin: 0;">Como funciona?</h3>
+                    </div>
+                    <p style="color: #ddd; font-size: 1.2rem; line-height: 1.7; margin-bottom: 20px;">
+                        A <strong style="color: #FFD000;">Netmax TV</strong> utiliza a mais avançada tecnologia de <strong style="color: #FFD000;">Content Delivery Network (CDN)</strong> especialmente desenvolvida para transmissão de TV.
+                    </p>
+                    <p style="color: #bbb; font-size: 1.1rem; line-height: 1.6;">
+                        O sinal dos canais é captado, otimizado e distribuído através de uma rede de servidores estratégicos, garantindo que você receba o conteúdo com a melhor qualidade possível, independente de onde estiver.
+                    </p>
+                </div>
+                
+                <!-- Coluna direita: lista de benefícios técnicos com hover effect -->
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    
+                    <div style="background: rgba(255,208,0,0.1); border: 1px solid rgba(255,208,0,0.3); border-radius: 20px; padding: 20px; display: flex; align-items: center; gap: 20px; transition: transform 0.3s ease;" 
+                         onmouseover="this.style.transform='translateX(10px)';this.style.background='rgba(255,208,0,0.2)';" 
+                         onmouseout="this.style.transform='translateX(0)';this.style.background='rgba(255,208,0,0.1)';">
+                        <div style="background: #FFD000; min-width: 60px; height: 60px; border-radius: 60px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-clock" style="color: #000; font-size: 1.8rem;"></i>
+                        </div>
+                        <div>
+                            <h4 style="color: #FFD000; margin: 0 0 5px 0; font-size: 1.3rem;">Mínimo Delay</h4>
+                            <p style="color: #fff; margin: 0; font-size: 1rem;">Você assiste quase em tempo real, com latência reduzida.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="background: rgba(255,208,0,0.1); border: 1px solid rgba(255,208,0,0.3); border-radius: 20px; padding: 20px; display: flex; align-items: center; gap: 20px; transition: transform 0.3s ease;"
+                         onmouseover="this.style.transform='translateX(10px)';this.style.background='rgba(255,208,0,0.2)';" 
+                         onmouseout="this.style.transform='translateX(0)';this.style.background='rgba(255,208,0,0.1)';">
+                        <div style="background: #FFD000; min-width: 60px; height: 60px; border-radius: 60px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-chart-line" style="color: #000; font-size: 1.8rem;"></i>
+                        </div>
+                        <div>
+                            <h4 style="color: #FFD000; margin: 0 0 5px 0; font-size: 1.3rem;">Qualidade Adaptativa</h4>
+                            <p style="color: #fff; margin: 0; font-size: 1rem;">Ajuste automático à sua velocidade de internet.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="background: rgba(255,208,0,0.1); border: 1px solid rgba(255,208,0,0.3); border-radius: 20px; padding: 20px; display: flex; align-items: center; gap: 20px; transition: transform 0.3s ease;"
+                         onmouseover="this.style.transform='translateX(10px)';this.style.background='rgba(255,208,0,0.2)';" 
+                         onmouseout="this.style.transform='translateX(0)';this.style.background='rgba(255,208,0,0.1)';">
+                        <div style="background: #FFD000; min-width: 60px; height: 60px; border-radius: 60px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-shield-alt" style="color: #000; font-size: 1.8rem;"></i>
+                        </div>
+                        <div>
+                            <h4 style="color: #FFD000; margin: 0 0 5px 0; font-size: 1.3rem;">Estabilidade</h4>
+                            <p style="color: #fff; margin: 0; font-size: 1rem;">Sem travamentos ou quedas, mesmo nos horários de pico.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="background: rgba(255,208,0,0.1); border: 1px solid rgba(255,208,0,0.3); border-radius: 20px; padding: 20px; display: flex; align-items: center; gap: 20px; transition: transform 0.3s ease;"
+                         onmouseover="this.style.transform='translateX(10px)';this.style.background='rgba(255,208,0,0.2)';" 
+                         onmouseout="this.style.transform='translateX(0)';this.style.background='rgba(255,208,0,0.1)';">
+                        <div style="background: #FFD000; min-width: 60px; height: 60px; border-radius: 60px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-tv" style="color: #000; font-size: 1.8rem;"></i>
+                        </div>
+                        <div>
+                            <h4 style="color: #FFD000; margin: 0 0 5px 0; font-size: 1.3rem;">4K Ready</h4>
+                            <p style="color: #fff; margin: 0; font-size: 1rem;">Pronto para ultra alta definição.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Destaque final de compatibilidade -->
+            <div style="text-align: center; margin-top: 40px; position: relative; z-index: 2;">
+                <div style="display: inline-flex; gap: 10px; background: rgba(255,208,0,0.2); padding: 15px 30px; border-radius: 60px; border: 1px dashed #FFD000;">
+                    <i class="fas fa-check-circle" style="color: #FFD000;"></i>
+                    <span style="color: white; font-weight: 500;">Compatível com todos os dispositivos: Smart TVs, Celulares, Tablets e Computadores</span>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- PERGUNTAS FREQUENTES - FAQ interativo -->
+        <h2 class="ecosystem-title" style="margin: 40px auto;">
+            ❓ <span class="price-fire">DÚVIDAS FREQUENTES</span>
+        </h2>
+
+        <div class="tv-faq">
+            <!-- Item 1 -->
+            <div class="tv-faq-item" onclick="this.classList.toggle('active')">
+                <h4>
+                    Preciso pagar alguma taxa extra para ter a Netmax TV?
+                    <i class="fas fa-chevron-down"></i>
+                </h4>
+                <p style="display: none;">Não! A Netmax TV já está 100% inclusa no seu plano de internet. Você não paga nada a mais por isso.</p>
+            </div>
+            <!-- Item 2 -->
+            <div class="tv-faq-item" onclick="this.classList.toggle('active')">
+                <h4>
+                    Quantos dispositivos posso usar ao mesmo tempo?
+                    <i class="fas fa-chevron-down"></i>
+                </h4>
+                <p style="display: none;">Com a tecnologia Multi-tela, vários membros da família podem assistir a programas diferentes em dispositivos diferentes simultaneamente. Não há limite definido, apenas recomendamos bom senso para não comprometer a experiência.</p>
+            </div>
+            <!-- Item 3 -->
+            <div class="tv-faq-item" onclick="this.classList.toggle('active')">
+                <h4>
+                    Preciso de equipamento especial?
+                    <i class="fas fa-chevron-down"></i>
+                </h4>
+                <p style="display: none;">Não. Você pode assistir diretamente no celular, tablet, computador ou enviar para a TV via Chromecast. Para Smart TVs, basta instalar o aplicativo.</p>
+            </div>
+            <!-- Item 4 -->
+            <div class="tv-faq-item" onclick="this.classList.toggle('active')">
+                <h4>
+                    Quais canais estão disponíveis?
+                    <i class="fas fa-chevron-down"></i>
+                </h4>
+                <p style="display: none;">São mais de 100 canais divididos entre esportes, filmes, séries, jornais, música, infantil, variedades, documentários e conteúdo religioso. A grade completa é enviada após a ativação.</p>
+            </div>
+            <!-- Item 5 -->
+            <div class="tv-faq-item" onclick="this.classList.toggle('active')">
+                <h4>
+                    A qualidade é realmente boa?
+                    <i class="fas fa-chevron-down"></i>
+                </h4>
+                <p style="display: none;">Sim! Utilizamos tecnologia CDNTV com qualidade adaptativa. Você pode assistir em HD, Full HD e até 4K, dependendo do seu plano de velocidade e do conteúdo.</p>
+            </div>
+        </div>
+
+        <!-- Script simples para o comportamento de clique do FAQ (toggle exibição) -->
+        <script>
+            document.querySelectorAll('.tv-faq-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const p = this.querySelector('p');
+                    const icon = this.querySelector('i');
+                    if (p.style.display === 'none' || p.style.display === '') {
+                        p.style.display = 'block';
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        p.style.display = 'none';
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+        </script>
+
+        <!-- COMO ATIVAR - Seção com botão grande para ativação -->
+        <div id="como-ativar" class="tv-cta-giant">
+            <h2>🚀 COMO ATIVAR AGORA MESMO?</h2>
+            <p style="font-size: 1.8rem; color: white; margin-bottom: 40px;">
+                Se você já é assinante Netmax, a diversão está a poucos cliques de distância:
+            </p>
+            <p style="font-size: 1.4rem; color: #FFD000; margin-bottom: 30px;">
+                <i class="fas fa-wifi" style="margin-right: 10px;"></i> 
+                Conecte seu celular, tablet ou Smart TV à sua rede Wi-Fi Netmax.
+            </p>
+            <!-- Botão que abre o modal de ativação (segundo modal) -->
+            <button onclick="abrirModal()" class="btn-primary pulse-btn" style="font-size: 2rem; padding: 25px 60px; cursor: pointer; border: none;">
+                📲 QUERO ASSISTIR NETMAX TV AGORA
+            </button>
+        </div>
+
+        <!-- DESTAQUE FINAL - Badge com slogan -->
+        <div style="margin: 40px 0; text-align: center;">
+            <span class="tv-highlight-badge">
+                📺 Netmax: A sua internet, a sua tela, o seu mundo.
+            </span>
+        </div>
+
+        <!-- CHAMADA PARA ASSINATURA - Para visitantes que ainda não são clientes -->
+        <div style="background: rgba(0,0,0,0.05); padding: 50px; border-radius: 30px; margin: 40px 0;">
+            <h2 style="font-size: 2.2rem; color: #000; margin-bottom: 20px;">
+                Ainda não é assinante Netmax?
+            </h2>
+            <p style="font-size: 1.5rem; color: #333; margin-bottom: 30px;">
+                Assine agora o plano de 1000 megas por apenas R$ 114,90 e leve a Netmax TV de brinde incluso!
+            </p>
+            <!-- Botão que redireciona para o WhatsApp de vendas -->
+            <button onclick="window.open('https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra.', '_blank')" class="btn-primary pulse-btn" style="font-size: 1.8rem; padding: 20px 50px; cursor: pointer; border: none;">
+                🔥 QUERO ASSINAR AGORA
+            </button>
+        </div>
+
+    </section>
+
+    <!-- MODAL DA NETMAX TV - PRIMEIRO MODAL (acesso rápido para assistir) -->
+    <div id="tvModal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-card">
+                
+                <!-- Botão Fechar (X) -->
+                <button class="modal-close-btn" onclick="fecharModal()" aria-label="Fechar">
+                    <i class="fas fa-times"></i>
+                </button>
+
+                <!-- Cabeçalho do modal -->
+                <div class="modal-header">
+                    <div class="modal-icon-wrapper">
+                        <i class="fas fa-tv"></i>
+                    </div>
+                    <h2 class="modal-title">ATIVE SUA <span class="title-fire">NETMAX TV</span></h2>
+                    <p class="modal-subtitle">+100 canais inclusos no seu plano de internet</p>
+                </div>
+
+                <!-- Corpo do modal -->
+                <div class="modal-body">
+                    
+                    <!-- Card com dados de acesso (login/senha padrão) -->
+                    <div class="access-card">
+                        <div class="access-card-header">
+                            <i class="fas fa-lock-open"></i>
+                            <span>DADOS DE ACESSO</span>
+                        </div>
+                        <div class="access-card-body">
+                            <div class="access-item">
+                                <span class="access-label">USUÁRIO:</span>
+                                <span class="access-value">Seu e-mail cadastrado na Netmax</span>
+                            </div>
+                            <div class="access-item">
+                                <span class="access-label">SENHA INICIAL:</span>
+                                <span class="access-value access-highlight">8 primeiros dígitos do CPF</span>
+                            </div>
+                        </div>
+                        <div class="access-card-footer">
+                            <i class="fas fa-sync-alt"></i>
+                            <span>Você pode alterar sua senha após o primeiro acesso.</span>
+                        </div>
+                    </div>
+
+                    <!-- Botões de ação em grade -->
+                    <div class="action-grid">
+                        
+                        <!-- Botão "Quero assistir" (link externo para a plataforma de TV) -->
+                        <a href="https://tv.lcainfo.com.br/login" target="_blank" rel="noopener noreferrer" class="action-card action-card-watch" onclick="fecharModal()">
+                            <div class="action-icon">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                            <div class="action-content">
+                                <h3>QUERO ASSISTIR</h3>
+                                <p>Abrir página de login</p>
+                            </div>
+                            <div class="action-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </a>
+                        
+                        <!-- Botão "Ative já" (link para WhatsApp) -->
+                        <a href="https://wa.me/554399149922?text=Olá, desejo ativar a minha Netmax TV!" target="_blank" rel="noopener noreferrer" class="action-card action-card-whatsapp" onclick="fecharModal()">
+                            <div class="action-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="action-content">
+                                <h3>ATIVE JÁ</h3>
+                                <p>Falar com um consultor</p>
+                            </div>
+                            <div class="action-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </a>
+                        
+                    </div>
+
+                    <!-- Lista de instruções passo a passo -->
+                    <div class="instruction-list">
+                        <div class="instruction-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Passo 1:</strong> Clique em <strong>"QUERO ASSISTIR"</strong> para ir à página de login.</span>
+                        </div>
+                        <div class="instruction-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Passo 2:</strong> Digite seu <strong>e-mail</strong> (usuário) e os <strong>8 primeiros dígitos do CPF</strong> (senha).</span>
+                        </div>
+                        <div class="instruction-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Passo 3:</strong> Pronto! Comece a assistir a mais de 100 canais agora mesmo.</span>
+                        </div>
+                    </div>
+
+                    <!-- Dica em destaque -->
+                    <div class="tip-box">
+                        <i class="fas fa-lightbulb"></i>
+                        <p><strong>Dica:</strong> Salve este link nos favoritos para acesso rápido: <span class="tip-link">tv.lcainfo.com.br</span></p>
+                    </div>
+
+                </div>
+
+                <!-- Rodapé do modal -->
+                <div class="modal-footer">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Netmax TV - 100% inclusa. Sem taxas extras.</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE ATIVAÇÃO NETMAX TV - SEGUNDO MODAL (foco em ativação assistida) -->
+    <div id="tvAtivacaoModal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-card">
+                
+                <!-- Botão Fechar -->
+                <button class="modal-close-btn" onclick="fecharModalAtivacao()" aria-label="Fechar">
+                    <i class="fas fa-times"></i>
+                </button>
+
+                <!-- Cabeçalho com ícone de foguete -->
+                <div class="modal-header">
+                    <div class="modal-icon-wrapper">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h2 class="modal-title">ATIVE SUA <span class="title-fire">NETMAX TV</span></h2>
+                    <p class="modal-subtitle">Processo simplificado com suporte especializado</p>
+                </div>
+
+                <!-- Corpo do modal -->
+                <div class="modal-body">
+                    
+                    <!-- Card de destaque: ativação assistida -->
+                    <div class="highlight-card" style="background: linear-gradient(145deg, #FFD000, #ffaa00); border: 2px solid #000; border-radius: 20px; padding: 20px; margin-bottom: 25px; text-align: center;">
+                        <i class="fas fa-headset" style="font-size: 2.5rem; color: #000; margin-bottom: 10px;"></i>
+                        <p style="color: #000; font-weight: 800; font-size: 1.2rem; margin-bottom: 5px;">ATIVAÇÃO ASSISTIDA</p>
+                        <p style="color: #333; font-size: 0.95rem;">Nossa equipe acompanha cada etapa para garantir sua diversão.</p>
+                    </div>
+
+                    <!-- Botão principal: ativar via WhatsApp -->
+                    <a href="https://wa.me/554399149922?text=Olá, desejo ativar a minha Netmax TV!" target="_blank" rel="noopener noreferrer" class="action-card action-card-whatsapp" style="margin-bottom: 25px;" onclick="fecharModalAtivacao()">
+                        <div class="action-icon">
+                            <i class="fab fa-whatsapp" style="color: #25D366;"></i>
+                        </div>
+                        <div class="action-content">
+                            <h3 style="font-size: 1.5rem;">ATIVE JÁ NO WHATSAPP</h3>
+                            <p style="font-size: 0.9rem;">Iniciar atendimento com um consultor</p>
+                        </div>
+                        <div class="action-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                    <!-- Instruções passo a passo numeradas -->
+                    <div class="instruction-list" style="padding: 20px;">
+                        <div style="display: flex; align-items: flex-start; gap: 15px; margin-bottom: 15px;">
+                            <span style="background: #FFD000; min-width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1rem; color: #000; border: 1px solid #000;">1</span>
+                            <p style="font-size: 0.95rem; color: #333; margin: 0;"><strong>Inicie sua ativação:</strong> Clique no botão "ATIVE JÁ NO WHATSAPP" acima para falar com a nossa equipe.</p>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 15px; margin-bottom: 15px;">
+                            <span style="background: #FFD000; min-width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1rem; color: #000; border: 1px solid #000;">2</span>
+                            <p style="font-size: 0.95rem; color: #333; margin: 0;"><strong>Fale com a gente:</strong> Um atendente especializado irá te acompanhar e ativar o serviço no seu cadastro em poucos minutos.</p>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 15px;">
+                            <span style="background: #FFD000; min-width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1rem; color: #000; border: 1px solid #000;">3</span>
+                            <p style="font-size: 0.95rem; color: #333; margin: 0;"><strong>Pronto! Hora de assistir:</strong> Volte a esta página e clique em "QUERO ASSISTIR" para fazer seu primeiro login.</p>
+                        </div>
+                    </div>
+
+                    <!-- Destaque de benefícios (ícones pequenos) -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin: 20px 0 20px; text-align: center;">
+                        <div style="background: rgba(0,0,0,0.03); padding: 10px 5px; border-radius: 12px;">
+                            <i class="fas fa-bolt" style="color: #FFD000; font-size: 1.2rem;"></i>
+                            <p style="font-size: 0.7rem; font-weight: 700; margin-top: 3px;">RÁPIDO</p>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.03); padding: 10px 5px; border-radius: 12px;">
+                            <i class="fas fa-shield-alt" style="color: #FFD000; font-size: 1.2rem;"></i>
+                            <p style="font-size: 0.7rem; font-weight: 700; margin-top: 3px;">SEGURO</p>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.03); padding: 10px 5px; border-radius: 12px;">
+                            <i class="fas fa-headset" style="color: #FFD000; font-size: 1.2rem;"></i>
+                            <p style="font-size: 0.7rem; font-weight: 700; margin-top: 3px;">ASSISTIDO</p>
+                        </div>
+                    </div>
+
+                    <!-- Dica adicional (já é assinante?) -->
+                    <div class="tip-box" style="background: #000; border: 2px solid #FFD000; border-radius: 40px; padding: 12px 20px;">
+                        <i class="fas fa-info-circle" style="color: #FFD000;"></i>
+                        <p style="color: #FFD000; font-size: 0.9rem;">
+                            <strong style="color: #fff;">Já é assinante?</strong> O processo é ainda mais rápido!
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Rodapé do modal -->
+                <div class="modal-footer">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Suporte especializado em todas as etapas</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER PADRÃO - Rodapé da página -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-text">
+                <p>© 2024 Netmax Fibra - Todos os Direitos Reservados</p>
+		<p>CNPJ: 48.287.603/0001-42</p> <!-- Placeholder para CNPJ -->
+                <p>Rua Rio Grande do Sul, 1460 - Bairro Santuário - Siqueira Campos - PR</p>
+            </div>
+            
+            <!-- Redes sociais (links com ícones SVG) -->
+            <div class="footer-social">
+                <a href="https://instagram.com/netmaxfibra" target="_blank" rel="noopener noreferrer">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/instagram.svg" alt="Instagram" width="20" height="20">
+                    <span>Instagram</span>
+                </a>
+                <a href="https://facebook.com/netmaxfibra" target="_blank" rel="noopener noreferrer">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/facebook.svg" alt="Facebook" width="20" height="20">
+                    <span>Facebook</span>
+                </a>
+                <a href="https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra." target="_blank" rel="noopener noreferrer">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/whatsapp.svg" alt="WhatsApp" width="20" height="20">
+                    <span>Fale Conosco</span>
+                </a>
+            </div>
+            
+            <div class="footer-copyright">
+                <p>Netmax Fibra - A velocidade que conecta você ao mundo e ao conhecimento.</p>
+                <p>Desenvolvido com 💛 para nossos clientes</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Inclusão do arquivo JavaScript externo (contém funções abrirModal, fecharModal, etc.) -->
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>
