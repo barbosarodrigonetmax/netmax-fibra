@@ -3,7 +3,8 @@
 // ===================================================================
 // 		Objetivo: Controlar todas as funcionalidades interativas do site
 //                da Netmax Fibra, incluindo modais, contador promocional,
-//                animações, integração com WhatsApp e analytics.
+//                animações, integração com WhatsApp, analytics e 
+//                menu mobile.
 // 		Autor : Rodrigo Barbosa
 // 		Data  : 23/02/2026
 // ===================================================================
@@ -360,7 +361,43 @@ console.log('%c📱 WhatsApp configurado: 43 99914-9922', 'color: #25D366; font-
 console.log('%c💡 Dica: Pressione F12 para mais informações', 'color: #888; font-size: 12px;');
 
 // ============================================
-// 10. MODAL DA NETMAX TV - CONTROLE (ORIGINAL)
+// 10. MENU MOBILE (HAMBÚRGUER) - NOVO!
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+            // Alterna a classe 'show' no menu para exibi-lo ou ocultá-lo
+            navMenu.classList.toggle('show');
+            
+            // Alterna o ícone do botão (opcional, para melhor UX)
+            const icon = menuToggle.querySelector('i');
+            if (navMenu.classList.contains('show')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times'); // Muda para ícone de "X"
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars'); // Volta para o ícone de hambúrguer
+            }
+        });
+
+        // Fecha o menu se o usuário clicar em um link (opcional, bom para UX)
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('show');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+    }
+});
+
+// ============================================
+// 11. MODAL DA NETMAX TV - CONTROLE (ORIGINAL)
 // ============================================
 
 // Função para abrir o modal original da Netmax TV
@@ -394,7 +431,7 @@ function fecharModal() {
 }
 
 // ============================================
-// 11. NOVO MODAL DE ATIVAÇÃO - CONTROLE
+// 12. NOVO MODAL DE ATIVAÇÃO - CONTROLE
 // ============================================
 
 // Função para abrir o modal de ativação
@@ -428,7 +465,7 @@ function fecharModalAtivacao() {
 }
 
 // ============================================
-// 12. FECHAR MODAIS CLICANDO NA ÁREA ESCURA
+// 13. FECHAR MODAIS CLICANDO NA ÁREA ESCURA
 // ============================================
 
 // Listener global para cliques na janela

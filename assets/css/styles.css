@@ -146,6 +146,32 @@ body {
   }
 }
 
+/* BOTÃO HAMBÚRGUER PARA MOBILE */
+.menu-toggle {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 30px;
+  z-index: 150;
+  color: #ffd000;
+  font-size: 2.5rem;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border: 2px solid #ffd000;
+}
+
+.menu-toggle:hover {
+  background: #ffd000;
+  color: #000;
+  transform: scale(1.1);
+}
+
 /* Menu de navegação principal */
 .nav-menu {
   display: flex;
@@ -155,6 +181,7 @@ body {
   background: #000;
   border-top: 1px solid rgba(255, 208, 0, 0.2);
   border-bottom: 1px solid rgba(255, 208, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
 /* Links do menu */
@@ -2669,6 +2696,35 @@ a:has(.super-price) {
   }
   .footer-social a {
     padding: 8px 12px;
+  }
+
+  /* MENU HAMBÚRGUER - ATIVADO */
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #000;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 20px 0;
+    border-top: 2px solid #ffd000;
+    border-bottom: 2px solid #ffd000;
+    z-index: 1000;
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+
+  .nav-menu a {
+    margin: 10px 0;
+    text-align: center;
+    width: 100%;
   }
 
   /* Central do Assinante: muda para posição estática (não flutuante) */
@@ -5194,7 +5250,7 @@ input:checked + .acessibilidade-slider:before {
 }
 
 /* ============================== */
-// * NOTIFICAÇÕES E ALERTAS */
+/* NOTIFICAÇÕES E ALERTAS */
 /* ============================== */
 
 /* Container de notificações */
@@ -5319,7 +5375,7 @@ input:checked + .acessibilidade-slider:before {
 }
 
 /* ============================== */
-// * COOKIE CONSENT */
+/* COOKIE CONSENT */
 /* ============================== */
 
 /* Barra de consentimento de cookies */
@@ -5510,5 +5566,5 @@ input:checked + .acessibilidade-slider:before {
 }
 
 /* ============================== */
-// * FIM DO ARQUIVO */
+/* FIM DO ARQUIVO */
 /* ============================== */
