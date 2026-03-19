@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--
     ===================================================================
     NETMAX FIBRA - PÁGINA DE ERRO 404 (NÃO ENCONTRADO)
@@ -14,144 +14,195 @@
     ===================================================================
 -->
 <!-- Declaração do tipo de documento HTML5 -->
-<html lang="pt-BR"> <!-- Define o idioma do documento como português do Brasil -->
-<head> <!-- Início da seção de cabeçalho da página -->
-    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura a viewport para dispositivos móveis -->
-    <title>Ops! Página não encontrada</title> <!-- Título da página que aparece na aba do navegador -->
+<html lang="pt-BR">
+  <!-- Define o idioma do documento como português do Brasil -->
+  <head>
+    <!-- Início da seção de cabeçalho da página -->
+    <meta charset="UTF-8" />
+    <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Configura a viewport para dispositivos móveis -->
+    <title>Ops! Página não encontrada</title>
+    <!-- Título da página que aparece na aba do navegador -->
     <!-- Link para o CSS principal (caminho corrigido) -->
-    <link rel="stylesheet" href="assets/css/styles.css"> <!-- Importa o arquivo CSS principal do site -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <!-- Importa o arquivo CSS principal do site -->
     <!-- Estilo adicional específico para a página 404 -->
-    <style> <!-- Início dos estilos CSS específicos para esta página -->
+    <style>
+      <!-- Início dos estilos CSS específicos para esta página -->
         /* Estilos específicos para a página 404 */
-        .container { /* Classe para o contêiner principal */
-            max-width: 800px; /* Largura máxima de 800 pixels */
-            margin: 50px auto; /* Margem superior/inferior de 50px e centralização horizontal */
-            text-align: center; /* Alinhamento central do texto */
-            padding: 40px 20px; /* Espaçamento interno: 40px superior/inferior, 20px laterais */
-            background: linear-gradient(135deg, #fff9e6, #ffffff); /* Fundo com gradiente diagonal */
-            border-radius: 30px; /* Bordas arredondadas em 30px */
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1); /* Sombra suave ao redor do contêiner */
-            border: 2px solid #FFD000; /* Borda sólida amarela de 2px */
-        }
-        .logo { /* Classe para a imagem do logo */
-            width: 200px; /* Largura de 200 pixels */
-            margin-bottom: 30px; /* Margem inferior de 30px */
-        }
-        .titulo { /* Classe para o título principal */
-            font-size: 5rem; /* Tamanho da fonte de 5rem (aproximadamente 80px) */
-            color: #f24f00; /* Cor laranja para o texto */
-            text-shadow: 0 0 20px #ffaa00; /* Sombra amarela no texto */
-            margin-bottom: 20px; /* Margem inferior de 20px */
-            animation: firePulse 1.2s infinite ease-in-out; /* Animação de pulsação contínua */
-        }
-        .mensagem { /* Classe para a mensagem de texto */
-            font-size: 1.4rem; /* Tamanho da fonte de 1.4rem */
-            color: #333; /* Cor cinza escuro */
-            line-height: 1.6; /* Altura da linha para melhor legibilidade */
-            margin-bottom: 30px; /* Margem inferior de 30px */
-        }
-        .btn { /* Classe para o botão principal */
-            background: #f24f00; /* Fundo laranja */
-            color: #000; /* Texto preto */
-            border: none; /* Remove a borda padrão */
-            padding: 15px 40px; /* Espaçamento interno: 15px vertical, 40px horizontal */
-            font-size: 1.3rem; /* Tamanho da fonte de 1.3rem */
-            font-weight: 800; /* Peso da fonte em negrito */
-            border-radius: 50px; /* Bordas extremamente arredondadas */
-            cursor: pointer; /* Cursor de ponteiro ao passar por cima */
-            transition: all 0.3s ease; /* Transição suave para animações */
-            margin: 10px; /* Margem de 10px em todas as direções */
-            box-shadow: 0 5px 15px rgba(255,208,0,0.3); /* Sombra amarela suave */
-        }
-        .btn:hover { /* Estilo quando o mouse passa sobre o botão principal */
-            background: #FFD000; /* Fundo amarelo */
-            transform: scale(1.05); /* Aumenta ligeiramente o tamanho */
-        }
-        .btn2 { /* Classe para o botão secundário */
-            background: #000; /* Fundo preto */
-            color: #FFD000; /* Texto amarelo */
-            border: 2px solid #FFD000; /* Borda amarela de 2px */
-            padding: 12px 30px; /* Espaçamento interno: 12px vertical, 30px horizontal */
-            font-size: 1.1rem; /* Tamanho da fonte de 1.1rem */
-            font-weight: 600; /* Peso da fonte semi-negrito */
-            border-radius: 50px; /* Bordas extremamente arredondadas */
-            cursor: pointer; /* Cursor de ponteiro ao passar por cima */
-            transition: all 0.3s ease; /* Transição suave para animações */
-            margin: 10px; /* Margem de 10px em todas as direções */
-        }
-        .btn2:hover { /* Estilo quando o mouse passa sobre o botão secundário */
-            background: #FFD000; /* Fundo amarelo */
-            color: #000; /* Texto preto */
-        }
-        .piadinha { /* Classe para o texto da piada */
-            font-size: 1.1rem; /* Tamanho da fonte de 1.1rem */
-            color: #666; /* Cor cinza médio */
-            margin: 30px 0 20px; /* Margem: 30px superior, 0 laterais, 20px inferior */
-            font-style: italic; /* Estilo itálico */
-        }
-        .resultado { /* Classe para o resultado da surpresa */
-            font-size: 1.3rem; /* Tamanho da fonte de 1.3rem */
-            color: #f24f00; /* Cor laranja */
-            font-weight: bold; /* Negrito */
-            margin-top: 20px; /* Margem superior de 20px */
-            min-height: 40px; /* Altura mínima de 40px */
-        }
-    </style> <!-- Fim dos estilos CSS -->
-</head> <!-- Fim da seção de cabeçalho -->
-<body> <!-- Início do corpo da página -->
+        .container {
+        /* Classe para o contêiner principal */
+        max-width: 800px; /* Largura máxima de 800 pixels */
+        margin: 50px auto; /* Margem superior/inferior de 50px e centralização horizontal */
+        text-align: center; /* Alinhamento central do texto */
+        padding: 40px 20px; /* Espaçamento interno: 40px superior/inferior, 20px laterais */
+        background: linear-gradient(
+          135deg,
+          #fff9e6,
+          #ffffff
+        ); /* Fundo com gradiente diagonal */
+        border-radius: 30px; /* Bordas arredondadas em 30px */
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); /* Sombra suave ao redor do contêiner */
+        border: 2px solid #ffd000; /* Borda sólida amarela de 2px */
+      }
+      .logo {
+        /* Classe para a imagem do logo */
+        width: 200px; /* Largura de 200 pixels */
+        margin-bottom: 30px; /* Margem inferior de 30px */
+      }
+      .titulo {
+        /* Classe para o título principal */
+        font-size: 5rem; /* Tamanho da fonte de 5rem (aproximadamente 80px) */
+        color: #f24f00; /* Cor laranja para o texto */
+        text-shadow: 0 0 20px #ffaa00; /* Sombra amarela no texto */
+        margin-bottom: 20px; /* Margem inferior de 20px */
+        animation: firePulse 1.2s infinite ease-in-out; /* Animação de pulsação contínua */
+      }
+      .mensagem {
+        /* Classe para a mensagem de texto */
+        font-size: 1.4rem; /* Tamanho da fonte de 1.4rem */
+        color: #333; /* Cor cinza escuro */
+        line-height: 1.6; /* Altura da linha para melhor legibilidade */
+        margin-bottom: 30px; /* Margem inferior de 30px */
+      }
+      .btn {
+        /* Classe para o botão principal */
+        background: #f24f00; /* Fundo laranja */
+        color: #000; /* Texto preto */
+        border: none; /* Remove a borda padrão */
+        padding: 15px 40px; /* Espaçamento interno: 15px vertical, 40px horizontal */
+        font-size: 1.3rem; /* Tamanho da fonte de 1.3rem */
+        font-weight: 800; /* Peso da fonte em negrito */
+        border-radius: 50px; /* Bordas extremamente arredondadas */
+        cursor: pointer; /* Cursor de ponteiro ao passar por cima */
+        transition: all 0.3s ease; /* Transição suave para animações */
+        margin: 10px; /* Margem de 10px em todas as direções */
+        box-shadow: 0 5px 15px rgba(255, 208, 0, 0.3); /* Sombra amarela suave */
+      }
+      .btn:hover {
+        /* Estilo quando o mouse passa sobre o botão principal */
+        background: #ffd000; /* Fundo amarelo */
+        transform: scale(1.05); /* Aumenta ligeiramente o tamanho */
+      }
+      .btn2 {
+        /* Classe para o botão secundário */
+        background: #000; /* Fundo preto */
+        color: #ffd000; /* Texto amarelo */
+        border: 2px solid #ffd000; /* Borda amarela de 2px */
+        padding: 12px 30px; /* Espaçamento interno: 12px vertical, 30px horizontal */
+        font-size: 1.1rem; /* Tamanho da fonte de 1.1rem */
+        font-weight: 600; /* Peso da fonte semi-negrito */
+        border-radius: 50px; /* Bordas extremamente arredondadas */
+        cursor: pointer; /* Cursor de ponteiro ao passar por cima */
+        transition: all 0.3s ease; /* Transição suave para animações */
+        margin: 10px; /* Margem de 10px em todas as direções */
+      }
+      .btn2:hover {
+        /* Estilo quando o mouse passa sobre o botão secundário */
+        background: #ffd000; /* Fundo amarelo */
+        color: #000; /* Texto preto */
+      }
+      .piadinha {
+        /* Classe para o texto da piada */
+        font-size: 1.1rem; /* Tamanho da fonte de 1.1rem */
+        color: #666; /* Cor cinza médio */
+        margin: 30px 0 20px; /* Margem: 30px superior, 0 laterais, 20px inferior */
+        font-style: italic; /* Estilo itálico */
+      }
+      .resultado {
+        /* Classe para o resultado da surpresa */
+        font-size: 1.3rem; /* Tamanho da fonte de 1.3rem */
+        color: #f24f00; /* Cor laranja */
+        font-weight: bold; /* Negrito */
+        margin-top: 20px; /* Margem superior de 20px */
+        min-height: 40px; /* Altura mínima de 40px */
+      }
+    </style>
+    <!-- Fim dos estilos CSS -->
+  </head>
+  <!-- Fim da seção de cabeçalho -->
+  <body>
+    <!-- Início do corpo da página -->
     <!-- CONTEÚDO DA PÁGINA 404 -->
-    <div class="container"> <!-- Div principal que agrupa todo o conteúdo -->
-        <!-- Logo da Netmax -->
-        <img src="assets/images/logos/logo_netmax.png" alt="Netmax Tecnologia" class="logo"> <!-- Imagem do logo com classe logo -->
+    <div class="container">
+      <!-- Div principal que agrupa todo o conteúdo -->
+      <!-- Logo da Netmax -->
+      <img
+        src="assets/images/logos/logo_netmax.jpg"
+        alt="Netmax Tecnologia"
+        class="logo"
+      />
+      <!-- Imagem do logo com classe logo -->
 
-        <h1 class="titulo">Error 404</h1> <!-- Título principal da página -->
+      <h1 class="titulo">Error 404</h1>
+      <!-- Título principal da página -->
 
-        <p class="mensagem"> <!-- Parágrafo com mensagem humorística -->
-            Parece que você tentou acessar uma página que fugiu da Internet...   <!-- Texto da mensagem linha 1 -->
-            <br><strong>Mas fique tranquilo!</strong> Ela deve estar em algum lugar...   <!-- Texto da mensagem linha 2 com negrito -->
-            <br>Provavelmente tomando café. ☕💻 <!-- Texto da mensagem linha 3 -->
-        </p>
+      <p class="mensagem">
+        <!-- Parágrafo com mensagem humorística -->
+        Parece que você tentou acessar uma página que fugiu da Internet...
+        <!-- Texto da mensagem linha 1 -->
+        <br /><strong>Mas fique tranquilo!</strong> Ela deve estar em algum
+        lugar...
+        <!-- Texto da mensagem linha 2 com negrito -->
+        <br />Provavelmente tomando café. ☕💻
+        <!-- Texto da mensagem linha 3 -->
+      </p>
 
-        <!-- Botão para voltar à página inicial -->
-        <button onclick="voltar()" class="btn">Voltar para o início</button> <!-- Botão que chama a função voltar() ao ser clicado -->
+      <!-- Botão para voltar à página inicial -->
+      <button onclick="voltar()" class="btn">Voltar para o início</button>
+      <!-- Botão que chama a função voltar() ao ser clicado -->
 
-        <p class="piadinha">Enquanto isso, aproveite esse botão totalmente funcional 👇</p> <!-- Texto de chamada para o botão surpresa -->
+      <p class="piadinha">
+        Enquanto isso, aproveite esse botão totalmente funcional 👇
+      </p>
+      <!-- Texto de chamada para o botão surpresa -->
 
-        <!-- Botão de surpresa interativo -->
-        <button onclick="surpresa()" class="btn2">Clique aqui 😄</button> <!-- Botão que chama a função surpresa() ao ser clicado -->
+      <!-- Botão de surpresa interativo -->
+      <button onclick="surpresa()" class="btn2">Clique aqui 😄</button>
+      <!-- Botão que chama a função surpresa() ao ser clicado -->
 
-        <!-- Área para exibir o resultado da surpresa -->
-        <p id="resultado" class="resultado"></p> <!-- Parágrafo vazio que receberá o resultado da surpresa -->
-    </div> <!-- Fim da div container -->
+      <!-- Área para exibir o resultado da surpresa -->
+      <p id="resultado" class="resultado"></p>
+      <!-- Parágrafo vazio que receberá o resultado da surpresa -->
+    </div>
+    <!-- Fim da div container -->
 
     <!-- Script específico para a página 404 -->
-    <script> <!-- Início do código JavaScript -->
-        // Função para voltar à página inicial
-        function voltar() { // Declaração da função voltar
-            window.location.href = 'index.html'; // Redireciona o navegador para a página index.html
-        }
+    <script>
+      <!-- Início do código JavaScript -->
+      // Função para voltar à página inicial
+      function voltar() {
+        // Declaração da função voltar
+        window.location.href = "index.html"; // Redireciona o navegador para a página index.html
+      }
 
-        // Função de surpresa (exibe uma mensagem aleatória)
-        function surpresa() { // Declaração da função surpresa
-            const frases = [ // Array com várias mensagens possíveis
-                "🎉 Parabéns! Você achou o botão secreto!", // Mensagem 1
-                "📚 Já leu um livro hoje? A Estante Digital te espera!", // Mensagem 2
-                "📰 Que tal ler as notícias no JornalZ?", // Mensagem 3
-                "📺 E a Netmax TV? Já ativou a sua?", // Mensagem 4
-                "⚡ 1000 megas de velocidade esperando por você!", // Mensagem 5
-                "💛 Obrigado por visitar nosso site!", // Mensagem 6
-                "☕ Achou que ia sair algo? Era só uma pausa pro café!" // Mensagem 7
-            ];
-            const randomIndex = Math.floor(Math.random() * frases.length); // Gera um índice aleatório baseado no tamanho do array
-            document.getElementById('resultado').textContent = frases[randomIndex]; // Insere a mensagem aleatória no elemento com id 'resultado'
-        }
+      // Função de surpresa (exibe uma mensagem aleatória)
+      function surpresa() {
+        // Declaração da função surpresa
+        const frases = [
+          // Array com várias mensagens possíveis
+          "🎉 Parabéns! Você achou o botão secreto!", // Mensagem 1
+          "📚 Já leu um livro hoje? A Estante Digital te espera!", // Mensagem 2
+          "📰 Que tal ler as notícias no JornalZ?", // Mensagem 3
+          "📺 E a Netmax TV? Já ativou a sua?", // Mensagem 4
+          "⚡ 1000 megas de velocidade esperando por você!", // Mensagem 5
+          "💛 Obrigado por visitar nosso site!", // Mensagem 6
+          "☕ Achou que ia sair algo? Era só uma pausa pro café!", // Mensagem 7
+        ];
+        const randomIndex = Math.floor(Math.random() * frases.length); // Gera um índice aleatório baseado no tamanho do array
+        document.getElementById("resultado").textContent = frases[randomIndex]; // Insere a mensagem aleatória no elemento com id 'resultado'
+      }
 
-        // Também é possível registrar no console
-        console.log("🚀 Página 404 carregada - Usuário perdido encontrado!"); // Mensagem no console do navegador
-    </script> <!-- Fim do código JavaScript -->
+      // Também é possível registrar no console
+      console.log("🚀 Página 404 carregada - Usuário perdido encontrado!"); // Mensagem no console do navegador
+    </script>
+    <!-- Fim do código JavaScript -->
 
     <!-- Script principal (opcional) -->
-    <script src="assets/js/script.js"></script> <!-- Importa o arquivo JavaScript principal -->
-</body> <!-- Fim do corpo da página -->
-</html> <!-- Fim do documento HTML -->
+    <script src="assets/js/script.js"></script>
+    <!-- Importa o arquivo JavaScript principal -->
+  </body>
+  <!-- Fim do corpo da página -->
+</html>
+<!-- Fim do documento HTML -->
