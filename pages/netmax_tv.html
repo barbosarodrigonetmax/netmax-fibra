@@ -42,8 +42,13 @@
             </a>
         </div>
 
+        <!-- BOTÃO HAMBÚRGUER PARA MOBILE -->
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+
         <!-- MENU DE NAVEGAÇÃO - Barra com links para as principais seções do site -->
-        <nav class="nav-menu">
+        <nav class="nav-menu" id="nav-menu">
             <a href="../index.html">PÁGINA INICIAL</a>
             <a href="estante_digital.html">ESTANTE DIGITAL NETMAX</a>
             <a href="jornalz.html">JORNALZ</a>
@@ -60,7 +65,7 @@
         <h1 class="hero-title">
             📺 NETMAX TV: <span class="price-fire">MAIS DE 100 CANAIS</span>
         </h1>
-        <p class="subtitle subtitle-premium" style="font-size: 2rem;">
+        <p class="subtitle subtitle-premium" style="font-size: 2rem;" class="hero-subtitle-mobile">
             Chega de conta cara e fios espalhados pela casa. Agora, o entretenimento completo viaja na velocidade da sua NETMAX.
         </p>
         <div class="hero-buttons">
@@ -75,7 +80,7 @@
     <section class="ecosystem" style="padding-top: 60px;">
         
         <!-- O QUE É A NETMAX TV - Bloco reformulado com fundo gradiente e informações detalhadas -->
-        <div style="background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%); border-radius: 40px; padding: 60px 50px; margin: 60px 0; box-shadow: 0 30px 50px rgba(0,0,0,0.08); border: 1px solid rgba(255,208,0,0.3); position: relative; overflow: hidden;">
+        <div style="background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%); border-radius: 40px; padding: 60px 50px; margin: 60px 0; box-shadow: 0 30px 50px rgba(0,0,0,0.08); border: 1px solid rgba(255,208,0,0.3); position: relative; overflow: hidden;" class="what-is-section">
 
             <!-- Elementos decorativos de fundo (ícones grandes e transparentes) -->
             <div style="position: absolute; top: -20px; right: -20px; font-size: 250px; opacity: 0.03; transform: rotate(10deg); color: #FFD000; pointer-events: none;">📡</div>
@@ -87,7 +92,7 @@
                     <div style="background: #000; padding: 15px; border-radius: 20px; box-shadow: 0 10px 0 #FFD000;">
                         <i class="fas fa-tv" style="color: #FFD000; font-size: 2.8rem;"></i>
                     </div>
-                    <h2 style="font-size: 2.8rem; font-weight: 800; color: #000; margin: 0;">
+                    <h2 style="font-size: 2.8rem; font-weight: 800; color: #000; margin: 0;" class="section-title">
                         O Mundo <span style="color: #FFD000; text-shadow: 0 0 5px rgba(255,208,0,0.3);">Netmax TV</span>
                     </h2>
                 </div>
@@ -98,7 +103,7 @@
             </div>
 
             <!-- Grid 2 colunas: texto explicativo à esquerda e cards de benefícios à direita -->
-            <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; align-items: center; position: relative; z-index: 2;">
+            <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; align-items: center; position: relative; z-index: 2;" class="what-is-grid">
 
                 <!-- Coluna Esquerda: explicação detalhada -->
                 <div>
@@ -121,7 +126,7 @@
                 </div>
 
                 <!-- Coluna Direita: cards com os principais benefícios -->
-                <div style="background: #000; border-radius: 30px; padding: 35px 25px; box-shadow: 0 20px 30px rgba(255,208,0,0.25); border: 2px solid #FFD000;">
+                <div style="background: #000; border-radius: 30px; padding: 35px 25px; box-shadow: 0 20px 30px rgba(255,208,0,0.25); border: 2px solid #FFD000;" class="benefits-card">
                     
                     <!-- Item 1: Sem taxas extras -->
                     <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,208,0,0.2);">
@@ -162,7 +167,7 @@
             </div>
 
             <!-- Barra de estatísticas (canais, multi-tela, etc.) -->
-            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 30px; margin-top: 50px; padding-top: 30px; border-top: 2px dashed rgba(0,0,0,0.1); position: relative; z-index: 2;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 30px; margin-top: 50px; padding-top: 30px; border-top: 2px dashed rgba(0,0,0,0.1); position: relative; z-index: 2;" class="stats-bar">
                 <div style="display: flex; align-items: center; gap: 10px;">
                     <span style="font-size: 2.5rem; font-weight: 900; color: #FFD000;">100+</span>
                     <span style="font-size: 1rem; color: #333; font-weight: 500;">Canais ao Vivo</span>
@@ -186,7 +191,7 @@
         <h2 class="ecosystem-title" style="margin: 40px auto;">
             🏠 ONDE ASSISTIR? <span class="price-fire">EM TODO LUGAR</span>
         </h2>
-        <p style="font-size: 1.5rem; margin-bottom: 30px; color: #000; font-weight: 500;">
+        <p style="font-size: 1.5rem; margin-bottom: 30px; color: #000; font-weight: 500;" class="devices-description">
             A grande utilidade da Netmax TV é a liberdade de escolha. Assista ao que quiser, onde quiser:
         </p>
 
@@ -330,7 +335,7 @@
         </div>
 
         <!-- TECNOLOGIA CDNTV - Explicação aprofundada da tecnologia utilizada -->
-        <div style="background: linear-gradient(145deg, #0a0a0a, #1a1a1a); border-radius: 40px; padding: 60px 40px; margin: 70px 0; border: 2px solid #FFD000; box-shadow: 0 25px 40px rgba(255,208,0,0.15); position: relative; overflow: hidden;">
+        <div style="background: linear-gradient(145deg, #0a0a0a, #1a1a1a); border-radius: 40px; padding: 60px 40px; margin: 70px 0; border: 2px solid #FFD000; box-shadow: 0 25px 40px rgba(255,208,0,0.15); position: relative; overflow: hidden;" class="technology-section">
             
             <!-- Elementos decorativos de fundo -->
             <div style="position: absolute; top: -30px; right: -30px; font-size: 200px; opacity: 0.03; transform: rotate(20deg); color: #FFD000; pointer-events: none;">📡</div>
@@ -339,15 +344,15 @@
             <!-- Cabeçalho da seção -->
             <div style="text-align: center; margin-bottom: 50px; position: relative; z-index: 2;">
                 <span style="background: #FFD000; color: #000; padding: 8px 25px; border-radius: 60px; font-weight: 800; font-size: 1.2rem; letter-spacing: 2px; display: inline-block; margin-bottom: 20px;">TECNOLOGIA EXCLUSIVA</span>
-                <h2 style="font-size: 3rem; color: white; margin: 0; display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <h2 style="font-size: 3rem; color: white; margin: 0; display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;" class="tech-title">
                     <i class="fas fa-microchip" style="color: #FFD000; font-size: 3.5rem; filter: drop-shadow(0 0 15px rgba(255,208,0,0.5));"></i>
                     <span style="background: linear-gradient(135deg, #fff, #FFD000); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">CDNTV</span>
                 </h2>
-                <p style="font-size: 1.8rem; color: #FFD000; font-weight: 300; margin-top: 10px;">O segredo da qualidade impecável</p>
+                <p style="font-size: 1.8rem; color: #FFD000; font-weight: 300; margin-top: 10px;" class="tech-subtitle">O segredo da qualidade impecável</p>
             </div>
             
             <!-- Grid de duas colunas: explicação e cards com vantagens técnicas -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1100px; margin: 0 auto; position: relative; z-index: 2;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1100px; margin: 0 auto; position: relative; z-index: 2;" class="tech-grid">
                 
                 <!-- Coluna esquerda: descrição do funcionamento -->
                 <div style="background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border-radius: 30px; padding: 35px; border: 1px solid rgba(255,208,0,0.3);">
@@ -477,7 +482,6 @@
             </div>
         </div>
 
-        <!-- Script simples para o comportamento de clique do FAQ (toggle exibição) -->
         <script>
             document.querySelectorAll('.tv-faq-item').forEach(item => {
                 item.addEventListener('click', function() {
@@ -497,7 +501,7 @@
         <!-- COMO ATIVAR - Seção com botão grande para ativação -->
         <div id="como-ativar" class="tv-cta-giant">
             <h2>🚀 COMO ATIVAR AGORA MESMO?</h2>
-            <p style="font-size: 1.8rem; color: white; margin-bottom: 40px;">
+            <p style="font-size: 1.8rem; color: white; margin-bottom: 40px;" class="cta-description">
                 Se você já é assinante Netmax, a diversão está a poucos cliques de distância:
             </p>
             <p style="font-size: 1.4rem; color: #FFD000; margin-bottom: 30px;">
@@ -743,7 +747,7 @@
         <div class="footer-content">
             <div class="footer-text">
                 <p>© 2024 Netmax Fibra - Todos os Direitos Reservados</p>
-		<p>CNPJ: 48.287.603/0001-42</p> <!-- Placeholder para CNPJ -->
+		<p>CNPJ: 48.287.603/0001-42</p>
                 <p>Rua Rio Grande do Sul, 1460 - Bairro Santuário - Siqueira Campos - PR</p>
             </div>
             

@@ -37,9 +37,14 @@
             </a>
         </div>
 
+        <!-- BOTÃO HAMBÚRGUER PARA MOBILE -->
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+
         <!-- Menu de navegação principal do site. -->
         <!-- O link atual "POR QUE ESCOLHER A NETMAX" recebe um destaque visual (cor amarela e negrito) para indicar a página corrente. -->
-        <nav class="nav-menu">
+        <nav class="nav-menu" id="nav-menu">
             <a href="../index.html">PÁGINA INICIAL</a>
             <a href="estante_digital.html">ESTANTE DIGITAL NETMAX</a>
             <a href="jornalz.html">JORNALZ</a>
@@ -101,9 +106,9 @@
 
         <!-- Chamada para o preço promocional e o brinde principal (Netmax TV). -->
         <div class="super-price" style="margin-top: 60px;">
-            <p style="font-size: 1.8rem; margin-bottom: 15px;">TUDO ISSO POR APENAS</p>
-            <p style="font-size: 4rem; font-weight: 900; line-height: 1.2;">R$ 114,90</p>
-            <p style="font-size: 1.4rem; margin-top: 20px; font-weight: bold; background: rgba(255, 208, 0, 0.3); padding: 10px 20px; border-radius: 50px; display: inline-block;">
+            <p style="font-size: 1.8rem; margin-bottom: 15px;" class="price-label">TUDO ISSO POR APENAS</p>
+            <p style="font-size: 4rem; font-weight: 900; line-height: 1.2;" class="price-value">R$ 114,90</p>
+            <p style="font-size: 1.4rem; margin-top: 20px; font-weight: bold; background: rgba(255, 208, 0, 0.3); padding: 10px 20px; border-radius: 50px; display: inline-block;" class="bonus-badge">
                 🎁 NETMAX TV DE BRINDE INCLUSO 🎁
             </p>
             <p style="font-size: 1.2rem; margin-top: 20px;">1000 megas + benefícios exclusivos</p>
@@ -112,7 +117,9 @@
         <!-- Botão de Call to Action (CTA) principal, com link direto para o WhatsApp para conversão em venda. -->
         <div style="text-align: center; margin: 50px 0 20px;">
             <a href="https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra." target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-                <button class="btn-primary pulse-btn" style="font-size: 2rem; padding: 20px 50px;">ASSINE AGORA E ATIVE TODOS OS BENEFÍCIOS</button>
+                <button class="btn-primary pulse-btn" style="font-size: 2rem; padding: 20px 50px; cursor: pointer; border: none;" class="cta-button-main">
+                    ASSINE AGORA E ATIVE TODOS OS BENEFÍCIOS
+                </button>
             </a>
         </div>
     </section>

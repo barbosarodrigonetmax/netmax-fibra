@@ -72,8 +72,13 @@
         </a>
       </div>
 
+      <!-- BOTÃO HAMBÚRGUER PARA MOBILE -->
+      <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+
       <!-- MENU DE NAVEGAÇÃO ATUALIZADO - Barra de navegação principal -->
-      <nav class="nav-menu">
+      <nav class="nav-menu" id="nav-menu">
         <!-- Link para página inicial -->
         <a href="../index.html">PÁGINA INICIAL</a>
         <!-- Link atual (estante digital) com estilo diferenciado (amarelo e negrito) -->
@@ -154,6 +159,7 @@
           position: relative;
           z-index: 2;
         "
+        class="hero-grid"
       >
         <!-- Coluna da Esquerda: Textos -->
         <div style="text-align: left">
@@ -185,6 +191,7 @@
               color: #000;
               text-shadow: 0 0 20px rgba(255, 208, 0, 0.3);
             "
+            class="hero-title-mobile"
           >
             ESTANTE
             <span
@@ -193,9 +200,7 @@
                 font-size: 4.5rem;
                 display: block;
                 margin-top: 5px;
-                text-shadow:
-                  0 0 30px #ffaa00,
-                  0 0 60px #ff5500;
+                text-shadow: 0 0 30px #ffaa00, 0 0 60px #ff5500;
                 animation: firePulse 1.2s infinite ease-in-out;
               "
               >DIGITAL</span
@@ -210,6 +215,7 @@
               color: #000;
               margin-bottom: 20px;
             "
+            class="subtitle-mobile"
           >
             Milhares de livros. Zero peso. Zero custo extra.
           </p>
@@ -224,6 +230,7 @@
               max-width: 600px;
               font-weight: 500;
             "
+            class="description-mobile"
           >
             Sua internet fibra Netmax acaba de ficar ainda mais inteligente.
             Agora, todo assinante tem acesso exclusivo à Estante Digital Digi
@@ -318,7 +325,7 @@
         </div>
 
         <!-- Coluna da Direita: Ilustração/Ícones -->
-        <div style="text-align: center; position: relative">
+        <div style="text-align: center; position: relative" class="hero-illustration">
           <!-- Círculo decorativo animado -->
           <div
             style="
@@ -333,6 +340,7 @@
               border: 3px dashed #000;
               animation: rotate 30s linear infinite;
             "
+            class="circle-decoration"
           >
             <div
               style="
@@ -402,6 +410,7 @@
               transform: rotate(5deg);
               box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
             "
+            class="floating-card-1"
           >
             <i
               class="fas fa-star"
@@ -422,6 +431,7 @@
               transform: rotate(-5deg);
               box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
             "
+            class="floating-card-2"
           >
             <i
               class="fas fa-flask"
@@ -447,6 +457,7 @@
           position: relative;
           overflow: hidden;
         "
+        class="magic-section"
       >
         <!-- ELEMENTOS DECORATIVOS DE FUNDO -->
         <div
@@ -531,9 +542,7 @@
                 background: #000;
                 padding: 22px;
                 border-radius: 30px;
-                box-shadow:
-                  0 12px 0 #ffd000,
-                  0 15px 30px rgba(0, 0, 0, 0.2);
+                box-shadow: 0 12px 0 #ffd000, 0 15px 30px rgba(0, 0, 0, 0.2);
                 transform: rotate(-2deg);
                 transition: transform 0.3s ease;
               "
@@ -555,6 +564,7 @@
                   line-height: 1.2;
                   text-transform: uppercase;
                 "
+                class="magic-title"
               >
                 <span
                   style="
@@ -585,6 +595,7 @@
               gap: 40px;
               align-items: center;
             "
+            class="magic-grid"
           >
             <!-- COLUNA ESQUERDA: TEXTOS PRINCIPAIS -->
             <div>
@@ -1118,6 +1129,7 @@
           position: relative;
           overflow: hidden;
         "
+        class="advantages-section"
       >
         <!-- ELEMENTOS DECORATIVOS DE FUNDO -->
         <div
@@ -1186,10 +1198,9 @@
                 color: white;
                 margin: 0 0 15px 0;
                 text-transform: uppercase;
-                text-shadow:
-                  0 0 15px #ffd000,
-                  0 0 30px rgba(255, 208, 0, 0.5);
+                text-shadow: 0 0 15px #ffd000, 0 0 30px rgba(255, 208, 0, 0.5);
               "
+              class="advantages-title"
             >
               VANTAGENS QUE
               <span
@@ -1226,6 +1237,7 @@
               grid-template-columns: repeat(3, 1fr);
               gap: 25px;
             "
+            class="advantages-grid"
           >
             <!-- CARD 1 - PESO ZERO -->
             <div
@@ -1249,6 +1261,7 @@
                 this.style.borderColor = 'rgba(255,208,0,0.3)';
                 this.style.boxShadow = 'none';
               "
+              class="advantage-card"
             >
               <div
                 style="
@@ -1398,6 +1411,7 @@
                 this.style.borderColor = 'rgba(255,208,0,0.3)';
                 this.style.boxShadow = 'none';
               "
+              class="advantage-card"
             >
               <div
                 style="
@@ -1531,6 +1545,7 @@
                 this.style.borderColor = 'rgba(255,208,0,0.3)';
                 this.style.boxShadow = 'none';
               "
+              class="advantage-card"
             >
               <div
                 style="
@@ -1664,6 +1679,7 @@
                 this.style.borderColor = 'rgba(255,208,0,0.3)';
                 this.style.boxShadow = 'none';
               "
+              class="advantage-card"
             >
               <div
                 style="
@@ -1808,6 +1824,7 @@
                 this.style.borderColor = 'rgba(255,208,0,0.3)';
                 this.style.boxShadow = 'none';
               "
+              class="advantage-card"
             >
               <div
                 style="
@@ -1925,6 +1942,7 @@
                 this.style.borderColor = 'rgba(255,208,0,0.3)';
                 this.style.boxShadow = 'none';
               "
+              class="advantage-card"
             >
               <div
                 style="
@@ -2046,6 +2064,7 @@
                 this.style.boxShadow = '0 15px 30px rgba(255,208,0,0.2)'
               "
               onmouseout="this.style.boxShadow = 'none'"
+              class="advantage-card-full"
             >
               <div
                 style="
@@ -2313,6 +2332,7 @@
           position: relative;
           overflow: hidden;
         "
+        class="guide-section"
       >
         <!-- ELEMENTOS DECORATIVOS DE FUNDO -->
         <div
@@ -2395,6 +2415,7 @@
                 margin: 0 0 15px 0;
                 text-transform: uppercase;
               "
+              class="guide-title"
             >
               COMO ACESSAR SUA
               <span style="color: #ffd000; display: block; margin-top: 5px"
@@ -2424,6 +2445,7 @@
               gap: 30px;
               margin-bottom: 40px;
             "
+            class="steps-grid"
           >
             <!-- PASSO 1 - CONECTE-SE -->
             <div
@@ -2446,6 +2468,7 @@
                 this.style.borderColor = 'rgba(255,208,0,0.2)';
                 this.style.boxShadow = 'none';
               "
+              class="step-card"
             >
               <div
                 style="
@@ -2556,6 +2579,7 @@
                 this.style.borderColor = 'rgba(255,208,0,0.2)';
                 this.style.boxShadow = 'none';
               "
+              class="step-card"
             >
               <div
                 style="
@@ -2678,6 +2702,7 @@
                 this.style.borderColor = 'rgba(255,208,0,0.2)';
                 this.style.boxShadow = 'none';
               "
+              class="step-card"
             >
               <div
                 style="
@@ -2882,6 +2907,7 @@
                 this.style.color = '#000';
                 this.style.borderColor = 'white';
               "
+              class="cta-button"
             >
               <i class="fas fa-book-open" style="font-size: 2rem"></i>
               <span>ACESSAR MINHA ESTANTE AGORA</span>

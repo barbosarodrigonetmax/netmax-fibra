@@ -35,9 +35,14 @@
             </a>
         </div>
 
+        <!-- BOTÃO HAMBÚRGUER PARA MOBILE -->
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+
         <!-- MENU DE NAVEGAÇÃO ATUALIZADO -->
         <!-- Barra de navegação com links para as principais seções do site. A página atual (NEWS PERIÓDICOS) está destacada em amarelo e negrito. -->
-        <nav class="nav-menu">
+        <nav class="nav-menu" id="nav-menu">
             <a href="../index.html">PÁGINA INICIAL</a>
             <a href="estante_digital.html">ESTANTE DIGITAL NETMAX</a>
             <a href="jornalz.html">JORNALZ</a>
@@ -60,7 +65,7 @@
         
         <!-- Container com grid de 2 colunas -->
         <!-- Estrutura em grid para organizar o conteúdo textual à esquerda e a ilustração/ícones à direita. -->
-        <div style="max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; position: relative; z-index: 2;">
+        <div style="max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; position: relative; z-index: 2;" class="hero-grid">
             
             <!-- Coluna da Esquerda: Textos -->
             <div style="text-align: left;">
@@ -71,17 +76,17 @@
                 
                 <!-- Título principal -->
                 <!-- O nome "NEWS PERIÓDICOS" tem efeito de pulsação em laranja para chamar atenção. -->
-                <h1 style="font-size: 4.2rem; font-weight: 900; line-height: 1.1; margin-bottom: 20px; color: #000; text-shadow: 0 0 20px rgba(255,208,0,0.3);">
+                <h1 style="font-size: 4.2rem; font-weight: 900; line-height: 1.1; margin-bottom: 20px; color: #000; text-shadow: 0 0 20px rgba(255,208,0,0.3);" class="hero-title-mobile">
                     NEWS <span style="color: #f24f00; font-size: 4.5rem; display: block; margin-top: 5px; text-shadow: 0 0 30px #ffaa00, 0 0 60px #ff5500; animation: firePulse 1.2s infinite ease-in-out;">PERIÓDICOS</span>
                 </h1>
                 
                 <!-- Subtítulo -->
-                <p style="font-size: 2rem; font-weight: 700; color: #000; margin-bottom: 20px;">
+                <p style="font-size: 2rem; font-weight: 700; color: #000; margin-bottom: 20px;" class="subtitle-mobile">
                     Conhecimento que vai além da velocidade.
                 </p>
                 
                 <!-- Descrição principal -->
-                <p style="font-size: 1.3rem; line-height: 1.6; color: #1a1a1a; margin-bottom: 30px; max-width: 600px; font-weight: 500;">
+                <p style="font-size: 1.3rem; line-height: 1.6; color: #1a1a1a; margin-bottom: 30px; max-width: 600px; font-weight: 500;" class="description-mobile">
                     A Netmax já te entrega a melhor internet fibra. Agora, prepare-se para uma viagem sem limites pelo universo do conhecimento aprofundado, direto do seu dispositivo.
                 </p>
                 
@@ -98,7 +103,7 @@
                 
                 <!-- Selo de "INCLUSO" -->
                 <!-- Duas tags informando que o benefício já está incluso no plano e sem custo adicional. -->
-                <div style="margin-top: 40px; display: flex; align-items: center; gap: 15px;">
+                <div style="margin-top: 40px; display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
                     <div style="background: rgba(0,0,0,0.2); backdrop-filter: blur(5px); padding: 10px 20px; border-radius: 50px; border: 1px solid #000;">
                         <span style="color: #000; font-weight: 700;"><i class="fas fa-check-circle" style="margin-right: 8px; color: #000;"></i> JÁ INCLUSO NO SEU PLANO</span>
                     </div>
@@ -110,10 +115,10 @@
             
             <!-- Coluna da Direita: Ilustração/Ícones -->
             <!-- Área visual com círculos concêntricos animados e ícones representando o acervo acadêmico. -->
-            <div style="text-align: center; position: relative;">
+            <div style="text-align: center; position: relative;" class="hero-illustration">
                 <!-- Círculo decorativo -->
                 <!-- Três camadas de círculo (borda tracejada, sólida e interna preta) com animação de rotação contínua. -->
-                <div style="width: 350px; height: 350px; margin: 0 auto; background: rgba(0,0,0,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px dashed #000; animation: rotate 30s linear infinite;">
+                <div style="width: 350px; height: 350px; margin: 0 auto; background: rgba(0,0,0,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px dashed #000; animation: rotate 30s linear infinite;" class="circle-decoration">
                     <div style="width: 280px; height: 280px; background: rgba(0,0,0,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #000;">
                         <div style="width: 220px; height: 220px; background: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 15px; border: 2px solid #FFD000; box-shadow: 0 0 50px rgba(255,208,0,0.3);">
                             <i class="fas fa-graduation-cap" style="font-size: 5rem; color: #FFD000;"></i>
@@ -130,12 +135,12 @@
                 
                 <!-- Cards flutuantes -->
                 <!-- Dois cards com ícones e textos que parecem flutuar ao redor do círculo principal, destacando tipos de conteúdo. -->
-                <div style="position: absolute; top: 20%; right: 0; background: #000; padding: 15px 25px; border-radius: 20px; border: 2px solid #FFD000; transform: rotate(5deg); box-shadow: 0 10px 20px rgba(0,0,0,0.3);">
+                <div style="position: absolute; top: 20%; right: 0; background: #000; padding: 15px 25px; border-radius: 20px; border: 2px solid #FFD000; transform: rotate(5deg); box-shadow: 0 10px 20px rgba(0,0,0,0.3);" class="floating-card-1">
                     <i class="fas fa-file-pdf" style="color: #FFD000; margin-right: 8px;"></i>
                     <span style="color: white;">Artigos científicos</span>
                 </div>
                 
-                <div style="position: absolute; bottom: 20%; left: 0; background: #000; padding: 15px 25px; border-radius: 20px; border: 2px solid #FFD000; transform: rotate(-5deg); box-shadow: 0 10px 20px rgba(0,0,0,0.3);">
+                <div style="position: absolute; bottom: 20%; left: 0; background: #000; padding: 15px 25px; border-radius: 20px; border: 2px solid #FFD000; transform: rotate(-5deg); box-shadow: 0 10px 20px rgba(0,0,0,0.3);" class="floating-card-2">
                     <i class="fas fa-newspaper" style="color: #FFD000; margin-right: 8px;"></i>
                     <span style="color: white;">Periódicos atualizados</span>
                 </div>
@@ -158,17 +163,17 @@
 
         <!-- O QUE É - Adicionado ID para destino do SAIBA MAIS -->
         <!-- Bloco com fundo claro explicando o que é o NEWS Periódicos. O ID "saiba-mais-target" é o alvo do botão "SAIBA MAIS" do hero. -->
-        <div id="saiba-mais-target" style="background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%); border-radius: 40px; padding: 60px 50px; margin: 40px 0; box-shadow: 0 30px 50px rgba(0,0,0,0.08); border: 1px solid rgba(255,208,0,0.3); position: relative; overflow: hidden; scroll-margin-top: 30px;">
+        <div id="saiba-mais-target" style="background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%); border-radius: 40px; padding: 60px 50px; margin: 40px 0; box-shadow: 0 30px 50px rgba(0,0,0,0.08); border: 1px solid rgba(255,208,0,0.3); position: relative; overflow: hidden; scroll-margin-top: 30px;" class="what-is-section">
             
             <!-- Elemento decorativo de fundo: livro gigante semi-transparente. -->
             <div style="position: absolute; top: -20px; right: -20px; font-size: 200px; opacity: 0.03; transform: rotate(10deg); color: #FFD000; pointer-events: none;">📚</div>
             
             <!-- Cabeçalho da seção com ícone em destaque. -->
-            <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 40px;">
+            <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 40px; flex-wrap: wrap;">
                 <div style="background: #000; padding: 20px; border-radius: 20px; box-shadow: 0 10px 0 #FFD000;">
                     <i class="fas fa-graduation-cap" style="color: #FFD000; font-size: 3rem;"></i>
                 </div>
-                <h2 style="font-size: 2.8rem; font-weight: 800; color: #000; margin: 0;">
+                <h2 style="font-size: 2.8rem; font-weight: 800; color: #000; margin: 0;" class="section-title">
                     ⚡ O PODER DA <span style="color: #FFD000;">PESQUISA ACADÊMICA</span> NA SUA MÃO
                 </h2>
             </div>
@@ -265,13 +270,13 @@
 
        <!-- COMO ATIVAR / CTA -->
        <!-- Bloco de call-to-action com fundo preto e amarelo, enfatizando que o benefício é incluso e gratuito. -->
-        <div style="background: linear-gradient(135deg, #000, #1a1a1a); border-radius: 40px; padding: 60px 40px; margin: 60px 0; border: 3px solid #FFD000; text-align: center; position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
+        <div style="background: linear-gradient(135deg, #000, #1a1a1a); border-radius: 40px; padding: 60px 40px; margin: 60px 0; border: 3px solid #FFD000; text-align: center; position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.3);" class="cta-section">
             
             <!-- Elementos decorativos de fundo: emojis de brilho e livro. -->
             <div style="position: absolute; top: -30px; left: -30px; font-size: 150px; opacity: 0.1; transform: rotate(-20deg); color: #FFD000; pointer-events: none;">✨</div>
             <div style="position: absolute; bottom: -30px; right: -30px; font-size: 150px; opacity: 0.1; transform: rotate(15deg); color: #FFD000; pointer-events: none;">📚</div>
             
-            <h2 style="font-size: 2.8rem; color: #FFD000; margin-bottom: 30px; font-weight: 900; text-shadow: 0 0 20px rgba(255,208,0,0.3); position: relative; z-index: 2;">
+            <h2 style="font-size: 2.8rem; color: #FFD000; margin-bottom: 30px; font-weight: 900; text-shadow: 0 0 20px rgba(255,208,0,0.3); position: relative; z-index: 2;" class="cta-title">
                 🎁 E O MELHOR: TUDO INCLUSO NO SEU PLANO!
             </h2>
             
@@ -279,7 +284,7 @@
                 Não é uma assinatura extra, não é um custo adicional. O <strong style="color: #FFD000;">NEWS Periódicos</strong> é um presente da Netmax para você, que já faz parte da nossa família.
             </p>
             
-            <p style="font-size: 1.8rem; color: #FFD000; margin-bottom: 40px; font-weight: bold; position: relative; z-index: 2;">
+            <p style="font-size: 1.8rem; color: #FFD000; margin-bottom: 40px; font-weight: bold; position: relative; z-index: 2;" class="cta-subtitle">
                 Se você já é assinante, a sua nova estante digital te espera.
             </p>
             

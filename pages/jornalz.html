@@ -55,8 +55,13 @@
             </a>
         </div>
 
+        <!-- BOTÃO HAMBÚRGUER PARA MOBILE -->
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+
         <!-- MENU DE NAVEGAÇÃO ATUALIZADO - Barra de navegação principal -->
-        <nav class="nav-menu">
+        <nav class="nav-menu" id="nav-menu">
             <!-- Link para a página inicial -->
             <a href="../index.html">PÁGINA INICIAL</a>
             <!-- Link para a página Estante Digital -->
@@ -83,7 +88,7 @@
         <div style="position: absolute; top: 50%; left: 10%; font-size: 120px; opacity: 0.05; transform: translateY(-50%); color: #000; pointer-events: none; z-index: 1;">🌐</div>
         
         <!-- Container com grid de 2 colunas para organizar o conteúdo -->
-        <div style="max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; position: relative; z-index: 2;">
+        <div style="max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; position: relative; z-index: 2;" class="hero-grid">
             
             <!-- Coluna da Esquerda: Textos principais -->
             <div style="text-align: left;">
@@ -93,17 +98,17 @@
                 </div>
                 
                 <!-- Título principal com efeito especial na letra Z -->
-                <h1 style="font-size: 4.2rem; font-weight: 900; line-height: 1.2; margin-bottom: 20px; color: #000; text-shadow: 0 0 20px rgba(255,208,0,0.3); position: relative;">
+                <h1 style="font-size: 4.2rem; font-weight: 900; line-height: 1.2; margin-bottom: 20px; color: #000; text-shadow: 0 0 20px rgba(255,208,0,0.3); position: relative;" class="hero-title-mobile">
                     JORNAL<span style="color: #f24f00; font-size: 5rem; text-shadow: 0 0 30px #ffaa00, 0 0 60px #ff5500; animation: firePulse 1.2s infinite ease-in-out; display: inline-block; position: relative; top: -2px;">Z</span>
                 </h1>
                 
                 <!-- Subtítulo -->
-                <p style="font-size: 2rem; font-weight: 700; color: #000; margin-bottom: 20px;">
+                <p style="font-size: 2rem; font-weight: 700; color: #000; margin-bottom: 20px;" class="subtitle-mobile">
                     O mundo em suas mãos.
                 </p>
                 
                 <!-- Descrição principal do serviço -->
-                <p style="font-size: 1.3rem; line-height: 1.6; color: #1a1a1a; margin-bottom: 30px; max-width: 600px; font-weight: 500;">
+                <p style="font-size: 1.3rem; line-height: 1.6; color: #1a1a1a; margin-bottom: 30px; max-width: 600px; font-weight: 500;" class="description-mobile">
                     Cansado de perder tempo com informações duvidosas e sites poluídos? O JornalZ é o seu portal inteligente que reúne os principais acontecimentos do Brasil e do mundo em um só lugar, com curadoria especializada.
                 </p>
                 
@@ -131,9 +136,9 @@
             </div>
             
             <!-- Coluna da Direita: Ilustração/Ícones -->
-            <div style="text-align: center; position: relative;">
+            <div style="text-align: center; position: relative;" class="hero-illustration">
                 <!-- Círculo decorativo com animação de rotação -->
-                <div style="width: 350px; height: 350px; margin: 0 auto; background: rgba(0,0,0,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px dashed #000; animation: rotate 30s linear infinite;">
+                <div style="width: 350px; height: 350px; margin: 0 auto; background: rgba(0,0,0,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px dashed #000; animation: rotate 30s linear infinite;" class="circle-decoration">
                     <!-- Círculo interno -->
                     <div style="width: 280px; height: 280px; background: rgba(0,0,0,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #000;">
                         <!-- Círculo central com estatísticas -->
@@ -152,12 +157,12 @@
                 </div>
                 
                 <!-- Cards flutuantes com características do serviço -->
-                <div style="position: absolute; top: 20%; right: 0; background: #000; padding: 15px 25px; border-radius: 20px; border: 2px solid #FFD000; transform: rotate(5deg); box-shadow: 0 10px 20px rgba(0,0,0,0.3);">
+                <div style="position: absolute; top: 20%; right: 0; background: #000; padding: 15px 25px; border-radius: 20px; border: 2px solid #FFD000; transform: rotate(5deg); box-shadow: 0 10px 20px rgba(0,0,0,0.3);" class="floating-card-1">
                     <i class="fas fa-search" style="color: #FFD000; margin-right: 8px;"></i>
                     <span style="color: white;">Curadoria inteligente</span>
                 </div>
                 
-                <div style="position: absolute; bottom: 20%; left: 0; background: #000; padding: 15px 25px; border-radius: 20px; border: 2px solid #FFD000; transform: rotate(-5deg); box-shadow: 0 10px 20px rgba(0,0,0,0.3);">
+                <div style="position: absolute; bottom: 20%; left: 0; background: #000; padding: 15px 25px; border-radius: 20px; border: 2px solid #FFD000; transform: rotate(-5deg); box-shadow: 0 10px 20px rgba(0,0,0,0.3);" class="floating-card-2">
                     <i class="fas fa-bolt" style="color: #FFD000; margin-right: 8px;"></i>
                     <span style="color: white;">Leitura limpa</span>
                 </div>
