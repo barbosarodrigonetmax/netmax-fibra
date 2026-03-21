@@ -9,102 +9,79 @@
 // 		Data  : 23/02/2026
 // ===================================================================
 
-// ============================================
-// NETMAX FIBRA - SCRIPT PRINCIPAL
-// ============================================
-
-// Exibe mensagem no console indicando que o site foi carregado com sucesso
 console.log("🚀 Netmax Website - Carregado com sucesso!");
 
 // ============================================
 // 1. WHATSAPP - CONFIGURAÇÃO CENTRALIZADA
 // ============================================
 
-// Objeto de configuração global contendo todas as constantes do site
 const CONFIG = {
     whatsapp: {
-        number: "554399149922", // Número do WhatsApp no formato internacional (55=BR, 43=DDD, 99149922=telefone)
-        message: "Olá! Gostaria de saber mais sobre os planos da Netmax Fibra." // Mensagem padrão para contato
+        number: "554399149922",
+        message: "Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
     }
 };
 
-// Função para gerar link do WhatsApp
-// Parâmetro message (opcional): mensagem personalizada para enviar
-// Retorna: URL completa para abrir conversa no WhatsApp
 function getWhatsAppLink(message = null) {
-    const baseUrl = `https://wa.me/${CONFIG.whatsapp.number}`; // URL base com o número
+    const baseUrl = `https://wa.me/${CONFIG.whatsapp.number}`;
     if (message) {
-        return `${baseUrl}?text=${encodeURIComponent(message)}`; // Adiciona mensagem codificada à URL
+        return `${baseUrl}?text=${encodeURIComponent(message)}`;
     }
-    return baseUrl; // Retorna apenas a URL base se não houver mensagem
+    return baseUrl;
 }
 
 // ============================================
 // 2. ANIMAÇÕES DE SCROLL (REVEAL)
 // ============================================
 
-// Aguarda o carregamento completo do DOM antes de executar
 document.addEventListener('DOMContentLoaded', function() {
-    
-    // Seleciona todos os elementos que devem aparecer com animação durante o scroll
     const revealElements = document.querySelectorAll('.benefit-card, .highlight-section, .partner-logo');
     
-    // Cria e adiciona um estilo CSS para controlar as animações
     const style = document.createElement('style');
     style.textContent = `
         .benefit-card, .highlight-section, .partner-logo {
-            opacity: 0;                    /* Começa invisível */
-            transform: translateY(30px);    /* Deslocado 30px para baixo */
-            transition: all 0.6s ease-out;  /* Animação suave de 0.6s */
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
         }
         
         .revealed {
-            opacity: 1;                     /* Fica visível */
-            transform: translateY(0);        /* Volta à posição original */
+            opacity: 1;
+            transform: translateY(0);
         }
     `;
-    document.head.appendChild(style); // Adiciona o estilo ao head do documento
+    document.head.appendChild(style);
     
-    // Função que verifica quais elementos devem ser revelados baseado na posição do scroll
     const revealOnScroll = function() {
-        const windowHeight = window.innerHeight; // Altura visível da janela
-        const revealThreshold = 150; // Distância da borda para ativar a revelação
+        const windowHeight = window.innerHeight;
+        const revealThreshold = 150;
         
-        // Percorre todos os elementos que devem ser revelados
         revealElements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top; // Posição do topo do elemento
-            
-            // Se o elemento está próximo de entrar na tela, revela-o
+            const elementTop = element.getBoundingClientRect().top;
             if (elementTop < windowHeight - revealThreshold) {
                 element.classList.add('revealed');
             }
         });
     };
     
-    // Adiciona listeners para verificar a posição durante o scroll e ao carregar
     window.addEventListener('scroll', revealOnScroll);
     window.addEventListener('load', revealOnScroll);
-    revealOnScroll(); // Executa imediatamente para revelar elementos já visíveis
+    revealOnScroll();
 });
 
 // ============================================
 // 3. CONTADOR REGRESSIVO PARA PROMOÇÃO
 // ============================================
 
-// Função auto-executável para criar o contador promocional
 (function criarContadorPromocao() {
-    // Verifica se já existe um contador na página para não duplicar
     if (document.querySelector('.promo-counter')) return;
     
-    // Seleciona a seção hero (principal) do site
     const heroSection = document.querySelector('.hero');
-    if (!heroSection) return; // Sai da função se não encontrar a seção hero
+    if (!heroSection) return;
     
-    // Define a data alvo: 7 dias a partir da data atual
     const dataAlvo = new Date();
     dataAlvo.setDate(dataAlvo.getDate() + 7);
     
-    // HTML do contador promocional
     const counterHTML = `
         <div class="promo-counter">
             <h3>🔥 OFERTA POR TEMPO LIMITADO!</h3>
@@ -129,13 +106,11 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     `;
     
-    // Insere o contador após os botões da seção hero
     const heroButtons = document.querySelector('.hero-buttons');
     if (heroButtons) {
         heroButtons.insertAdjacentHTML('afterend', counterHTML);
     }
     
-    // Estilo CSS do contador promocional
     const counterStyle = document.createElement('style');
     counterStyle.textContent = `
         .promo-counter {
@@ -197,59 +172,56 @@ document.addEventListener('DOMContentLoaded', function() {
             .counter-unit { padding: 10px 15px; min-width: 70px; }
             .counter-unit span:first-child { font-size: 1.8rem; }
         }
+        
+        @media (max-width: 480px) {
+            .counter-unit { padding: 6px 10px; min-width: 55px; }
+            .counter-unit span:first-child { font-size: 1.2rem; }
+            .counter-unit span:last-child { font-size: 0.7rem; }
+        }
     `;
-    document.head.appendChild(counterStyle); // Adiciona o estilo ao head
+    document.head.appendChild(counterStyle);
     
-    // Função que atualiza os valores do contador
     function atualizarContador() {
-        const agora = new Date().getTime(); // Timestamp atual
-        const distancia = dataAlvo - agora; // Diferença em milissegundos
+        const agora = new Date().getTime();
+        const distancia = dataAlvo - agora;
         
         if (distancia < 0) {
-            // Se passou da data, reinicia para mais 7 dias
             dataAlvo.setDate(dataAlvo.getDate() + 7);
             return atualizarContador();
         }
         
-        // Calcula dias, horas, minutos e segundos restantes
         const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
         const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
         const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
         
-        // Seleciona os elementos HTML que mostram os valores
         const daysEl = document.querySelector('.counter-days');
         const hoursEl = document.querySelector('.counter-hours');
         const minutesEl = document.querySelector('.counter-minutes');
         const secondsEl = document.querySelector('.counter-seconds');
         
-        // Atualiza os valores, adicionando zero à esquerda se necessário
         if (daysEl) daysEl.textContent = String(dias).padStart(2, '0');
         if (hoursEl) hoursEl.textContent = String(horas).padStart(2, '0');
         if (minutesEl) minutesEl.textContent = String(minutos).padStart(2, '0');
         if (secondsEl) secondsEl.textContent = String(segundos).padStart(2, '0');
     }
     
-    // Atualiza o contador a cada segundo (1000ms)
     setInterval(atualizarContador, 1000);
-    atualizarContador(); // Executa imediatamente na inicialização
+    atualizarContador();
 })();
 
 // ============================================
 // 4. TOOLTIP MELHORADO PARA WHATSAPP
 // ============================================
 
-// Seleciona o elemento de tooltip do WhatsApp
 const whatsappTooltip = document.querySelector('.whatsapp-tooltip');
 if (whatsappTooltip) {
-    const originalText = whatsappTooltip.textContent; // Salva o texto original
+    const originalText = whatsappTooltip.textContent;
     
-    // Altera o texto quando o mouse entra no elemento
     whatsappTooltip.addEventListener('mouseenter', function() {
         this.textContent = 'Fale com um consultor! 📱';
     });
     
-    // Restaura o texto original quando o mouse sai
     whatsappTooltip.addEventListener('mouseleave', function() {
         this.textContent = originalText;
     });
@@ -259,21 +231,16 @@ if (whatsappTooltip) {
 // 5. REGISTRO DE CLIQUES (ANALYTICS)
 // ============================================
 
-// Função para registrar interações do usuário (analytics)
 function registrarClique(elemento, acao) {
     console.log(`📊 Analytics: ${acao} - ${new Date().toLocaleString()}`);
-    // Aqui você poderia implementar o envio para um servidor de analytics
 }
 
-// Aguarda o DOM carregar para adicionar os listeners de clique
 document.addEventListener('DOMContentLoaded', function() {
-    // Seleciona todos os botões importantes e adiciona listener de clique
     document.querySelectorAll('.btn-primary, .whatsapp-float, .assinante-link').forEach(btn => {
         btn.addEventListener('click', function(e) {
-            // Determina qual tipo de botão foi clicado baseado nas classes CSS
             const acao = this.classList.contains('btn-primary') ? 'Botão Assinar' :
                         this.classList.contains('whatsapp-float') ? 'WhatsApp Float' : 'Central Assinante';
-            registrarClique(this, acao); // Registra o clique
+            registrarClique(this, acao);
         });
     });
 });
@@ -283,28 +250,22 @@ document.addEventListener('DOMContentLoaded', function() {
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function() {
-    const imagens = document.querySelectorAll('img'); // Seleciona todas as imagens
-    let imagensCarregadas = 0; // Contador de imagens carregadas com sucesso
-    let imagensComErro = 0; // Contador de imagens com erro de carregamento
+    const imagens = document.querySelectorAll('img');
+    let imagensCarregadas = 0;
+    let imagensComErro = 0;
     
-    // Adiciona listeners para cada imagem
     imagens.forEach(img => {
-        // Evento disparado quando há erro no carregamento da imagem
         img.addEventListener('error', function() {
             imagensComErro++;
             console.warn(`⚠️ Imagem não carregou: ${this.src}`);
-            // Opção comentada para substituir por imagem padrão em caso de erro
-            // this.src = 'caminho/para/imagem-padrao.jpg';
         });
         
-        // Evento disparado quando a imagem carrega com sucesso
         img.addEventListener('load', function() {
             imagensCarregadas++;
             console.log(`✅ Imagem carregada: ${this.alt || 'sem descrição'}`);
         });
     });
     
-    // Após o carregamento total da página, exibe relatório final
     window.addEventListener('load', function() {
         console.log(`📸 Total de imagens: ${imagens.length} | Carregadas: ${imagensCarregadas} | Erros: ${imagensComErro}`);
     });
@@ -315,18 +276,14 @@ document.addEventListener('DOMContentLoaded', function() {
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Seleciona todos os links que começam com # (âncoras internas)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault(); // Previne o comportamento padrão do link
-            
-            // Seleciona o elemento alvo baseado no href
+            e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                // Rola suavemente até o elemento alvo
                 target.scrollIntoView({
-                    behavior: 'smooth', // Animação suave
-                    block: 'start' // Alinha o topo do elemento ao topo da janela
+                    behavior: 'smooth',
+                    block: 'start'
                 });
             }
         });
@@ -337,15 +294,13 @@ document.addEventListener('DOMContentLoaded', function() {
 // 8. DETECÇÃO DE DISPOSITIVO MÓVEL
 // ============================================
 
-// Função que detecta se o usuário está usando um dispositivo móvel
 function isMobileDevice() {
-    return (window.innerWidth <= 768) || // Tela pequena
-           ('ontouchstart' in window) || // Suporte a toque
-           (navigator.maxTouchPoints > 0) || // Múltiplos pontos de toque
-           (navigator.userAgent.match(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i)); // User agent de dispositivos móveis
+    return (window.innerWidth <= 768) ||
+           ('ontouchstart' in window) ||
+           (navigator.maxTouchPoints > 0) ||
+           (navigator.userAgent.match(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i));
 }
 
-// Se for dispositivo móvel, adiciona classe ao body e loga no console
 if (isMobileDevice()) {
     document.body.classList.add('mobile-device');
     console.log("📱 Dispositivo móvel detectado - Otimizações ativadas");
@@ -355,13 +310,12 @@ if (isMobileDevice()) {
 // 9. MENSAGEM DE BOAS-VINDAS NO CONSOLE
 // ============================================
 
-// Mensagens estilizadas no console para desenvolvedores
 console.log('%c🎯 Netmax Fibra - Conectando você ao conhecimento', 'color: #FFD000; font-size: 16px; font-weight: bold;');
 console.log('%c📱 WhatsApp configurado: 43 99914-9922', 'color: #25D366; font-size: 14px;');
 console.log('%c💡 Dica: Pressione F12 para mais informações', 'color: #888; font-size: 12px;');
 
 // ============================================
-// 10. MENU MOBILE (HAMBÚRGUER) - NOVO!
+// 10. MENU MOBILE (HAMBÚRGUER)
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -370,97 +324,92 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', function() {
-            // Alterna a classe 'show' no menu para exibi-lo ou ocultá-lo
             navMenu.classList.toggle('show');
             
-            // Alterna o ícone do botão (opcional, para melhor UX)
             const icon = menuToggle.querySelector('i');
             if (navMenu.classList.contains('show')) {
                 icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times'); // Muda para ícone de "X"
+                icon.classList.add('fa-times');
             } else {
                 icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars'); // Volta para o ícone de hambúrguer
+                icon.classList.add('fa-bars');
             }
         });
 
-        // Fecha o menu se o usuário clicar em um link (opcional, bom para UX)
         navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('show');
                 const icon = menuToggle.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+                if (icon) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
             });
+        });
+        
+        // Fecha o menu ao clicar fora dele (para melhor UX)
+        document.addEventListener('click', function(event) {
+            if (!navMenu.contains(event.target) && !menuToggle.contains(event.target) && navMenu.classList.contains('show')) {
+                navMenu.classList.remove('show');
+                const icon = menuToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
         });
     }
 });
 
 // ============================================
-// 11. MODAL DA NETMAX TV - CONTROLE (ORIGINAL)
+// 11. MODAL DA NETMAX TV - CONTROLE
 // ============================================
 
-// Função para abrir o modal original da Netmax TV
 function abrirModal() {
-    const modal = document.getElementById('tvModal'); // Seleciona o modal pelo ID
+    const modal = document.getElementById('tvModal');
     if (modal) {
-        modal.style.display = 'flex'; // Mostra o modal com display flex
-        
-        // Pequeno atraso para permitir a transição CSS
+        modal.style.display = 'flex';
         setTimeout(() => {
-            modal.classList.add('show'); // Adiciona classe que ativa a animação
+            modal.classList.add('show');
         }, 10);
-        
-        document.body.style.overflow = 'hidden'; // Impede rolagem da página
+        document.body.style.overflow = 'hidden';
     }
 }
 
-// Função para fechar o modal original
 function fecharModal() {
     const modal = document.getElementById('tvModal');
     if (modal) {
-        modal.classList.remove('show'); // Remove classe de animação
-        
-        // Aguarda a animação terminar antes de ocultar completamente
+        modal.classList.remove('show');
         setTimeout(() => {
-            modal.style.display = 'none'; // Esconde o modal
-        }, 300); // 300ms corresponde à duração da transição CSS
-        
-        document.body.style.overflow = ''; // Restaura rolagem da página
+            modal.style.display = 'none';
+        }, 300);
+        document.body.style.overflow = '';
     }
 }
 
 // ============================================
-// 12. NOVO MODAL DE ATIVAÇÃO - CONTROLE
+// 12. MODAL DE ATIVAÇÃO - CONTROLE
 // ============================================
 
-// Função para abrir o modal de ativação
 function abrirModalAtivacao() {
-    const modal = document.getElementById('tvAtivacaoModal'); // Seleciona o modal de ativação
+    const modal = document.getElementById('tvAtivacaoModal');
     if (modal) {
-        modal.style.display = 'flex'; // Mostra o modal
-        
-        // Pequeno atraso para permitir a transição CSS
+        modal.style.display = 'flex';
         setTimeout(() => {
-            modal.classList.add('show'); // Ativa animação
+            modal.classList.add('show');
         }, 10);
-        
-        document.body.style.overflow = 'hidden'; // Impede rolagem
+        document.body.style.overflow = 'hidden';
     }
 }
 
-// Função para fechar o modal de ativação
 function fecharModalAtivacao() {
     const modal = document.getElementById('tvAtivacaoModal');
     if (modal) {
-        modal.classList.remove('show'); // Remove animação
-        
-        // Aguarda animação terminar
+        modal.classList.remove('show');
         setTimeout(() => {
-            modal.style.display = 'none'; // Esconde o modal
+            modal.style.display = 'none';
         }, 300);
-        
-        document.body.style.overflow = ''; // Restaura rolagem
+        document.body.style.overflow = '';
     }
 }
 
@@ -468,17 +417,77 @@ function fecharModalAtivacao() {
 // 13. FECHAR MODAIS CLICANDO NA ÁREA ESCURA
 // ============================================
 
-// Listener global para cliques na janela
 window.addEventListener('click', function(event) {
-    // Fecha modal original se clicar na área escura (overlay)
     const modalOriginal = document.getElementById('tvModal');
     if (event.target === modalOriginal) {
         fecharModal();
     }
     
-    // Fecha modal de ativação se clicar na área escura
     const modalAtivacao = document.getElementById('tvAtivacaoModal');
     if (event.target === modalAtivacao) {
         fecharModalAtivacao();
     }
 });
+
+// ============================================
+// 14. OTIMIZAÇÃO DE PERFORMANCE PARA SCROLL
+// ============================================
+
+let ticking = false;
+const optimizedRevealOnScroll = function() {
+    if (!ticking) {
+        window.requestAnimationFrame(function() {
+            const revealElements = document.querySelectorAll('.benefit-card, .highlight-section, .partner-logo');
+            const windowHeight = window.innerHeight;
+            const revealThreshold = 150;
+            
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                if (elementTop < windowHeight - revealThreshold && !element.classList.contains('revealed')) {
+                    element.classList.add('revealed');
+                }
+            });
+            ticking = false;
+        });
+        ticking = true;
+    }
+};
+
+window.addEventListener('scroll', optimizedRevealOnScroll);
+window.addEventListener('resize', optimizedRevealOnScroll);
+
+// ============================================
+// 15. PREVENIR CLIQUE EM LINKS QUEBRADOS
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a[href="#"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.warn('⚠️ Link não configurado:', this.textContent);
+        });
+    });
+});
+
+// ============================================
+// 16. LAZY LOADING OTIMIZADO PARA IMAGENS
+// ============================================
+
+if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                }
+                observer.unobserve(img);
+            }
+        });
+    });
+    
+    document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
+    });
+}

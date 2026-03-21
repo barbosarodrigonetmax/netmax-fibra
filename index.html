@@ -1,121 +1,94 @@
 <!doctype html>
-<!-- ===================================================================
-     NETMAX FIBRA - PÁGINA INICIAL
-     ===================================================================
-     Objetivo: Página institucional da Netmax Fibra, apresentando 
-               planos de internet, benefícios e conteúdos exclusivos
-     Autor : Rodrigo Barbosa
-     Data  : 23/02/2026
-     ===================================================================
--->
-
 <html lang="pt-BR">
   <head>
-    <!-- Meta tags básicas para codificação e responsividade -->
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
     />
-
-    <!-- Título da página exibido na aba do navegador -->
-    <title>Netmax Fibra - Página Inicial</title>
-
-    <!-- Link para o arquivo CSS principal (estilos personalizados) -->
+    <meta name="description" content="Netmax Fibra - Internet de alta velocidade com pacote completo de benefícios. 1000 Megas por apenas R$ 114,90 mensais.">
+    <meta name="keywords" content="Netmax, Fibra, Internet, 1000 Megas, Siqueira Campos">
+    <meta name="author" content="Netmax Fibra">
+    <title>Netmax Fibra - Internet de Alta Velocidade</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
-
-    <!-- Font Awesome para ícones (versão 6) -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
   </head>
   <body>
-    <!-- WHATSAPP FLOATING BUTTON - Botão flutuante do WhatsApp para contato rápido -->
+    <!-- WHATSAPP FLOATING BUTTON -->
     <a
       href="https://wa.me/554399149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
       class="whatsapp-float"
       target="_blank"
       rel="noopener noreferrer"
+      aria-label="WhatsApp"
     >
-      <!-- Ícone do WhatsApp do Font Awesome -->
       <i class="fab fa-whatsapp"></i>
-      <!-- Tooltip que aparece ao passar o mouse -->
       <span class="whatsapp-tooltip">Fale conosco!</span>
     </a>
 
-    <!-- HEADER PRINCIPAL - Cabeçalho da página -->
+    <!-- HEADER PRINCIPAL -->
     <header class="header">
-      <!-- Área de destaque do logo principal e slogan -->
       <div class="logo-area-highlight">
-        <!-- Imagem do logo da Netmax (formato JPG) -->
         <img
           src="assets/images/logos/logo_netmax.jpg"
           alt="Logo Netmax"
           class="logo-netmax-big"
+          width="300"
+          height="180"
         />
-        <!-- Slogan da empresa -->
         <h1 class="slogan-top">
           A velocidade que conecta você ao mundo e ao conhecimento.
         </h1>
       </div>
 
-      <!-- CENTRAL DO ASSINANTE - Área de acesso para assinantes -->
+      <!-- CENTRAL DO ASSINANTE -->
       <div class="assinante-container">
-        <!-- Link para o portal do assinante (abre em nova aba) -->
         <a
           href="https://netmax.net.br/"
           class="assinante-link"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Central do Assinante"
         >
-          <!-- Ícone de usuário do Font Awesome -->
           <div class="assinante-icon">
             <i class="fas fa-user-circle"></i>
           </div>
-          <!-- Texto "CENTRAL DO ASSINANTE" com quebra de linha -->
           <span class="assinante-text">CENTRAL DO<br />ASSINANTE</span>
         </a>
       </div>
 
-      <!-- BOTÃO HAMBÚRGUER PARA MOBILE -->
-      <div class="menu-toggle" id="menu-toggle">
+      <!-- BOTÃO HAMBÚRGUER -->
+      <div class="menu-toggle" id="menu-toggle" aria-label="Menu" role="button" tabindex="0">
         <i class="fas fa-bars"></i>
       </div>
 
-      <!-- MENU DE NAVEGAÇÃO PRINCIPAL -->
-      <nav class="nav-menu" id="nav-menu">
-        <!-- Link atual com destaque em amarelo (página atual) -->
-        <a href="#" style="color: #ffd000; font-weight: bold">PÁGINA INICIAL</a>
-        <!-- Links para as demais páginas do site -->
+      <!-- MENU DE NAVEGAÇÃO -->
+      <nav class="nav-menu" id="nav-menu" aria-label="Menu principal">
+        <a href="index.html" style="color: #ffd000; font-weight: bold">PÁGINA INICIAL</a>
         <a href="pages/estante_digital.html">ESTANTE DIGITAL NETMAX</a>
         <a href="pages/jornalz.html">JORNALZ</a>
         <a href="pages/news_periodicos.html">NEWS PERIÓDICOS</a>
         <a href="pages/netmax_tv.html">NETMAX TV</a>
         <a href="pages/nosso_proposito.html">NOSSO PROPÓSITO</a>
-        <a href="pages/por_que_escolher_a_netmax.html"
-          >POR QUE ESCOLHER A NETMAX</a
-        >
+        <a href="pages/por_que_escolher_a_netmax.html">POR QUE ESCOLHER A NETMAX</a>
       </nav>
     </header>
 
-    <!-- HERO SECTION - Seção principal de destaque -->
+    <!-- HERO SECTION -->
     <section class="hero hero-boosted">
-      <!-- Título principal com destaque para o preço -->
       <h1 class="hero-title">
         🔥 1000 MEGAS POR APENAS
         <span class="price price-fire">R$ 114,90</span>
       </h1>
-
-      <!-- Subtítulo promocional -->
       <p class="subtitle subtitle-premium">
         O plano completo que transforma sua casa em um centro de entretenimento
         e conhecimento.
       </p>
-
-      <!-- Botões da seção hero -->
       <div class="hero-buttons">
-        <!-- Botão principal de call-to-action com efeito pulse -->
         <a
           href="https://wa.me/554399149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
           class="btn-primary pulse-btn"
@@ -127,95 +100,91 @@
       </div>
     </section>
 
-    <!-- MEGA SEÇÃO DO PLANO - Seção que detalha os benefícios do plano -->
+    <!-- MEGA SEÇÃO DO PLANO -->
     <section class="ecosystem">
-      <!-- Título destacando que vai além da velocidade -->
       <h2 class="ecosystem-title">
         POR QUE SÓ VELOCIDADE?<br />
         NO PLANO ÚNICO DA NETMAX, VOCÊ VAI ALÉM DOS 1000 MEGAS E AINDA LEVA UM
         PACOTE COMPLETO DE BENEFÍCIOS
       </h2>
-
-      <!-- Segundo título chamando para conhecer a cesta de produtos -->
       <h2 class="ecosystem-title title-fire">
         CONHEÇA NOSSA CESTA DE PRODUTOS E BENEFÍCIOS
       </h2>
 
-      <!-- Área de banners promocionais -->
       <div class="banner-area">
-        <!-- Banner da internet fibra -->
         <img
           src="assets/images/banners/internet_banner.png"
           alt="Banner Internet Fibra"
           class="big-banner"
+          loading="lazy"
         />
-        <!-- Banner da Netmax TV -->
         <img
           src="assets/images/banners/netmaxtv_banner.png"
           alt="Banner Netmax TV"
           class="big-banner"
+          loading="lazy"
         />
       </div>
 
-      <!-- GRADE DE BENEFÍCIOS - Cards com os produtos/serviços -->
+      <!-- GRADE DE BENEFÍCIOS -->
       <div class="benefits-grid big-cards">
-        <!-- Card da Internet Fibra (sem link) -->
         <div class="benefit-card">
           <img
             src="assets/images/logos/logo_netmaxFIBRA.png"
             class="mini-logo"
             alt="Netmax Fibra"
+            loading="lazy"
           />
           <h3>Internet Fibra 1000 Megas</h3>
           <p>Velocidade simétrica, estável e com o melhor sinal.</p>
         </div>
 
-        <!-- Card da Estante Digital (com link para a página) -->
         <a href="pages/estante_digital.html" class="benefit-card-link">
           <div class="benefit-card">
             <img
               src="assets/images/logos/logo_digi_livro.png"
               class="mini-logo"
               alt="Digi Livro"
+              loading="lazy"
             />
             <h3>Estante Digital</h3>
             <p>Milhares de e-books na palma da sua mão.</p>
           </div>
         </a>
 
-        <!-- Card do JornalZ (com link para a página) -->
         <a href="pages/jornalz.html" class="benefit-card-link">
           <div class="benefit-card">
             <img
               src="assets/images/logos/logo_jornalz.png"
               class="mini-logo"
               alt="JornalZ"
+              loading="lazy"
             />
             <h3>JornalZ</h3>
             <p>Curadoria inteligente das principais notícias do dia.</p>
           </div>
         </a>
 
-        <!-- Card do News Periódicos (com link para a página) -->
         <a href="pages/news_periodicos.html" class="benefit-card-link">
           <div class="benefit-card">
             <img
               src="assets/images/logos/logo_estante_virtual.png"
               class="mini-logo"
               alt="News Periódicos"
+              loading="lazy"
             />
             <h3>News Periódicos</h3>
             <p>Artigos especializados e conteúdo acadêmico aprofundado.</p>
           </div>
         </a>
 
-        <!-- Card da Netmax TV (com link para a página) -->
         <a href="pages/netmax_tv.html" class="benefit-card-link">
           <div class="benefit-card">
             <img
               src="assets/images/logos/logo_netmaxTV.png"
               class="mini-logo"
               alt="Netmax TV"
+              loading="lazy"
             />
             <h3>Netmax TV</h3>
             <p>Mais de 100 canais para toda a família.</p>
@@ -223,7 +192,6 @@
         </a>
       </div>
 
-      <!-- Link para WhatsApp com o preço final destacado -->
       <a
         href="https://wa.me/554399149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
         target="_blank"
@@ -236,24 +204,18 @@
       </a>
     </section>
 
-    <!-- SOBRE A NETMAX - Seção com a história da empresa -->
+    <!-- SOBRE A NETMAX -->
     <section class="sobre highlight-section">
       <h2>Sobre a Netmax</h2>
-
-      <!-- Parágrafo sobre a origem da empresa -->
       <p>
         Na cidade de Siqueira Campos, no coração do Paraná, a Netmax nasceu de
         um sonho compartilhado por três irmãos:
         <strong>Juliano, Julio Cesar e Isaac Vilas Boas</strong>.
       </p>
-
-      <!-- Parágrafo sobre o porte e propósito da empresa -->
       <p>
         Somos uma empresa de médio porte com um propósito gigante: entregar a
         melhor internet fibra óptica da região.
       </p>
-
-      <!-- Parágrafo sobre os diferenciais da empresa -->
       <p>
         Com equipamentos modernos, equipe própria, responsabilidade real e
         atendimento humano porque quando o sinal chega forte na sua casa,
@@ -261,42 +223,42 @@
       </p>
     </section>
 
-    <!-- PARCEIROS - Seção com logos dos parceiros de conteúdo -->
+    <!-- PARCEIROS -->
     <section class="parceiros highlight-section">
       <h2>Nossos Conteúdos Exclusivos</h2>
-
-      <!-- Área com os logos dos parceiros -->
       <div class="partner-logos">
-        <!-- Link para Digi Livro (vazio por enquanto) -->
-        <a href="#"
-          ><img
+        <a href="#" aria-label="Digi Livro">
+          <img
             src="assets/images/logos/logo_digi_livro.png"
             class="partner-logo"
             alt="Digi Livro"
-        /></a>
-        <!-- Link para Estante Virtual (vazio por enquanto) -->
-        <a href="#"
-          ><img
+            loading="lazy"
+          />
+        </a>
+        <a href="#" aria-label="Estante Digital">
+          <img
             src="assets/images/logos/logo_estante_virtual.png"
             class="partner-logo"
             alt="Estante Digital"
-        /></a>
-        <!-- Link para JornalZ (vazio por enquanto) -->
-        <a href="#"
-          ><img
+            loading="lazy"
+          />
+        </a>
+        <a href="#" aria-label="JornalZ">
+          <img
             src="assets/images/logos/logo_jornalz.png"
             class="partner-logo"
             alt="JornalZ"
-        /></a>
+            loading="lazy"
+          />
+        </a>
       </div>
     </section>
 
-    <!-- FOOTER - Rodapé da página -->
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="footer-content">
-        <!-- Informações textuais do rodapé -->
         <div class="footer-text">
-          <p>© 2024 Netmax Fibra - Todos os Direitos Reservados</p>
+          <p>© 2025 Netmax Fibra - Todos os Direitos Reservados</p>
           <p>CNPJ: 48.287.603/0001-42</p>
           <p>
             Rua Rio Grande do Sul, 1460 - Bairro Santuário - Siqueira Campos -
@@ -304,53 +266,54 @@
           </p>
         </div>
 
-        <!-- Links para redes sociais -->
         <div class="footer-social">
-          <!-- Instagram (ícone SVG) -->
           <a
             href="https://instagram.com/netmaxfibra"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Instagram"
           >
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/instagram.svg"
               alt="Instagram"
               width="20"
               height="20"
+              loading="lazy"
             />
             <span>Instagram</span>
           </a>
-          <!-- Facebook (ícone SVG) -->
           <a
             href="https://facebook.com/netmax.siq"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Facebook"
           >
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/facebook.svg"
               alt="Facebook"
               width="20"
               height="20"
+              loading="lazy"
             />
             <span>Facebook</span>
           </a>
-          <!-- WhatsApp (ícone SVG) -->
           <a
             href="https://wa.me/554399149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="WhatsApp"
           >
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/whatsapp.svg"
               alt="WhatsApp"
               width="20"
               height="20"
+              loading="lazy"
             />
             <span>Fale Conosco</span>
           </a>
         </div>
 
-        <!-- Mensagem de copyright adicional -->
         <div class="footer-copyright">
           <p>
             Netmax Fibra - A velocidade que conecta você ao mundo e ao
@@ -361,7 +324,6 @@
       </div>
     </footer>
 
-    <!-- Link para o arquivo JavaScript principal -->
     <script src="assets/js/script.js"></script>
   </body>
 </html>
