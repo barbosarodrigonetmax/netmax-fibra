@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- ===================================================================
-     NETMAX FIBRA - PÁGINA ESTANTE DIGITAL
+     NETMAX FIBRA - PÁGINA ESTANTE DIGITAL (REFATORADA COM BOOTSTRAP)
      ===================================================================
      Objetivo: Página institucional da Netmax Fibra apresentando o 
                benefício exclusivo "Estante Digital Digi Livros" para 
@@ -9,53 +9,192 @@
      Autor : Rodrigo Barbosa
      Data  : 23/02/2026
      =================================================================== -->
+
 <html lang="pt-BR">
   <head>
-    <!-- Define a codificação de caracteres como UTF-8 -->
     <meta charset="UTF-8" />
-    <!-- Configura a viewport para responsividade em dispositivos móveis -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Título da página exibido na aba do navegador -->
     <title>Netmax Fibra - Estante Digital: Milhares de Livros Inclusos</title>
-    <!-- Link para o arquivo de estilos CSS principal -->
     <link rel="stylesheet" href="../assets/css/styles.css" />
-    <!-- Link para a biblioteca de ícones Font Awesome (versão 6) -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <style>
+      /* Estilos adicionais específicos para garantir responsividade da página Estante Digital */
+      @media (max-width: 1024px) {
+        .estante-hero .hero-boosted > div[style*="display: grid"] {
+          grid-template-columns: 1fr !important;
+          gap: 30px !important;
+          text-align: center !important;
+        }
+
+        .estante-hero [style*="text-align: left"] {
+          text-align: center !important;
+        }
+
+        .estante-hero [style*="max-width: 600px"] {
+          max-width: 100% !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+
+        .estante-hero [style*="display: flex"][style*="gap: 20px"] {
+          justify-content: center !important;
+        }
+
+        .estante-hero [style*="margin-top: 40px"] {
+          justify-content: center !important;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .estante-hero h1 {
+          font-size: 2.5rem !important;
+        }
+
+        .estante-hero h1 span {
+          font-size: 2.8rem !important;
+        }
+
+        .estante-hero [style*="font-size: 2rem"] {
+          font-size: 1.5rem !important;
+        }
+
+        .estante-hero [style*="font-size: 1.3rem"] {
+          font-size: 1.1rem !important;
+        }
+
+        .estante-hero .btn-primary,
+        .estante-hero .btn-secondary {
+          font-size: 1rem !important;
+          padding: 12px 25px !important;
+        }
+
+        .estante-hero [style*="width: 350px"] {
+          width: 280px !important;
+          height: 280px !important;
+        }
+
+        .estante-hero [style*="width: 280px"] {
+          width: 220px !important;
+          height: 220px !important;
+        }
+
+        .estante-hero [style*="width: 220px"] {
+          width: 180px !important;
+          height: 180px !important;
+        }
+
+        .estante-hero [style*="position: absolute"][style*="top: 20%"] {
+          top: 10% !important;
+          right: 0 !important;
+          padding: 10px 18px !important;
+          font-size: 0.9rem !important;
+        }
+
+        .estante-hero [style*="position: absolute"][style*="bottom: 20%"] {
+          bottom: 10% !important;
+          left: 0 !important;
+          padding: 10px 18px !important;
+          font-size: 0.9rem !important;
+        }
+
+        /* Ajustes para seções internas */
+        .ecosystem [style*="grid-template-columns: 1.5fr 1fr"] {
+          grid-template-columns: 1fr !important;
+          gap: 30px !important;
+        }
+
+        .ecosystem [style*="grid-template-columns: repeat(3, 1fr)"] {
+          grid-template-columns: 1fr !important;
+        }
+
+        .ecosystem [style*="grid-column: span 3"] {
+          grid-column: span 1 !important;
+        }
+
+        [style*="background: linear-gradient(145deg, #000000 0%, #1a1a1a 100%)"] {
+          padding: 40px 25px !important;
+        }
+
+        [style*="grid-template-columns: repeat(3, 1fr)"]:has(.counter-unit) {
+          grid-template-columns: 1fr !important;
+          gap: 15px !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .estante-hero h1 {
+          font-size: 2rem !important;
+        }
+
+        .estante-hero h1 span {
+          font-size: 2.2rem !important;
+        }
+
+        .estante-hero [style*="width: 350px"] {
+          width: 240px !important;
+          height: 240px !important;
+        }
+
+        .estante-hero [style*="width: 280px"] {
+          width: 200px !important;
+          height: 200px !important;
+        }
+
+        .estante-hero [style*="width: 220px"] {
+          width: 160px !important;
+          height: 160px !important;
+        }
+
+        .estante-hero .btn-primary,
+        .estante-hero .btn-secondary {
+          font-size: 0.9rem !important;
+          padding: 10px 20px !important;
+        }
+
+        [style*="font-size: 3.2rem"] {
+          font-size: 2rem !important;
+        }
+
+        [style*="font-size: 3.5rem"] {
+          font-size: 2.2rem !important;
+        }
+
+        .tip-box {
+          flex-direction: column !important;
+          text-align: center !important;
+        }
+      }
+    </style>
   </head>
   <body>
-    <!-- WHATSAPP FLOATING BUTTON - Botão flutuante fixo na tela -->
+    <!-- WHATSAPP FLOATING BUTTON -->
     <a
       href="https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
       class="whatsapp-float"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <!-- Ícone do WhatsApp da Font Awesome -->
       <i class="fab fa-whatsapp"></i>
-      <!-- Tooltip que aparece ao passar o mouse -->
       <span class="whatsapp-tooltip">Fale conosco!</span>
     </a>
 
-    <!-- HEADER PADRÃO - Cabeçalho padrão do site -->
+    <!-- HEADER PADRÃO -->
     <header class="header">
-      <!-- Área de destaque com logo e slogan -->
       <div class="logo-area-highlight">
-        <!-- Imagem da logo da Netmax -->
         <img
-          src="../assets/images/logos/logo_netmax.jpg"
+          src="../assets/images/logos/logo_netmax.JPG"
           alt="Logo Netmax"
           class="logo-netmax-big"
         />
-        <!-- Slogan da empresa -->
         <h1 class="slogan-top">
           A velocidade que conecta você ao mundo e ao conhecimento.
         </h1>
       </div>
 
-      <!-- CENTRAL DO ASSINANTE - Link para área do assinante -->
+      <!-- CENTRAL DO ASSINANTE -->
       <div class="assinante-container">
         <a
           href="https://netmax.net.br/"
@@ -64,43 +203,29 @@
           rel="noopener noreferrer"
         >
           <div class="assinante-icon">
-            <!-- Ícone de usuário (Font Awesome) -->
             <i class="fas fa-user-circle"></i>
           </div>
-          <!-- Texto "CENTRAL DO ASSINANTE" com quebra de linha -->
           <span class="assinante-text">CENTRAL DO<br />ASSINANTE</span>
         </a>
       </div>
 
-      <!-- BOTÃO HAMBÚRGUER PARA MOBILE -->
-      <div class="menu-toggle" id="menu-toggle">
-        <i class="fas fa-bars"></i>
-      </div>
-
-      <!-- MENU DE NAVEGAÇÃO ATUALIZADO - Barra de navegação principal -->
-      <nav class="nav-menu" id="nav-menu">
-        <!-- Link para página inicial -->
+      <!-- MENU DE NAVEGAÇÃO ATUALIZADO -->
+      <nav class="nav-menu">
         <a href="../index.html">PÁGINA INICIAL</a>
-        <!-- Link atual (estante digital) com estilo diferenciado (amarelo e negrito) -->
         <a href="#" style="color: #ffd000; font-weight: bold"
           >ESTANTE DIGITAL NETMAX</a
         >
-        <!-- Link para página Jornalz -->
         <a href="jornalz.html">JORNALZ</a>
-        <!-- Link para página News Periódicos -->
         <a href="news_periodicos.html">NEWS PERIÓDICOS</a>
-        <!-- Link para página Netmax TV -->
         <a href="netmax_tv.html">NETMAX TV</a>
-        <!-- Link para página Nosso Propósito -->
         <a href="nosso_proposito.html">NOSSO PROPÓSITO</a>
-        <!-- Link para página Por que escolher a Netmax -->
         <a href="por_que_escolher_a_netmax.html">POR QUE ESCOLHER A NETMAX</a>
       </nav>
     </header>
 
-    <!-- HERO ESPECIAL ESTANTE DIGITAL - Seção hero (destaque principal) -->
+    <!-- HERO ESPECIAL ESTANTE DIGITAL -->
     <section class="hero hero-boosted estante-hero" style="padding: 80px 20px">
-      <!-- Elementos decorativos de fundo (emojis gigantes com baixa opacidade) -->
+      <!-- Elementos decorativos de fundo -->
       <div
         style="
           position: absolute;
@@ -147,7 +272,7 @@
         📱
       </div>
 
-      <!-- Container com grid de 2 colunas para organizar conteúdo -->
+      <!-- Container com grid de 2 colunas -->
       <div
         style="
           max-width: 1300px;
@@ -159,11 +284,10 @@
           position: relative;
           z-index: 2;
         "
-        class="hero-grid"
       >
         <!-- Coluna da Esquerda: Textos -->
         <div style="text-align: left">
-          <!-- Badge "BENEFÍCIO EXCLUSIVO" -->
+          <!-- Badge de "BENEFÍCIO EXCLUSIVO" -->
           <div
             style="
               display: inline-block;
@@ -181,7 +305,7 @@
             ⚡ BENEFÍCIO EXCLUSIVO
           </div>
 
-          <!-- Título principal da página -->
+          <!-- Título principal -->
           <h1
             style="
               font-size: 4.2rem;
@@ -191,7 +315,6 @@
               color: #000;
               text-shadow: 0 0 20px rgba(255, 208, 0, 0.3);
             "
-            class="hero-title-mobile"
           >
             ESTANTE
             <span
@@ -200,7 +323,9 @@
                 font-size: 4.5rem;
                 display: block;
                 margin-top: 5px;
-                text-shadow: 0 0 30px #ffaa00, 0 0 60px #ff5500;
+                text-shadow:
+                  0 0 30px #ffaa00,
+                  0 0 60px #ff5500;
                 animation: firePulse 1.2s infinite ease-in-out;
               "
               >DIGITAL</span
@@ -215,12 +340,11 @@
               color: #000;
               margin-bottom: 20px;
             "
-            class="subtitle-mobile"
           >
             Milhares de livros. Zero peso. Zero custo extra.
           </p>
 
-          <!-- Descrição principal do benefício -->
+          <!-- Descrição principal -->
           <p
             style="
               font-size: 1.3rem;
@@ -230,16 +354,16 @@
               max-width: 600px;
               font-weight: 500;
             "
-            class="description-mobile"
           >
             Sua internet fibra Netmax acaba de ficar ainda mais inteligente.
             Agora, todo assinante tem acesso exclusivo à Estante Digital Digi
-            Livros uma biblioteca virtual completa que cabe na palma da sua mão.
+            Livros — uma biblioteca virtual completa que cabe na palma da sua
+            mão.
           </p>
 
           <!-- Botões de ação -->
           <div style="display: flex; gap: 20px; flex-wrap: wrap">
-            <!-- Botão para acessar a estante digital (abre link em nova aba) -->
+            <!-- [AJUSTADO] Botão para abrir o link da estante em nova aba -->
             <button
               class="btn-primary pulse-btn"
               style="
@@ -256,7 +380,6 @@
             >
               📚 ACESSAR ESTANTE DIGITAL
             </button>
-            <!-- Botão para rolar suavemente até a seção "saiba-mais" -->
             <button
               class="btn-secondary"
               style="
@@ -277,7 +400,7 @@
             </button>
           </div>
 
-          <!-- Selos de "INCLUSO" e "SEM CUSTO ADICIONAL" -->
+          <!-- Selo de "INCLUSO" -->
           <div
             style="
               margin-top: 40px;
@@ -325,8 +448,8 @@
         </div>
 
         <!-- Coluna da Direita: Ilustração/Ícones -->
-        <div style="text-align: center; position: relative" class="hero-illustration">
-          <!-- Círculo decorativo animado -->
+        <div style="text-align: center; position: relative">
+          <!-- Círculo decorativo -->
           <div
             style="
               width: 350px;
@@ -340,7 +463,6 @@
               border: 3px dashed #000;
               animation: rotate 30s linear infinite;
             "
-            class="circle-decoration"
           >
             <div
               style="
@@ -397,7 +519,7 @@
             </div>
           </div>
 
-          <!-- Cards flutuantes com categorias de livros -->
+          <!-- Cards flutuantes -->
           <div
             style="
               position: absolute;
@@ -410,7 +532,6 @@
               transform: rotate(5deg);
               box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
             "
-            class="floating-card-1"
           >
             <i
               class="fas fa-star"
@@ -431,7 +552,6 @@
               transform: rotate(-5deg);
               box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
             "
-            class="floating-card-2"
           >
             <i
               class="fas fa-flask"
@@ -457,7 +577,6 @@
           position: relative;
           overflow: hidden;
         "
-        class="magic-section"
       >
         <!-- ELEMENTOS DECORATIVOS DE FUNDO -->
         <div
@@ -542,7 +661,9 @@
                 background: #000;
                 padding: 22px;
                 border-radius: 30px;
-                box-shadow: 0 12px 0 #ffd000, 0 15px 30px rgba(0, 0, 0, 0.2);
+                box-shadow:
+                  0 12px 0 #ffd000,
+                  0 15px 30px rgba(0, 0, 0, 0.2);
                 transform: rotate(-2deg);
                 transition: transform 0.3s ease;
               "
@@ -564,7 +685,6 @@
                   line-height: 1.2;
                   text-transform: uppercase;
                 "
-                class="magic-title"
               >
                 <span
                   style="
@@ -595,7 +715,6 @@
               gap: 40px;
               align-items: center;
             "
-            class="magic-grid"
           >
             <!-- COLUNA ESQUERDA: TEXTOS PRINCIPAIS -->
             <div>
@@ -913,7 +1032,7 @@
 
               <!-- BOTÃO SUTIL PARA EXPLORAR -->
               <div style="margin-top: 25px; text-align: right">
-                <!-- Link para explorar a estante (abre nova aba) -->
+                <!-- [AJUSTADO] Link para abrir a estante em nova aba -->
                 <a
                   href="https://netmax.estante.app/login"
                   target="_blank"
@@ -948,7 +1067,7 @@
             </div>
           </div>
 
-          <!-- LINHA DECORATIVA INFERIOR (ícones de dispositivos) -->
+          <!-- LINHA DECORATIVA INFERIOR -->
           <div
             style="
               margin-top: 50px;
@@ -993,7 +1112,7 @@
         />
         <span>=</span>
         <img
-          src="../assets/images/logos/logo_netmax.jpg"
+          src="../assets/images/logos/logo_netmax.JPG"
           alt="Netmax Fibra"
           style="width: 100px"
         />
@@ -1093,7 +1212,7 @@
           <i class="fas fa-eye-slash"></i>
           <h3>Leitura sem Julgamentos</h3>
           <p>
-            Leia o que quiser, onde quiser. A capa do livro é só sua ninguém
+            Leia o que quiser, onde quiser. A capa do livro é só sua — ninguém
             precisa saber o que você está lendo.
           </p>
         </div>
@@ -1129,7 +1248,6 @@
           position: relative;
           overflow: hidden;
         "
-        class="advantages-section"
       >
         <!-- ELEMENTOS DECORATIVOS DE FUNDO -->
         <div
@@ -1165,7 +1283,8 @@
         <div style="position: relative; z-index: 2">
           <!-- HEADER REFORMULADO -->
           <div style="text-align: center; margin-bottom: 50px">
-            <!-- Badge de "EXCLUSIVO" (agora é um link para o WhatsApp) -->
+            <!-- Badge de "EXCLUSIVO" -->
+            <!-- [AJUSTADO] Badge agora é um link para o WhatsApp -->
             <a
               href="https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
               target="_blank"
@@ -1198,9 +1317,10 @@
                 color: white;
                 margin: 0 0 15px 0;
                 text-transform: uppercase;
-                text-shadow: 0 0 15px #ffd000, 0 0 30px rgba(255, 208, 0, 0.5);
+                text-shadow:
+                  0 0 15px #ffd000,
+                  0 0 30px rgba(255, 208, 0, 0.5);
               "
-              class="advantages-title"
             >
               VANTAGENS QUE
               <span
@@ -1237,7 +1357,6 @@
               grid-template-columns: repeat(3, 1fr);
               gap: 25px;
             "
-            class="advantages-grid"
           >
             <!-- CARD 1 - PESO ZERO -->
             <div
@@ -1261,7 +1380,6 @@
                 this.style.borderColor = 'rgba(255,208,0,0.3)';
                 this.style.boxShadow = 'none';
               "
-              class="advantage-card"
             >
               <div
                 style="
@@ -1411,7 +1529,6 @@
                 this.style.borderColor = 'rgba(255,208,0,0.3)';
                 this.style.boxShadow = 'none';
               "
-              class="advantage-card"
             >
               <div
                 style="
@@ -1523,7 +1640,7 @@
               </div>
             </div>
 
-            <!-- CARD 3 - PRIVACIDADE -->
+            <!-- CARD 3 - SEM JULGAMENTOS -->
             <div
               style="
                 background: rgba(255, 255, 255, 0.05);
@@ -1545,7 +1662,6 @@
                 this.style.borderColor = 'rgba(255,208,0,0.3)';
                 this.style.boxShadow = 'none';
               "
-              class="advantage-card"
             >
               <div
                 style="
@@ -1620,8 +1736,8 @@
                   margin-bottom: 20px;
                 "
               >
-                Leia o que quiser, onde quiser. A capa do livro é só sua ninguém
-                precisa saber o que você está lendo.
+                Leia o que quiser, onde quiser. A capa do livro é só sua —
+                ninguém precisa saber o que você está lendo.
               </p>
 
               <div
@@ -1679,7 +1795,6 @@
                 this.style.borderColor = 'rgba(255,208,0,0.3)';
                 this.style.boxShadow = 'none';
               "
-              class="advantage-card"
             >
               <div
                 style="
@@ -1824,7 +1939,6 @@
                 this.style.borderColor = 'rgba(255,208,0,0.3)';
                 this.style.boxShadow = 'none';
               "
-              class="advantage-card"
             >
               <div
                 style="
@@ -1942,7 +2056,6 @@
                 this.style.borderColor = 'rgba(255,208,0,0.3)';
                 this.style.boxShadow = 'none';
               "
-              class="advantage-card"
             >
               <div
                 style="
@@ -2064,7 +2177,6 @@
                 this.style.boxShadow = '0 15px 30px rgba(255,208,0,0.2)'
               "
               onmouseout="this.style.boxShadow = 'none'"
-              class="advantage-card-full"
             >
               <div
                 style="
@@ -2128,6 +2240,7 @@
                 border: 1px solid rgba(255, 208, 0, 0.3);
               "
             >
+              <!-- [AJUSTADO] Link para abrir a estante em nova aba -->
               <p style="margin: 0; color: #ffd000; font-size: 1.2rem">
                 <i class="fas fa-check-circle" style="margin-right: 10px"></i>
                 Todos os benefícios já estão ativos no seu plano.
@@ -2150,7 +2263,7 @@
         </div>
       </div>
 
-      <!-- ANIMAÇÃO GLOW (estilo CSS inline) -->
+      <!-- ANIMAÇÃO GLOW -->
       <style>
         @keyframes glowPulse {
           0% {
@@ -2332,7 +2445,6 @@
           position: relative;
           overflow: hidden;
         "
-        class="guide-section"
       >
         <!-- ELEMENTOS DECORATIVOS DE FUNDO -->
         <div
@@ -2381,7 +2493,8 @@
         <div style="position: relative; z-index: 2">
           <!-- HEADER REFORMULADO -->
           <div style="text-align: center; margin-bottom: 50px">
-            <!-- Badge de "ATIVAÇÃO SIMPLES" (agora é um link para a estante) -->
+            <!-- Badge de "ATIVAÇÃO SIMPLES" -->
+            <!-- [AJUSTADO] Badge agora é um link para a estante -->
             <a
               href="https://netmax.estante.app/login"
               target="_blank"
@@ -2415,7 +2528,6 @@
                 margin: 0 0 15px 0;
                 text-transform: uppercase;
               "
-              class="guide-title"
             >
               COMO ACESSAR SUA
               <span style="color: #ffd000; display: block; margin-top: 5px"
@@ -2445,7 +2557,6 @@
               gap: 30px;
               margin-bottom: 40px;
             "
-            class="steps-grid"
           >
             <!-- PASSO 1 - CONECTE-SE -->
             <div
@@ -2468,7 +2579,6 @@
                 this.style.borderColor = 'rgba(255,208,0,0.2)';
                 this.style.boxShadow = 'none';
               "
-              class="step-card"
             >
               <div
                 style="
@@ -2579,7 +2689,6 @@
                 this.style.borderColor = 'rgba(255,208,0,0.2)';
                 this.style.boxShadow = 'none';
               "
-              class="step-card"
             >
               <div
                 style="
@@ -2702,7 +2811,6 @@
                 this.style.borderColor = 'rgba(255,208,0,0.2)';
                 this.style.boxShadow = 'none';
               "
-              class="step-card"
             >
               <div
                 style="
@@ -2877,6 +2985,7 @@
 
           <!-- CALL TO ACTION PRINCIPAL -->
           <div style="text-align: center; margin-top: 30px">
+            <!-- [AJUSTADO] Link para abrir a estante em nova aba -->
             <a
               href="https://netmax.estante.app/login"
               target="_blank"
@@ -2907,7 +3016,6 @@
                 this.style.color = '#000';
                 this.style.borderColor = 'white';
               "
-              class="cta-button"
             >
               <i class="fas fa-book-open" style="font-size: 2rem"></i>
               <span>ACESSAR MINHA ESTANTE AGORA</span>
@@ -2994,7 +3102,7 @@
       </div>
 
       <script>
-        // Script simples para FAQ (abrir/fechar respostas)
+        // Script simples para FAQ
         document.querySelectorAll(".estante-faq-item").forEach((item) => {
           item.addEventListener("click", function () {
             const p = this.querySelector("p");
@@ -3028,7 +3136,7 @@
         >
           Se você já é assinante, a sua nova biblioteca particular te espera.
         </p>
-        <!-- Botão principal para acessar a estante -->
+        <!-- [AJUSTADO] Botão para abrir o link da estante em nova aba -->
         <button
           class="btn-primary pulse-btn"
           style="
@@ -3057,7 +3165,7 @@
         </button>
       </div>
 
-      <!-- CHAMADA PARA ASSINATURA (para não assinantes) -->
+      <!-- CHAMADA PARA ASSINATURA -->
       <div
         style="
           background: rgba(0, 0, 0, 0.05);
@@ -3075,7 +3183,7 @@
           leve todos os benefícios inclusos: Netmax TV, Estante Digital, JornalZ
           e NEWS Periódicos!
         </p>
-        <!-- Link para WhatsApp para assinar -->
+        <!-- [AJUSTADO] Link para o WhatsApp em vez da página inicial -->
         <a
           href="https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
           target="_blank"
@@ -3156,7 +3264,6 @@
       </div>
     </footer>
 
-    <!-- Link para arquivo JavaScript principal -->
     <script src="../assets/js/script.js"></script>
   </body>
 </html>

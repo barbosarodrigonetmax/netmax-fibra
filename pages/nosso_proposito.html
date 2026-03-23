@@ -1,222 +1,475 @@
-<!DOCTYPE html>
+<!doctype html>
 <!-- 
-	===================================================================
-		NETMAX FIBRA - PÁGINA "NOSSO PROPÓSITO"
-	===================================================================
-		Objetivo: Apresentar a história, valores e diferenciais da 
-		          empresa Netmax Fibra, destacando o propósito dos 
-		          fundadores e o compromisso com os clientes.
-		Autor : Rodrigo Barbosa
-		Data  : 23/02/2026
-	===================================================================
+    ===================================================================
+        NETMAX FIBRA - NOSSO PROPÓSITO (COM BOOTSTRAP)
+    ===================================================================
+    Objetivo: Apresentar a história, valores e diferenciais da 
+              empresa Netmax Fibra, destacando o propósito dos 
+              fundadores e o compromisso com os clientes.
+    Autor : Rodrigo Barbosa
+    Data  : 23/02/2026
+    ===================================================================
 -->
-<html lang="pt-BR">
-<!-- Define o idioma principal do documento como português do Brasil -->
-<head>
-    <!-- Meta tags para codificação de caracteres e responsividade -->
-    <meta charset="UTF-8"> <!-- Suporte a caracteres especiais do português -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Adaptação para dispositivos móveis -->
-    
-    <!-- Título da página (aparece na aba do navegador) -->
-    <title>Netmax Fibra - Nosso Propósito</title>
-    
-    <!-- Link para o arquivo CSS principal do site -->
-    <link rel="stylesheet" href="../assets/css/styles.css">
-    <!-- Link para a biblioteca Font Awesome (ícones) versão 6 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
 
-    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
-    <!-- Link direto para o WhatsApp da empresa com mensagem pré-definida -->
-    <a href="https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra." 
-       class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-        <!-- Ícone do WhatsApp (Font Awesome) -->
-        <i class="fab fa-whatsapp"></i>
-        <!-- Tooltip (texto que aparece ao passar o mouse) -->
-        <span class="whatsapp-tooltip">Fale conosco!</span>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netmax Fibra - Nosso Propósito</title>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* Estilos adicionais específicos para garantir responsividade da página Nosso Propósito */
+      @media (max-width: 1024px) {
+        .diferenciais-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 25px !important;
+        }
+
+        .proposito-highlight p:first-child {
+          font-size: 1.6rem !important;
+        }
+
+        .proposito-highlight p {
+          font-size: 1.2rem !important;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero .hero-title {
+          font-size: 2.2rem !important;
+        }
+
+        .hero .subtitle-premium {
+          font-size: 1.4rem !important;
+          padding: 20px !important;
+        }
+
+        .proposito-container {
+          padding: 30px 15px !important;
+        }
+
+        .irmaos-image {
+          height: 250px !important;
+        }
+
+        .irmaos-image .overlay-text {
+          font-size: 1.2rem !important;
+          padding: 15px !important;
+        }
+
+        .proposito-highlight {
+          padding: 30px 20px !important;
+          margin: 30px 0 !important;
+        }
+
+        .proposito-highlight p:first-child {
+          font-size: 1.3rem !important;
+          margin-bottom: 20px !important;
+        }
+
+        .proposito-highlight p {
+          font-size: 1.1rem !important;
+          line-height: 1.6 !important;
+        }
+
+        .diferenciais-grid {
+          grid-template-columns: 1fr !important;
+          gap: 20px !important;
+          margin: 30px 0 !important;
+        }
+
+        .diferencial-card {
+          padding: 25px !important;
+        }
+
+        .diferencial-card h3 {
+          font-size: 1.5rem !important;
+        }
+
+        .diferencial-card h3 i {
+          font-size: 1.8rem !important;
+        }
+
+        .diferencial-card p {
+          font-size: 1rem !important;
+        }
+
+        .missao-box {
+          padding: 40px 25px !important;
+          margin: 40px 0 !important;
+        }
+
+        .missao-box p {
+          font-size: 1.3rem !important;
+        }
+
+        .missao-box .autor {
+          font-size: 1rem !important;
+        }
+
+        .rodape-proposito {
+          padding: 20px !important;
+        }
+
+        .rodape-proposito p {
+          font-size: 1rem !important;
+        }
+
+        .rodape-proposito p:first-child {
+          font-size: 1.2rem !important;
+        }
+
+        .ecosystem-title {
+          font-size: 1.8rem !important;
+          padding: 20px 15px !important;
+        }
+
+        .ecosystem-title .price-fire {
+          font-size: 2rem !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero .hero-title {
+          font-size: 1.8rem !important;
+        }
+
+        .hero .subtitle-premium {
+          font-size: 1.2rem !important;
+        }
+
+        .irmaos-image {
+          height: 200px !important;
+        }
+
+        .irmaos-image .overlay-text {
+          font-size: 0.9rem !important;
+          padding: 10px !important;
+        }
+
+        .irmaos-image .overlay-text i {
+          font-size: 2rem !important;
+        }
+
+        .proposito-highlight p:first-child {
+          font-size: 1.2rem !important;
+        }
+
+        .proposito-highlight p {
+          font-size: 1rem !important;
+        }
+
+        .diferencial-card h3 {
+          font-size: 1.3rem !important;
+        }
+
+        .diferencial-card h3 i {
+          font-size: 1.5rem !important;
+        }
+
+        .missao-box p {
+          font-size: 1.1rem !important;
+        }
+
+        .ecosystem-title {
+          font-size: 1.5rem !important;
+        }
+
+        .ecosystem-title .price-fire {
+          font-size: 1.8rem !important;
+          display: block !important;
+          margin-top: 10px !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a
+      href="https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
+      class="whatsapp-float"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <i class="fab fa-whatsapp"></i>
+      <span class="whatsapp-tooltip">Fale conosco!</span>
     </a>
 
-    <!-- CABEÇALHO PADRÃO DO SITE -->
+    <!-- HEADER PADRÃO -->
     <header class="header">
-        <!-- Área de destaque com logo e slogan -->
-        <div class="logo-area-highlight">
-            <!-- Logo da empresa (formato JPG) -->
-            <img src="../assets/images/logos/logo_netmax.jpg" alt="Logo Netmax" class="logo-netmax-big">
-            <!-- Slogan principal -->
-            <h1 class="slogan-top">A velocidade que conecta você ao mundo e ao conhecimento.</h1>
-        </div>
-        
-        <!-- CENTRAL DO ASSINANTE - Área de acesso do cliente -->
-        <div class="assinante-container">
-            <!-- Link para o portal do assinante (abre em nova aba) -->
-            <a href="https://netmax.net.br/" class="assinante-link" target="_blank" rel="noopener noreferrer">
-                <!-- Ícone de usuário (Font Awesome) -->
-                <div class="assinante-icon">
-                    <i class="fas fa-user-circle"></i>
-                </div>
-                <!-- Texto "CENTRAL DO ASSINANTE" com quebra de linha -->
-                <span class="assinante-text">CENTRAL DO<br>ASSINANTE</span>
-            </a>
-        </div>
+      <div class="logo-area-highlight">
+        <img
+          src="../assets/images/logos/logo_netmax.JPG"
+          alt="Logo Netmax"
+          class="logo-netmax-big"
+        />
+        <h1 class="slogan-top">
+          A velocidade que conecta você ao mundo e ao conhecimento.
+        </h1>
+      </div>
 
-        <!-- BOTÃO HAMBÚRGUER PARA MOBILE -->
-        <div class="menu-toggle" id="menu-toggle">
-            <i class="fas fa-bars"></i>
-        </div>
+      <!-- CENTRAL DO ASSINANTE -->
+      <div class="assinante-container">
+        <a
+          href="https://netmax.net.br/"
+          class="assinante-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="assinante-icon">
+            <i class="fas fa-user-circle"></i>
+          </div>
+          <span class="assinante-text">CENTRAL DO<br />ASSINANTE</span>
+        </a>
+      </div>
 
-        <!-- MENU DE NAVEGAÇÃO PRINCIPAL -->
-        <nav class="nav-menu" id="nav-menu">
-            <a href="../index.html">PÁGINA INICIAL</a> <!-- Link para home -->
-            <a href="estante_digital.html">ESTANTE DIGITAL NETMAX</a> <!-- Link para estante digital -->
-            <a href="jornalz.html">JORNALZ</a> <!-- Link para jornal -->
-            <a href="news_periodicos.html">NEWS PERIÓDICOS</a> <!-- Link para news/periódicos -->
-            <a href="netmax_tv.html">NETMAX TV</a> <!-- Link para Netmax TV -->
-            <!-- Item atual (página "Nosso Propósito") - destacado em amarelo -->
-            <a href="#" style="color: #FFD000; font-weight: bold;">NOSSO PROPÓSITO</a>
-            <!-- Link para página "Por que escolher" -->
-            <a href="por_que_escolher_a_netmax.html">POR QUE ESCOLHER A NETMAX</a>
-        </nav>
+      <!-- MENU DE NAVEGAÇÃO -->
+      <nav class="nav-menu">
+        <a href="../index.html">PÁGINA INICIAL</a>
+        <a href="estante_digital.html">ESTANTE DIGITAL NETMAX</a>
+        <a href="jornalz.html">JORNALZ</a>
+        <a href="news_periodicos.html">NEWS PERIÓDICOS</a>
+        <a href="netmax_tv.html">NETMAX TV</a>
+        <a href="#" style="color: #ffd000; font-weight: bold"
+          >NOSSO PROPÓSITO</a
+        >
+        <a href="por_que_escolher_a_netmax.html">POR QUE ESCOLHER A NETMAX</a>
+      </nav>
     </header>
 
-    <!-- SEÇÃO HERO (DESTAQUE) DA PÁGINA -->
+    <!-- HERO DA PÁGINA -->
     <section class="hero hero-boosted">
-        <!-- Título principal com efeito visual (classe price-fire) -->
-        <h1 class="hero-title">
-            <span class="price-fire">NOSSO PROPÓSITO</span>
-        </h1>
-        <!-- Subtítulo com classe premium -->
-        <p class="subtitle subtitle-premium">
-            Mais que internet, uma conexão feita por quem se importa.
-        </p>
+      <h1 class="hero-title">
+        <span class="price-fire">NOSSO PROPÓSITO</span>
+      </h1>
+      <p class="subtitle subtitle-premium">
+        Mais que internet, uma conexão feita por quem se importa.
+      </p>
     </section>
 
-    <!-- CONTEÚDO PRINCIPAL DA PÁGINA -->
-    <section class="ecosystem" style="padding-top: 60px;"> <!-- Classe ecosystem reutilizada -->
-        <div class="proposito-container"> <!-- Container específico para propósito -->
-            
-            <!-- ÁREA DOS IRMÃOS FUNDADORES (SIMULADA) -->
-            <div class="irmaos-image">
-                <!-- Texto sobreposto à imagem (ícone + nomes) -->
-                <div class="overlay-text">
-                    <i class="fas fa-users" style="font-size: 4rem; margin-bottom: 15px;"></i><br>
-                    JULIANO • JULIO CESAR • ISAAC VILAS BOAS
-                </div>
-            </div>
-            
-            <!-- TEXTO DE ABERTURA - História e propósito da empresa -->
-            <div class="proposito-highlight">
-                <!-- Parágrafo de destaque com ícone de raio -->
-                <p>⚡ Toda a nossa tecnologia e excelência existe com um único propósito: fazer com que você, cliente, tenha uma vida mais fácil, sem preocupações e com a melhor experiência possível.</p>
-                
-                <!-- Parágrafo sobre a origem da empresa e fundadores -->
-                <p>A <strong>Netmax</strong> nasceu em <strong>Siqueira Campos, no coração do Paraná</strong>, de um sonho compartilhado por três irmãos: <strong>Juliano, Julio Cesar e Isaac Vilas Boas</strong>. Mais do que empreendedores, somos como você: pessoas que valorizam uma conexão de verdade, que não abrem mão da qualidade e que acreditam que a tecnologia deve servir para aproximar, e não para complicar.</p>
-                
-                <!-- Parágrafo sobre o diferencial da empresa (ênfase em negrito) -->
-                <p><strong>Mas, para nós, ser o melhor provedor de fibra óptica da região vai muito além dos 1000 megas de velocidade.</strong> Significa ter uma equipe técnica altamente qualificada, que está sempre de prontidão. Significa ter os proprietários com a mão na massa, acompanhando cada instalação, cada melhoria, e trabalhando incansavelmente ao lado do time.</p>
-            </div>
-            
-            <!-- TÍTULO DA SEÇÃO DE DIFERENCIAIS (COM DESTAQUE) -->
-            <h2 class="ecosystem-title" style="margin: 60px auto 30px auto; max-width: 900px; padding: 35px 25px; text-align: center; font-size: 2rem;">
-                 POR QUE O CLIENTE NETMAX 
-               <!-- Segunda linha com efeito visual (classe price-fire) -->
-               <span class="price-fire" style="font-size: 2.5rem; display: block; margin-top: 15px; text-align: center; width: 100%;">
-                 SENTE ESSA DIFERENÇA?
-               </span>
-            </h2>
-            
-            <!-- GRID DE DIFERENCIAIS (cards com ícones e texto) -->
-            <div class="diferenciais-grid">
-                <!-- Card 1: Proprietários Presentes -->
-                <div class="diferencial-card">
-                    <h3><i class="fas fa-home"></i> Proprietários Presentes</h3>
-                    <p>Juliano, Julio Cesar e Isaac não são sócios que ficam atrás de uma mesa. Eles estão na rua, visitando clientes, conhecendo cada bairro e fazendo questão de estar perto de você. <strong>A gente sabe seu nome, conhece sua rua e entende as suas necessidades.</strong></p>
-                </div>
-                
-                <!-- Card 2: Equipe Qualificada -->
-                <div class="diferencial-card">
-                    <h3><i class="fas fa-tools"></i> Equipe Qualificada e Respeitosa</h3>
-                    <p>Nossos técnicos são mais do que profissionais preparados; eles são o nosso cartão de visitas. Tratam sua casa com o mesmo cuidado que tratariam a própria casa, levando a solução com respeito e agilidade.</p>
-                </div>
-                
-                <!-- Card 3: Tecnologia Renovada -->
-                <div class="diferencial-card">
-                    <h3><i class="fas fa-microchip"></i> Tecnologia Sempre Renovada</h3>
-                    <p>A gente não terceiriza a responsabilidade. Estamos constantemente renovando equipamentos e buscando o que há de mais moderno no mercado para fazer parte do nosso sistema. É assim que garantimos um sinal forte e estável em todos os cômodos, sem surpresas.</p>
-                </div>
-                
-                <!-- Card 4: Responsabilidade -->
-                <div class="diferencial-card">
-                    <h3><i class="fas fa-heart"></i> Responsabilidade de Verdade</h3>
-                    <p>Na Netmax, quando o sinal chega forte na sua casa, a gente sabe que o nosso trabalho está bem feito. Por isso, não descansamos enquanto você não estiver 100% satisfeito.</p>
-                </div>
-            </div>
-            
-            <!-- FRASE DE DESTAQUE (emoji + texto em negrito) -->
-            <div class="proposito-highlight" style="margin: 30px 0;">
-                <p style="font-size: 2rem; text-align: center; margin-bottom: 0;">💪</p> <!-- Emoji grande -->
-                <p style="font-size: 1.8rem; text-align: center; font-weight: bold; color: #000;" class="highlight-phrase">
-                    A gente capricha na tecnologia para que você não tenha dor de cabeça e possa usar a internet sossegado.
-                </p>
-            </div>
-            
-            <!-- BOX DA MISSÃO DA EMPRESA -->
-            <div class="missao-box">
-                <p>
-                    Oferecer a você e sua família o máximo conforto, a tranquilidade de uma conexão que funciona e a certeza de que, atrás da fibra, existem pessoas que realmente se importam.
-                </p>
-                <!-- Assinatura/autor da mensagem -->
-                <div class="autor">
-                    Equipe Netmax
-                </div>
-            </div>
-            
-            <!-- RODAPÉ DO PROPÓSITO (frase final) -->
-            <div class="rodape-proposito">
-                <p>⚡ Netmax: Feita por quem entende, administrada por quem se importa.</p>
-            </div>
-            
-        </div> <!-- Fim proposito-container -->
-    </section> <!-- Fim seção ecosystem -->
+    <!-- CONTEÚDO PRINCIPAL -->
+    <section class="ecosystem" style="padding-top: 60px">
+      <div class="proposito-container">
+        <!-- IMAGEM DOS IRMÃOS (SIMULADA) -->
+        <div class="irmaos-image">
+          <div class="overlay-text">
+            <i
+              class="fas fa-users"
+              style="font-size: 4rem; margin-bottom: 15px"
+            ></i
+            ><br />
+            JULIANO • JULIO CESAR • ISAAC VILAS BOAS
+          </div>
+        </div>
 
-    <!-- RODAPÉ PADRÃO DO SITE -->
+        <!-- TEXTO DE ABERTURA -->
+        <div class="proposito-highlight">
+          <p>
+            ⚡ Toda a nossa tecnologia e excelência existe com um único
+            propósito: fazer com que você, cliente, tenha uma vida mais fácil,
+            sem preocupações e com a melhor experiência possível.
+          </p>
+
+          <p>
+            A <strong>Netmax</strong> nasceu em
+            <strong>Siqueira Campos, no coração do Paraná</strong>, de um sonho
+            compartilhado por três irmãos:
+            <strong>Juliano, Julio Cesar e Isaac Vilas Boas</strong>. Mais do
+            que empreendedores, somos como você: pessoas que valorizam uma
+            conexão de verdade, que não abrem mão da qualidade e que acreditam
+            que a tecnologia deve servir para aproximar, e não para complicar.
+          </p>
+
+          <p>
+            <strong
+              >Mas, para nós, ser o melhor provedor de fibra óptica da região
+              vai muito além dos 1000 megas de velocidade.</strong
+            >
+            Significa ter uma equipe técnica altamente qualificada, que está
+            sempre de prontidão. Significa ter os proprietários com a mão na
+            massa, acompanhando cada instalação, cada melhoria, e trabalhando
+            incansavelmente ao lado do time.
+          </p>
+        </div>
+
+        <!-- TÍTULO SEÇÃO DIFERENCIAIS -->
+        <h2
+          class="ecosystem-title"
+          style="
+            margin: 60px auto 30px auto;
+            max-width: 900px;
+            padding: 35px 25px;
+            text-align: center;
+            font-size: 2rem;
+          "
+        >
+          POR QUE O CLIENTE NETMAX
+          <span
+            class="price-fire"
+            style="
+              font-size: 2.5rem;
+              display: block;
+              margin-top: 15px;
+              text-align: center;
+              width: 100%;
+            "
+          >
+            SENTE ESSA DIFERENÇA?
+          </span>
+        </h2>
+
+        <!-- GRID DE DIFERENCIAIS -->
+        <div class="diferenciais-grid">
+          <div class="diferencial-card">
+            <h3><i class="fas fa-home"></i> Proprietários Presentes</h3>
+            <p>
+              Juliano, Julio Cesar e Isaac não são sócios que ficam atrás de uma
+              mesa. Eles estão na rua, visitando clientes, conhecendo cada
+              bairro e fazendo questão de estar perto de você.
+              <strong
+                >A gente sabe seu nome, conhece sua rua e entende as suas
+                necessidades.</strong
+              >
+            </p>
+          </div>
+
+          <div class="diferencial-card">
+            <h3>
+              <i class="fas fa-tools"></i> Equipe Qualificada e Respeitosa
+            </h3>
+            <p>
+              Nossos técnicos são mais do que profissionais preparados; eles são
+              o nosso cartão de visitas. Tratam sua casa com o mesmo cuidado que
+              tratariam a própria casa, levando a solução com respeito e
+              agilidade.
+            </p>
+          </div>
+
+          <div class="diferencial-card">
+            <h3><i class="fas fa-microchip"></i> Tecnologia Sempre Renovada</h3>
+            <p>
+              A gente não terceiriza a responsabilidade. Estamos constantemente
+              renovando equipamentos e buscando o que há de mais moderno no
+              mercado para fazer parte do nosso sistema. É assim que garantimos
+              um sinal forte e estável em todos os cômodos, sem surpresas.
+            </p>
+          </div>
+
+          <div class="diferencial-card">
+            <h3><i class="fas fa-heart"></i> Responsabilidade de Verdade</h3>
+            <p>
+              Na Netmax, quando o sinal chega forte na sua casa, a gente sabe
+              que o nosso trabalho está bem feito. Por isso, não descansamos
+              enquanto você não estiver 100% satisfeito.
+            </p>
+          </div>
+        </div>
+
+        <!-- FRASE DE DESTAQUE -->
+        <div class="proposito-highlight" style="margin: 30px 0">
+          <p style="font-size: 2rem; text-align: center; margin-bottom: 0">
+            💪
+          </p>
+          <p
+            style="
+              font-size: 1.8rem;
+              text-align: center;
+              font-weight: bold;
+              color: #000;
+            "
+          >
+            A gente capricha na tecnologia para que você não tenha dor de cabeça
+            e possa usar a internet sossegado.
+          </p>
+        </div>
+
+        <!-- MISSÃO -->
+        <div class="missao-box">
+          <p>
+            Oferecer a você e sua família o máximo conforto, a tranquilidade de
+            uma conexão que funciona e a certeza de que, atrás da fibra, existem
+            pessoas que realmente se importam.
+          </p>
+          <div class="autor">Equipe Netmax</div>
+        </div>
+
+        <!-- RODAPÉ DO PROPÓSITO -->
+        <div class="rodape-proposito">
+          <p>
+            ⚡ Netmax: Feita por quem entende, administrada por quem se importa.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER PADRÃO -->
     <footer class="footer">
-        <div class="footer-content">
-            <!-- Informações legais e de contato -->
-            <div class="footer-text">
-                <p>© 2024 Netmax Fibra - Todos os Direitos Reservados</p>
-                <p>CNPJ: 48.287.603/0001-42</p> <!-- CNPJ placeholder -->
-                <p>Rua Rio Grande do Sul, 1460 - Bairro Santuário - Siqueira Campos - PR</p>
-            </div>
-            
-            <!-- REDES SOCIAIS (links com ícones SVG) -->
-            <div class="footer-social">
-                <!-- Instagram -->
-                <a href="https://instagram.com/netmaxfibra" target="_blank" rel="noopener noreferrer">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/instagram.svg" alt="Instagram" width="20" height="20">
-                    <span>Instagram</span>
-                </a>
-                <!-- Facebook -->
-                <a href="https://facebook.com/netmaxfibra" target="_blank" rel="noopener noreferrer">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/facebook.svg" alt="Facebook" width="20" height="20">
-                    <span>Facebook</span>
-                </a>
-                <!-- WhatsApp (repetido, mas com texto diferente) -->
-                <a href="https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra." target="_blank" rel="noopener noreferrer">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/whatsapp.svg" alt="WhatsApp" width="20" height="20">
-                    <span>Fale Conosco</span>
-                </a>
-            </div>
-            
-            <!-- COPYRIGHT E CRÉDITOS -->
-            <div class="footer-copyright">
-                <p>Netmax Fibra - A velocidade que conecta você ao mundo e ao conhecimento.</p>
-                <p>Desenvolvido com 💛 para nossos clientes</p>
-            </div>
-        </div> <!-- Fim footer-content -->
+      <div class="footer-content">
+        <div class="footer-text">
+          <p>© 2024 Netmax Fibra - Todos os Direitos Reservados</p>
+          <p>CNPJ: 48.287.603/0001-42</p>
+          <p>
+            Rua Rio Grande do Sul, 1460 - Bairro Santuário - Siqueira Campos -
+            PR
+          </p>
+        </div>
+
+        <div class="footer-social">
+          <a
+            href="https://instagram.com/netmaxfibra"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/instagram.svg"
+              alt="Instagram"
+              width="20"
+              height="20"
+            />
+            <span>Instagram</span>
+          </a>
+          <a
+            href="https://facebook.com/netmaxfibra"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/facebook.svg"
+              alt="Facebook"
+              width="20"
+              height="20"
+            />
+            <span>Facebook</span>
+          </a>
+          <a
+            href="https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/whatsapp.svg"
+              alt="WhatsApp"
+              width="20"
+              height="20"
+            />
+            <span>Fale Conosco</span>
+          </a>
+        </div>
+
+        <div class="footer-copyright">
+          <p>
+            Netmax Fibra - A velocidade que conecta você ao mundo e ao
+            conhecimento.
+          </p>
+          <p>Desenvolvido com 💛 para nossos clientes</p>
+        </div>
+      </div>
     </footer>
 
-    <!-- Script JavaScript principal (para interatividade) -->
     <script src="../assets/js/script.js"></script>
-</body>
+  </body>
 </html>

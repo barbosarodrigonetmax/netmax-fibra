@@ -1,3 +1,39 @@
+========================================================================================================================================================================
+========================================================================================================================================================================
+# Netmax Fibra - Website Rebuilt (Bootstrap Edition)
+
+Este projeto consiste na reconstrução completa do portal institucional da **Netmax Fibra**. O site foi modernizado utilizando Bootstrap 5, garantindo total responsividade e uma interface de usuário otimizada, mantendo a identidade visual clássica da marca.
+
+## 🎨 Identidade Visual
+- **Cor Primária:** #FFD000 (Amarelo Netmax)
+- **Cor Secundária:** #000000 (Preto)
+- **Tipografia:** Segoe UI / Arial
+
+## 🛠️ Tecnologias Utilizadas
+- **HTML5:** Estrutura semântica.
+- **CSS3:** Estilizações personalizadas e animações de pulsação.
+- **JavaScript (Vanilla):** Lógica de modais e integração com WhatsApp.
+- **Bootstrap 5:** Sistema de grid, utilitários e componentes responsivos.
+- **Font Awesome 6:** Ícones vetoriais.
+
+## 📂 Estrutura de Arquivos
+- `/index.html`: Página principal com planos e benefícios.
+- `/netmax_tv.html`: Página dedicada ao serviço de TV com modais de ativação.
+- `/estante_digital.html`: Detalhes do benefício de livros.
+- `/jornalz.html` & `/news_periodicos.html`: Portais de conteúdo.
+- `/nosso_proposito.html` & `/por_que_escolher_a_netmax.html`: Páginas institucionais.
+- `/assets/css/styles.css`: Estilos customizados e overrides do Bootstrap.
+- `/assets/js/script.js`: Comportamento dinâmico.
+
+## 🚀 Como Executar
+Basta abrir o arquivo `index.html` em qualquer navegador moderno. Não é necessário servidor backend, pois o site é estático.
+
+---
+*Desenvolvido para Netmax Fibra - Conectando você ao mundo.*
+========================================================================================================================================================================
+========================================================================================================================================================================
+
+
 # 📡 NETMAX FIBRA - O Site que é Mais Rápido que Nossa Internet (Quase)
 
 ![Netmax Logo](assets/images/logos/logo_netmax.JPG)
