@@ -2363,6 +2363,17 @@ a:has(.super-price) {
   .news-cta-box p {
     font-size: 1.2rem;
   }
+
+  /* ===== AJUSTES PARA PÁGINA "POR QUE ESCOLHER A NETMAX" ===== */
+  .benefits-grid.big-cards {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 30px !important;
+  }
+
+  .super-price {
+    font-size: 2.2rem !important;
+    padding: 25px 40px !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -2617,6 +2628,107 @@ a:has(.super-price) {
   .proposito-highlight p {
     font-size: 1.1rem;
   }
+
+  /* ===== AJUSTES PARA PÁGINA "POR QUE ESCOLHER A NETMAX" ===== */
+  .hero .hero-title {
+    font-size: 2rem !important;
+  }
+
+  .hero .subtitle-premium {
+    font-size: 1.3rem !important;
+    padding: 20px !important;
+  }
+
+  .ecosystem {
+    padding: 60px 20px !important;
+  }
+
+  .ecosystem-title {
+    font-size: 1.8rem !important;
+    padding: 20px 15px !important;
+    margin-bottom: 30px !important;
+  }
+
+  .benefits-grid.big-cards {
+    grid-template-columns: 1fr !important;
+    gap: 25px !important;
+    margin: 40px 0 !important;
+  }
+
+  .benefit-card {
+    padding: 30px 20px !important;
+    min-height: auto !important;
+  }
+
+  .benefit-card i {
+    font-size: 3rem !important;
+    margin-bottom: 15px !important;
+  }
+
+  .benefit-card h3 {
+    font-size: 1.3rem !important;
+    margin-bottom: 10px !important;
+  }
+
+  .benefit-card p {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .super-price {
+    font-size: 1.8rem !important;
+    padding: 20px 30px !important;
+    margin-top: 40px !important;
+  }
+
+  .super-price p:first-child {
+    font-size: 1.3rem !important;
+  }
+
+  .super-price p:first-of-type {
+    font-size: 1.3rem !important;
+  }
+
+  .super-price p:nth-child(2) {
+    font-size: 2.5rem !important;
+  }
+
+  .super-price .btn-primary {
+    font-size: 1.3rem !important;
+    padding: 15px 30px !important;
+  }
+
+  .sobre,
+  .parceiros {
+    padding: 40px 25px !important;
+    margin: 20px !important;
+  }
+
+  .sobre h2,
+  .parceiros h2 {
+    font-size: 1.8rem !important;
+    margin-bottom: 30px !important;
+  }
+
+  .sobre p,
+  .parceiros p {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 20px !important;
+  }
+
+  .partner-logos {
+    gap: 25px !important;
+  }
+
+  .partner-logo {
+    width: 100px !important;
+  }
+
+  [style*="margin-top: 60px"] .btn-primary {
+    font-size: 1.3rem !important;
+    padding: 15px 30px !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -2787,6 +2899,56 @@ a:has(.super-price) {
   }
   .rodape-proposito p {
     font-size: 1rem;
+  }
+
+  /* ===== AJUSTES PARA PÁGINA "POR QUE ESCOLHER A NETMAX" ===== */
+  .hero .hero-title {
+    font-size: 1.6rem !important;
+  }
+
+  .hero .subtitle-premium {
+    font-size: 1.1rem !important;
+    padding: 15px !important;
+  }
+
+  .ecosystem-title {
+    font-size: 1.5rem !important;
+    padding: 15px !important;
+  }
+
+  .benefit-card h3 {
+    font-size: 1.2rem !important;
+  }
+
+  .benefit-card p {
+    font-size: 0.9rem !important;
+  }
+
+  .super-price {
+    font-size: 1.5rem !important;
+    padding: 15px 20px !important;
+  }
+
+  .super-price p:first-of-type {
+    font-size: 1.1rem !important;
+  }
+
+  .super-price p:nth-child(2) {
+    font-size: 2rem !important;
+  }
+
+  .sobre h2,
+  .parceiros h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .partner-logo {
+    width: 80px !important;
+  }
+
+  [style*="margin-top: 60px"] .btn-primary {
+    font-size: 1.1rem !important;
+    padding: 12px 25px !important;
   }
 }
 
@@ -3207,10 +3369,10 @@ a:has(.super-price) {
 }
 
 .instruction-item span {
-  font-size: 1.15rem; /* Ajustado de 0.95rem para 1.15rem (cerca de 21% de aumento) */
+  font-size: 1.15rem;
   color: #333;
-  line-height: 1.6; /* Aumentado ligeiramente para melhor legibilidade */
-  font-weight: 500; /* Adicionado um peso de fonte médio para mais nitidez */
+  line-height: 1.6;
+  font-weight: 500;
 }
 
 .instruction-item strong {
@@ -3317,9 +3479,8 @@ a:has(.super-price) {
     padding: 15px 20px;
   }
 
-  /* Ajuste responsivo para o texto da instrução */
   .instruction-item span {
-    font-size: 1.05rem; /* Reduz ligeiramente em tablets, mas mantém o aumento */
+    font-size: 1.05rem;
   }
 }
 
@@ -3342,9 +3503,8 @@ a:has(.super-price) {
     border-radius: 30px;
   }
 
-  /* Ajuste responsivo para o texto da instrução em dispositivos móveis */
   .instruction-item span {
-    font-size: 1rem; /* Ainda maior que o original (0.95rem), mas ajustado para telas pequenas */
+    font-size: 1rem;
   }
 }
 
@@ -3352,23 +3512,21 @@ a:has(.super-price) {
 /* REDUÇÃO DE 5% NO MODAL DA NETMAX TV (AJUSTADO PARA 0.7125) */
 /* ============================== */
 #tvModal .modal-container {
-  transform: scale(0.7125); /* 5% menor que 0.75 */
+  transform: scale(0.7125);
   transition: transform 0.3s ease;
 }
 
 #tvModal.show .modal-container {
-  transform: scale(0.7125); /* Mantém a escala mesmo quando visível */
+  transform: scale(0.7125);
 }
 
-/* Ajuste para não reduzir duplamente no hover/transitions */
 #tvModal .modal-card {
   transform-origin: center;
 }
 
-/* Ajuste fino para manter a proporção em mobile */
 @media (max-width: 768px) {
   #tvModal .modal-container {
-    transform: scale(0.6625); /* 5% menor que 0.7 */
+    transform: scale(0.6625);
   }
 }
 
@@ -3376,28 +3534,24 @@ a:has(.super-price) {
 /* NOVO MODAL DE ATIVAÇÃO - REDUÇÃO DE 20% E REORGANIZADO */
 /* ============================== */
 #tvAtivacaoModal .modal-container {
-  transform: scale(0.8); /* 20% de redução */
+  transform: scale(0.8);
   transition: transform 0.3s ease;
-  max-width: 950px; /* Ajuste para manter a legibilidade */
-  margin: 20px; /* Ajuste para dar mais espaço nas bordas */
+  max-width: 950px;
+  margin: 20px;
 }
 
 #tvAtivacaoModal.show .modal-container {
-  transform: scale(0.8); /* Mantém a escala mesmo quando visível */
+  transform: scale(0.8);
 }
 
-/* Ajuste fino para manter a proporção em mobile */
 @media (max-width: 768px) {
   #tvAtivacaoModal .modal-container {
-    transform: scale(
-      0.75
-    ); /* 20% de redução em relação ao tamanho base para mobile */
+    transform: scale(0.75);
     max-width: 95%;
     margin: 15px;
   }
 }
 
-/* Estilo para o novo card de destaque no modal de ativação */
 .highlight-card {
   background: linear-gradient(145deg, #ffd000, #ffaa00);
   border: 2px solid #000;
