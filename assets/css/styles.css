@@ -2531,6 +2531,75 @@ a:has(.super-price) {
     min-height: auto;
   }
 
+  /* Ajustes adicionais para o hero da Estante Digital */
+  .estante-hero .hero-grid-container {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+  }
+
+  .estante-hero [style*="text-align: left"] {
+    text-align: center !important;
+  }
+
+  .estante-hero [style*="max-width: 600px"] {
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .estante-hero .hero-circle-container {
+    width: 280px !important;
+    height: 280px !important;
+    margin: 20px auto !important;
+  }
+
+  .estante-hero [style*="width: 280px"] {
+    width: 220px !important;
+    height: 220px !important;
+  }
+
+  .estante-hero [style*="width: 220px"] {
+    width: 180px !important;
+    height: 180px !important;
+  }
+
+  .estante-hero .hero-float-card-right,
+  .estante-hero .hero-float-card-left {
+    display: none !important;
+  }
+
+  /* Ajustes para seção "A magia da leitura digital" */
+  .ecosystem
+    [style*="background: linear-gradient(145deg, #fff9e6 0%, #ffffff 100%)"] {
+    padding: 40px 25px !important;
+  }
+
+  .ecosystem .magia-grid-container {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ecosystem [style*="font-size: 3.2rem"] {
+    font-size: 2.2rem !important;
+  }
+
+  /* Ajustes para seção de vantagens */
+  [style*="background: linear-gradient(145deg, #000000 0%, #1a1a1a 100%)"] {
+    padding: 40px 25px !important;
+  }
+
+  .vantagens-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .vantagens-grid [style*="grid-column: span 3"] {
+    grid-column: span 1 !important;
+  }
+
+  /* Ajustes para seção de passos */
+  .passos-grid {
+    grid-template-columns: 1fr !important;
+  }
+
   /* JornalZ */
   .jornalz-devices {
     gap: 20px;
@@ -2729,6 +2798,85 @@ a:has(.super-price) {
     font-size: 1.3rem !important;
     padding: 15px 30px !important;
   }
+
+  /* Ajustes para botões do hero */
+  .estante-hero [style*="display: flex"][style*="gap: 20px"] {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+  }
+
+  .estante-hero .btn-primary,
+  .estante-hero .btn-secondary {
+    font-size: 1rem !important;
+    padding: 12px 25px !important;
+  }
+
+  /* Ajustes para seção de "Para quem é" */
+  [style*="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Ajustes para CTA principal */
+  .estante-cta-box {
+    padding: 40px 25px !important;
+  }
+
+  .estante-cta-box h2 {
+    font-size: 1.8rem !important;
+  }
+
+  .estante-cta-box p {
+    font-size: 1.1rem !important;
+  }
+
+  .estante-cta-box .btn-primary {
+    font-size: 1.3rem !important;
+    padding: 15px 30px !important;
+  }
+
+  /* Ajustes para FAQ */
+  .estante-faq-item h4 {
+    font-size: 1.1rem !important;
+  }
+
+  .estante-faq-item p {
+    font-size: 1rem !important;
+  }
+
+  /* Ajustes para chamada de assinatura final */
+  [style*="background: rgba(0, 0, 0, 0.05)"] h2 {
+    font-size: 1.6rem !important;
+  }
+
+  [style*="background: rgba(0, 0, 0, 0.05)"] p {
+    font-size: 1.1rem !important;
+  }
+
+  [style*="background: rgba(0, 0, 0, 0.05)"] p strong {
+    font-size: 1.5rem !important;
+  }
+
+  [style*="background: rgba(0, 0, 0, 0.05)"] .btn-primary {
+    font-size: 1.3rem !important;
+    padding: 15px 30px !important;
+  }
+
+  /* Ajustes para o footer */
+  .footer-content {
+    padding: 0 15px;
+  }
+
+  .footer-text p {
+    font-size: 0.9rem;
+  }
+
+  .footer-social a span {
+    display: none;
+  }
+
+  .footer-social a {
+    padding: 10px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -2822,6 +2970,94 @@ a:has(.super-price) {
   }
   .estante-cta-box h2 {
     font-size: 1.8rem;
+  }
+
+  /* Ajustes para o hero da Estante Digital em telas muito pequenas */
+  .estante-hero h1 {
+    font-size: 2.2rem !important;
+  }
+
+  .estante-hero h1 span {
+    font-size: 2.5rem !important;
+  }
+
+  .estante-hero [style*="font-size: 2rem"] {
+    font-size: 1.5rem !important;
+  }
+
+  .estante-hero [style*="font-size: 1.3rem"] {
+    font-size: 1rem !important;
+  }
+
+  .estante-hero .hero-circle-container {
+    width: 240px !important;
+    height: 240px !important;
+  }
+
+  .estante-hero [style*="width: 280px"] {
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  .estante-hero [style*="width: 220px"] {
+    width: 160px !important;
+    height: 160px !important;
+  }
+
+  .estante-hero .btn-primary,
+  .estante-hero .btn-secondary {
+    font-size: 0.9rem !important;
+    padding: 10px 20px !important;
+  }
+
+  .estante-hero [style*="display: flex"][style*="gap: 15px"] {
+    gap: 10px !important;
+  }
+
+  /* Ajustes para seção "A magia da leitura digital" */
+  .ecosystem
+    [style*="background: linear-gradient(145deg, #fff9e6 0%, #ffffff 100%)"] {
+    padding: 30px 20px !important;
+  }
+
+  .ecosystem [style*="font-size: 3.2rem"] {
+    font-size: 1.8rem !important;
+  }
+
+  .ecosystem [style*="font-size: 3.8rem"] {
+    font-size: 2rem !important;
+  }
+
+  .ecosystem [style*="font-size: 1.4rem"] {
+    font-size: 1.1rem !important;
+  }
+
+  /* Ajustes para seção de vantagens */
+  [style*="background: linear-gradient(145deg, #000000 0%, #1a1a1a 100%)"] h2 {
+    font-size: 2rem !important;
+  }
+
+  [style*="background: linear-gradient(145deg, #000000 0%, #1a1a1a 100%)"]
+    h2
+    span {
+    font-size: 2.2rem !important;
+  }
+
+  /* Ajustes para seção de passos */
+  [style*="background: linear-gradient(145deg, #000000 0%, #1a1a1a 100%)"]
+    .btn-primary {
+    font-size: 1.3rem !important;
+    padding: 15px 30px !important;
+  }
+
+  /* Ajustes para o botão final */
+  [style*="background: rgba(0, 0, 0, 0.05)"] .btn-primary {
+    font-size: 1.2rem !important;
+    padding: 12px 25px !important;
+  }
+
+  [style*="background: rgba(0, 0, 0, 0.05)"] p strong {
+    font-size: 1.3rem !important;
   }
 
   /* JornalZ */
