@@ -26,137 +26,381 @@
     />
     <style>
       /* Estilos adicionais específicos para garantir responsividade da página JornalZ */
+      
+      /* Container responsivo do hero */
+      .jornalz-hero-container {
+        max-width: 1300px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 40px;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+      }
+      
+      /* Texto da coluna esquerda */
+      .jornalz-hero-text {
+        text-align: left;
+      }
+      
+      /* Badge */
+      .jornalz-badge {
+        display: inline-block;
+        background: #000;
+        color: #ffd000;
+        font-weight: 800;
+        padding: 8px 25px;
+        border-radius: 40px;
+        font-size: 1.1rem;
+        letter-spacing: 2px;
+        margin-bottom: 25px;
+        border: 2px solid #ffd000;
+      }
+      
+      /* Título principal */
+      .jornalz-hero-title {
+        font-size: 4.2rem;
+        font-weight: 900;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        color: #000;
+        text-shadow: 0 0 20px rgba(255, 208, 0, 0.3);
+        position: relative;
+      }
+      
+      .jornalz-hero-title span {
+        color: #f24f00;
+        font-size: 5rem;
+        text-shadow: 0 0 30px #ffaa00, 0 0 60px #ff5500;
+        animation: firePulse 1.2s infinite ease-in-out;
+        display: inline-block;
+        position: relative;
+        top: -2px;
+      }
+      
+      /* Subtítulo */
+      .jornalz-hero-subtitle {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #000;
+        margin-bottom: 20px;
+      }
+      
+      /* Descrição */
+      .jornalz-hero-description {
+        font-size: 1.3rem;
+        line-height: 1.6;
+        color: #1a1a1a;
+        margin-bottom: 30px;
+        max-width: 600px;
+        font-weight: 500;
+      }
+      
+      /* Botões container */
+      .jornalz-hero-buttons {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      
+      /* Selos container */
+      .jornalz-hero-badges {
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+      
+      .jornalz-hero-badge {
+        background: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(5px);
+        padding: 10px 20px;
+        border-radius: 50px;
+        border: 1px solid #000;
+      }
+      
+      .jornalz-hero-badge-yellow {
+        background: rgba(255, 208, 0, 0.2);
+        backdrop-filter: blur(5px);
+        padding: 10px 20px;
+        border-radius: 50px;
+        border: 1px solid #ffd000;
+      }
+      
+      /* Coluna da direita - ilustração */
+      .jornalz-hero-illustration {
+        text-align: center;
+        position: relative;
+      }
+      
+      /* Círculo externo */
+      .jornalz-circle-outer {
+        width: 350px;
+        height: 350px;
+        margin: 0 auto;
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px dashed #000;
+        animation: rotate 30s linear infinite;
+      }
+      
+      /* Círculo médio */
+      .jornalz-circle-middle {
+        width: 280px;
+        height: 280px;
+        background: rgba(0, 0, 0, 0.15);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #000;
+      }
+      
+      /* Círculo interno */
+      .jornalz-circle-inner {
+        width: 220px;
+        height: 220px;
+        background: #000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+        border: 2px solid #ffd000;
+        box-shadow: 0 0 50px rgba(255, 208, 0, 0.3);
+      }
+      
+      /* Cards flutuantes */
+      .jornalz-float-card-top {
+        position: absolute;
+        top: 20%;
+        right: 0;
+        background: #000;
+        padding: 15px 25px;
+        border-radius: 20px;
+        border: 2px solid #ffd000;
+        transform: rotate(5deg);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      }
+      
+      .jornalz-float-card-bottom {
+        position: absolute;
+        bottom: 20%;
+        left: 0;
+        background: #000;
+        padding: 15px 25px;
+        border-radius: 20px;
+        border: 2px solid #ffd000;
+        transform: rotate(-5deg);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      }
+      
+      /* Elementos decorativos de fundo */
+      .jornalz-bg-icon-top {
+        position: absolute;
+        top: -30px;
+        right: -30px;
+        font-size: 300px;
+        opacity: 0.08;
+        transform: rotate(15deg);
+        color: #000;
+        pointer-events: none;
+        z-index: 1;
+      }
+      
+      .jornalz-bg-icon-bottom {
+        position: absolute;
+        bottom: -80px;
+        left: -40px;
+        font-size: 280px;
+        opacity: 0.08;
+        transform: rotate(-10deg);
+        color: #000;
+        pointer-events: none;
+        z-index: 1;
+      }
+      
+      .jornalz-bg-icon-center {
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        font-size: 120px;
+        opacity: 0.05;
+        transform: translateY(-50%);
+        color: #000;
+        pointer-events: none;
+        z-index: 1;
+      }
+      
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      
+      /* Responsividade - Tablet (max-width: 1024px) */
       @media (max-width: 1024px) {
-        .jornalz-hero > div[style*="display: grid"] {
+        .jornalz-hero-container {
           grid-template-columns: 1fr !important;
           gap: 30px !important;
           text-align: center !important;
         }
-
-        .jornalz-hero [style*="text-align: left"] {
+        
+        .jornalz-hero-text {
           text-align: center !important;
         }
-
-        .jornalz-hero [style*="max-width: 600px"] {
+        
+        .jornalz-hero-description {
           max-width: 100% !important;
           margin-left: auto !important;
           margin-right: auto !important;
         }
-
-        .jornalz-hero [style*="display: flex"][style*="gap: 20px"] {
+        
+        .jornalz-hero-buttons {
           justify-content: center !important;
         }
-
-        .jornalz-hero [style*="margin-top: 40px"] {
+        
+        .jornalz-hero-badges {
           justify-content: center !important;
+        }
+        
+        .jornalz-circle-outer {
+          width: 300px !important;
+          height: 300px !important;
+        }
+        
+        .jornalz-circle-middle {
+          width: 240px !important;
+          height: 240px !important;
+        }
+        
+        .jornalz-circle-inner {
+          width: 190px !important;
+          height: 190px !important;
         }
       }
-
+      
+      /* Responsividade - Mobile (max-width: 768px) */
       @media (max-width: 768px) {
-        .jornalz-hero h1 {
+        .jornalz-hero-title {
           font-size: 2.5rem !important;
         }
-
-        .jornalz-hero h1 span {
+        
+        .jornalz-hero-title span {
           font-size: 2.8rem !important;
         }
-
-        .jornalz-hero [style*="font-size: 2rem"] {
+        
+        .jornalz-hero-subtitle {
           font-size: 1.5rem !important;
         }
-
-        .jornalz-hero [style*="font-size: 1.3rem"] {
+        
+        .jornalz-hero-description {
           font-size: 1.1rem !important;
         }
-
-        .jornalz-hero .btn-primary,
-        .jornalz-hero .btn-secondary {
+        
+        .jornalz-hero-buttons .btn-primary,
+        .jornalz-hero-buttons .btn-secondary {
           font-size: 1rem !important;
           padding: 12px 25px !important;
         }
-
-        .jornalz-hero [style*="width: 350px"] {
+        
+        .jornalz-circle-outer {
           width: 280px !important;
           height: 280px !important;
         }
-
-        .jornalz-hero [style*="width: 280px"] {
+        
+        .jornalz-circle-middle {
           width: 220px !important;
           height: 220px !important;
         }
-
-        .jornalz-hero [style*="width: 220px"] {
+        
+        .jornalz-circle-inner {
           width: 180px !important;
           height: 180px !important;
         }
-
-        .jornalz-hero [style*="position: absolute"][style*="top: 20%"] {
+        
+        .jornalz-float-card-top {
           top: 10% !important;
           right: 0 !important;
           padding: 10px 18px !important;
           font-size: 0.9rem !important;
         }
-
-        .jornalz-hero [style*="position: absolute"][style*="bottom: 20%"] {
+        
+        .jornalz-float-card-bottom {
           bottom: 10% !important;
           left: 0 !important;
           padding: 10px 18px !important;
           font-size: 0.9rem !important;
         }
-
+        
+        .jornalz-badge {
+          font-size: 0.9rem !important;
+          padding: 6px 20px !important;
+        }
+        
         /* Ajustes para seções internas */
         .jornalz-explicativo-box p:first-child {
           font-size: 1.4rem !important;
         }
-
+        
         .jornalz-explicativo-box p {
           font-size: 1rem !important;
         }
-
+        
         .jornalz-cta-box h2 {
           font-size: 2rem !important;
         }
-
+        
         .jornalz-cta-box p {
           font-size: 1.2rem !important;
         }
-
+        
         .jornalz-cta-box .btn-primary {
           font-size: 1.5rem !important;
           padding: 20px 40px !important;
         }
       }
-
+      
+      /* Responsividade - Mobile Pequeno (max-width: 480px) */
       @media (max-width: 480px) {
-        .jornalz-hero h1 {
+        .jornalz-hero-title {
           font-size: 2rem !important;
         }
-
-        .jornalz-hero h1 span {
+        
+        .jornalz-hero-title span {
           font-size: 2.2rem !important;
         }
-
-        .jornalz-hero [style*="width: 350px"] {
+        
+        .jornalz-circle-outer {
           width: 240px !important;
           height: 240px !important;
         }
-
-        .jornalz-hero [style*="width: 280px"] {
+        
+        .jornalz-circle-middle {
           width: 200px !important;
           height: 200px !important;
         }
-
-        .jornalz-hero [style*="width: 220px"] {
+        
+        .jornalz-circle-inner {
           width: 160px !important;
           height: 160px !important;
         }
-
-        .jornalz-hero .btn-primary,
-        .jornalz-hero .btn-secondary {
+        
+        .jornalz-hero-buttons .btn-primary,
+        .jornalz-hero-buttons .btn-secondary {
           font-size: 0.9rem !important;
           padding: 10px 20px !important;
         }
-
+        
         .jornalz-cta-box .btn-primary {
           font-size: 1.2rem !important;
           padding: 15px 30px !important;
@@ -217,138 +461,33 @@
     </header>
 
     <!-- HERO ESPECIAL JORNALZ -->
-    <section class="hero hero-boosted jornalz-hero" style="padding: 80px 20px">
+    <section class="hero hero-boosted jornalz-hero" style="padding: 80px 20px; position: relative; overflow: hidden;">
       <!-- Elementos decorativos de fundo -->
-      <div
-        style="
-          position: absolute;
-          top: -30px;
-          right: -30px;
-          font-size: 300px;
-          opacity: 0.08;
-          transform: rotate(15deg);
-          color: #000;
-          pointer-events: none;
-          z-index: 1;
-        "
-      >
-        📰
-      </div>
-      <div
-        style="
-          position: absolute;
-          bottom: -80px;
-          left: -40px;
-          font-size: 280px;
-          opacity: 0.08;
-          transform: rotate(-10deg);
-          color: #000;
-          pointer-events: none;
-          z-index: 1;
-        "
-      >
-        ⚡
-      </div>
-      <div
-        style="
-          position: absolute;
-          top: 50%;
-          left: 10%;
-          font-size: 120px;
-          opacity: 0.05;
-          transform: translateY(-50%);
-          color: #000;
-          pointer-events: none;
-          z-index: 1;
-        "
-      >
-        🌐
-      </div>
+      <div class="jornalz-bg-icon-top">📰</div>
+      <div class="jornalz-bg-icon-bottom">⚡</div>
+      <div class="jornalz-bg-icon-center">🌐</div>
 
       <!-- Container com grid de 2 colunas -->
-      <div
-        style="
-          max-width: 1300px;
-          margin: 0 auto;
-          display: grid;
-          grid-template-columns: 1.2fr 0.8fr;
-          gap: 40px;
-          align-items: center;
-          position: relative;
-          z-index: 2;
-        "
-      >
+      <div class="jornalz-hero-container">
         <!-- Coluna da Esquerda: Textos -->
-        <div style="text-align: left">
+        <div class="jornalz-hero-text">
           <!-- Badge de "BENEFÍCIO EXCLUSIVO" -->
-          <div
-            style="
-              display: inline-block;
-              background: #000;
-              color: #ffd000;
-              font-weight: 800;
-              padding: 8px 25px;
-              border-radius: 40px;
-              font-size: 1.1rem;
-              letter-spacing: 2px;
-              margin-bottom: 25px;
-              border: 2px solid #ffd000;
-            "
-          >
+          <div class="jornalz-badge">
             ⚡ INFORMAÇÃO INTELIGENTE
           </div>
 
           <!-- Título principal -->
-          <h1
-            style="
-              font-size: 4.2rem;
-              font-weight: 900;
-              line-height: 1.2;
-              margin-bottom: 20px;
-              color: #000;
-              text-shadow: 0 0 20px rgba(255, 208, 0, 0.3);
-              position: relative;
-            "
-          >
-            JORNAL<span
-              style="
-                color: #f24f00;
-                font-size: 5rem;
-                text-shadow:
-                  0 0 30px #ffaa00,
-                  0 0 60px #ff5500;
-                animation: firePulse 1.2s infinite ease-in-out;
-                display: inline-block;
-                position: relative;
-                top: -2px;
-              "
-              >Z</span
-            >
+          <h1 class="jornalz-hero-title">
+            JORNAL<span>Z</span>
           </h1>
 
           <!-- Subtítulo -->
-          <p
-            style="
-              font-size: 2rem;
-              font-weight: 700;
-              color: #000;
-              margin-bottom: 20px;
-            "
-          >
+          <p class="jornalz-hero-subtitle">
             O mundo em suas mãos.
           </p>
 
           <!-- Descrição principal -->
-          <p
-            style="
-              font-size: 1.3rem;
-              line-height: 1.6;
-              color: #1a1a1a;
-              margin-bottom: 30px;
-              max-width: 600px;
-              font-weight: 500;
-            "
-          >
+          <p class="jornalz-hero-description">
             Cansado de perder tempo com informações duvidosas e sites poluídos?
             O JornalZ é o seu portal inteligente que reúne os principais
             acontecimentos do Brasil e do mundo em um só lugar, com curadoria
@@ -356,215 +495,70 @@
           </p>
 
           <!-- Botões de ação -->
-          <div style="display: flex; gap: 20px; flex-wrap: wrap">
-            <!-- BOTÃO 1 AJUSTADO: abre nova aba para jornalz.com.br -->
+          <div class="jornalz-hero-buttons">
             <button
               class="btn-primary pulse-btn"
-              style="
-                font-size: 1.3rem;
-                padding: 15px 35px;
-                background: #f24f00;
-                color: #000;
-                font-weight: 800;
-                border: none;
-              "
+              style="font-size: 1.3rem; padding: 15px 35px; background: #f24f00; color: #000; font-weight: 800; border: none;"
               onclick="window.open('https://www.jornalz.com.br/', '_blank')"
             >
               📰 ACESSAR JORNALZ
             </button>
             <button
               class="btn-secondary"
-              style="
-                font-size: 1.3rem;
-                padding: 15px 35px;
-                background: #000;
-                color: #ffd000;
-                border: 2px solid #ffd000;
-                font-weight: 600;
-              "
-              onclick="
-                document
-                  .getElementById('saiba-mais')
-                  .scrollIntoView({ behavior: 'smooth' })
-              "
+              style="font-size: 1.3rem; padding: 15px 35px; background: #000; color: #ffd000; border: 2px solid #ffd000; font-weight: 600;"
+              onclick="document.getElementById('saiba-mais').scrollIntoView({ behavior: 'smooth' })"
             >
               🔍 SAIBA MAIS
             </button>
           </div>
 
           <!-- Selo de "INCLUSO" -->
-          <div
-            style="
-              margin-top: 40px;
-              display: flex;
-              align-items: center;
-              gap: 15px;
-              flex-wrap: wrap;
-            "
-          >
-            <div
-              style="
-                background: rgba(0, 0, 0, 0.2);
-                backdrop-filter: blur(5px);
-                padding: 10px 20px;
-                border-radius: 50px;
-                border: 1px solid #000;
-              "
-            >
-              <span style="color: #000; font-weight: 700"
-                ><i
-                  class="fas fa-check-circle"
-                  style="margin-right: 8px; color: #000"
-                ></i>
-                JÁ INCLUSO NO SEU PLANO</span
-              >
+          <div class="jornalz-hero-badges">
+            <div class="jornalz-hero-badge">
+              <span style="color: #000; font-weight: 700">
+                <i class="fas fa-check-circle" style="margin-right: 8px; color: #000"></i>
+                JÁ INCLUSO NO SEU PLANO
+              </span>
             </div>
-            <div
-              style="
-                background: rgba(255, 208, 0, 0.2);
-                backdrop-filter: blur(5px);
-                padding: 10px 20px;
-                border-radius: 50px;
-                border: 1px solid #ffd000;
-              "
-            >
-              <span style="color: #000; font-weight: 700"
-                ><i
-                  class="fas fa-rocket"
-                  style="margin-right: 8px; color: #000"
-                ></i>
-                SEM CUSTO ADICIONAL</span
-              >
+            <div class="jornalz-hero-badge-yellow">
+              <span style="color: #000; font-weight: 700">
+                <i class="fas fa-rocket" style="margin-right: 8px; color: #000"></i>
+                SEM CUSTO ADICIONAL
+              </span>
             </div>
           </div>
         </div>
 
         <!-- Coluna da Direita: Ilustração/Ícones -->
-        <div style="text-align: center; position: relative">
+        <div class="jornalz-hero-illustration">
           <!-- Círculo decorativo -->
-          <div
-            style="
-              width: 350px;
-              height: 350px;
-              margin: 0 auto;
-              background: rgba(0, 0, 0, 0.1);
-              border-radius: 50%;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              border: 3px dashed #000;
-              animation: rotate 30s linear infinite;
-            "
-          >
-            <div
-              style="
-                width: 280px;
-                height: 280px;
-                background: rgba(0, 0, 0, 0.15);
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border: 2px solid #000;
-              "
-            >
-              <div
-                style="
-                  width: 220px;
-                  height: 220px;
-                  background: #000;
-                  border-radius: 50%;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  flex-direction: column;
-                  gap: 15px;
-                  border: 2px solid #ffd000;
-                  box-shadow: 0 0 50px rgba(255, 208, 0, 0.3);
-                "
-              >
-                <i
-                  class="fas fa-newspaper"
-                  style="font-size: 5rem; color: #ffd000"
-                ></i>
-                <span style="color: white; font-size: 1.5rem; font-weight: 700"
-                  >+ de 50</span
-                >
-                <span style="color: #ffd000; font-size: 1.1rem"
-                  >Fontes Confiáveis</span
-                >
+          <div class="jornalz-circle-outer">
+            <div class="jornalz-circle-middle">
+              <div class="jornalz-circle-inner">
+                <i class="fas fa-newspaper" style="font-size: 5rem; color: #ffd000"></i>
+                <span style="color: white; font-size: 1.5rem; font-weight: 700">+ de 50</span>
+                <span style="color: #ffd000; font-size: 1.1rem">Fontes Confiáveis</span>
                 <div style="display: flex; gap: 15px; margin-top: 10px">
-                  <i
-                    class="fas fa-globe-americas"
-                    style="color: #ffd000; font-size: 1.5rem"
-                  ></i>
-                  <i
-                    class="fas fa-chart-line"
-                    style="color: #ffd000; font-size: 1.5rem"
-                  ></i>
-                  <i
-                    class="fas fa-futbol"
-                    style="color: #ffd000; font-size: 1.5rem"
-                  ></i>
+                  <i class="fas fa-globe-americas" style="color: #ffd000; font-size: 1.5rem"></i>
+                  <i class="fas fa-chart-line" style="color: #ffd000; font-size: 1.5rem"></i>
+                  <i class="fas fa-futbol" style="color: #ffd000; font-size: 1.5rem"></i>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Cards flutuantes -->
-          <div
-            style="
-              position: absolute;
-              top: 20%;
-              right: 0;
-              background: #000;
-              padding: 15px 25px;
-              border-radius: 20px;
-              border: 2px solid #ffd000;
-              transform: rotate(5deg);
-              box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            "
-          >
-            <i
-              class="fas fa-search"
-              style="color: #ffd000; margin-right: 8px"
-            ></i>
+          <div class="jornalz-float-card-top">
+            <i class="fas fa-search" style="color: #ffd000; margin-right: 8px"></i>
             <span style="color: white">Curadoria inteligente</span>
           </div>
 
-          <div
-            style="
-              position: absolute;
-              bottom: 20%;
-              left: 0;
-              background: #000;
-              padding: 15px 25px;
-              border-radius: 20px;
-              border: 2px solid #ffd000;
-              transform: rotate(-5deg);
-              box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            "
-          >
-            <i
-              class="fas fa-bolt"
-              style="color: #ffd000; margin-right: 8px"
-            ></i>
+          <div class="jornalz-float-card-bottom">
+            <i class="fas fa-bolt" style="color: #ffd000; margin-right: 8px"></i>
             <span style="color: white">Leitura limpa</span>
           </div>
         </div>
       </div>
-
-      <!-- Animação de rotação -->
-      <style>
-        @keyframes rotate {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
-      </style>
     </section>
 
     <!-- CONTEÚDO PRINCIPAL -->
@@ -740,7 +734,6 @@
         >
           Se você já é assinante, o mundo da informação inteligente te espera.
         </p>
-        <!-- BOTÃO 2 AJUSTADO: abre nova aba para jornalz.com.br -->
         <button
           class="btn-primary pulse-btn"
           style="
@@ -787,7 +780,6 @@
           leve todos os benefícios inclusos: Netmax TV, Estante Digital, NEWS
           Periódicos e JornalZ!
         </p>
-        <!-- BOTÃO 3 AJUSTADO: abre link do WhatsApp -->
         <button
           class="btn-primary pulse-btn"
           style="
@@ -842,13 +834,15 @@
      <!-- FOOTER -->
     <footer class="footer">
       <div class="footer-content">
+        <div class="footer-content">
         <div class="footer-text">
           <p>© 2024 Netmax Fibra - Todos os Direitos Reservados</p>
-          <p>CNPJ: 48.287.603/0001-42</p>
+          <p>Telefone/WhatsApp: 43 9 9914-9922</p>
           <p>
             Rua Rio Grande do Sul, 1460 - Bairro Santuário - Siqueira Campos -
             PR
           </p>
+          <p>CNPJ: 48.287.603/0001-42</p>
         </div>
 
         <div class="footer-social">

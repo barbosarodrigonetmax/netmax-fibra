@@ -23,7 +23,11 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <style>
-      /* Estilos adicionais específicos para garantir responsividade da página NETMAX TV */
+      /* ===================================================================
+         ESTILOS RESPONSIVOS OTIMIZADOS PARA NETMAX TV
+         =================================================================== */
+
+      /* --- TABLETS (max-width: 1024px) --- */
       @media (max-width: 1024px) {
         .tv-hero .hero-title {
           font-size: 2.5rem !important;
@@ -38,9 +42,16 @@
           font-size: 1.5rem !important;
           padding: 15px 35px !important;
         }
+
+        /* Ajuste para a seção de estatísticas */
+        .tv-stats-row {
+          gap: 20px !important;
+        }
       }
 
+      /* --- MOBILE GRANDE (max-width: 768px) --- */
       @media (max-width: 768px) {
+        /* Hero */
         .tv-hero {
           padding: 60px 20px !important;
         }
@@ -52,6 +63,7 @@
         .tv-hero .subtitle-premium {
           font-size: 1.3rem !important;
           margin: 20px auto !important;
+          padding: 15px !important;
         }
 
         .tv-hero .btn-primary {
@@ -59,30 +71,46 @@
           padding: 12px 25px !important;
         }
 
-        /* Ajustes para seção "O Mundo Netmax TV" */
-        .ecosystem [style*="grid-template-columns: 1.5fr 1fr"] {
+        /* Seção "O Mundo Netmax TV" - container principal */
+        .tv-ecosystem-container {
+          padding: 40px 25px !important;
+          margin: 40px 15px !important;
+        }
+
+        /* Grid 2 colunas vira 1 coluna */
+        .tv-world-grid {
           grid-template-columns: 1fr !important;
           gap: 30px !important;
         }
 
-        .ecosystem
-          [style*="display: flex"][style*="justify-content: space-between"] {
+        /* Header da seção com botão de "JÁ INCLUSO" */
+        .tv-world-header {
           flex-direction: column !important;
-          align-items: center !important;
+          align-items: flex-start !important;
           gap: 15px !important;
         }
 
-        /* Ajustes para cards de benefícios */
+        /* Barra de estatísticas */
+        .tv-stats-row {
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          gap: 15px !important;
+          margin-top: 35px !important;
+        }
+
+        /* Cards de benefícios - 1 coluna */
         .tv-features-grid {
           grid-template-columns: 1fr !important;
+          gap: 20px !important;
         }
 
-        /* Ajustes para grade de canais */
+        /* Grade de canais - 2 colunas */
         .tv-channels-grid {
           grid-template-columns: repeat(2, 1fr) !important;
+          gap: 15px !important;
         }
 
-        /* Ajustes para dispositivos */
+        /* Dispositivos - flex wrap ajustado */
         .tv-devices {
           gap: 20px !important;
           padding: 30px 20px !important;
@@ -96,16 +124,18 @@
           font-size: 3.5rem !important;
         }
 
-        /* Ajustes para seção de tecnologia CDNTV */
-        [style*="grid-template-columns: 1fr 1fr"]:has(
-          .tv-tech-box,
-          .cdntv-content
-        ) {
+        /* Seção CDNTV - grid 2 colunas vira 1 */
+        .tv-cdntv-grid {
           grid-template-columns: 1fr !important;
           gap: 30px !important;
         }
 
-        /* Ajustes para FAQ */
+        /* CDNTV cards de características */
+        .tv-cdntv-cards {
+          gap: 15px !important;
+        }
+
+        /* FAQ */
         .tv-faq-item h4 {
           font-size: 1.1rem !important;
         }
@@ -114,9 +144,10 @@
           font-size: 0.95rem !important;
         }
 
-        /* Ajustes para CTA */
+        /* CTA */
         .tv-cta-giant {
           padding: 50px 20px !important;
+          margin: 40px 15px !important;
         }
 
         .tv-cta-giant h2 {
@@ -128,16 +159,72 @@
           padding: 15px 35px !important;
         }
 
-        /* Ajustes para depoimento */
+        .tv-cta-giant p {
+          font-size: 1.2rem !important;
+        }
+
+        /* Depoimento */
         .tv-testimonial {
           padding: 40px 20px !important;
+          margin: 40px 15px !important;
         }
 
         .tv-testimonial p {
           font-size: 1.1rem !important;
         }
+
+        /* Badge de destaque */
+        .tv-highlight-badge {
+          font-size: 1rem !important;
+          padding: 12px 20px !important;
+        }
+
+        /* Chamada para assinatura */
+        .tv-signup-box {
+          padding: 30px 20px !important;
+          margin: 30px 15px !important;
+        }
+
+        .tv-signup-box h2 {
+          font-size: 1.8rem !important;
+        }
+
+        .tv-signup-box p {
+          font-size: 1.2rem !important;
+        }
+
+        /* Modal - ajustes de escala */
+        .modal-container {
+          margin: 20px !important;
+        }
+
+        .modal-body {
+          padding: 25px !important;
+        }
+
+        .action-grid {
+          grid-template-columns: 1fr !important;
+          gap: 15px !important;
+        }
+
+        .access-item {
+          flex-direction: column !important;
+          gap: 8px !important;
+          align-items: flex-start !important;
+        }
+
+        .instruction-item span {
+          font-size: 1rem !important;
+        }
+
+        .tip-box {
+          flex-direction: column !important;
+          text-align: center !important;
+          gap: 10px !important;
+        }
       }
 
+      /* --- MOBILE PEQUENO (max-width: 480px) --- */
       @media (max-width: 480px) {
         .tv-hero .hero-title {
           font-size: 1.5rem !important;
@@ -147,10 +234,12 @@
           font-size: 1.1rem !important;
         }
 
+        /* Grade de canais - 1 coluna */
         .tv-channels-grid {
           grid-template-columns: 1fr !important;
         }
 
+        /* Dispositivos */
         .tv-device-item {
           width: 100px !important;
         }
@@ -159,11 +248,15 @@
           font-size: 2.8rem !important;
         }
 
-        .tv-cta-giant .btn-primary {
-          font-size: 1.1rem !important;
-          padding: 12px 25px !important;
+        .tv-device-item span {
+          font-size: 0.9rem !important;
         }
 
+        .tv-device-item small {
+          font-size: 0.75rem !important;
+        }
+
+        /* Cards de features */
         .tv-feature-card h3 {
           font-size: 1.3rem !important;
         }
@@ -172,9 +265,136 @@
           font-size: 0.9rem !important;
         }
 
-        .tv-highlight-badge {
+        /* CTA */
+        .tv-cta-giant .btn-primary {
+          font-size: 1.1rem !important;
+          padding: 12px 25px !important;
+        }
+
+        .tv-cta-giant h2 {
+          font-size: 1.5rem !important;
+        }
+
+        .tv-cta-giant p {
           font-size: 1rem !important;
-          padding: 10px 20px !important;
+        }
+
+        /* Chamada para assinatura */
+        .tv-signup-box .btn-primary {
+          font-size: 1.2rem !important;
+          padding: 12px 30px !important;
+        }
+
+        /* Modal */
+        .modal-title {
+          font-size: 1.5rem !important;
+        }
+
+        .modal-subtitle {
+          font-size: 1rem !important;
+        }
+
+        .access-card-header span {
+          font-size: 1.2rem !important;
+        }
+
+        .action-card {
+          padding: 15px !important;
+        }
+
+        .action-content h3 {
+          font-size: 1.1rem !important;
+        }
+
+        .instruction-item span {
+          font-size: 0.9rem !important;
+        }
+      }
+
+      /* --- TABLET EM PORTRAIT (max-width: 768px) --- */
+      /* Estilos específicos para manter a legibilidade */
+      @media (max-width: 768px) and (orientation: portrait) {
+        .tv-world-grid [style*="background: #000; border-radius: 30px"] {
+          margin-top: 20px !important;
+        }
+      }
+
+      /* --- Ajustes para telas muito grandes (min-width: 1400px) --- */
+      @media (min-width: 1400px) {
+        .tv-features-grid {
+          grid-template-columns: repeat(4, 1fr) !important;
+        }
+        
+        .tv-channels-grid {
+          grid-template-columns: repeat(5, 1fr) !important;
+        }
+      }
+
+      /* --- Classes utilitárias responsivas adicionais --- */
+      .tv-stats-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+        margin-top: 50px;
+        padding-top: 30px;
+        border-top: 2px dashed rgba(0, 0, 0, 0.1);
+        position: relative;
+        z-index: 2;
+      }
+
+      .tv-world-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 40px;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .tv-cdntv-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        max-width: 1100px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+      }
+
+      .tv-cdntv-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      /* Garantir que o container principal não tenha overflow */
+      .ecosystem {
+        overflow-x: hidden;
+        width: 100%;
+      }
+
+      /* Ajustes para elementos inline com style inline que quebram */
+      [style*="grid-template-columns: 1.5fr 1fr"] {
+        grid-template-columns: 1.5fr 1fr !important;
+      }
+
+      @media (max-width: 768px) {
+        [style*="grid-template-columns: 1.5fr 1fr"] {
+          grid-template-columns: 1fr !important;
+        }
+      }
+
+      [style*="display: flex"][style*="justify-content: space-between"][style*="align-items: center"] {
+        flex-wrap: wrap !important;
+      }
+
+      @media (max-width: 768px) {
+        [style*="display: flex"][style*="justify-content: space-between"][style*="align-items: center"] {
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          gap: 15px !important;
         }
       }
     </style>
@@ -260,6 +480,7 @@
     <section class="ecosystem" style="padding-top: 60px">
       <!-- O QUE É A NETMAX TV - VERSÃO REFORMULADA -->
       <div
+        class="tv-ecosystem-container"
         style="
           background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
           border-radius: 40px;
@@ -303,6 +524,7 @@
 
         <!-- Cabeçalho da Seção -->
         <div
+          class="tv-world-header"
           style="
             display: flex;
             justify-content: space-between;
@@ -362,16 +584,7 @@
         </div>
 
         <!-- Grid de 2 Colunas: Explicação e Destaque -->
-        <div
-          style="
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 40px;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-          "
-        >
+        <div class="tv-world-grid">
           <!-- Coluna da Esquerda: Explicação Principal -->
           <div>
             <p
@@ -590,20 +803,7 @@
         </div>
 
         <!-- Barra de estatísticas -->
-        <div
-          style="
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 30px;
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 2px dashed rgba(0, 0, 0, 0.1);
-            position: relative;
-            z-index: 2;
-          "
-        >
+        <div class="tv-stats-row">
           <div style="display: flex; align-items: center; gap: 10px">
             <span style="font-size: 2.5rem; font-weight: 900; color: #ffd000"
               >100+</span
@@ -919,17 +1119,7 @@
           </p>
         </div>
 
-        <div
-          style="
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            max-width: 1100px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-          "
-        >
+        <div class="tv-cdntv-grid">
           <div
             style="
               background: rgba(255, 255, 255, 0.05);
@@ -990,7 +1180,7 @@
             </p>
           </div>
 
-          <div style="display: flex; flex-direction: column; gap: 15px">
+          <div class="tv-cdntv-cards">
             <div
               style="
                 background: rgba(255, 208, 0, 0.1);
@@ -1198,6 +1388,8 @@
               padding: 15px 30px;
               border-radius: 60px;
               border: 1px dashed #ffd000;
+              flex-wrap: wrap;
+              justify-content: center;
             "
           >
             <i class="fas fa-check-circle" style="color: #ffd000"></i>
@@ -1323,6 +1515,7 @@
 
       <!-- CHAMADA PARA ASSINATURA -->
       <div
+        class="tv-signup-box"
         style="
           background: rgba(0, 0, 0, 0.05);
           padding: 50px;
@@ -1754,13 +1947,15 @@
     <!-- FOOTER -->
     <footer class="footer">
       <div class="footer-content">
+        <div class="footer-content">
         <div class="footer-text">
           <p>© 2024 Netmax Fibra - Todos os Direitos Reservados</p>
-          <p>CNPJ: 48.287.603/0001-42</p>
+          <p>Telefone/WhatsApp: 43 9 9914-9922</p>
           <p>
             Rua Rio Grande do Sul, 1460 - Bairro Santuário - Siqueira Campos -
             PR
           </p>
+          <p>CNPJ: 48.287.603/0001-42</p>
         </div>
 
         <div class="footer-social">
