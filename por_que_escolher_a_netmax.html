@@ -1,0 +1,482 @@
+<!doctype html>
+<!--
+    ===================================================================
+        NETMAX FIBRA - POR QUE ESCOLHER A NETMAX (COM BOOTSTRAP)
+    ===================================================================
+    Objetivo: Página que lista os principais motivos para escolher a 
+              Netmax Fibra como provedor de internet, destacando 
+              benefícios, diferenciais e chamada para ação.
+    Autor : Rodrigo Barbosa
+    Data  : 23/02/2026
+    ===================================================================
+-->
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netmax Fibra - Por que escolher a Netmax</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/outros/favicon_netmax.png" />
+    <link rel="shortcut icon" type="image/png" href="../assets/images/outros/favicon_netmax.png" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* Estilos adicionais específicos para garantir responsividade da página Por Que Escolher a Netmax */
+      @media (max-width: 1024px) {
+        .benefits-grid.big-cards {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 30px !important;
+        }
+
+        .super-price {
+          font-size: 2.2rem !important;
+          padding: 25px 40px !important;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero .hero-title {
+          font-size: 2rem !important;
+        }
+
+        .hero .subtitle-premium {
+          font-size: 1.3rem !important;
+          padding: 20px !important;
+        }
+
+        .ecosystem {
+          padding: 60px 20px !important;
+        }
+
+        .ecosystem-title {
+          font-size: 1.8rem !important;
+          padding: 20px 15px !important;
+          margin-bottom: 30px !important;
+        }
+
+        .benefits-grid.big-cards {
+          grid-template-columns: 1fr !important;
+          gap: 25px !important;
+          margin: 40px 0 !important;
+        }
+
+        .benefit-card {
+          padding: 30px 20px !important;
+          min-height: auto !important;
+        }
+
+        .benefit-card i {
+          font-size: 3rem !important;
+          margin-bottom: 15px !important;
+        }
+
+        .benefit-card h3 {
+          font-size: 1.3rem !important;
+          margin-bottom: 10px !important;
+        }
+
+        .benefit-card p {
+          font-size: 0.95rem !important;
+          line-height: 1.5 !important;
+        }
+
+        .super-price {
+          font-size: 1.8rem !important;
+          padding: 20px 30px !important;
+          margin-top: 40px !important;
+        }
+
+        .super-price p:first-child {
+          font-size: 1.3rem !important;
+        }
+
+        .super-price p:first-of-type {
+          font-size: 1.3rem !important;
+        }
+
+        .super-price p:nth-child(2) {
+          font-size: 2.5rem !important;
+        }
+
+        .super-price .btn-primary {
+          font-size: 1.3rem !important;
+          padding: 15px 30px !important;
+        }
+
+        .sobre,
+        .parceiros {
+          padding: 40px 25px !important;
+          margin: 20px !important;
+        }
+
+        .sobre h2,
+        .parceiros h2 {
+          font-size: 1.8rem !important;
+          margin-bottom: 30px !important;
+        }
+
+        .sobre p,
+        .parceiros p {
+          font-size: 1rem !important;
+          line-height: 1.6 !important;
+          margin-bottom: 20px !important;
+        }
+
+        .partner-logos {
+          gap: 25px !important;
+        }
+
+        .partner-logo {
+          width: 100px !important;
+        }
+
+        [style*="margin-top: 60px"] .btn-primary {
+          font-size: 1.3rem !important;
+          padding: 15px 30px !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero .hero-title {
+          font-size: 1.6rem !important;
+        }
+
+        .hero .subtitle-premium {
+          font-size: 1.1rem !important;
+          padding: 15px !important;
+        }
+
+        .ecosystem-title {
+          font-size: 1.5rem !important;
+          padding: 15px !important;
+        }
+
+        .benefit-card h3 {
+          font-size: 1.2rem !important;
+        }
+
+        .benefit-card p {
+          font-size: 0.9rem !important;
+        }
+
+        .super-price {
+          font-size: 1.5rem !important;
+          padding: 15px 20px !important;
+        }
+
+        .super-price p:first-of-type {
+          font-size: 1.1rem !important;
+        }
+
+        .super-price p:nth-child(2) {
+          font-size: 2rem !important;
+        }
+
+        .sobre h2,
+        .parceiros h2 {
+          font-size: 1.5rem !important;
+        }
+
+        .partner-logo {
+          width: 80px !important;
+        }
+
+        [style*="margin-top: 60px"] .btn-primary {
+          font-size: 1.1rem !important;
+          padding: 12px 25px !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a
+      href="https://wa.me/554399149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
+      class="whatsapp-float"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <i class="fab fa-whatsapp"></i>
+      <span class="whatsapp-tooltip">Fale conosco!</span>
+    </a>
+
+    <!-- LOGO DESTACADO -->
+    <header class="header">
+      <div class="logo-area-highlight">
+        <img
+          src="../assets/images/logos/logo_netmax.jpg"
+          alt="Logo Netmax"
+          class="logo-netmax-big"
+        />
+        <h1 class="slogan-top">
+          A velocidade que conecta você ao mundo e ao conhecimento.
+        </h1>
+      </div>
+
+      <!-- CENTRAL DO ASSINANTE -->
+      <div class="assinante-container">
+        <a
+          href="https://netmax.net.br/"
+          class="assinante-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="assinante-icon">
+            <i class="fas fa-user-circle"></i>
+          </div>
+          <span class="assinante-text">CENTRAL DO<br />ASSINANTE</span>
+        </a>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="../index.html">PÁGINA INICIAL</a>
+        <a href="estante_digital.html">ESTANTE DIGITAL NETMAX</a>
+        <a href="jornalz.html">JORNALZ</a>
+        <a href="news_periodicos.html">NEWS PERIÓDICOS</a>
+        <a href="netmax_tv.html">NETMAX TV</a>
+        <a href="nosso_proposito.html">NOSSO PROPÓSITO</a>
+        <a href="#" style="color: #ffd000; font-weight: bold"
+          >POR QUE ESCOLHER A NETMAX</a
+        >
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero hero-boosted">
+      <h1 class="hero-title">
+        POR QUE ESCOLHER A <span class="price-fire">NETMAX</span> ?
+      </h1>
+      <p class="subtitle subtitle-premium">
+        Não é só internet. É liberdade, conexão real e um mundo de
+        possibilidades dentro de casa. Descubra por que somos a escolha certa.
+      </p>
+    </section>
+
+    <!-- SEÇÃO DE MOTIVOS -->
+    <section class="ecosystem">
+      <h2 class="ecosystem-title">MOTIVOS PARA VOCÊ ASSINAR A NETMAX</h2>
+
+      <div class="benefits-grid big-cards">
+        <div class="benefit-card">
+          <i
+            class="fas fa-wifi"
+            style="font-size: 4rem; color: #ffd000; margin-bottom: 20px"
+          ></i>
+          <h3>SINAL FORTE E ESTÁVEL</h3>
+          <p>
+            Não é só velocidade, é constância. O sinal chega com força em todos
+            os cômodos. Adeus aos pontos sem Wi-Fi.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <i
+            class="fas fa-handshake"
+            style="font-size: 4rem; color: #ffd000; margin-bottom: 20px"
+          ></i>
+          <h3>PROPRIETÁRIOS COM A MÃO NA MASSA</h3>
+          <p>
+            Juliano, Julio Cesar e Isaac estão pessoalmente empenhados na sua
+            satisfação. Compromisso que é da nossa gente.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <i
+            class="fas fa-tools"
+            style="font-size: 4rem; color: #ffd000; margin-bottom: 20px"
+          ></i>
+          <h3>EQUIPE TÉCNICA QUALIFICADA</h3>
+          <p>
+            Profissionais preparados e equipados para levar a melhor solução até
+            você. Atendimento ágil e respeitoso.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <i
+            class="fas fa-microchip"
+            style="font-size: 4rem; color: #ffd000; margin-bottom: 20px"
+          ></i>
+          <h3>TECNOLOGIA DE PONTA</h3>
+          <p>
+            Estamos sempre renovando equipamentos para oferecer o que há de mais
+            moderno em fibra óptica.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <i
+            class="fas fa-gem"
+            style="font-size: 4rem; color: #ffd000; margin-bottom: 20px"
+          ></i>
+          <h3>BENEFÍCIOS EXCLUSIVOS</h3>
+          <p>
+            Estante Digital, JornalZ e News Periódicos.
+            <strong
+              >E MAIS: Netmax TV com 100+ canais como brinde exclusivo!</strong
+            >
+            Tudo incluso.
+          </p>
+        </div>
+      </div>
+
+      <div class="super-price" style="margin-top: 60px">
+        <p style="font-size: 1.8rem; margin-bottom: 15px">
+          TUDO ISSO POR APENAS
+        </p>
+        <p style="font-size: 4rem; font-weight: 900; line-height: 1.2">
+          R$ 114,90
+        </p>
+        <p
+          style="
+            font-size: 1.4rem;
+            margin-top: 20px;
+            font-weight: bold;
+            background: rgba(255, 208, 0, 0.3);
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: inline-block;
+          "
+        >
+          🎁 NETMAX TV DE BRINDE INCLUSO 🎁
+        </p>
+        <p style="font-size: 1.2rem; margin-top: 20px">
+          1000 megas + benefícios exclusivos
+        </p>
+      </div>
+
+      <div style="text-align: center; margin: 50px 0 20px">
+        <a
+          href="https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
+          target="_blank"
+          rel="noopener noreferrer"
+          style="text-decoration: none"
+        >
+          <button
+            class="btn-primary pulse-btn"
+            style="font-size: 2rem; padding: 20px 50px"
+          >
+            ASSINE AGORA E ATIVE TODOS OS BENEFÍCIOS
+          </button>
+        </a>
+      </div>
+    </section>
+
+    <!-- SOBRE A NETMAX -->
+    <section class="sobre highlight-section">
+      <h2>Sobre a Netmax</h2>
+      <p>
+        Na cidade de Siqueira Campos, no coração do Paraná, a Netmax nasceu de
+        um sonho compartilhado por três irmãos:
+        <strong>Juliano, Julio Cesar e Isaac Vilas Boas</strong>.
+      </p>
+      <p>
+        Somos uma empresa de médio porte com um propósito gigante: entregar a
+        melhor internet fibra óptica da região.
+      </p>
+      <p>
+        Com equipamentos modernos, equipe própria, responsabilidade real e
+        atendimento humano porque quando o sinal chega forte na sua casa,
+        sabemos que nosso trabalho foi bem feito.
+      </p>
+    </section>
+
+    <!-- PARCEIROS -->
+    <section class="parceiros highlight-section">
+      <h2>Nossos Conteúdos Exclusivos</h2>
+      <div class="partner-logos">
+        <a href="#"
+          ><img
+            src="../assets/images/logos/logo_digi_livro.png"
+            class="partner-logo"
+            alt="Digi Livro"
+        /></a>
+        <a href="#"
+          ><img
+            src="../assets/images/logos/logo_estante_virtual.png"
+            class="partner-logo"
+            alt="Estante Digital"
+        /></a>
+        <a href="#"
+          ><img
+            src="../assets/images/logos/logo_jornalz.png"
+            class="partner-logo"
+            alt="JornalZ"
+        /></a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-content">
+        <div class="footer-text">
+          <p>© 2024 Netmax Fibra - Todos os Direitos Reservados</p>
+          <p>Telefone/WhatsApp: 43 9 9914-9922</p>
+          <p>
+            Rua Rio Grande do Sul, 1460 - Bairro Santuário - Siqueira Campos -
+            PR
+          </p>
+          <p>CNPJ: 53.458.225/0001-52</p>
+        </div>
+
+        <div class="footer-social">
+          <a
+            href="https://instagram.com/netmaxscm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/instagram.svg"
+              alt="Instagram"
+              width="20"
+              height="20"
+            />
+            <span>Instagram</span>
+          </a>
+          <a
+            href="https://facebook.com/netmax.siq"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/facebook.svg"
+              alt="Facebook"
+              width="20"
+              height="20"
+            />
+            <span>Facebook</span>
+          </a>
+          <a
+            href="https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/whatsapp.svg"
+              alt="WhatsApp"
+              width="20"
+              height="20"
+            />
+            <span>Fale Conosco</span>
+          </a>
+        </div>
+
+        <div class="footer-copyright">
+          <p>
+            Netmax Fibra - A velocidade que conecta você ao mundo e ao
+            conhecimento.
+          </p>
+          <p>Desenvolvido com 💛 para nossos clientes</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

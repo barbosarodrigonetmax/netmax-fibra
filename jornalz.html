@@ -1,0 +1,902 @@
+<!doctype html>
+<!--
+    ===================================================================
+        NETMAX FIBRA - PÁGINA JORNALZ (REFATORADA COM BOOTSTRAP)
+    ===================================================================
+    Objetivo: Página institucional do portal JornalZ, serviço de curadoria 
+              de notícias incluso nos planos Netmax Fibra. Apresenta os 
+              benefícios, estatísticas e funcionalidades do JornalZ.
+    Autor : Rodrigo Barbosa
+    Data  : 23/02/2026
+    ===================================================================
+-->
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netmax Fibra - JornalZ: Informação Inteligente</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/outros/favicon_netmax.png" />
+    <link rel="shortcut icon" type="image/png" href="../assets/images/outros/favicon_netmax.png" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* Estilos adicionais específicos para garantir responsividade da página JornalZ */
+      
+      /* Container responsivo do hero */
+      .jornalz-hero-container {
+        max-width: 1300px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 40px;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+      }
+      
+      /* Texto da coluna esquerda */
+      .jornalz-hero-text {
+        text-align: left;
+      }
+      
+      /* Badge */
+      .jornalz-badge {
+        display: inline-block;
+        background: #000;
+        color: #ffd000;
+        font-weight: 800;
+        padding: 8px 25px;
+        border-radius: 40px;
+        font-size: 1.1rem;
+        letter-spacing: 2px;
+        margin-bottom: 25px;
+        border: 2px solid #ffd000;
+      }
+      
+      /* Título principal */
+      .jornalz-hero-title {
+        font-size: 4.2rem;
+        font-weight: 900;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        color: #000;
+        text-shadow: 0 0 20px rgba(255, 208, 0, 0.3);
+        position: relative;
+      }
+      
+      .jornalz-hero-title span {
+        color: #f24f00;
+        font-size: 5rem;
+        text-shadow: 0 0 30px #ffaa00, 0 0 60px #ff5500;
+        animation: firePulse 1.2s infinite ease-in-out;
+        display: inline-block;
+        position: relative;
+        top: -2px;
+      }
+      
+      /* Subtítulo */
+      .jornalz-hero-subtitle {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #000;
+        margin-bottom: 20px;
+      }
+      
+      /* Descrição */
+      .jornalz-hero-description {
+        font-size: 1.3rem;
+        line-height: 1.6;
+        color: #1a1a1a;
+        margin-bottom: 30px;
+        max-width: 600px;
+        font-weight: 500;
+      }
+      
+      /* Botões container */
+      .jornalz-hero-buttons {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      
+      /* Selos container */
+      .jornalz-hero-badges {
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+      
+      .jornalz-hero-badge {
+        background: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(5px);
+        padding: 10px 20px;
+        border-radius: 50px;
+        border: 1px solid #000;
+      }
+      
+      .jornalz-hero-badge-yellow {
+        background: rgba(255, 208, 0, 0.2);
+        backdrop-filter: blur(5px);
+        padding: 10px 20px;
+        border-radius: 50px;
+        border: 1px solid #ffd000;
+      }
+      
+      /* Coluna da direita - ilustração */
+      .jornalz-hero-illustration {
+        text-align: center;
+        position: relative;
+      }
+      
+      /* Círculo externo */
+      .jornalz-circle-outer {
+        width: 350px;
+        height: 350px;
+        margin: 0 auto;
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px dashed #000;
+        animation: rotate 30s linear infinite;
+      }
+      
+      /* Círculo médio */
+      .jornalz-circle-middle {
+        width: 280px;
+        height: 280px;
+        background: rgba(0, 0, 0, 0.15);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #000;
+      }
+      
+      /* Círculo interno */
+      .jornalz-circle-inner {
+        width: 220px;
+        height: 220px;
+        background: #000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+        border: 2px solid #ffd000;
+        box-shadow: 0 0 50px rgba(255, 208, 0, 0.3);
+      }
+      
+      /* Cards flutuantes */
+      .jornalz-float-card-top {
+        position: absolute;
+        top: 20%;
+        right: 0;
+        background: #000;
+        padding: 15px 25px;
+        border-radius: 20px;
+        border: 2px solid #ffd000;
+        transform: rotate(5deg);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      }
+      
+      .jornalz-float-card-bottom {
+        position: absolute;
+        bottom: 20%;
+        left: 0;
+        background: #000;
+        padding: 15px 25px;
+        border-radius: 20px;
+        border: 2px solid #ffd000;
+        transform: rotate(-5deg);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      }
+      
+      /* Elementos decorativos de fundo */
+      .jornalz-bg-icon-top {
+        position: absolute;
+        top: -30px;
+        right: -30px;
+        font-size: 300px;
+        opacity: 0.08;
+        transform: rotate(15deg);
+        color: #000;
+        pointer-events: none;
+        z-index: 1;
+      }
+      
+      .jornalz-bg-icon-bottom {
+        position: absolute;
+        bottom: -80px;
+        left: -40px;
+        font-size: 280px;
+        opacity: 0.08;
+        transform: rotate(-10deg);
+        color: #000;
+        pointer-events: none;
+        z-index: 1;
+      }
+      
+      .jornalz-bg-icon-center {
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        font-size: 120px;
+        opacity: 0.05;
+        transform: translateY(-50%);
+        color: #000;
+        pointer-events: none;
+        z-index: 1;
+      }
+      
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      
+      /* Responsividade - Tablet (max-width: 1024px) */
+      @media (max-width: 1024px) {
+        .jornalz-hero-container {
+          grid-template-columns: 1fr !important;
+          gap: 30px !important;
+          text-align: center !important;
+        }
+        
+        .jornalz-hero-text {
+          text-align: center !important;
+        }
+        
+        .jornalz-hero-description {
+          max-width: 100% !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+        
+        .jornalz-hero-buttons {
+          justify-content: center !important;
+        }
+        
+        .jornalz-hero-badges {
+          justify-content: center !important;
+        }
+        
+        .jornalz-circle-outer {
+          width: 300px !important;
+          height: 300px !important;
+        }
+        
+        .jornalz-circle-middle {
+          width: 240px !important;
+          height: 240px !important;
+        }
+        
+        .jornalz-circle-inner {
+          width: 190px !important;
+          height: 190px !important;
+        }
+      }
+      
+      /* Responsividade - Mobile (max-width: 768px) */
+      @media (max-width: 768px) {
+        .jornalz-hero-title {
+          font-size: 2.5rem !important;
+        }
+        
+        .jornalz-hero-title span {
+          font-size: 2.8rem !important;
+        }
+        
+        .jornalz-hero-subtitle {
+          font-size: 1.5rem !important;
+        }
+        
+        .jornalz-hero-description {
+          font-size: 1.1rem !important;
+        }
+        
+        .jornalz-hero-buttons .btn-primary,
+        .jornalz-hero-buttons .btn-secondary {
+          font-size: 1rem !important;
+          padding: 12px 25px !important;
+        }
+        
+        .jornalz-circle-outer {
+          width: 280px !important;
+          height: 280px !important;
+        }
+        
+        .jornalz-circle-middle {
+          width: 220px !important;
+          height: 220px !important;
+        }
+        
+        .jornalz-circle-inner {
+          width: 180px !important;
+          height: 180px !important;
+        }
+        
+        .jornalz-float-card-top {
+          top: 10% !important;
+          right: 0 !important;
+          padding: 10px 18px !important;
+          font-size: 0.9rem !important;
+        }
+        
+        .jornalz-float-card-bottom {
+          bottom: 10% !important;
+          left: 0 !important;
+          padding: 10px 18px !important;
+          font-size: 0.9rem !important;
+        }
+        
+        .jornalz-badge {
+          font-size: 0.9rem !important;
+          padding: 6px 20px !important;
+        }
+        
+        /* Ajustes para seções internas */
+        .jornalz-explicativo-box p:first-child {
+          font-size: 1.4rem !important;
+        }
+        
+        .jornalz-explicativo-box p {
+          font-size: 1rem !important;
+        }
+        
+        .jornalz-cta-box h2 {
+          font-size: 2rem !important;
+        }
+        
+        .jornalz-cta-box p {
+          font-size: 1.2rem !important;
+        }
+        
+        .jornalz-cta-box .btn-primary {
+          font-size: 1.5rem !important;
+          padding: 20px 40px !important;
+        }
+      }
+      
+      /* Responsividade - Mobile Pequeno (max-width: 480px) */
+      @media (max-width: 480px) {
+        .jornalz-hero-title {
+          font-size: 2rem !important;
+        }
+        
+        .jornalz-hero-title span {
+          font-size: 2.2rem !important;
+        }
+        
+        .jornalz-circle-outer {
+          width: 240px !important;
+          height: 240px !important;
+        }
+        
+        .jornalz-circle-middle {
+          width: 200px !important;
+          height: 200px !important;
+        }
+        
+        .jornalz-circle-inner {
+          width: 160px !important;
+          height: 160px !important;
+        }
+        
+        .jornalz-hero-buttons .btn-primary,
+        .jornalz-hero-buttons .btn-secondary {
+          font-size: 0.9rem !important;
+          padding: 10px 20px !important;
+        }
+        
+        .jornalz-cta-box .btn-primary {
+          font-size: 1.2rem !important;
+          padding: 15px 30px !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a
+      href="https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
+      class="whatsapp-float"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <i class="fab fa-whatsapp"></i>
+      <span class="whatsapp-tooltip">Fale conosco!</span>
+    </a>
+
+    <!-- HEADER PADRÃO -->
+    <header class="header">
+      <div class="logo-area-highlight">
+        <img
+          src="../assets/images/logos/logo_netmax.jpg"
+          alt="Logo Netmax"
+          class="logo-netmax-big"
+        />
+        <h1 class="slogan-top">
+          A velocidade que conecta você ao mundo e ao conhecimento.
+        </h1>
+      </div>
+
+      <!-- CENTRAL DO ASSINANTE -->
+      <div class="assinante-container">
+        <a
+          href="https://netmax.net.br/"
+          class="assinante-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="assinante-icon">
+            <i class="fas fa-user-circle"></i>
+          </div>
+          <span class="assinante-text">CENTRAL DO<br />ASSINANTE</span>
+        </a>
+      </div>
+
+      <!-- MENU DE NAVEGAÇÃO ATUALIZADO -->
+      <nav class="nav-menu">
+        <a href="../index.html">PÁGINA INICIAL</a>
+        <a href="estante_digital.html">ESTANTE DIGITAL NETMAX</a>
+        <a href="#" style="color: #ffd000; font-weight: bold">JORNALZ</a>
+        <a href="news_periodicos.html">NEWS PERIÓDICOS</a>
+        <a href="netmax_tv.html">NETMAX TV</a>
+        <a href="nosso_proposito.html">NOSSO PROPÓSITO</a>
+        <a href="por_que_escolher_a_netmax.html">POR QUE ESCOLHER A NETMAX</a>
+      </nav>
+    </header>
+
+    <!-- HERO ESPECIAL JORNALZ -->
+    <section class="hero hero-boosted jornalz-hero" style="padding: 80px 20px; position: relative; overflow: hidden;">
+      <!-- Elementos decorativos de fundo -->
+      <div class="jornalz-bg-icon-top">📰</div>
+      <div class="jornalz-bg-icon-bottom">⚡</div>
+      <div class="jornalz-bg-icon-center">🌐</div>
+
+      <!-- Container com grid de 2 colunas -->
+      <div class="jornalz-hero-container">
+        <!-- Coluna da Esquerda: Textos -->
+        <div class="jornalz-hero-text">
+          <!-- Badge de "BENEFÍCIO EXCLUSIVO" -->
+          <div class="jornalz-badge">
+            ⚡ INFORMAÇÃO INTELIGENTE
+          </div>
+
+          <!-- Título principal -->
+          <h1 class="jornalz-hero-title">
+            JORNAL<span>Z</span>
+          </h1>
+
+          <!-- Subtítulo -->
+          <p class="jornalz-hero-subtitle">
+            O mundo em suas mãos.
+          </p>
+
+          <!-- Descrição principal -->
+          <p class="jornalz-hero-description">
+            Cansado de perder tempo com informações duvidosas e sites poluídos?
+            O JornalZ é o seu portal inteligente que reúne os principais
+            acontecimentos do Brasil e do mundo em um só lugar, com curadoria
+            especializada.
+          </p>
+
+          <!-- Botões de ação -->
+          <div class="jornalz-hero-buttons">
+            <button
+              class="btn-primary pulse-btn"
+              style="font-size: 1.3rem; padding: 15px 35px; background: #f24f00; color: #000; font-weight: 800; border: none;"
+              onclick="window.open('https://www.jornalz.com.br/', '_blank')"
+            >
+              📰 ACESSAR JORNALZ
+            </button>
+            <button
+              class="btn-secondary"
+              style="font-size: 1.3rem; padding: 15px 35px; background: #000; color: #ffd000; border: 2px solid #ffd000; font-weight: 600;"
+              onclick="document.getElementById('saiba-mais').scrollIntoView({ behavior: 'smooth' })"
+            >
+              🔍 SAIBA MAIS
+            </button>
+          </div>
+
+          <!-- Selo de "INCLUSO" -->
+          <div class="jornalz-hero-badges">
+            <div class="jornalz-hero-badge">
+              <span style="color: #000; font-weight: 700">
+                <i class="fas fa-check-circle" style="margin-right: 8px; color: #000"></i>
+                JÁ INCLUSO NO SEU PLANO
+              </span>
+            </div>
+            <div class="jornalz-hero-badge-yellow">
+              <span style="color: #000; font-weight: 700">
+                <i class="fas fa-rocket" style="margin-right: 8px; color: #000"></i>
+                SEM CUSTO ADICIONAL
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coluna da Direita: Ilustração/Ícones -->
+        <div class="jornalz-hero-illustration">
+          <!-- Círculo decorativo -->
+          <div class="jornalz-circle-outer">
+            <div class="jornalz-circle-middle">
+              <div class="jornalz-circle-inner">
+                <i class="fas fa-newspaper" style="font-size: 5rem; color: #ffd000"></i>
+                <span style="color: white; font-size: 1.5rem; font-weight: 700">+ de 50</span>
+                <span style="color: #ffd000; font-size: 1.1rem">Fontes Confiáveis</span>
+                <div style="display: flex; gap: 15px; margin-top: 10px">
+                  <i class="fas fa-globe-americas" style="color: #ffd000; font-size: 1.5rem"></i>
+                  <i class="fas fa-chart-line" style="color: #ffd000; font-size: 1.5rem"></i>
+                  <i class="fas fa-futbol" style="color: #ffd000; font-size: 1.5rem"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cards flutuantes -->
+          <div class="jornalz-float-card-top">
+            <i class="fas fa-search" style="color: #ffd000; margin-right: 8px"></i>
+            <span style="color: white">Curadoria inteligente</span>
+          </div>
+
+          <div class="jornalz-float-card-bottom">
+            <i class="fas fa-bolt" style="color: #ffd000; margin-right: 8px"></i>
+            <span style="color: white">Leitura limpa</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <section class="ecosystem" style="padding-top: 60px" id="saiba-mais">
+      <!-- O QUE É - TEXTO EXPLICATIVO MELHORADO -->
+      <div class="jornalz-explicativo-box">
+        <p>⚡ INFORMAÇÃO INTELIGENTE PARA QUEM NÃO TEM TEMPO A PERDER</p>
+        <p>
+          Chega de abrir dez abas diferentes para tentar se informar. O
+          <strong>JornalZ</strong> é o seu portal inteligente que reúne os
+          principais acontecimentos do Brasil e do mundo em um só lugar, com
+          curadoria especializada para quem busca qualidade, profundidade e
+          agilidade.
+        </p>
+        <p>
+          Nossa equipe e algoritmos trabalham juntos para selecionar as notícias
+          mais relevantes do dia. Nada de exageros sensacionalistas ou
+          informações irrelevantes. Você recebe o que realmente importa, de
+          fontes confiáveis, em um layout minimalista e direto.
+        </p>
+      </div>
+
+      <!-- ESTATÍSTICAS -->
+      <div class="jornalz-stats">
+        <div class="jornalz-stat-item">
+          <div class="numero">+50</div>
+          <div class="rotulo">Fontes Confiáveis</div>
+        </div>
+        <div class="jornalz-stat-item">
+          <div class="numero">24/7</div>
+          <div class="rotulo">Atualização Contínua</div>
+        </div>
+        <div class="jornalz-stat-item">
+          <div class="numero">100%</div>
+          <div class="rotulo">Livre de Anúncios</div>
+        </div>
+      </div>
+
+      <!-- VANTAGENS - GRID DE FEATURES -->
+      <h2 class="ecosystem-title" style="margin: 60px auto 30px">
+        🚀 POR QUE O <span class="price-fire">JORNALZ</span> VAI TRANSFORMAR SUA
+        ROTINA?
+      </h2>
+
+      <div class="jornalz-features-grid">
+        <div class="jornalz-feature-card">
+          <div class="jornalz-feature-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <div class="jornalz-feature-content">
+            <h3>Curadoria Inteligente</h3>
+            <p>
+              Nossa equipe e algoritmos trabalham juntos para selecionar as
+              notícias mais relevantes do dia. Você recebe o que realmente
+              importa, de fontes confiáveis, sem ruído.
+            </p>
+          </div>
+        </div>
+
+        <div class="jornalz-feature-card">
+          <div class="jornalz-feature-icon">
+            <i class="fas fa-broom"></i>
+          </div>
+          <div class="jornalz-feature-content">
+            <h3>Experiência Limpa</h3>
+            <p>
+              Esqueça telas poluídas por anúncios popping, popunders e banners
+              intermináveis. Layout minimalista, direto e focado no que
+              interessa: a informação de qualidade.
+            </p>
+          </div>
+        </div>
+
+        <div class="jornalz-feature-card">
+          <div class="jornalz-feature-icon">
+            <i class="fas fa-sliders-h"></i>
+          </div>
+          <div class="jornalz-feature-content">
+            <h3>Personalização Sob Medida</h3>
+            <p>
+              Escolha seus temas preferidos: política, economia, tecnologia,
+              esportes, cultura, ciência. O JornalZ aprende com suas
+              preferências e entrega um feed sob medida.
+            </p>
+          </div>
+        </div>
+
+        <div class="jornalz-feature-card">
+          <div class="jornalz-feature-icon">
+            <i class="fas fa-link"></i>
+          </div>
+          <div class="jornalz-feature-content">
+            <h3>Integração com Ecossistema Netmax</h3>
+            <p>
+              Comece o dia lendo uma notícia e, com um clique, mergulhe em um
+              livro digital completo na Estante Digital ou aprofunde-se com
+              artigos acadêmicos no NEWS Periódicos.
+            </p>
+          </div>
+        </div>
+
+        <div class="jornalz-feature-card">
+          <div class="jornalz-feature-icon">
+            <i class="fas fa-globe-americas"></i>
+          </div>
+          <div class="jornalz-feature-content">
+            <h3>Cobertura Nacional e Internacional</h3>
+            <p>
+              Acompanhe os desdobramentos políticos em Brasília, as inovações do
+              Vale do Silício, os resultados do futebol europeu e os impactos da
+              economia global no seu bolso.
+            </p>
+          </div>
+        </div>
+
+        <div class="jornalz-feature-card">
+          <div class="jornalz-feature-icon">
+            <i class="fas fa-tachometer-alt"></i>
+          </div>
+          <div class="jornalz-feature-content">
+            <h3>Na Velocidade da Netmax</h3>
+            <p>
+              Enquanto nossa fibra entrega 1000 megas de velocidade, o JornalZ
+              entrega a informação mais rápida e relevante. Perfeito para quem
+              precisa estar atualizado sem perder tempo.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ONDE ACESSAR -->
+      <h2
+        class="ecosystem-title"
+        style="margin: 60px auto 30px"
+        id="como-acessar"
+      >
+        📱 ONDE QUISER, <span class="price-fire">QUANDO QUISER</span>
+      </h2>
+
+      <div class="jornalz-devices">
+        <div class="jornalz-device-item">
+          <i class="fas fa-mobile-alt"></i>
+          <span>Smartphone</span>
+          <small>No ônibus, na fila, no intervalo</small>
+        </div>
+        <div class="jornalz-device-item">
+          <i class="fas fa-laptop"></i>
+          <span>Computador</span>
+          <small>Home office com pesquisa rápida</small>
+        </div>
+        <div class="jornalz-device-item">
+          <i class="fas fa-tablet-alt"></i>
+          <span>Tablet</span>
+          <small>Leitura confortável no sofá</small>
+        </div>
+      </div>
+
+      <!-- COMO ATIVAR / CTA -->
+      <div class="jornalz-cta-box" id="como-acessar">
+        <h2>🎁 E O MELHOR: TUDO INCLUSO NO SEU PLANO!</h2>
+        <p>
+          Não é uma assinatura extra, não é um custo adicional. O
+          <strong>JornalZ</strong> é mais um presente da Netmax para você, que
+          já faz parte da nossa família.
+        </p>
+        <p
+          style="
+            font-size: 1.8rem;
+            color: #ffd000;
+            margin-bottom: 40px;
+            font-weight: bold;
+          "
+        >
+          Se você já é assinante, o mundo da informação inteligente te espera.
+        </p>
+        <button
+          class="btn-primary pulse-btn"
+          style="
+            font-size: 2rem;
+            padding: 25px 60px;
+            background: #f24f00;
+            color: #000;
+            font-weight: 800;
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 30px rgba(255, 208, 0, 0.5);
+          "
+          onmouseover="
+            this.style.background = '#FFD000';
+            this.style.transform = 'scale(1.05)';
+          "
+          onmouseout="
+            this.style.background = '#f24f00';
+            this.style.transform = 'scale(1)';
+          "
+          onclick="window.open('https://www.jornalz.com.br/', '_blank')"
+        >
+          📰 ACESSAR JORNALZ AGORA
+        </button>
+      </div>
+
+      <!-- CHAMADA PARA ASSINATURA -->
+      <div
+        style="
+          background: rgba(0, 0, 0, 0.05);
+          padding: 50px;
+          border-radius: 30px;
+          margin: 40px 0;
+        "
+      >
+        <h2 style="font-size: 2.2rem; color: #000; margin-bottom: 20px">
+          Ainda não é assinante Netmax?
+        </h2>
+        <p style="font-size: 1.5rem; color: #333; margin-bottom: 30px">
+          Assine agora o plano de 1000 megas por apenas
+          <strong style="color: #f24f00; font-size: 2rem">R$ 114,90</strong> e
+          leve todos os benefícios inclusos: Netmax TV, Estante Digital, NEWS
+          Periódicos e JornalZ!
+        </p>
+        <button
+          class="btn-primary pulse-btn"
+          style="
+            font-size: 1.8rem;
+            padding: 20px 50px;
+            text-decoration: none;
+            display: inline-block;
+            background: #f24f00;
+            color: #000;
+            font-weight: 800;
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 30px rgba(255, 208, 0, 0.5);
+          "
+          onmouseover="
+            this.style.background = '#FFD000';
+            this.style.transform = 'scale(1.05)';
+          "
+          onmouseout="
+            this.style.background = '#f24f00';
+            this.style.transform = 'scale(1)';
+          "
+          onclick="
+            window.open(
+              'https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra.',
+              '_blank',
+            )
+          "
+        >
+          🔥 QUERO ASSINAR AGORA
+        </button>
+      </div>
+
+      <!-- PARCEIROS / CONTEÚDOS EXCLUSIVOS -->
+      <div class="jornalz-partner-showcase">
+        <img
+          src="../assets/images/logos/logo_jornalz.png"
+          alt="JornalZ"
+          style="width: 100px"
+        />
+        <span>+</span>
+        <img
+          src="../assets/images/logos/logo_netmax.jpg"
+          alt="Netmax Fibra"
+          style="width: 100px"
+        />
+      </div>
+    </section>
+
+     <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-content">
+        <div class="footer-text">
+          <p>© 2024 Netmax Fibra - Todos os Direitos Reservados</p>
+          <p>Telefone/WhatsApp: 43 9 9914-9922</p>
+          <p>
+            Rua Rio Grande do Sul, 1460 - Bairro Santuário - Siqueira Campos -
+            PR
+          </p>
+          <p>CNPJ: 53.458.225/0001-52</p>
+        </div>
+
+        <div class="footer-social">
+          <a
+            href="https://instagram.com/netmaxscm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/instagram.svg"
+              alt="Instagram"
+              width="20"
+              height="20"
+            />
+            <span>Instagram</span>
+          </a>
+          <a
+            href="https://facebook.com/netmax.siq"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/facebook.svg"
+              alt="Facebook"
+              width="20"
+              height="20"
+            />
+            <span>Facebook</span>
+          </a>
+          <a
+            href="https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/whatsapp.svg"
+              alt="WhatsApp"
+              width="20"
+              height="20"
+            />
+            <span>Fale Conosco</span>
+          </a>
+        </div>
+
+        <div class="footer-copyright">
+          <p>
+            Netmax Fibra - A velocidade que conecta você ao mundo e ao
+            conhecimento.
+          </p>
+          <p>Desenvolvido com 💛 para nossos clientes</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

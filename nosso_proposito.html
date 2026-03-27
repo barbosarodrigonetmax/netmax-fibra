@@ -1,0 +1,788 @@
+<!doctype html>
+<!-- 
+    ===================================================================
+        NETMAX FIBRA - NOSSO PROPÓSITO (COM BOOTSTRAP)
+    ===================================================================
+    Objetivo: Apresentar a história, valores e diferenciais da 
+              empresa Netmax Fibra, destacando o propósito dos 
+              fundadores e o compromisso com os clientes.
+    Autor : Rodrigo Barbosa
+    Data  : 23/02/2026
+    ===================================================================
+-->
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Netmax Fibra - Nosso Propósito</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/outros/favicon_netmax.png" />
+    <link rel="shortcut icon" type="image/png" href="../assets/images/outros/favicon_netmax.png" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* Estilos adicionais específicos para garantir responsividade da página Nosso Propósito */
+      
+      /* Reset e ajustes base para garantir consistência */
+      * {
+        box-sizing: border-box;
+      }
+      
+      /* Container principal com padding responsivo */
+      .proposito-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 24px;
+      }
+      
+      /* Ajustes para tablets (até 1024px) */
+      @media (max-width: 1024px) {
+        .proposito-container {
+          padding: 30px 20px;
+        }
+        
+        .diferenciais-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 25px !important;
+        }
+        
+        .diferencial-card {
+          padding: 25px !important;
+        }
+        
+        .diferencial-card h3 {
+          font-size: 1.5rem !important;
+        }
+        
+        .proposito-highlight p:first-child {
+          font-size: 1.5rem !important;
+        }
+        
+        .proposito-highlight p {
+          font-size: 1.15rem !important;
+        }
+        
+        .missao-box p {
+          font-size: 1.5rem !important;
+        }
+        
+        .irmaos-image {
+          height: 350px !important;
+        }
+      }
+      
+      /* Ajustes para tablets médios e grandes (até 900px) */
+      @media (max-width: 900px) {
+        .diferenciais-grid {
+          gap: 20px !important;
+        }
+        
+        .diferencial-card {
+          padding: 22px !important;
+        }
+        
+        .diferencial-card h3 {
+          font-size: 1.4rem !important;
+        }
+        
+        .diferencial-card h3 i {
+          font-size: 1.6rem !important;
+        }
+        
+        .diferencial-card p {
+          font-size: 1rem !important;
+        }
+      }
+      
+      /* Ajustes para tablets pequenos e dispositivos móveis (até 768px) */
+      @media (max-width: 768px) {
+        /* Hero section ajustes */
+        .hero .hero-title {
+          font-size: 2rem !important;
+        }
+        
+        .hero .hero-title .price-fire {
+          font-size: 2rem !important;
+        }
+        
+        .hero .subtitle-premium {
+          font-size: 1.3rem !important;
+          padding: 18px !important;
+          margin: 20px auto !important;
+        }
+        
+        /* Container principal */
+        .proposito-container {
+          padding: 20px 16px !important;
+        }
+        
+        /* Imagem dos irmãos */
+        .irmaos-image {
+          height: 280px !important;
+          margin: 20px auto !important;
+        }
+        
+        .irmaos-image .overlay-text {
+          font-size: 1.1rem !important;
+          padding: 12px !important;
+        }
+        
+        .irmaos-image .overlay-text i {
+          font-size: 2.5rem !important;
+          margin-bottom: 8px !important;
+        }
+        
+        /* Highlight de propósito */
+        .proposito-highlight {
+          padding: 25px 20px !important;
+          margin: 25px 0 !important;
+        }
+        
+        .proposito-highlight p:first-child {
+          font-size: 1.25rem !important;
+          margin-bottom: 18px !important;
+        }
+        
+        .proposito-highlight p {
+          font-size: 1rem !important;
+          line-height: 1.6 !important;
+        }
+        
+        /* Título da seção de diferenciais */
+        .ecosystem-title {
+          font-size: 1.6rem !important;
+          margin: 40px auto 25px auto !important;
+          padding: 25px 20px !important;
+        }
+        
+        .ecosystem-title .price-fire {
+          font-size: 1.8rem !important;
+          margin-top: 12px !important;
+        }
+        
+        /* Grid de diferenciais */
+        .diferenciais-grid {
+          grid-template-columns: 1fr !important;
+          gap: 20px !important;
+          margin: 25px 0 !important;
+        }
+        
+        .diferencial-card {
+          padding: 22px !important;
+        }
+        
+        .diferencial-card h3 {
+          font-size: 1.35rem !important;
+        }
+        
+        .diferencial-card h3 i {
+          font-size: 1.6rem !important;
+        }
+        
+        .diferencial-card p {
+          font-size: 0.95rem !important;
+          line-height: 1.5 !important;
+        }
+        
+        /* Frase de destaque */
+        .proposito-highlight[style*="margin: 30px 0"] {
+          margin: 20px 0 !important;
+        }
+        
+        .proposito-highlight p[style*="font-size: 2rem"] {
+          font-size: 1.8rem !important;
+        }
+        
+        .proposito-highlight p[style*="font-size: 1.8rem"] {
+          font-size: 1.3rem !important;
+        }
+        
+        /* Missão box */
+        .missao-box {
+          padding: 35px 20px !important;
+          margin: 35px 0 !important;
+        }
+        
+        .missao-box p {
+          font-size: 1.25rem !important;
+          line-height: 1.5 !important;
+        }
+        
+        .missao-box .autor {
+          font-size: 1rem !important;
+          margin-top: 20px !important;
+        }
+        
+        /* Rodapé do propósito */
+        .rodape-proposito {
+          padding: 18px !important;
+        }
+        
+        .rodape-proposito p {
+          font-size: 0.95rem !important;
+        }
+        
+        .rodape-proposito p:first-child {
+          font-size: 1.1rem !important;
+        }
+      }
+      
+      /* Ajustes para dispositivos móveis (até 600px) */
+      @media (max-width: 600px) {
+        .proposito-container {
+          padding: 15px 12px !important;
+        }
+        
+        .irmaos-image {
+          height: 240px !important;
+        }
+        
+        .irmaos-image .overlay-text {
+          font-size: 0.95rem !important;
+          padding: 10px !important;
+        }
+        
+        .irmaos-image .overlay-text i {
+          font-size: 2rem !important;
+        }
+        
+        .proposito-highlight {
+          padding: 20px 15px !important;
+        }
+        
+        .proposito-highlight p:first-child {
+          font-size: 1.15rem !important;
+        }
+        
+        .ecosystem-title {
+          font-size: 1.4rem !important;
+          padding: 20px 15px !important;
+        }
+        
+        .ecosystem-title .price-fire {
+          font-size: 1.6rem !important;
+        }
+        
+        .diferencial-card {
+          padding: 18px !important;
+        }
+        
+        .diferencial-card h3 {
+          font-size: 1.25rem !important;
+        }
+        
+        .diferencial-card h3 i {
+          font-size: 1.4rem !important;
+        }
+        
+        .missao-box {
+          padding: 28px 18px !important;
+        }
+        
+        .missao-box p {
+          font-size: 1.1rem !important;
+        }
+      }
+      
+      /* Ajustes para dispositivos móveis pequenos (até 480px) */
+      @media (max-width: 480px) {
+        /* Hero */
+        .hero .hero-title {
+          font-size: 1.6rem !important;
+        }
+        
+        .hero .hero-title .price-fire {
+          font-size: 1.6rem !important;
+        }
+        
+        .hero .subtitle-premium {
+          font-size: 1.1rem !important;
+          padding: 15px !important;
+        }
+        
+        /* Container */
+        .proposito-container {
+          padding: 12px 12px !important;
+        }
+        
+        /* Imagem dos irmãos */
+        .irmaos-image {
+          height: 200px !important;
+          border-radius: 16px !important;
+        }
+        
+        .irmaos-image .overlay-text {
+          font-size: 0.85rem !important;
+          padding: 8px !important;
+        }
+        
+        .irmaos-image .overlay-text i {
+          font-size: 1.8rem !important;
+          margin-bottom: 5px !important;
+        }
+        
+        /* Highlight */
+        .proposito-highlight {
+          padding: 18px 12px !important;
+          border-radius: 20px !important;
+        }
+        
+        .proposito-highlight p:first-child {
+          font-size: 1.05rem !important;
+        }
+        
+        .proposito-highlight p {
+          font-size: 0.9rem !important;
+        }
+        
+        /* Título diferenciais */
+        .ecosystem-title {
+          font-size: 1.2rem !important;
+          padding: 18px 12px !important;
+        }
+        
+        .ecosystem-title .price-fire {
+          font-size: 1.4rem !important;
+        }
+        
+        /* Cards de diferenciais */
+        .diferencial-card {
+          padding: 16px !important;
+          border-radius: 16px !important;
+        }
+        
+        .diferencial-card h3 {
+          font-size: 1.15rem !important;
+          margin-bottom: 10px !important;
+        }
+        
+        .diferencial-card h3 i {
+          font-size: 1.3rem !important;
+        }
+        
+        .diferencial-card p {
+          font-size: 0.85rem !important;
+        }
+        
+        /* Frase destaque */
+        .proposito-highlight p[style*="font-size: 2rem"] {
+          font-size: 1.6rem !important;
+        }
+        
+        .proposito-highlight p[style*="font-size: 1.8rem"] {
+          font-size: 1.15rem !important;
+        }
+        
+        /* Missão box */
+        .missao-box {
+          padding: 22px 15px !important;
+          border-radius: 20px !important;
+        }
+        
+        .missao-box p {
+          font-size: 1rem !important;
+        }
+        
+        .missao-box .autor {
+          font-size: 0.9rem !important;
+        }
+        
+        /* Rodapé do propósito */
+        .rodape-proposito {
+          padding: 15px !important;
+          border-radius: 16px !important;
+        }
+        
+        .rodape-proposito p {
+          font-size: 0.85rem !important;
+        }
+        
+        .rodape-proposito p:first-child {
+          font-size: 1rem !important;
+        }
+      }
+      
+      /* Ajustes para dispositivos muito pequenos (até 375px) */
+      @media (max-width: 375px) {
+        .hero .hero-title {
+          font-size: 1.4rem !important;
+        }
+        
+        .hero .hero-title .price-fire {
+          font-size: 1.4rem !important;
+        }
+        
+        .hero .subtitle-premium {
+          font-size: 1rem !important;
+          padding: 12px !important;
+        }
+        
+        .irmaos-image {
+          height: 180px !important;
+        }
+        
+        .irmaos-image .overlay-text {
+          font-size: 0.75rem !important;
+        }
+        
+        .irmaos-image .overlay-text i {
+          font-size: 1.5rem !important;
+        }
+        
+        .proposito-highlight p:first-child {
+          font-size: 0.95rem !important;
+        }
+        
+        .proposito-highlight p {
+          font-size: 0.85rem !important;
+        }
+        
+        .diferencial-card h3 {
+          font-size: 1rem !important;
+        }
+        
+        .diferencial-card h3 i {
+          font-size: 1.2rem !important;
+        }
+        
+        .diferencial-card p {
+          font-size: 0.8rem !important;
+        }
+        
+        .missao-box p {
+          font-size: 0.9rem !important;
+        }
+      }
+      
+      /* Ajustes para garantir que o grid não quebre em telas muito pequenas */
+      @media (max-width: 340px) {
+        .diferencial-card h3 {
+          flex-direction: column;
+          text-align: center;
+          gap: 8px !important;
+        }
+        
+        .diferencial-card h3 i {
+          margin-bottom: 5px;
+        }
+        
+        .proposito-highlight p:first-child {
+          text-align: center;
+        }
+      }
+      
+      /* Garantir que textos longos não quebrem layout */
+      .proposito-highlight p,
+      .diferencial-card p,
+      .missao-box p,
+      .rodape-proposito p {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+      
+      /* Melhorar espaçamento entre elementos */
+      .proposito-highlight + h2,
+      .diferenciais-grid + .proposito-highlight,
+      .proposito-highlight + .missao-box {
+        margin-top: 30px !important;
+      }
+      
+      /* Ajuste para o título da seção ecosystem */
+      .ecosystem {
+        padding: 60px 0 80px !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a
+      href="https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
+      class="whatsapp-float"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <i class="fab fa-whatsapp"></i>
+      <span class="whatsapp-tooltip">Fale conosco!</span>
+    </a>
+
+    <!-- HEADER PADRÃO -->
+    <header class="header">
+      <div class="logo-area-highlight">
+        <img
+          src="../assets/images/logos/logo_netmax.jpg"
+          alt="Logo Netmax"
+          class="logo-netmax-big"
+        />
+        <h1 class="slogan-top">
+          A velocidade que conecta você ao mundo e ao conhecimento.
+        </h1>
+      </div>
+
+      <!-- CENTRAL DO ASSINANTE -->
+      <div class="assinante-container">
+        <a
+          href="https://netmax.net.br/"
+          class="assinante-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="assinante-icon">
+            <i class="fas fa-user-circle"></i>
+          </div>
+          <span class="assinante-text">CENTRAL DO<br />ASSINANTE</span>
+        </a>
+      </div>
+
+      <!-- MENU DE NAVEGAÇÃO -->
+      <nav class="nav-menu">
+        <a href="../index.html">PÁGINA INICIAL</a>
+        <a href="estante_digital.html">ESTANTE DIGITAL NETMAX</a>
+        <a href="jornalz.html">JORNALZ</a>
+        <a href="news_periodicos.html">NEWS PERIÓDICOS</a>
+        <a href="netmax_tv.html">NETMAX TV</a>
+        <a href="#" style="color: #ffd000; font-weight: bold"
+          >NOSSO PROPÓSITO</a
+        >
+        <a href="por_que_escolher_a_netmax.html">POR QUE ESCOLHER A NETMAX</a>
+      </nav>
+    </header>
+
+    <!-- HERO DA PÁGINA -->
+    <section class="hero hero-boosted">
+      <h1 class="hero-title">
+        <span class="price-fire">NOSSO PROPÓSITO</span>
+      </h1>
+      <p class="subtitle subtitle-premium">
+        Mais que internet, uma conexão feita por quem se importa.
+      </p>
+    </section>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <section class="ecosystem" style="padding-top: 60px">
+      <div class="proposito-container">
+        <!-- IMAGEM DOS IRMÃOS (SIMULADA) -->
+        <div class="irmaos-image">
+          <div class="overlay-text">
+            <i
+              class="fas fa-users"
+              style="font-size: 4rem; margin-bottom: 15px"
+            ></i
+            ><br />
+            JULIANO • JULIO CESAR • ISAAC VILAS BOAS
+          </div>
+        </div>
+
+        <!-- TEXTO DE ABERTURA -->
+        <div class="proposito-highlight">
+          <p>
+            ⚡ Toda a nossa tecnologia e excelência existe com um único
+            propósito: fazer com que você, cliente, tenha uma vida mais fácil,
+            sem preocupações e com a melhor experiência possível.
+          </p>
+
+          <p>
+            A <strong>Netmax</strong> nasceu em
+            <strong>Siqueira Campos, no coração do Paraná</strong>, de um sonho
+            compartilhado por três irmãos:
+            <strong>Juliano, Julio Cesar e Isaac Vilas Boas</strong>. Mais do
+            que empreendedores, somos como você: pessoas que valorizam uma
+            conexão de verdade, que não abrem mão da qualidade e que acreditam
+            que a tecnologia deve servir para aproximar, e não para complicar.
+          </p>
+
+          <p>
+            <strong
+              >Mas, para nós, ser o melhor provedor de fibra óptica da região
+              vai muito além dos 1000 megas de velocidade.</strong
+            >
+            Significa ter uma equipe técnica altamente qualificada, que está
+            sempre de prontidão. Significa ter os proprietários com a mão na
+            massa, acompanhando cada instalação, cada melhoria, e trabalhando
+            incansavelmente ao lado do time.
+          </p>
+        </div>
+
+        <!-- TÍTULO SEÇÃO DIFERENCIAIS -->
+        <h2
+          class="ecosystem-title"
+          style="
+            margin: 60px auto 30px auto;
+            max-width: 900px;
+            padding: 35px 25px;
+            text-align: center;
+            font-size: 2rem;
+          "
+        >
+          POR QUE O CLIENTE NETMAX
+          <span
+            class="price-fire"
+            style="
+              font-size: 2.5rem;
+              display: block;
+              margin-top: 15px;
+              text-align: center;
+              width: 100%;
+            "
+          >
+            SENTE ESSA DIFERENÇA?
+          </span>
+        </h2>
+
+        <!-- GRID DE DIFERENCIAIS -->
+        <div class="diferenciais-grid">
+          <div class="diferencial-card">
+            <h3><i class="fas fa-home"></i> Proprietários Presentes</h3>
+            <p>
+              Juliano, Julio Cesar e Isaac não são sócios que ficam atrás de uma
+              mesa. Eles estão na rua, visitando clientes, conhecendo cada
+              bairro e fazendo questão de estar perto de você.
+              <strong
+                >A gente sabe seu nome, conhece sua rua e entende as suas
+                necessidades.</strong
+              >
+            </p>
+          </div>
+
+          <div class="diferencial-card">
+            <h3>
+              <i class="fas fa-tools"></i> Equipe Qualificada e Respeitosa
+            </h3>
+            <p>
+              Nossos técnicos são mais do que profissionais preparados; eles são
+              o nosso cartão de visitas. Tratam sua casa com o mesmo cuidado que
+              tratariam a própria casa, levando a solução com respeito e
+              agilidade.
+            </p>
+          </div>
+
+          <div class="diferencial-card">
+            <h3><i class="fas fa-microchip"></i> Tecnologia Sempre Renovada</h3>
+            <p>
+              A gente não terceiriza a responsabilidade. Estamos constantemente
+              renovando equipamentos e buscando o que há de mais moderno no
+              mercado para fazer parte do nosso sistema. É assim que garantimos
+              um sinal forte e estável em todos os cômodos, sem surpresas.
+            </p>
+          </div>
+
+          <div class="diferencial-card">
+            <h3><i class="fas fa-heart"></i> Responsabilidade de Verdade</h3>
+            <p>
+              Na Netmax, quando o sinal chega forte na sua casa, a gente sabe
+              que o nosso trabalho está bem feito. Por isso, não descansamos
+              enquanto você não estiver 100% satisfeito.
+            </p>
+          </div>
+        </div>
+
+        <!-- FRASE DE DESTAQUE -->
+        <div class="proposito-highlight" style="margin: 30px 0">
+          <p style="font-size: 2rem; text-align: center; margin-bottom: 0">
+            💪
+          </p>
+          <p
+            style="
+              font-size: 1.8rem;
+              text-align: center;
+              font-weight: bold;
+              color: #000;
+            "
+          >
+            A gente capricha na tecnologia para que você não tenha dor de cabeça
+            e possa usar a internet sossegado.
+          </p>
+        </div>
+
+        <!-- MISSÃO -->
+        <div class="missao-box">
+          <p>
+            Oferecer a você e sua família o máximo conforto, a tranquilidade de
+            uma conexão que funciona e a certeza de que, atrás da fibra, existem
+            pessoas que realmente se importam.
+          </p>
+          <div class="autor">Equipe Netmax</div>
+        </div>
+
+        <!-- RODAPÉ DO PROPÓSITO -->
+        <div class="rodape-proposito">
+          <p>
+            ⚡ Netmax: Feita por quem entende, administrada por quem se importa.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-content">
+        <div class="footer-text">
+          <p>© 2024 Netmax Fibra - Todos os Direitos Reservados</p>
+          <p>Telefone/WhatsApp: 43 9 9914-9922</p>
+          <p>
+            Rua Rio Grande do Sul, 1460 - Bairro Santuário - Siqueira Campos -
+            PR
+          </p>
+          <p>CNPJ: 53.458.225/0001-52</p>
+        </div>
+
+        <div class="footer-social">
+          <a
+            href="https://instagram.com/netmaxscm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/instagram.svg"
+              alt="Instagram"
+              width="20"
+              height="20"
+            />
+            <span>Instagram</span>
+          </a>
+          <a
+            href="https://facebook.com/netmax.siq"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/facebook.svg"
+              alt="Facebook"
+              width="20"
+              height="20"
+            />
+            <span>Facebook</span>
+          </a>
+          <a
+            href="https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/whatsapp.svg"
+              alt="WhatsApp"
+              width="20"
+              height="20"
+            />
+            <span>Fale Conosco</span>
+          </a>
+        </div>
+
+        <div class="footer-copyright">
+          <p>
+            Netmax Fibra - A velocidade que conecta você ao mundo e ao
+            conhecimento.
+          </p>
+          <p>Desenvolvido com 💛 para nossos clientes</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>
