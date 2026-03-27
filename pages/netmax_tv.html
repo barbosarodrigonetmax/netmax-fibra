@@ -2,13 +2,20 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
     <title>Netmax Fibra - NETMAX TV: 100+ Canais Inclusos</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../assets/images/outros/favicon_netmax.png" />
-    <link rel="shortcut icon" type="image/png" href="../assets/images/outros/favicon_netmax.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../assets/images/outros/favicon_netmax.png"
+    />
+    <link rel="shortcut icon" type="image/png" href="../favicon_netmax.png" />
     <!-- ===================================================================
-         NETMAX FIBRA - PÁGINA NETMAX TV (REFATORADA COM BOOTSTRAP)
+         NETMAX FIBRA - PÁGINA NETMAX TV (REFATORADA)
          ===================================================================
          Objetivo: Página institucional para apresentar e ativar o serviço 
                    NETMAX TV (mais de 100 canais via streaming) incluso nos 
@@ -27,7 +34,497 @@
          ESTILOS RESPONSIVOS OTIMIZADOS PARA NETMAX TV
          =================================================================== */
 
-      /* --- TABLETS (max-width: 1024px) --- */
+      /* --- ESTILOS GLOBAIS PARA MODAIS (GARANTIA) --- */
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+      }
+
+      .modal-overlay.show {
+        display: flex !important;
+      }
+
+      .modal-container {
+        width: 90%;
+        max-width: 600px;
+        margin: 20px;
+        animation: modalSlideIn 0.3s ease-out;
+      }
+
+      @keyframes modalSlideIn {
+        from {
+          opacity: 0;
+          transform: translateY(-30px) scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      .modal-card {
+        background: #fff;
+        border-radius: 40px;
+        overflow-y: auto;
+        max-height: 85vh;
+        position: relative;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(255, 208, 0, 0.3);
+      }
+
+      .modal-close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 44px;
+        height: 44px;
+        border-radius: 30px;
+        background: rgba(0, 0, 0, 0.05);
+        border: none;
+        cursor: pointer;
+        z-index: 10;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal-close-btn i {
+        font-size: 1.2rem;
+        color: #666;
+      }
+
+      .modal-header {
+        padding: 40px 32px 24px 32px;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+      }
+
+      .modal-icon-wrapper {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 20px auto;
+        background: linear-gradient(135deg, #ffd000, #ffaa00);
+        border-radius: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal-icon-wrapper i {
+        font-size: 3rem;
+        color: #000;
+      }
+
+      .modal-title {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: #000;
+        margin: 0 0 8px 0;
+      }
+
+      .title-fire {
+        color: #ffd000;
+      }
+
+      .modal-subtitle {
+        font-size: 1rem;
+        color: #666;
+        margin: 0;
+      }
+
+      .modal-body {
+        padding: 32px;
+      }
+
+      .access-card {
+        background: #f8f8f8;
+        border-radius: 24px;
+        margin-bottom: 32px;
+        overflow: hidden;
+        border: 1px solid #e0e0e0;
+      }
+
+      .access-card-header {
+        background: #000;
+        padding: 16px 24px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .access-card-header i {
+        color: #ffd000;
+        font-size: 1.2rem;
+      }
+
+      .access-card-header span {
+        color: #ffd000;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-size: 0.9rem;
+      }
+
+      .access-card-body {
+        padding: 20px 24px;
+      }
+
+      .access-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .access-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .access-label {
+        font-size: 0.85rem;
+        color: #999;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      .access-value {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #333;
+      }
+
+      .access-highlight {
+        background: #ffd00020;
+        padding: 6px 12px;
+        border-radius: 12px;
+        font-family: monospace;
+      }
+
+      .access-card-footer {
+        background: #fff0c0;
+        padding: 12px 24px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.8rem;
+        color: #666;
+      }
+
+      .action-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-bottom: 32px;
+      }
+
+      .action-card {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 20px;
+        border-radius: 24px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: 2px solid transparent;
+      }
+
+      .action-card-watch {
+        background: linear-gradient(135deg, #000, #1a1a1a);
+        border: 2px solid #ffd000;
+      }
+
+      .action-card-whatsapp {
+        background: linear-gradient(135deg, #075e54, #128c7e);
+      }
+
+      .action-icon {
+        width: 60px;
+        height: 60px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .action-icon i {
+        font-size: 2rem;
+      }
+
+      .action-card-watch .action-icon i {
+        color: #ffd000;
+      }
+
+      .action-card-whatsapp .action-icon i {
+        color: #fff;
+      }
+
+      .action-content {
+        flex: 1;
+      }
+
+      .action-content h3 {
+        font-size: 1.2rem;
+        font-weight: 800;
+        margin: 0 0 4px 0;
+      }
+
+      .action-card-watch .action-content h3 {
+        color: #ffd000;
+      }
+
+      .action-card-whatsapp .action-content h3 {
+        color: #fff;
+      }
+
+      .action-content p {
+        font-size: 0.8rem;
+        margin: 0;
+      }
+
+      .action-card-watch .action-content p {
+        color: #aaa;
+      }
+
+      .action-card-whatsapp .action-content p {
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .action-arrow i {
+        font-size: 1.2rem;
+      }
+
+      .action-card-watch .action-arrow i {
+        color: #ffd000;
+      }
+
+      .action-card-whatsapp .action-arrow i {
+        color: #fff;
+      }
+
+      .instruction-list {
+        background: #f8f8f8;
+        border-radius: 24px;
+        padding: 24px;
+        margin-bottom: 24px;
+      }
+
+      .instruction-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 20px;
+      }
+
+      .instruction-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .instruction-item i {
+        color: #ffd000;
+        font-size: 1.2rem;
+        margin-top: 2px;
+      }
+
+      .instruction-item span {
+        font-size: 0.95rem;
+        color: #333;
+        line-height: 1.5;
+      }
+
+      .tip-box {
+        background: #fff8e7;
+        border-left: 4px solid #ffd000;
+        border-radius: 16px;
+        padding: 16px 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .tip-box i {
+        color: #ffd000;
+        font-size: 1.2rem;
+      }
+
+      .tip-box p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #666;
+      }
+
+      .tip-link {
+        font-family: monospace;
+        background: #fff;
+        padding: 2px 8px;
+        border-radius: 8px;
+        font-weight: 600;
+        color: #ffd000;
+      }
+
+      .modal-footer {
+        background: #f8f8f8;
+        padding: 16px 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border-top: 1px solid #eee;
+        font-size: 0.8rem;
+        color: #666;
+      }
+
+      .modal-footer i {
+        color: #ffd000;
+      }
+
+      .highlight-card {
+        background: linear-gradient(145deg, #ffd000, #ffaa00);
+        border: 2px solid #000;
+        border-radius: 20px;
+        padding: 20px;
+        margin-bottom: 25px;
+        text-align: center;
+      }
+
+      .highlight-card i {
+        font-size: 2.5rem;
+        color: #000;
+        margin-bottom: 10px;
+      }
+
+      .highlight-card p {
+        color: #000;
+        font-weight: 800;
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+      }
+
+      /* --- RESPONSIVIDADE DOS MODAIS --- */
+      @media (max-width: 768px) {
+        .modal-container {
+          width: 92%;
+          max-width: 500px;
+          animation: modalSlideInMobile 0.3s ease-out;
+        }
+
+        @keyframes modalSlideInMobile {
+          from {
+            opacity: 0;
+            transform: translateY(30px) scale(0.96);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+
+        .modal-card {
+          max-height: 90vh;
+          border-radius: 32px;
+        }
+
+        .modal-close-btn {
+          top: 16px;
+          right: 16px;
+          width: 40px;
+          height: 40px;
+        }
+
+        .modal-header {
+          padding: 30px 24px 20px 24px;
+        }
+
+        .modal-icon-wrapper {
+          width: 70px;
+          height: 70px;
+        }
+
+        .modal-icon-wrapper i {
+          font-size: 2.5rem;
+        }
+
+        .modal-title {
+          font-size: 1.5rem;
+        }
+
+        .modal-body {
+          padding: 24px;
+        }
+
+        .action-grid {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+
+        .access-item {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .instruction-list {
+          padding: 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .modal-container {
+          width: 94%;
+        }
+
+        .modal-header {
+          padding: 24px 20px 16px 20px;
+        }
+
+        .modal-icon-wrapper {
+          width: 60px;
+          height: 60px;
+        }
+
+        .modal-icon-wrapper i {
+          font-size: 2rem;
+        }
+
+        .modal-title {
+          font-size: 1.4rem;
+        }
+
+        .modal-body {
+          padding: 20px;
+        }
+
+        .action-card {
+          padding: 14px 16px;
+        }
+
+        .action-icon {
+          width: 48px;
+          height: 48px;
+        }
+
+        .action-icon i {
+          font-size: 1.5rem;
+        }
+
+        .action-content h3 {
+          font-size: 1rem;
+        }
+      }
+
+      /* --- ESTILOS EXISTENTES DA PÁGINA --- */
       @media (max-width: 1024px) {
         .tv-hero .hero-title {
           font-size: 2.5rem !important;
@@ -42,16 +539,9 @@
           font-size: 1.5rem !important;
           padding: 15px 35px !important;
         }
-
-        /* Ajuste para a seção de estatísticas */
-        .tv-stats-row {
-          gap: 20px !important;
-        }
       }
 
-      /* --- MOBILE GRANDE (max-width: 768px) --- */
       @media (max-width: 768px) {
-        /* Hero */
         .tv-hero {
           padding: 60px 20px !important;
         }
@@ -71,26 +561,22 @@
           padding: 12px 25px !important;
         }
 
-        /* Seção "O Mundo Netmax TV" - container principal */
         .tv-ecosystem-container {
           padding: 40px 25px !important;
           margin: 40px 15px !important;
         }
 
-        /* Grid 2 colunas vira 1 coluna */
         .tv-world-grid {
           grid-template-columns: 1fr !important;
           gap: 30px !important;
         }
 
-        /* Header da seção com botão de "JÁ INCLUSO" */
         .tv-world-header {
           flex-direction: column !important;
           align-items: flex-start !important;
           gap: 15px !important;
         }
 
-        /* Barra de estatísticas */
         .tv-stats-row {
           flex-direction: column !important;
           align-items: flex-start !important;
@@ -98,19 +584,16 @@
           margin-top: 35px !important;
         }
 
-        /* Cards de benefícios - 1 coluna */
         .tv-features-grid {
           grid-template-columns: 1fr !important;
           gap: 20px !important;
         }
 
-        /* Grade de canais - 2 colunas */
         .tv-channels-grid {
           grid-template-columns: repeat(2, 1fr) !important;
           gap: 15px !important;
         }
 
-        /* Dispositivos - flex wrap ajustado */
         .tv-devices {
           gap: 20px !important;
           padding: 30px 20px !important;
@@ -124,27 +607,15 @@
           font-size: 3.5rem !important;
         }
 
-        /* Seção CDNTV - grid 2 colunas vira 1 */
         .tv-cdntv-grid {
           grid-template-columns: 1fr !important;
           gap: 30px !important;
         }
 
-        /* CDNTV cards de características */
         .tv-cdntv-cards {
           gap: 15px !important;
         }
 
-        /* FAQ */
-        .tv-faq-item h4 {
-          font-size: 1.1rem !important;
-        }
-
-        .tv-faq-item p {
-          font-size: 0.95rem !important;
-        }
-
-        /* CTA */
         .tv-cta-giant {
           padding: 50px 20px !important;
           margin: 40px 15px !important;
@@ -154,92 +625,26 @@
           font-size: 1.8rem !important;
         }
 
-        .tv-cta-giant .btn-primary {
-          font-size: 1.3rem !important;
-          padding: 15px 35px !important;
-        }
-
-        .tv-cta-giant p {
-          font-size: 1.2rem !important;
-        }
-
-        /* Depoimento */
         .tv-testimonial {
           padding: 40px 20px !important;
           margin: 40px 15px !important;
         }
 
-        .tv-testimonial p {
-          font-size: 1.1rem !important;
-        }
-
-        /* Badge de destaque */
-        .tv-highlight-badge {
-          font-size: 1rem !important;
-          padding: 12px 20px !important;
-        }
-
-        /* Chamada para assinatura */
         .tv-signup-box {
           padding: 30px 20px !important;
           margin: 30px 15px !important;
         }
-
-        .tv-signup-box h2 {
-          font-size: 1.8rem !important;
-        }
-
-        .tv-signup-box p {
-          font-size: 1.2rem !important;
-        }
-
-        /* Modal - ajustes de escala */
-        .modal-container {
-          margin: 20px !important;
-        }
-
-        .modal-body {
-          padding: 25px !important;
-        }
-
-        .action-grid {
-          grid-template-columns: 1fr !important;
-          gap: 15px !important;
-        }
-
-        .access-item {
-          flex-direction: column !important;
-          gap: 8px !important;
-          align-items: flex-start !important;
-        }
-
-        .instruction-item span {
-          font-size: 1rem !important;
-        }
-
-        .tip-box {
-          flex-direction: column !important;
-          text-align: center !important;
-          gap: 10px !important;
-        }
       }
 
-      /* --- MOBILE PEQUENO (max-width: 480px) --- */
       @media (max-width: 480px) {
         .tv-hero .hero-title {
           font-size: 1.5rem !important;
         }
 
-        .tv-hero .subtitle-premium {
-          font-size: 1.1rem !important;
-        }
-
-        /* Grade de canais - 1 coluna */
         .tv-channels-grid {
           grid-template-columns: 1fr !important;
         }
 
-        /* Dispositivos */
         .tv-device-item {
           width: 100px !important;
         }
@@ -247,90 +652,8 @@
         .tv-device-item i {
           font-size: 2.8rem !important;
         }
-
-        .tv-device-item span {
-          font-size: 0.9rem !important;
-        }
-
-        .tv-device-item small {
-          font-size: 0.75rem !important;
-        }
-
-        /* Cards de features */
-        .tv-feature-card h3 {
-          font-size: 1.3rem !important;
-        }
-
-        .tv-feature-card p {
-          font-size: 0.9rem !important;
-        }
-
-        /* CTA */
-        .tv-cta-giant .btn-primary {
-          font-size: 1.1rem !important;
-          padding: 12px 25px !important;
-        }
-
-        .tv-cta-giant h2 {
-          font-size: 1.5rem !important;
-        }
-
-        .tv-cta-giant p {
-          font-size: 1rem !important;
-        }
-
-        /* Chamada para assinatura */
-        .tv-signup-box .btn-primary {
-          font-size: 1.2rem !important;
-          padding: 12px 30px !important;
-        }
-
-        /* Modal */
-        .modal-title {
-          font-size: 1.5rem !important;
-        }
-
-        .modal-subtitle {
-          font-size: 1rem !important;
-        }
-
-        .access-card-header span {
-          font-size: 1.2rem !important;
-        }
-
-        .action-card {
-          padding: 15px !important;
-        }
-
-        .action-content h3 {
-          font-size: 1.1rem !important;
-        }
-
-        .instruction-item span {
-          font-size: 0.9rem !important;
-        }
       }
 
-      /* --- TABLET EM PORTRAIT (max-width: 768px) --- */
-      /* Estilos específicos para manter a legibilidade */
-      @media (max-width: 768px) and (orientation: portrait) {
-        .tv-world-grid [style*="background: #000; border-radius: 30px"] {
-          margin-top: 20px !important;
-        }
-      }
-
-      /* --- Ajustes para telas muito grandes (min-width: 1400px) --- */
-      @media (min-width: 1400px) {
-        .tv-features-grid {
-          grid-template-columns: repeat(4, 1fr) !important;
-        }
-        
-        .tv-channels-grid {
-          grid-template-columns: repeat(5, 1fr) !important;
-        }
-      }
-
-      /* --- Classes utilitárias responsivas adicionais --- */
       .tv-stats-row {
         display: flex;
         flex-wrap: wrap;
@@ -369,33 +692,9 @@
         gap: 15px;
       }
 
-      /* Garantir que o container principal não tenha overflow */
       .ecosystem {
         overflow-x: hidden;
         width: 100%;
-      }
-
-      /* Ajustes para elementos inline com style inline que quebram */
-      [style*="grid-template-columns: 1.5fr 1fr"] {
-        grid-template-columns: 1.5fr 1fr !important;
-      }
-
-      @media (max-width: 768px) {
-        [style*="grid-template-columns: 1.5fr 1fr"] {
-          grid-template-columns: 1fr !important;
-        }
-      }
-
-      [style*="display: flex"][style*="justify-content: space-between"][style*="align-items: center"] {
-        flex-wrap: wrap !important;
-      }
-
-      @media (max-width: 768px) {
-        [style*="display: flex"][style*="justify-content: space-between"][style*="align-items: center"] {
-          flex-direction: column !important;
-          align-items: flex-start !important;
-          gap: 15px !important;
-        }
       }
     </style>
   </head>
@@ -478,7 +777,7 @@
 
     <!-- CONTEÚDO PRINCIPAL -->
     <section class="ecosystem" style="padding-top: 60px">
-      <!-- O QUE É A NETMAX TV - VERSÃO REFORMULADA -->
+      <!-- O QUE É A NETMAX TV -->
       <div
         class="tv-ecosystem-container"
         style="
@@ -492,7 +791,6 @@
           overflow: hidden;
         "
       >
-        <!-- Elemento Decorativo de Fundo -->
         <div
           style="
             position: absolute;
@@ -522,7 +820,6 @@
           ⚡
         </div>
 
-        <!-- Cabeçalho da Seção -->
         <div
           class="tv-world-header"
           style="
@@ -583,9 +880,7 @@
           </div>
         </div>
 
-        <!-- Grid de 2 Colunas: Explicação e Destaque -->
         <div class="tv-world-grid">
-          <!-- Coluna da Esquerda: Explicação Principal -->
           <div>
             <p
               style="
@@ -670,7 +965,6 @@
             </a>
           </div>
 
-          <!-- Coluna da Direita: Painel de Destaque com Cards de Benefícios -->
           <div
             style="
               background: #000;
@@ -680,7 +974,6 @@
               border: 2px solid #ffd000;
             "
           >
-            <!-- Item 1 -->
             <div
               style="
                 display: flex;
@@ -720,7 +1013,6 @@
               </div>
             </div>
 
-            <!-- Item 2 -->
             <div
               style="
                 display: flex;
@@ -759,7 +1051,6 @@
               </div>
             </div>
 
-            <!-- Item 3 -->
             <div style="display: flex; align-items: center; gap: 15px">
               <div
                 style="
@@ -802,7 +1093,6 @@
           </div>
         </div>
 
-        <!-- Barra de estatísticas -->
         <div class="tv-stats-row">
           <div style="display: flex; align-items: center; gap: 10px">
             <span style="font-size: 2.5rem; font-weight: 900; color: #ffd000"
@@ -1192,14 +1482,6 @@
                 gap: 20px;
                 transition: transform 0.3s ease;
               "
-              onmouseover="
-                this.style.transform = 'translateX(10px)';
-                this.style.background = 'rgba(255,208,0,0.2)';
-              "
-              onmouseout="
-                this.style.transform = 'translateX(0)';
-                this.style.background = 'rgba(255,208,0,0.1)';
-              "
             >
               <div
                 style="
@@ -1239,14 +1521,6 @@
                 align-items: center;
                 gap: 20px;
                 transition: transform 0.3s ease;
-              "
-              onmouseover="
-                this.style.transform = 'translateX(10px)';
-                this.style.background = 'rgba(255,208,0,0.2)';
-              "
-              onmouseout="
-                this.style.transform = 'translateX(0)';
-                this.style.background = 'rgba(255,208,0,0.1)';
               "
             >
               <div
@@ -1288,14 +1562,6 @@
                 gap: 20px;
                 transition: transform 0.3s ease;
               "
-              onmouseover="
-                this.style.transform = 'translateX(10px)';
-                this.style.background = 'rgba(255,208,0,0.2)';
-              "
-              onmouseout="
-                this.style.transform = 'translateX(0)';
-                this.style.background = 'rgba(255,208,0,0.1)';
-              "
             >
               <div
                 style="
@@ -1335,14 +1601,6 @@
                 align-items: center;
                 gap: 20px;
                 transition: transform 0.3s ease;
-              "
-              onmouseover="
-                this.style.transform = 'translateX(10px)';
-                this.style.background = 'rgba(255,208,0,0.2)';
-              "
-              onmouseout="
-                this.style.transform = 'translateX(0)';
-                this.style.background = 'rgba(255,208,0,0.1)';
               "
             >
               <div
@@ -1407,7 +1665,7 @@
       </h2>
 
       <div class="tv-faq">
-        <div class="tv-faq-item" onclick="this.classList.toggle('active')">
+        <div class="tv-faq-item">
           <h4>
             Preciso pagar alguma taxa extra para ter a Netmax TV?
             <i class="fas fa-chevron-down"></i>
@@ -1417,7 +1675,7 @@
             não paga nada a mais por isso.
           </p>
         </div>
-        <div class="tv-faq-item" onclick="this.classList.toggle('active')">
+        <div class="tv-faq-item">
           <h4>
             Quantos dispositivos posso usar ao mesmo tempo?
             <i class="fas fa-chevron-down"></i>
@@ -1429,7 +1687,7 @@
             senso para não comprometer a experiência.
           </p>
         </div>
-        <div class="tv-faq-item" onclick="this.classList.toggle('active')">
+        <div class="tv-faq-item">
           <h4>
             Preciso de equipamento especial?
             <i class="fas fa-chevron-down"></i>
@@ -1440,7 +1698,7 @@
             aplicativo.
           </p>
         </div>
-        <div class="tv-faq-item" onclick="this.classList.toggle('active')">
+        <div class="tv-faq-item">
           <h4>
             Quais canais estão disponíveis?
             <i class="fas fa-chevron-down"></i>
@@ -1451,7 +1709,7 @@
             religioso. A grade completa é enviada após a ativação.
           </p>
         </div>
-        <div class="tv-faq-item" onclick="this.classList.toggle('active')">
+        <div class="tv-faq-item">
           <h4>
             A qualidade é realmente boa?
             <i class="fas fa-chevron-down"></i>
@@ -1463,23 +1721,6 @@
           </p>
         </div>
       </div>
-
-      <script>
-        // Script simples para FAQ
-        document.querySelectorAll(".tv-faq-item").forEach((item) => {
-          item.addEventListener("click", function () {
-            const p = this.querySelector("p");
-            const icon = this.querySelector("i");
-            if (p.style.display === "none" || p.style.display === "") {
-              p.style.display = "block";
-              icon.style.transform = "rotate(180deg)";
-            } else {
-              p.style.display = "none";
-              icon.style.transform = "rotate(0deg)";
-            }
-          });
-        });
-      </script>
 
       <!-- COMO ATIVAR -->
       <div id="como-ativar" class="tv-cta-giant">
@@ -1550,11 +1791,10 @@
       </div>
     </section>
 
-    <!-- MODAL DA NETMAX TV - ORIGINAL (COM LISTA DE INSTRUÇÕES OTIMIZADA) -->
+    <!-- MODAL DA NETMAX TV - ORIGINAL -->
     <div id="tvModal" class="modal-overlay">
       <div class="modal-container">
         <div class="modal-card">
-          <!-- Botão Fechar -->
           <button
             class="modal-close-btn"
             onclick="fecharModal()"
@@ -1563,7 +1803,6 @@
             <i class="fas fa-times"></i>
           </button>
 
-          <!-- Cabeçalho com Ícone -->
           <div class="modal-header">
             <div class="modal-icon-wrapper">
               <i class="fas fa-tv"></i>
@@ -1576,9 +1815,7 @@
             </p>
           </div>
 
-          <!-- Corpo do Modal -->
           <div class="modal-body">
-            <!-- Card de Acesso Rápido (Dados de Login) -->
             <div class="access-card">
               <div class="access-card-header">
                 <i class="fas fa-lock-open"></i>
@@ -1604,9 +1841,7 @@
               </div>
             </div>
 
-            <!-- Botões de Ação em Grade -->
             <div class="action-grid">
-              <!-- Botão Assistir -->
               <a
                 href="https://tv.lcainfo.com.br/login"
                 target="_blank"
@@ -1626,7 +1861,6 @@
                 </div>
               </a>
 
-              <!-- Botão Ativar (WhatsApp) -->
               <a
                 href="https://wa.me/554399149922?text=Olá, desejo ativar a minha Netmax TV!"
                 target="_blank"
@@ -1647,7 +1881,6 @@
               </a>
             </div>
 
-            <!-- LISTA DE INSTRUÇÕES - VERSÃO OTIMIZADA COM MELHOR NITIDEZ -->
             <div class="instruction-list">
               <div class="instruction-item">
                 <i class="fas fa-check-circle"></i>
@@ -1674,7 +1907,6 @@
               </div>
             </div>
 
-            <!-- Dica em Destaque -->
             <div class="tip-box">
               <i class="fas fa-lightbulb"></i>
               <p>
@@ -1684,7 +1916,6 @@
             </div>
           </div>
 
-          <!-- Rodapé -->
           <div class="modal-footer">
             <i class="fas fa-check-circle"></i>
             <span>Netmax TV - 100% inclusa. Sem taxas extras.</span>
@@ -1693,11 +1924,10 @@
       </div>
     </div>
 
-    <!-- MODAL DE ATIVAÇÃO NETMAX TV - NOVO MODAL (REFATORADO) -->
+    <!-- MODAL DE ATIVAÇÃO NETMAX TV -->
     <div id="tvAtivacaoModal" class="modal-overlay">
       <div class="modal-container">
         <div class="modal-card">
-          <!-- Botão Fechar -->
           <button
             class="modal-close-btn"
             onclick="fecharModalAtivacao()"
@@ -1706,7 +1936,6 @@
             <i class="fas fa-times"></i>
           </button>
 
-          <!-- Cabeçalho com Ícone (Mantido) -->
           <div class="modal-header">
             <div class="modal-icon-wrapper">
               <i class="fas fa-rocket"></i>
@@ -1719,40 +1948,16 @@
             </p>
           </div>
 
-          <!-- Corpo do Modal (Reorganizado para legibilidade) -->
           <div class="modal-body">
-            <!-- Card de Destaque - Ativação Assistida (Simplificado) -->
-            <div
-              class="highlight-card"
-              style="
-                background: linear-gradient(145deg, #ffd000, #ffaa00);
-                border: 2px solid #000;
-                border-radius: 20px;
-                padding: 20px;
-                margin-bottom: 25px;
-                text-align: center;
-              "
-            >
-              <i
-                class="fas fa-headset"
-                style="font-size: 2.5rem; color: #000; margin-bottom: 10px"
-              ></i>
-              <p
-                style="
-                  color: #000;
-                  font-weight: 800;
-                  font-size: 1.2rem;
-                  margin-bottom: 5px;
-                "
+            <div class="highlight-card">
+              <i class="fas fa-headset"></i>
+              <p>ATIVAÇÃO ASSISTIDA</p>
+              <small
+                >Nossa equipe acompanha cada etapa para garantir sua
+                diversão.</small
               >
-                ATIVAÇÃO ASSISTIDA
-              </p>
-              <p style="color: #333; font-size: 0.95rem">
-                Nossa equipe acompanha cada etapa para garantir sua diversão.
-              </p>
             </div>
 
-            <!-- Botão de Ação Principal - Ativar via WhatsApp (Simplificado) -->
             <a
               href="https://wa.me/554399149922?text=Olá, desejo ativar a minha Netmax TV!"
               target="_blank"
@@ -1762,118 +1967,94 @@
               onclick="fecharModalAtivacao()"
             >
               <div class="action-icon">
-                <i class="fab fa-whatsapp" style="color: #25d366"></i>
+                <i class="fab fa-whatsapp"></i>
               </div>
               <div class="action-content">
-                <h3 style="font-size: 1.5rem">ATIVE JÁ NO WHATSAPP</h3>
-                <p style="font-size: 0.9rem">
-                  Iniciar atendimento com um consultor
-                </p>
+                <h3>ATIVE JÁ NO WHATSAPP</h3>
+                <p>Iniciar atendimento com um consultor</p>
               </div>
               <div class="action-arrow">
                 <i class="fas fa-arrow-right"></i>
               </div>
             </a>
 
-            <!-- Instruções Passo a Passo (Reestruturado como Lista) -->
-            <div class="instruction-list" style="padding: 20px">
-              <div
-                style="
-                  display: flex;
-                  align-items: flex-start;
-                  gap: 15px;
-                  margin-bottom: 15px;
-                "
-              >
+            <div class="instruction-list">
+              <div class="instruction-item">
                 <span
                   style="
                     background: #ffd000;
-                    min-width: 28px;
+                    width: 28px;
                     height: 28px;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     font-weight: 900;
-                    font-size: 1rem;
                     color: #000;
-                    border: 1px solid #000;
                   "
                   >1</span
                 >
-                <p style="font-size: 0.95rem; color: #333; margin: 0">
+                <p style="margin: 0">
                   <strong>Inicie sua ativação:</strong> Clique no botão "ATIVE
                   JÁ NO WHATSAPP" acima para falar com a nossa equipe.
                 </p>
               </div>
-              <div
-                style="
-                  display: flex;
-                  align-items: flex-start;
-                  gap: 15px;
-                  margin-bottom: 15px;
-                "
-              >
+              <div class="instruction-item">
                 <span
                   style="
                     background: #ffd000;
-                    min-width: 28px;
+                    width: 28px;
                     height: 28px;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     font-weight: 900;
-                    font-size: 1rem;
                     color: #000;
-                    border: 1px solid #000;
                   "
                   >2</span
                 >
-                <p style="font-size: 0.95rem; color: #333; margin: 0">
+                <p style="margin: 0">
                   <strong>Fale com a gente:</strong> Um atendente especializado
                   irá te acompanhar e ativar o serviço no seu cadastro em poucos
                   minutos.
                 </p>
               </div>
-              <div style="display: flex; align-items: flex-start; gap: 15px">
+              <div class="instruction-item">
                 <span
                   style="
                     background: #ffd000;
-                    min-width: 28px;
+                    width: 28px;
                     height: 28px;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     font-weight: 900;
-                    font-size: 1rem;
                     color: #000;
-                    border: 1px solid #000;
                   "
                   >3</span
                 >
-                <p style="font-size: 0.95rem; color: #333; margin: 0">
+                <p style="margin: 0">
                   <strong>Pronto! Hora de assistir:</strong> Volte a esta página
                   e clique em "QUERO ASSISTIR" para fazer seu primeiro login.
                 </p>
               </div>
             </div>
 
-            <!-- Destaque de Benefícios (Integrado ao fluxo) -->
             <div
               style="
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
                 gap: 10px;
-                margin: 20px 0 20px;
+                margin: 20px 0;
                 text-align: center;
               "
             >
               <div
                 style="
                   background: rgba(0, 0, 0, 0.03);
-                  padding: 10px 5px;
+                  padding: 10px;
                   border-radius: 12px;
                 "
               >
@@ -1888,7 +2069,7 @@
               <div
                 style="
                   background: rgba(0, 0, 0, 0.03);
-                  padding: 10px 5px;
+                  padding: 10px;
                   border-radius: 12px;
                 "
               >
@@ -1903,7 +2084,7 @@
               <div
                 style="
                   background: rgba(0, 0, 0, 0.03);
-                  padding: 10px 5px;
+                  padding: 10px;
                   border-radius: 12px;
                 "
               >
@@ -1917,25 +2098,22 @@
               </div>
             </div>
 
-            <!-- Dica em Destaque (Mantida com estilo refinado) -->
             <div
               class="tip-box"
               style="
                 background: #000;
                 border: 2px solid #ffd000;
                 border-radius: 40px;
-                padding: 12px 20px;
               "
             >
               <i class="fas fa-info-circle" style="color: #ffd000"></i>
-              <p style="color: #ffd000; font-size: 0.9rem">
+              <p style="color: #ffd000">
                 <strong style="color: #fff">Já é assinante?</strong> O processo
                 é ainda mais rápido!
               </p>
             </div>
           </div>
 
-          <!-- Rodapé (Mantido) -->
           <div class="modal-footer">
             <i class="fas fa-check-circle"></i>
             <span>Suporte especializado em todas as etapas</span>
@@ -1947,15 +2125,13 @@
     <!-- FOOTER -->
     <footer class="footer">
       <div class="footer-content">
-        <div class="footer-content">
         <div class="footer-text">
           <p>© 2024 Netmax Fibra - Todos os Direitos Reservados</p>
-          <p>Telefone/WhatsApp: 43 9 9914-9922</p>
+          <p>CNPJ: 48.287.603/0001-42</p>
           <p>
             Rua Rio Grande do Sul, 1460 - Bairro Santuário - Siqueira Campos -
             PR
           </p>
-          <p>CNPJ: 53.458.225/0001-52</p>
         </div>
 
         <div class="footer-social">
@@ -2011,5 +2187,116 @@
     </footer>
 
     <script src="../assets/js/script.js"></script>
+
+    <!-- Script inline para garantir que as funções dos modais estejam disponíveis -->
+    <script>
+      // Funções globais para os modais
+      function abrirModal() {
+        console.log("Abrindo modal tvModal");
+        var modal = document.getElementById("tvModal");
+        if (modal) {
+          modal.style.display = "flex";
+          setTimeout(function () {
+            modal.classList.add("show");
+          }, 10);
+          document.body.style.overflow = "hidden";
+          if (window.innerWidth <= 768) {
+            document.body.style.position = "fixed";
+            document.body.style.top = "-" + window.scrollY + "px";
+            document.body.style.width = "100%";
+          }
+        } else {
+          console.error("Modal tvModal não encontrado");
+        }
+      }
+
+      function fecharModal() {
+        console.log("Fechando modal tvModal");
+        var modal = document.getElementById("tvModal");
+        if (modal) {
+          modal.classList.remove("show");
+          setTimeout(function () {
+            modal.style.display = "none";
+          }, 300);
+          if (window.innerWidth <= 768) {
+            var scrollY = document.body.style.top;
+            document.body.style.position = "";
+            document.body.style.top = "";
+            document.body.style.width = "";
+            if (scrollY) {
+              window.scrollTo(0, parseInt(scrollY || "0") * -1);
+            }
+          }
+          document.body.style.overflow = "";
+        }
+      }
+
+      function abrirModalAtivacao() {
+        console.log("Abrindo modal tvAtivacaoModal");
+        var modal = document.getElementById("tvAtivacaoModal");
+        if (modal) {
+          modal.style.display = "flex";
+          setTimeout(function () {
+            modal.classList.add("show");
+          }, 10);
+          document.body.style.overflow = "hidden";
+          if (window.innerWidth <= 768) {
+            document.body.style.position = "fixed";
+            document.body.style.top = "-" + window.scrollY + "px";
+            document.body.style.width = "100%";
+          }
+        } else {
+          console.error("Modal tvAtivacaoModal não encontrado");
+        }
+      }
+
+      function fecharModalAtivacao() {
+        console.log("Fechando modal tvAtivacaoModal");
+        var modal = document.getElementById("tvAtivacaoModal");
+        if (modal) {
+          modal.classList.remove("show");
+          setTimeout(function () {
+            modal.style.display = "none";
+          }, 300);
+          if (window.innerWidth <= 768) {
+            var scrollY = document.body.style.top;
+            document.body.style.position = "";
+            document.body.style.top = "";
+            document.body.style.width = "";
+            if (scrollY) {
+              window.scrollTo(0, parseInt(scrollY || "0") * -1);
+            }
+          }
+          document.body.style.overflow = "";
+        }
+      }
+
+      // Fechar modais ao clicar fora
+      window.addEventListener("click", function (event) {
+        var modalOriginal = document.getElementById("tvModal");
+        if (modalOriginal && event.target === modalOriginal) {
+          fecharModal();
+        }
+        var modalAtivacao = document.getElementById("tvAtivacaoModal");
+        if (modalAtivacao && event.target === modalAtivacao) {
+          fecharModalAtivacao();
+        }
+      });
+
+      // FAQ interativo
+      document.querySelectorAll(".tv-faq-item").forEach(function (item) {
+        item.addEventListener("click", function () {
+          var p = this.querySelector("p");
+          var icon = this.querySelector("i");
+          if (p.style.display === "none" || p.style.display === "") {
+            p.style.display = "block";
+            if (icon) icon.style.transform = "rotate(180deg)";
+          } else {
+            p.style.display = "none";
+            if (icon) icon.style.transform = "rotate(0deg)";
+          }
+        });
+      });
+    </script>
   </body>
 </html>
