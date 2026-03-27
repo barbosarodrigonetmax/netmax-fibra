@@ -328,39 +328,21 @@ console.log('%c📱 WhatsApp configurado: 43 99914-9922', 'color: #25D366; font-
 console.log('%c💡 Dica: Pressione F12 para mais informações', 'color: #888; font-size: 12px;');
 
 // ============================================
-// 10. MODAL DA NETMAX TV - CONTROLE (ORIGINAL) - OTIMIZADO PARA MOBILE
+// 10. MODAL DA NETMAX TV - CONTROLE (ORIGINAL)
 // ============================================
 function abrirModal() {
     const modal = document.getElementById('tvModal');
     if (modal) {
         modal.style.display = 'flex';
-        
-        // Pequeno delay para garantir a transição CSS
         setTimeout(() => {
             modal.classList.add('show');
         }, 10);
-        
-        // Prevenir scroll do fundo
         document.body.style.overflow = 'hidden';
-        
-        // Prevenir scroll do fundo no iOS (mais eficiente)
+        // Prevenir scroll do fundo no iOS
         if (isMobileDevice()) {
             document.body.style.position = 'fixed';
-            document.body.style.top = `-${window.scrollY}px`;
             document.body.style.width = '100%';
-            document.body.style.left = '0';
-            document.body.style.right = '0';
         }
-        
-        // Fechar modal ao pressionar ESC (melhor usabilidade)
-        const handleEsc = function(e) {
-            if (e.key === 'Escape') {
-                fecharModal();
-                document.removeEventListener('keydown', handleEsc);
-            }
-        };
-        document.addEventListener('keydown', handleEsc);
-        modal._handleEsc = handleEsc;
     }
 }
 
@@ -368,66 +350,34 @@ function fecharModal() {
     const modal = document.getElementById('tvModal');
     if (modal) {
         modal.classList.remove('show');
-        
         setTimeout(() => {
             modal.style.display = 'none';
         }, 300);
-        
-        // Restaurar scroll
-        if (isMobileDevice()) {
-            const scrollY = document.body.style.top;
-            document.body.style.position = '';
-            document.body.style.top = '';
-            document.body.style.width = '';
-            document.body.style.left = '';
-            document.body.style.right = '';
-            if (scrollY) {
-                window.scrollTo(0, parseInt(scrollY || '0') * -1);
-            }
-        }
         document.body.style.overflow = '';
-        
-        // Remover listener do ESC
-        if (modal._handleEsc) {
-            document.removeEventListener('keydown', modal._handleEsc);
-            delete modal._handleEsc;
+        // Restaurar scroll no iOS
+        if (isMobileDevice()) {
+            document.body.style.position = '';
+            document.body.style.width = '';
         }
     }
 }
 
 // ============================================
-// 11. NOVO MODAL DE ATIVAÇÃO - CONTROLE OTIMIZADO
+// 11. NOVO MODAL DE ATIVAÇÃO - CONTROLE
 // ============================================
 function abrirModalAtivacao() {
     const modal = document.getElementById('tvAtivacaoModal');
     if (modal) {
         modal.style.display = 'flex';
-        
         setTimeout(() => {
             modal.classList.add('show');
         }, 10);
-        
-        // Prevenir scroll do fundo
         document.body.style.overflow = 'hidden';
-        
-        // Prevenir scroll do fundo no iOS (mais eficiente)
+        // Prevenir scroll do fundo no iOS
         if (isMobileDevice()) {
             document.body.style.position = 'fixed';
-            document.body.style.top = `-${window.scrollY}px`;
             document.body.style.width = '100%';
-            document.body.style.left = '0';
-            document.body.style.right = '0';
         }
-        
-        // Fechar modal ao pressionar ESC
-        const handleEsc = function(e) {
-            if (e.key === 'Escape') {
-                fecharModalAtivacao();
-                document.removeEventListener('keydown', handleEsc);
-            }
-        };
-        document.addEventListener('keydown', handleEsc);
-        modal._handleEsc = handleEsc;
     }
 }
 
@@ -435,46 +385,31 @@ function fecharModalAtivacao() {
     const modal = document.getElementById('tvAtivacaoModal');
     if (modal) {
         modal.classList.remove('show');
-        
         setTimeout(() => {
             modal.style.display = 'none';
         }, 300);
-        
-        // Restaurar scroll
-        if (isMobileDevice()) {
-            const scrollY = document.body.style.top;
-            document.body.style.position = '';
-            document.body.style.top = '';
-            document.body.style.width = '';
-            document.body.style.left = '';
-            document.body.style.right = '';
-            if (scrollY) {
-                window.scrollTo(0, parseInt(scrollY || '0') * -1);
-            }
-        }
         document.body.style.overflow = '';
-        
-        // Remover listener do ESC
-        if (modal._handleEsc) {
-            document.removeEventListener('keydown', modal._handleEsc);
-            delete modal._handleEsc;
+        // Restaurar scroll no iOS
+        if (isMobileDevice()) {
+            document.body.style.position = '';
+            document.body.style.width = '';
         }
     }
 }
 
 // ============================================
-// 12. FECHAR MODAIS CLICANDO NA ÁREA ESCURA - OTIMIZADO
+// 12. FECHAR MODAIS CLICANDO NA ÁREA ESCURA
 // ============================================
 window.addEventListener('click', function(event) {
     // Fechar modal original
     const modalOriginal = document.getElementById('tvModal');
-    if (modalOriginal && event.target === modalOriginal) {
+    if (event.target === modalOriginal) {
         fecharModal();
     }
     
     // Fechar novo modal de ativação
     const modalAtivacao = document.getElementById('tvAtivacaoModal');
-    if (modalAtivacao && event.target === modalAtivacao) {
+    if (event.target === modalAtivacao) {
         fecharModalAtivacao();
     }
 });
@@ -506,19 +441,6 @@ window.addEventListener('resize', function() {
             window.dispatchEvent(event);
         }, 100);
         
-        // Ajustar modais abertos se houver mudança de orientação
-        const modalOriginal = document.getElementById('tvModal');
-        const modalAtivacao = document.getElementById('tvAtivacaoModal');
-        
-        if (modalOriginal && modalOriginal.style.display === 'flex') {
-            // Reforçar estilos responsivos
-            modalOriginal.style.display = 'flex';
-        }
-        
-        if (modalAtivacao && modalAtivacao.style.display === 'flex') {
-            modalAtivacao.style.display = 'flex';
-        }
-        
         console.log(`🔄 Tela redimensionada: ${window.innerWidth}x${window.innerHeight}`);
     }, 250);
 });
@@ -539,57 +461,4 @@ document.querySelectorAll('button, .btn-primary, .btn-secondary, .action-card').
             isClicked = false;
         }, 500);
     });
-    
-    // Adicionar feedback tátil para mobile (opcional)
-    if (isMobileDevice()) {
-        el.addEventListener('touchstart', function() {
-            this.style.transform = 'scale(0.98)';
-        }, { passive: true });
-        
-        el.addEventListener('touchend', function() {
-            this.style.transform = '';
-        });
-        
-        el.addEventListener('touchcancel', function() {
-            this.style.transform = '';
-        });
-    }
 });
-
-// ============================================
-// 15. MELHORIA: AJUSTE DE ALTURA DO MODAL EM ORIENTAÇÃO PAISAGEM
-// ============================================
-function ajustarModalParaOrientacao() {
-    const isLandscape = window.innerWidth > window.innerHeight;
-    const modals = document.querySelectorAll('.modal-card');
-    
-    modals.forEach(modal => {
-        if (isLandscape && isMobileDevice() && window.innerWidth <= 900) {
-            modal.style.maxHeight = '85vh';
-        } else {
-            modal.style.maxHeight = '';
-        }
-    });
-}
-
-// Detectar mudança de orientação
-window.addEventListener('orientationchange', function() {
-    setTimeout(ajustarModalParaOrientacao, 100);
-});
-
-// Chamar inicialmente
-document.addEventListener('DOMContentLoaded', ajustarModalParaOrientacao);
-
-// ============================================
-// 16. PREVENIR PROPAGAÇÃO DE CLIQUE DENTRO DO MODAL PARA NÃO FECHAR
-// ============================================
-document.querySelectorAll('.modal-container, .modal-card').forEach(element => {
-    element.addEventListener('click', function(e) {
-        e.stopPropagation();
-    });
-});
-
-// ============================================
-// 17. MELHORIA: FECHAR MODAL AO TOCAR FORA EM DISPOSITIVOS MÓVEIS
-// ============================================
-// (Já implementado no item 12, mas com prevenção de propagação)
