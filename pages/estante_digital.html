@@ -7,23 +7,51 @@
                assinantes, com informações sobre o acervo, vantagens,
                como acessar, perguntas frequentes e chamadas para ação.
      Autor : Rodrigo Barbosa
-     Data  : 23/02/2026
+     Data  : 23/02/2026 - ATUALIZADO COM CORREÇÕES DE RESPONSIVIDADE
      =================================================================== -->
 
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
     <title>Netmax Fibra - Estante Digital: Milhares de Livros Inclusos</title>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="../assets/images/outros/favicon_netmax.png"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="../assets/images/outros/favicon_netmax.png"
+    />
     <link rel="stylesheet" href="../assets/css/styles.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+
     <style>
       /* ==================================================== */
       /* ESTILOS ADICIONAIS PARA RESPONSIVIDADE DA ESTANTE DIGITAL */
       /* ==================================================== */
+
+      /* Reset de margens e padding para garantir consistência */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        overflow-x: hidden;
+        width: 100%;
+      }
 
       /* Ajuste do header para responsividade */
       @media (max-width: 768px) {
@@ -122,7 +150,7 @@
         }
       }
 
-      /* Ajustes do hero section */
+      /* Ajustes do hero section - CORREÇÕES CRÍTICAS */
       @media (max-width: 1024px) {
         .estante-hero .hero-grid-container {
           grid-template-columns: 1fr !important;
@@ -148,34 +176,21 @@
           justify-content: center !important;
         }
 
-        /* Ajuste dos elementos flutuantes do hero - torná-los não flutuantes em mobile */
+        /* Ajuste dos elementos flutuantes do hero - REPOSICIONAMENTO */
         .estante-hero .hero-float-card-right,
         .estante-hero .hero-float-card-left {
           position: relative !important;
           top: auto !important;
+          right: auto !important;
           bottom: auto !important;
           left: auto !important;
-          right: auto !important;
           margin: 15px auto 0 !important;
-          display: inline-flex !important;
-          transform: rotate(0deg) !important;
-          width: fit-content;
+          display: inline-block !important;
+          transform: none !important;
         }
 
-        .estante-hero .hero-float-card-right {
-          margin-right: 10px !important;
-        }
-
-        .estante-hero .hero-float-card-left {
-          margin-left: 10px !important;
-        }
-
-        .estante-hero .hero-float-card-container {
-          display: flex;
-          justify-content: center;
-          flex-wrap: wrap;
-          gap: 15px;
-          margin-top: 20px;
+        .estante-hero .hero-circle-container {
+          margin: 0 auto !important;
         }
       }
 
@@ -202,49 +217,24 @@
           padding: 12px 25px !important;
         }
 
-        .estante-hero .hero-circle-container {
-          width: 280px !important;
-          height: 280px !important;
-        }
-
-        .estante-hero .hero-circle-container > div {
-          width: 220px !important;
-          height: 220px !important;
-        }
-
-        .estante-hero .hero-circle-container > div > div {
-          width: 180px !important;
-          height: 180px !important;
-        }
-
         /* Ajustes para seções internas */
-        .ecosystem .magia-grid-container {
+        .magia-grid-container {
           grid-template-columns: 1fr !important;
           gap: 30px !important;
         }
 
-        .ecosystem .vantagens-grid {
+        .vantagens-grid {
           grid-template-columns: 1fr !important;
         }
 
-        .ecosystem .vantagens-grid [style*="grid-column: span 3"] {
+        .vantagens-grid [style*="grid-column: span 3"] {
           grid-column: span 1 !important;
         }
 
-        .ecosystem .passos-grid {
+        .passos-grid {
           grid-template-columns: 1fr !important;
         }
 
-        [style*="background: linear-gradient(145deg, #000000 0%, #1a1a1a 100%)"] {
-          padding: 40px 25px !important;
-        }
-
-        [style*="grid-template-columns: repeat(3, 1fr)"]:has(.counter-unit) {
-          grid-template-columns: 1fr !important;
-          gap: 15px !important;
-        }
-
-        /* Ajuste da seção de vantagens */
         .estante-features-grid {
           grid-template-columns: 1fr !important;
         }
@@ -270,29 +260,9 @@
           font-size: 2rem !important;
         }
 
-        /* Ajuste da seção "A MAGIA DA LEITURA DIGITAL" */
-        .ecosystem
-          [style*="background: linear-gradient(145deg, #fff9e6 0%, #ffffff 100%)"] {
+        /* Ajuste da seção de vantagens com fundo preto */
+        [style*="background: linear-gradient(145deg, #000000 0%, #1a1a1a 100%)"] {
           padding: 40px 25px !important;
-        }
-
-        .ecosystem
-          [style*="background: linear-gradient(145deg, #fff9e6 0%, #ffffff 100%)"]
-          [style*="font-size: 3.2rem"] {
-          font-size: 2rem !important;
-        }
-
-        .ecosystem
-          [style*="background: linear-gradient(145deg, #fff9e6 0%, #ffffff 100%)"]
-          [style*="font-size: 3.8rem"] {
-          font-size: 2.2rem !important;
-        }
-
-        .ecosystem
-          [style*="background: linear-gradient(145deg, #fff9e6 0%, #ffffff 100%)"]
-          [style*="display: flex"][style*="gap: 20px"] {
-          justify-content: center !important;
-          text-align: center !important;
         }
       }
 
@@ -303,33 +273,6 @@
 
         .estante-hero h1 span {
           font-size: 2.2rem !important;
-        }
-
-        .estante-hero .hero-circle-container {
-          width: 240px !important;
-          height: 240px !important;
-        }
-
-        .estante-hero .hero-circle-container > div {
-          width: 200px !important;
-          height: 200px !important;
-        }
-
-        .estante-hero .hero-circle-container > div > div {
-          width: 160px !important;
-          height: 160px !important;
-        }
-
-        .estante-hero .hero-circle-container > div > div i {
-          font-size: 3rem !important;
-        }
-
-        .estante-hero .hero-circle-container > div > div span:first-of-type {
-          font-size: 1.2rem !important;
-        }
-
-        .estante-hero .hero-circle-container > div > div span:last-of-type {
-          font-size: 0.9rem !important;
         }
 
         .estante-hero .btn-primary,
@@ -399,34 +342,6 @@
           font-size: 1.2rem !important;
           padding: 12px 25px !important;
         }
-
-        /* Ajuste da seção "COMO ACESSAR" */
-        .ecosystem .passos-grid [style*="padding: 40px 30px"] {
-          padding: 30px 20px !important;
-        }
-
-        .ecosystem .passos-grid h3 {
-          font-size: 1.8rem !important;
-        }
-
-        .ecosystem .passos-grid p {
-          font-size: 1rem !important;
-        }
-
-        /* Ajuste do CTA principal */
-        [style*="font-size: 1.8rem; padding: 20px 50px"] {
-          font-size: 1.2rem !important;
-          padding: 15px 25px !important;
-        }
-
-        /* Ajuste do grid de categorias de livros */
-        .estante-categories-grid .estante-category-item i {
-          font-size: 1.8rem !important;
-        }
-
-        .estante-categories-grid .estante-category-item span {
-          font-size: 0.9rem !important;
-        }
       }
 
       /* Ajustes para tablets */
@@ -445,24 +360,6 @@
 
         .vantagens-grid [style*="grid-column: span 3"] {
           grid-column: span 2 !important;
-        }
-
-        .passos-grid {
-          grid-template-columns: repeat(2, 1fr) !important;
-        }
-      }
-
-      /* Ajuste para o container dos cards flutuantes do hero */
-      .hero-float-card-container {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        margin-top: 20px;
-      }
-
-      @media (min-width: 1025px) {
-        .hero-float-card-container {
-          display: none;
         }
       }
 
@@ -516,6 +413,30 @@
             0 0 15px #ffd000,
             0 0 30px rgba(255, 208, 0, 0.5);
         }
+      }
+
+      /* Correção para overflow em elementos com largura fixa */
+      img,
+      video,
+      iframe {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Garantir que containers não causem overflow */
+      .container,
+      .hero,
+      .ecosystem,
+      .estante-hero,
+      .estante-cta-box {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      /* Ajuste para os cards flutuantes do hero */
+      .hero-float-card-right,
+      .hero-float-card-left {
+        transition: all 0.3s ease;
       }
     </style>
   </head>
@@ -573,7 +494,7 @@
       </nav>
     </header>
 
-    <!-- HERO ESPECIAL ESTANTE DIGITAL -->
+    <!-- HERO ESPECIAL ESTANTE DIGITAL - CORRIGIDO PARA RESPONSIVIDADE -->
     <section
       class="hero hero-boosted estante-hero"
       style="padding: 80px 20px; position: relative; overflow: hidden"
@@ -591,6 +512,7 @@
           pointer-events: none;
           z-index: 1;
         "
+        class="desktop-only-bg"
       >
         📚
       </div>
@@ -606,23 +528,9 @@
           pointer-events: none;
           z-index: 1;
         "
+        class="desktop-only-bg"
       >
         📖
-      </div>
-      <div
-        style="
-          position: absolute;
-          top: 50%;
-          left: 10%;
-          font-size: 120px;
-          opacity: 0.05;
-          transform: translateY(-50%);
-          color: #000;
-          pointer-events: none;
-          z-index: 1;
-        "
-      >
-        📱
       </div>
 
       <!-- Container com grid de 2 colunas - responsivo -->
@@ -640,7 +548,7 @@
         class="hero-grid-container"
       >
         <!-- Coluna da Esquerda: Textos -->
-        <div style="text-align: left">
+        <div style="text-align: left" class="hero-text-column">
           <!-- Badge de "BENEFÍCIO EXCLUSIVO" -->
           <div
             style="
@@ -721,7 +629,7 @@
               display: flex;
               gap: 20px;
               flex-wrap: wrap;
-              justify-content: flex-start;
+              justify-content: center;
             "
           >
             <button
@@ -768,7 +676,7 @@
               align-items: center;
               gap: 15px;
               flex-wrap: wrap;
-              justify-content: flex-start;
+              justify-content: center;
             "
           >
             <div
@@ -808,13 +716,13 @@
           </div>
         </div>
 
-        <!-- Coluna da Direita: Ilustração/Ícones -->
+        <!-- Coluna da Direita: Ilustração/Ícones - CORRIGIDA -->
         <div style="text-align: center; position: relative">
-          <!-- Círculo decorativo -->
+          <!-- Círculo decorativo com dimensões responsivas via CSS -->
           <div
             style="
-              width: 350px;
-              height: 350px;
+              width: min(350px, 80vw);
+              height: min(350px, 80vw);
               margin: 0 auto;
               background: rgba(0, 0, 0, 0.1);
               border-radius: 50%;
@@ -828,8 +736,8 @@
           >
             <div
               style="
-                width: 280px;
-                height: 280px;
+                width: 80%;
+                height: 80%;
                 background: rgba(0, 0, 0, 0.15);
                 border-radius: 50%;
                 display: flex;
@@ -840,129 +748,106 @@
             >
               <div
                 style="
-                  width: 220px;
-                  height: 220px;
+                  width: 78%;
+                  height: 78%;
                   background: #000;
                   border-radius: 50%;
                   display: flex;
                   align-items: center;
                   justify-content: center;
                   flex-direction: column;
-                  gap: 15px;
+                  gap: 8px;
                   border: 2px solid #ffd000;
                   box-shadow: 0 0 50px rgba(255, 208, 0, 0.3);
+                  text-align: center;
+                  padding: 10px;
                 "
               >
                 <i
                   class="fas fa-book-open"
-                  style="font-size: 5rem; color: #ffd000"
+                  style="font-size: clamp(2rem, 8vw, 5rem); color: #ffd000"
                 ></i>
-                <span style="color: white; font-size: 1.5rem; font-weight: 700"
+                <span
+                  style="
+                    color: white;
+                    font-size: clamp(1rem, 4vw, 1.5rem);
+                    font-weight: 700;
+                  "
                   >+ de 10.000</span
                 >
-                <span style="color: #ffd000; font-size: 1.1rem"
+                <span
+                  style="color: #ffd000; font-size: clamp(0.7rem, 3vw, 1.1rem)"
                   >E-books Disponíveis</span
                 >
-                <div style="display: flex; gap: 15px; margin-top: 10px">
+                <div
+                  style="
+                    display: flex;
+                    gap: 12px;
+                    margin-top: 5px;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                  "
+                >
                   <i
                     class="fas fa-mobile-alt"
-                    style="color: #ffd000; font-size: 1.5rem"
+                    style="color: #ffd000; font-size: clamp(1rem, 4vw, 1.5rem)"
                   ></i>
                   <i
                     class="fas fa-tablet-alt"
-                    style="color: #ffd000; font-size: 1.5rem"
+                    style="color: #ffd000; font-size: clamp(1rem, 4vw, 1.5rem)"
                   ></i>
                   <i
                     class="fas fa-laptop"
-                    style="color: #ffd000; font-size: 1.5rem"
+                    style="color: #ffd000; font-size: clamp(1rem, 4vw, 1.5rem)"
                   ></i>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Cards flutuantes - container para responsividade -->
-          <div class="hero-float-card-container">
-            <div
-              style="
-                background: #000;
-                padding: 12px 20px;
-                border-radius: 20px;
-                border: 2px solid #ffd000;
-                transform: rotate(0deg);
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-              "
-              class="hero-float-card-right"
-            >
-              <i
-                class="fas fa-star"
-                style="color: #ffd000; margin-right: 8px"
-              ></i>
-              <span style="color: white">Romances</span>
-            </div>
-
-            <div
-              style="
-                background: #000;
-                padding: 12px 20px;
-                border-radius: 20px;
-                border: 2px solid #ffd000;
-                transform: rotate(0deg);
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-              "
-              class="hero-float-card-left"
-            >
-              <i
-                class="fas fa-flask"
-                style="color: #ffd000; margin-right: 8px"
-              ></i>
-              <span style="color: white">Ficção Científica</span>
-            </div>
-          </div>
-
-          <!-- Cards flutuantes em desktop (posicionamento absoluto) -->
+          <!-- Cards flutuantes - ajustados para responsividade -->
           <div
             style="
               position: absolute;
-              top: 20%;
+              top: 15%;
               right: 0;
               background: #000;
-              padding: 15px 25px;
+              padding: 12px 20px;
               border-radius: 20px;
               border: 2px solid #ffd000;
               transform: rotate(5deg);
               box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-              display: none;
             "
-            class="hero-float-card-right-desktop"
+            class="hero-float-card hero-float-card-right"
           >
             <i
               class="fas fa-star"
-              style="color: #ffd000; margin-right: 8px"
+              style="color: #ffd000; margin-right: 8px; font-size: 0.9rem"
             ></i>
-            <span style="color: white">Romances</span>
+            <span style="color: white; font-size: 0.9rem">Romances</span>
           </div>
 
           <div
             style="
               position: absolute;
-              bottom: 20%;
+              bottom: 15%;
               left: 0;
               background: #000;
-              padding: 15px 25px;
+              padding: 12px 20px;
               border-radius: 20px;
               border: 2px solid #ffd000;
               transform: rotate(-5deg);
               box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-              display: none;
             "
-            class="hero-float-card-left-desktop"
+            class="hero-float-card hero-float-card-left"
           >
             <i
               class="fas fa-flask"
-              style="color: #ffd000; margin-right: 8px"
+              style="color: #ffd000; margin-right: 8px; font-size: 0.9rem"
             ></i>
-            <span style="color: white">Ficção Científica</span>
+            <span style="color: white; font-size: 0.9rem"
+              >Ficção Científica</span
+            >
           </div>
         </div>
       </div>
@@ -983,7 +868,7 @@
           overflow: hidden;
         "
       >
-        <!-- ELEMENTOS DECORATIVOS DE FUNDO -->
+        <!-- ELEMENTOS DECORATIVOS DE FUNDO - AJUSTADOS -->
         <div
           style="
             position: absolute;
@@ -996,6 +881,7 @@
             pointer-events: none;
             z-index: 1;
           "
+          class="desktop-only-bg"
         >
           📖
         </div>
@@ -1011,23 +897,9 @@
             pointer-events: none;
             z-index: 1;
           "
+          class="desktop-only-bg"
         >
           📱
-        </div>
-        <div
-          style="
-            position: absolute;
-            top: 40%;
-            right: 10%;
-            font-size: 100px;
-            opacity: 0.03;
-            transform: rotate(5deg);
-            color: #000;
-            pointer-events: none;
-            z-index: 1;
-          "
-        >
-          ⭐
         </div>
 
         <!-- CONTEÚDO PRINCIPAL -->
@@ -1114,7 +986,7 @@
             </div>
           </div>
 
-          <!-- GRID DE 2 COLUNAS - responsivo -->
+          <!-- GRID DE 2 COLUNAS - responsivo com classe -->
           <div
             style="
               display: grid;
@@ -1895,7 +1767,7 @@
         </div>
       </div>
 
-      <!-- SEÇÃO: VANTAGENS EXCLUSIVAS EM FORMATO DE CARDS INTERATIVOS -->
+      <!-- SEÇÃO: VANTAGENS EXCLUSIVAS EM FORMATO DE CARDS INTERATIVOS (CORRIGIDA) -->
       <div
         style="
           background: linear-gradient(145deg, #000000 0%, #1a1a1a 100%);
@@ -1920,6 +1792,7 @@
             color: #ffd000;
             pointer-events: none;
           "
+          class="desktop-only-bg"
         >
           ⭐
         </div>
@@ -1934,6 +1807,7 @@
             color: #ffd000;
             pointer-events: none;
           "
+          class="desktop-only-bg"
         >
           ✨
         </div>
@@ -2008,7 +1882,7 @@
             </p>
           </div>
 
-          <!-- GRID DE CARDS DE BENEFÍCIOS (3 COLUNAS) - responsivo -->
+          <!-- GRID DE CARDS DE BENEFÍCIOS (3 COLUNAS) - responsivo com classe -->
           <div
             style="
               display: grid;
@@ -3156,7 +3030,7 @@
         </div>
       </div>
 
-      <!-- SEÇÃO: GUIA INTERATIVO DE ATIVAÇÃO EM 3 PASSOS -->
+      <!-- SEÇÃO: GUIA INTERATIVO DE ATIVAÇÃO EM 3 PASSOS (CORRIGIDA) -->
       <div
         style="
           background: linear-gradient(145deg, #000000 0%, #1a1a1a 100%);
@@ -3181,6 +3055,7 @@
             color: #ffd000;
             pointer-events: none;
           "
+          class="desktop-only-bg"
         >
           📱
         </div>
@@ -3195,21 +3070,9 @@
             color: #ffd000;
             pointer-events: none;
           "
+          class="desktop-only-bg"
         >
           🔑
-        </div>
-        <div
-          style="
-            position: absolute;
-            top: 30%;
-            left: 10%;
-            font-size: 100px;
-            opacity: 0.02;
-            color: #ffd000;
-            pointer-events: none;
-          "
-        >
-          ✨
         </div>
 
         <!-- CONTEÚDO PRINCIPAL -->
@@ -3271,7 +3134,7 @@
             </p>
           </div>
 
-          <!-- PASSO A PASSO EM 3 COLUNAS - responsivo -->
+          <!-- PASSO A PASSO EM 3 COLUNAS - responsivo com classe -->
           <div
             style="
               display: grid;
@@ -4089,15 +3952,14 @@
     <!-- FOOTER PADRÃO -->
     <footer class="footer">
       <div class="footer-content">
-        div class="footer-content">
         <div class="footer-text">
           <p>© 2024 Netmax Fibra - Todos os Direitos Reservados</p>
-          <p>TELEFONE / WHATSAPP: 43 9 9991-49922</p>
+          <p>Telefone/WhatsApp: 43 9 9914-9922</p>
           <p>
             Rua Rio Grande do Sul, 1460 - Bairro Santuário - Siqueira Campos -
             PR
           </p>
-          <p>CNPJ: 48.287.603/0001-42</p>
+          <p>CNPJ: 53.458.225/0001-52</p>
         </div>
 
         <div class="footer-social">
