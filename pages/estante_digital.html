@@ -1,3 +1,467 @@
+<!doctype html>
+<!-- ===================================================================
+     NETMAX FIBRA - PÁGINA ESTANTE DIGITAL (REFATORADA COM BOOTSTRAP)
+     ===================================================================
+     Objetivo: Página institucional da Netmax Fibra apresentando o 
+               benefício exclusivo "Estante Digital Digi Livros" para 
+               assinantes, com informações sobre o acervo, vantagens,
+               como acessar, perguntas frequentes e chamadas para ação.
+     Autor : Rodrigo Barbosa
+     Data  : 23/02/2026 - ATUALIZADO COM CORREÇÕES DE RESPONSIVIDADE
+     =================================================================== -->
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Netmax Fibra - Estante Digital: Milhares de Livros Inclusos</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/outros/favicon_netmax.png" />
+    <link rel="shortcut icon" type="image/png" href="../assets/images/outros/favicon_netmax.png" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    
+    <style>
+      /* ==================================================== */
+      /* ESTILOS ADICIONAIS PARA RESPONSIVIDADE DA ESTANTE DIGITAL */
+      /* ==================================================== */
+      
+      /* Reset de margens e padding para garantir consistência */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        overflow-x: hidden;
+        width: 100%;
+      }
+      
+      /* Ajuste do header para responsividade */
+      @media (max-width: 768px) {
+        .header {
+          position: relative;
+        }
+        
+        .logo-area-highlight {
+          padding: 30px 0 20px;
+        }
+        
+        .logo-netmax-big {
+          max-height: 100px;
+          width: auto;
+        }
+        
+        .slogan-top {
+          font-size: 1rem;
+          margin-top: 10px;
+          padding: 0 15px;
+        }
+        
+        /* Central do assinante - muda para posição estática em mobile */
+        .assinante-container {
+          position: static;
+          display: flex;
+          justify-content: center;
+          margin: 15px 0 10px;
+        }
+        
+        .assinante-link {
+          flex-direction: row;
+          gap: 12px;
+          background: rgba(255, 208, 0, 0.15);
+          padding: 10px 20px;
+          border-radius: 50px;
+          border: 1px solid rgba(255, 208, 0, 0.4);
+        }
+        
+        .assinante-icon {
+          width: 50px;
+          height: 50px;
+          animation: none;
+        }
+        
+        .assinante-icon i {
+          font-size: 28px;
+        }
+        
+        .assinante-text {
+          margin-top: 0;
+          font-size: 14px;
+        }
+        
+        /* Menu de navegação - melhor espaçamento */
+        .nav-menu {
+          padding: 12px 0;
+          gap: 8px;
+        }
+        
+        .nav-menu a {
+          margin: 5px 10px;
+          font-size: 0.85rem;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .logo-netmax-big {
+          max-height: 80px;
+        }
+        
+        .slogan-top {
+          font-size: 0.85rem;
+        }
+        
+        .assinante-link {
+          padding: 8px 15px;
+        }
+        
+        .assinante-icon {
+          width: 40px;
+          height: 40px;
+        }
+        
+        .assinante-icon i {
+          font-size: 22px;
+        }
+        
+        .assinante-text {
+          font-size: 12px;
+        }
+        
+        .nav-menu a {
+          margin: 3px 6px;
+          font-size: 0.75rem;
+        }
+      }
+      
+      /* Ajustes do hero section - CORREÇÕES CRÍTICAS */
+      @media (max-width: 1024px) {
+        .estante-hero .hero-grid-container {
+          grid-template-columns: 1fr !important;
+          gap: 40px !important;
+          text-align: center !important;
+        }
+
+        .estante-hero [style*="text-align: left"] {
+          text-align: center !important;
+        }
+
+        .estante-hero [style*="max-width: 600px"] {
+          max-width: 100% !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+
+        .estante-hero [style*="display: flex"][style*="gap: 20px"] {
+          justify-content: center !important;
+        }
+
+        .estante-hero [style*="margin-top: 40px"] {
+          justify-content: center !important;
+        }
+        
+        /* Ajuste dos elementos flutuantes do hero - REPOSICIONAMENTO */
+        .estante-hero .hero-float-card-right,
+        .estante-hero .hero-float-card-left {
+          position: relative !important;
+          top: auto !important;
+          right: auto !important;
+          bottom: auto !important;
+          left: auto !important;
+          margin: 15px auto 0 !important;
+          display: inline-block !important;
+          transform: none !important;
+        }
+        
+        .estante-hero .hero-circle-container {
+          margin: 0 auto !important;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .estante-hero h1 {
+          font-size: 2.5rem !important;
+        }
+
+        .estante-hero h1 span {
+          font-size: 2.8rem !important;
+        }
+
+        .estante-hero [style*="font-size: 2rem"] {
+          font-size: 1.5rem !important;
+        }
+
+        .estante-hero [style*="font-size: 1.3rem"] {
+          font-size: 1.1rem !important;
+        }
+
+        .estante-hero .btn-primary,
+        .estante-hero .btn-secondary {
+          font-size: 1rem !important;
+          padding: 12px 25px !important;
+        }
+
+        /* Ajustes para seções internas */
+        .magia-grid-container {
+          grid-template-columns: 1fr !important;
+          gap: 30px !important;
+        }
+
+        .vantagens-grid {
+          grid-template-columns: 1fr !important;
+        }
+        
+        .vantagens-grid [style*="grid-column: span 3"] {
+          grid-column: span 1 !important;
+        }
+
+        .passos-grid {
+          grid-template-columns: 1fr !important;
+        }
+
+        .estante-features-grid {
+          grid-template-columns: 1fr !important;
+        }
+        
+        .estante-categories-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+        
+        .estante-devices {
+          flex-wrap: wrap !important;
+          gap: 25px !important;
+        }
+        
+        .estante-device-item {
+          width: 100px !important;
+        }
+        
+        .estante-stat-item {
+          padding: 15px 20px !important;
+        }
+        
+        .estante-stat-item .numero {
+          font-size: 2rem !important;
+        }
+        
+        /* Ajuste da seção de vantagens com fundo preto */
+        [style*="background: linear-gradient(145deg, #000000 0%, #1a1a1a 100%)"] {
+          padding: 40px 25px !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .estante-hero h1 {
+          font-size: 2rem !important;
+        }
+
+        .estante-hero h1 span {
+          font-size: 2.2rem !important;
+        }
+
+        .estante-hero .btn-primary,
+        .estante-hero .btn-secondary {
+          font-size: 0.9rem !important;
+          padding: 10px 20px !important;
+        }
+
+        [style*="font-size: 3.2rem"] {
+          font-size: 2rem !important;
+        }
+
+        [style*="font-size: 3.5rem"] {
+          font-size: 2.2rem !important;
+        }
+
+        .tip-box {
+          flex-direction: column !important;
+          text-align: center !important;
+        }
+        
+        .estante-categories-grid {
+          grid-template-columns: 1fr !important;
+        }
+        
+        .estante-partner-showcase {
+          flex-direction: column !important;
+          gap: 15px !important;
+        }
+        
+        .estante-partner-showcase span {
+          display: none !important;
+        }
+        
+        .estante-partner-showcase img {
+          width: 80px !important;
+        }
+        
+        .estante-cta-box {
+          padding: 30px 20px !important;
+        }
+        
+        .estante-cta-box h2 {
+          font-size: 1.5rem !important;
+        }
+        
+        .estante-cta-box p {
+          font-size: 1rem !important;
+        }
+        
+        .estante-cta-box .btn-primary {
+          font-size: 1.2rem !important;
+          padding: 15px 30px !important;
+        }
+        
+        /* Ajuste da seção de FAQ */
+        .estante-faq-item h4 {
+          font-size: 1rem !important;
+        }
+        
+        .estante-faq-item p {
+          font-size: 0.9rem !important;
+        }
+        
+        /* Ajuste do botão final de assinatura */
+        [style*="font-size: 1.8rem"] .btn-primary {
+          font-size: 1.2rem !important;
+          padding: 12px 25px !important;
+        }
+      }
+      
+      /* Ajustes para tablets */
+      @media (min-width: 769px) and (max-width: 1024px) {
+        .estante-features-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+        
+        .estante-categories-grid {
+          grid-template-columns: repeat(3, 1fr) !important;
+        }
+        
+        .vantagens-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+        
+        .vantagens-grid [style*="grid-column: span 3"] {
+          grid-column: span 2 !important;
+        }
+      }
+      
+      /* Animações */
+      @keyframes firePulse {
+        0% {
+          text-shadow: 0 0 20px #ffaa00, 0 0 40px #ff5500, 0 0 60px #ff0000;
+          transform: scale(1);
+        }
+        50% {
+          text-shadow: 0 0 30px #ffdd55, 0 0 60px #ff8800, 0 0 90px #ff3300;
+          transform: scale(1.05);
+        }
+        100% {
+          text-shadow: 0 0 20px #ffaa00, 0 0 40px #ff5500, 0 0 60px #ff0000;
+          transform: scale(1);
+        }
+      }
+      
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      
+      @keyframes glowPulse {
+        0% {
+          text-shadow: 0 0 15px #ffd000, 0 0 30px rgba(255, 208, 0, 0.5);
+        }
+        50% {
+          text-shadow: 0 0 25px #ffd000, 0 0 50px rgba(255, 208, 0, 0.8);
+        }
+        100% {
+          text-shadow: 0 0 15px #ffd000, 0 0 30px rgba(255, 208, 0, 0.5);
+        }
+      }
+      
+      /* Correção para overflow em elementos com largura fixa */
+      img, video, iframe {
+        max-width: 100%;
+        height: auto;
+      }
+      
+      /* Garantir que containers não causem overflow */
+      .container, .hero, .ecosystem, .estante-hero, .estante-cta-box {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+      
+      /* Ajuste para os cards flutuantes do hero */
+      .hero-float-card-right,
+      .hero-float-card-left {
+        transition: all 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a
+      href="https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
+      class="whatsapp-float"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <i class="fab fa-whatsapp"></i>
+      <span class="whatsapp-tooltip">Fale conosco!</span>
+    </a>
+
+    <!-- HEADER PADRÃO -->
+    <header class="header">
+      <div class="logo-area-highlight">
+        <img
+          src="../assets/images/logos/logo_netmax.jpg"
+          alt="Logo Netmax"
+          class="logo-netmax-big"
+        />
+        <h1 class="slogan-top">
+          A velocidade que conecta você ao mundo e ao conhecimento.
+        </h1>
+      </div>
+
+      <!-- CENTRAL DO ASSINANTE -->
+      <div class="assinante-container">
+        <a
+          href="https://netmax.net.br/"
+          class="assinante-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="assinante-icon">
+            <i class="fas fa-user-circle"></i>
+          </div>
+          <span class="assinante-text">CENTRAL DO<br />ASSINANTE</span>
+        </a>
+      </div>
+
+      <!-- MENU DE NAVEGAÇÃO ATUALIZADO -->
+      <nav class="nav-menu">
+        <a href="../index.html">PÁGINA INICIAL</a>
+        <a href="#" style="color: #ffd000; font-weight: bold"
+          >ESTANTE DIGITAL NETMAX</a
+        >
+        <a href="jornalz.html">JORNALZ</a>
+        <a href="news_periodicos.html">NEWS PERIÓDICOS</a>
+        <a href="netmax_tv.html">NETMAX TV</a>
+        <a href="nosso_proposito.html">NOSSO PROPÓSITO</a>
+        <a href="por_que_escolher_a_netmax.html">POR QUE ESCOLHER A NETMAX</a>
+      </nav>
+    </header>
+
     <!-- HERO ESPECIAL ESTANTE DIGITAL - CORRIGIDO PARA RESPONSIVIDADE -->
     <section class="hero hero-boosted estante-hero" style="padding: 80px 20px; position: relative; overflow: hidden;">
       <!-- Elementos decorativos de fundo - ajustados para responsividade -->
@@ -285,7 +749,7 @@
             </div>
           </div>
 
-          <!-- Cards flutuantes - ajustados para responsividade (agora com classes para controle) -->
+          <!-- Cards flutuantes - ajustados para responsividade -->
           <div
             style="
               position: absolute;
@@ -330,3 +794,2680 @@
         </div>
       </div>
     </section>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <section class="ecosystem" style="padding-top: 60px" id="saiba-mais">
+      <!-- SEÇÃO: A MAGIA DA LEITURA DIGITAL -->
+      <div
+        style="
+          background: linear-gradient(145deg, #fff9e6 0%, #ffffff 100%);
+          border-radius: 50px;
+          padding: 70px 60px;
+          margin: 50px 0;
+          box-shadow: 0 30px 50px rgba(255, 208, 0, 0.15);
+          border: 2px solid #ffd000;
+          position: relative;
+          overflow: hidden;
+        "
+      >
+        <!-- ELEMENTOS DECORATIVOS DE FUNDO - AJUSTADOS -->
+        <div
+          style="
+            position: absolute;
+            top: -30px;
+            right: -20px;
+            font-size: 250px;
+            opacity: 0.04;
+            transform: rotate(15deg);
+            color: #ffd000;
+            pointer-events: none;
+            z-index: 1;
+          "
+          class="desktop-only-bg"
+        >
+          📖
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -40px;
+            left: -30px;
+            font-size: 220px;
+            opacity: 0.04;
+            transform: rotate(-10deg);
+            color: #ffd000;
+            pointer-events: none;
+            z-index: 1;
+          "
+          class="desktop-only-bg"
+        >
+          📱
+        </div>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <div style="position: relative; z-index: 2">
+          <!-- BADGE DE NOVIDADE/DESTAQUE -->
+          <div
+            style="
+              display: inline-block;
+              background: #000;
+              color: #ffd000;
+              font-weight: 800;
+              padding: 8px 30px;
+              border-radius: 60px;
+              font-size: 1.1rem;
+              letter-spacing: 2px;
+              margin-bottom: 30px;
+              border: 2px solid #ffd000;
+              box-shadow: 0 5px 15px rgba(255, 208, 0, 0.3);
+            "
+          >
+            ✨ NOVA EXPERIÊNCIA DE LEITURA
+          </div>
+
+          <!-- HEADER COM ÍCONE E TÍTULO REFORMULADO -->
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 25px;
+              margin-bottom: 40px;
+              flex-wrap: wrap;
+              justify-content: center;
+            "
+          >
+            <div
+              style="
+                background: #000;
+                padding: 22px;
+                border-radius: 30px;
+                box-shadow:
+                  0 12px 0 #ffd000,
+                  0 15px 30px rgba(0, 0, 0, 0.2);
+                transform: rotate(-2deg);
+                transition: transform 0.3s ease;
+              "
+              onmouseover="this.style.transform = 'rotate(0deg) scale(1.05)'"
+              onmouseout="this.style.transform = 'rotate(-2deg) scale(1)'"
+            >
+              <i
+                class="fas fa-book-open"
+                style="color: #ffd000; font-size: 3.5rem"
+              ></i>
+            </div>
+            <div>
+              <h2
+                style="
+                  font-size: 3.2rem;
+                  font-weight: 900;
+                  color: #000;
+                  margin: 0;
+                  line-height: 1.2;
+                  text-transform: uppercase;
+                  text-align: center;
+                "
+              >
+                <span
+                  style="
+                    background: linear-gradient(135deg, #000, #333);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                  "
+                  >MAIS QUE UMA</span
+                ><br />
+                <span
+                  style="
+                    color: #ffd000;
+                    font-size: 3.8rem;
+                    text-shadow: 0 0 15px rgba(255, 208, 0, 0.3);
+                  "
+                  >BIBLIOTECA, UMA VIAGEM</span
+                >
+              </h2>
+            </div>
+          </div>
+
+          <!-- GRID DE 2 COLUNAS - responsivo com classe -->
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1.5fr 1fr;
+              gap: 40px;
+              align-items: center;
+            "
+            class="magia-grid-container"
+          >
+            <!-- COLUNA ESQUERDA: TEXTOS PRINCIPAIS -->
+            <div>
+              <p
+                style="
+                  font-size: 1.4rem;
+                  line-height: 1.8;
+                  color: #1a1a1a;
+                  margin-bottom: 25px;
+                  font-weight: 500;
+                "
+              >
+                <i
+                  class="fas fa-quote-left"
+                  style="
+                    color: #ffd000;
+                    font-size: 2rem;
+                    margin-right: 10px;
+                    opacity: 0.5;
+                  "
+                ></i>
+                Imagine carregar
+                <strong style="color: #000">milhares de livros</strong> no bolso
+                sem peso nenhum. É exatamente isso que a
+                <strong
+                  style="
+                    color: #000;
+                    background: rgba(255, 208, 0, 0.2);
+                    padding: 2px 8px;
+                    border-radius: 10px;
+                  "
+                  >Estante Digital Netmax</strong
+                >
+                proporciona: liberdade para ler onde e quando quiser, sem ocupar
+                espaço físico ou gastar fortunas em livros novos.
+              </p>
+
+              <div
+                style="
+                  background: rgba(255, 208, 0, 0.08);
+                  padding: 25px;
+                  border-radius: 25px;
+                  margin: 30px 0;
+                  border-left: 4px solid #ffd000;
+                "
+              >
+                <p
+                  style="
+                    font-size: 1.2rem;
+                    line-height: 1.7;
+                    color: #333;
+                    margin-bottom: 15px;
+                    font-style: italic;
+                  "
+                >
+                  Chega de pilhas de livros ocupando a estante, livros
+                  esquecidos na mudança ou aquele pesar de não ter lido porque
+                  era pesado demais para levar na viagem.
+                </p>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    color: #000;
+                    font-weight: 600;
+                  "
+                >
+                  <i
+                    class="fas fa-check-circle"
+                    style="color: #ffd000; font-size: 1.3rem"
+                  ></i>
+                  <span>Resolvemos todos esses problemas com um clique</span>
+                </div>
+              </div>
+
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 20px;
+                  background: #000;
+                  padding: 20px 30px;
+                  border-radius: 40px;
+                  border: 2px solid #ffd000;
+                  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+                  flex-wrap: wrap;
+                  justify-content: center;
+                "
+              >
+                <div
+                  style="
+                    background: #ffd000;
+                    border-radius: 50%;
+                    width: 60px;
+                    height: 60px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <i
+                    class="fas fa-handshake"
+                    style="color: #000; font-size: 2rem"
+                  ></i>
+                </div>
+                <div style="text-align: center">
+                  <p
+                    style="
+                      margin: 0;
+                      color: #ffd000;
+                      font-weight: bold;
+                      font-size: 1.1rem;
+                    "
+                  >
+                    UMA PARCERIA QUE TRANSFORMA
+                  </p>
+                  <p
+                    style="
+                      margin: 5px 0 0 0;
+                      color: white;
+                      font-size: 1.3rem;
+                      font-weight: 600;
+                    "
+                  >
+                    <strong style="color: #ffd000">Digi Livros</strong> + Netmax
+                    Fibra
+                  </p>
+                  <p style="margin: 5px 0 0 0; color: #ccc; font-size: 0.95rem">
+                    O maior acervo digital da região, com atualizações semanais
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- COLUNA DIREITA: ELEMENTOS VISUAIS -->
+            <div>
+              <!-- CARD DE ESTATÍSTICAS -->
+              <div
+                style="
+                  background: #000;
+                  border-radius: 30px;
+                  padding: 35px 25px;
+                  border: 2px solid #ffd000;
+                  box-shadow: 0 20px 30px rgba(255, 208, 0, 0.2);
+                  margin-bottom: 25px;
+                "
+              >
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-around;
+                    text-align: center;
+                    margin-bottom: 25px;
+                    flex-wrap: wrap;
+                    gap: 15px;
+                  "
+                >
+                  <div>
+                    <div
+                      style="
+                        font-size: 2.5rem;
+                        font-weight: 900;
+                        color: #ffd000;
+                      "
+                    >
+                      +10k
+                    </div>
+                    <div style="color: #ccc; font-size: 0.9rem">Títulos</div>
+                  </div>
+                  <div>
+                    <div
+                      style="
+                        font-size: 2.5rem;
+                        font-weight: 900;
+                        color: #ffd000;
+                      "
+                    >
+                      24/7
+                    </div>
+                    <div style="color: #ccc; font-size: 0.9rem">Disponível</div>
+                  </div>
+                  <div>
+                    <div
+                      style="
+                        font-size: 2.5rem;
+                        font-weight: 900;
+                        color: #ffd000;
+                      "
+                    >
+                      100%
+                    </div>
+                    <div style="color: #ccc; font-size: 0.9rem">Incluso</div>
+                  </div>
+                </div>
+
+                <!-- MINI CATEGORIAS -->
+                <div
+                  style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;
+                    justify-content: center;
+                  "
+                >
+                  <span
+                    style="
+                      background: rgba(255, 208, 0, 0.2);
+                      color: #ffd000;
+                      padding: 8px 15px;
+                      border-radius: 30px;
+                      font-size: 0.9rem;
+                      border: 1px solid rgba(255, 208, 0, 0.3);
+                    "
+                    >📚 Romance</span
+                  >
+                  <span
+                    style="
+                      background: rgba(255, 208, 0, 0.2);
+                      color: #ffd000;
+                      padding: 8px 15px;
+                      border-radius: 30px;
+                      font-size: 0.9rem;
+                      border: 1px solid rgba(255, 208, 0, 0.3);
+                    "
+                    >🔪 Suspense</span
+                  >
+                  <span
+                    style="
+                      background: rgba(255, 208, 0, 0.2);
+                      color: #ffd000;
+                      padding: 8px 15px;
+                      border-radius: 30px;
+                      font-size: 0.9rem;
+                      border: 1px solid rgba(255, 208, 0, 0.3);
+                    "
+                    >🚀 Ficção</span
+                  >
+                  <span
+                    style="
+                      background: rgba(255, 208, 0, 0.2);
+                      color: #ffd000;
+                      padding: 8px 15px;
+                      border-radius: 30px;
+                      font-size: 0.9rem;
+                      border: 1px solid rgba(255, 208, 0, 0.3);
+                    "
+                    >📖 Biografia</span
+                  >
+                </div>
+              </div>
+
+              <!-- CARD DE DEPOIMENTO SIMULADO -->
+              <div
+                style="
+                  background: linear-gradient(135deg, #fff, #fff9e6);
+                  border-radius: 25px;
+                  padding: 25px;
+                  border: 1px solid #ffd000;
+                  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+                "
+              >
+                <i
+                  class="fas fa-star"
+                  style="color: #ffd000; font-size: 1rem"
+                ></i>
+                <i
+                  class="fas fa-star"
+                  style="color: #ffd000; font-size: 1rem"
+                ></i>
+                <i
+                  class="fas fa-star"
+                  style="color: #ffd000; font-size: 1rem"
+                ></i>
+                <i
+                  class="fas fa-star"
+                  style="color: #ffd000; font-size: 1rem"
+                ></i>
+                <i
+                  class="fas fa-star"
+                  style="color: #ffd000; font-size: 1rem"
+                ></i>
+                <p
+                  style="
+                    font-size: 1.1rem;
+                    line-height: 1.6;
+                    color: #333;
+                    margin: 15px 0;
+                    font-style: italic;
+                  "
+                >
+                  "Nunca li tanto na vida! Levo no celular pro trabalho, leio no
+                  almoço. Já li 8 livros esse mês sem pagar nada extra. A Netmax
+                  mudou meu hábito de leitura."
+                </p>
+                <div style="display: flex; align-items: center; gap: 15px">
+                  <div
+                    style="
+                      background: #000;
+                      width: 45px;
+                      height: 45px;
+                      border-radius: 50%;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      border: 2px solid #ffd000;
+                    "
+                  >
+                    <i class="fas fa-user" style="color: #ffd000"></i>
+                  </div>
+                  <div>
+                    <p style="margin: 0; font-weight: 700">Ana Claudia</p>
+                    <p style="margin: 0; font-size: 0.85rem; color: #666">
+                      Assinante Netmax há 1 ano
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- BOTÃO SUTIL PARA EXPLORAR -->
+              <div style="margin-top: 25px; text-align: right">
+                <a
+                  href="https://netmax.estante.app/login"
+                  target="_blank"
+                  style="
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 10px;
+                    background: transparent;
+                    color: #000;
+                    text-decoration: none;
+                    font-weight: 600;
+                    padding: 10px 20px;
+                    border-radius: 40px;
+                    border: 2px dashed #ffd000;
+                    transition: all 0.3s ease;
+                  "
+                  onmouseover="
+                    this.style.background = '#FFD000';
+                    this.style.color = '#000';
+                    this.style.border = '2px solid #000';
+                  "
+                  onmouseout="
+                    this.style.background = 'transparent';
+                    this.style.color = '#000';
+                    this.style.border = '2px dashed #FFD000';
+                  "
+                >
+                  <span>QUERO EXPLORAR A ESTANTE</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- LINHA DECORATIVA INFERIOR -->
+          <div
+            style="
+              margin-top: 50px;
+              display: flex;
+              justify-content: center;
+              gap: 30px;
+              opacity: 0.5;
+              flex-wrap: wrap;
+            "
+          >
+            <i
+              class="fas fa-mobile-alt"
+              style="color: #ffd000; font-size: 1.5rem"
+            ></i>
+            <i
+              class="fas fa-tablet-alt"
+              style="color: #ffd000; font-size: 1.5rem"
+            ></i>
+            <i
+              class="fas fa-laptop"
+              style="color: #ffd000; font-size: 1.5rem"
+            ></i>
+            <i
+              class="fas fa-book-reader"
+              style="color: #ffd000; font-size: 1.5rem"
+            ></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- PARCEIROS / CONTEÚDOS EXCLUSIVOS -->
+      <div class="estante-partner-showcase" style="display: flex; align-items: center; justify-content: center; gap: 50px; margin: 40px 0; background: rgba(255, 215, 0, 0.2); backdrop-filter: blur(10px); padding: 30px 50px; border-radius: 60px; border: 2px solid rgba(255, 208, 0, 0.5); flex-wrap: wrap;">
+        <img
+          src="../assets/images/logos/logo_digi_livro.png"
+          alt="Digi Livro"
+          style="width: 100px; max-width: 100%; height: auto;"
+        />
+        <span style="font-size: 3rem; color: #ffd000;">+</span>
+        <img
+          src="../assets/images/logos/logo_estante_virtual.png"
+          alt="Estante Digital"
+          style="width: 100px; max-width: 100%; height: auto;"
+        />
+        <span style="font-size: 3rem; color: #ffd000;">=</span>
+        <img
+          src="../assets/images/logos/logo_netmax.jpg"
+          alt="Netmax Fibra"
+          style="width: 100px; max-width: 100%; height: auto;"
+        />
+      </div>
+
+      <!-- ESTATÍSTICAS -->
+      <div class="estante-stats" style="display: flex; justify-content: center; gap: 60px; margin: 50px 0; flex-wrap: wrap;">
+        <div class="estante-stat-item" style="text-align: center; background: rgba(0, 0, 0, 0.05); padding: 25px 35px; border-radius: 30px; border: 2px dashed #ffd000;">
+          <div class="numero" style="font-size: 3.5rem; font-weight: 900; color: #f24f00;">+10.000</div>
+          <div class="rotulo" style="font-size: 1.1rem; color: #000; font-weight: 600;">E-books Disponíveis</div>
+        </div>
+        <div class="estante-stat-item" style="text-align: center; background: rgba(0, 0, 0, 0.05); padding: 25px 35px; border-radius: 30px; border: 2px dashed #ffd000;">
+          <div class="numero" style="font-size: 3.5rem; font-weight: 900; color: #f24f00;">24/7</div>
+          <div class="rotulo" style="font-size: 1.1rem; color: #000; font-weight: 600;">Disponibilidade Total</div>
+        </div>
+        <div class="estante-stat-item" style="text-align: center; background: rgba(0, 0, 0, 0.05); padding: 25px 35px; border-radius: 30px; border: 2px dashed #ffd000;">
+          <div class="numero" style="font-size: 3.5rem; font-weight: 900; color: #f24f00;">100%</div>
+          <div class="rotulo" style="font-size: 1.1rem; color: #000; font-weight: 600;">Incluso no Plano</div>
+        </div>
+      </div>
+
+      <!-- CATEGORIAS DE LIVROS -->
+      <h2 class="ecosystem-title" style="margin: 40px auto; font-size: 2.8rem; text-align: center;">
+        📖 <span class="price-fire" style="color: #f24f00;">GÊNEROS</span> PARA TODOS OS GOSTOS
+      </h2>
+
+      <div class="estante-categories-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 50px 0;">
+        <div class="estante-category-item" style="background: rgba(0, 0, 0, 0.05); border-radius: 20px; padding: 20px 15px; text-align: center;">
+          <i class="fas fa-heart" style="font-size: 2.5rem; color: #000;"></i>
+          <span style="display: block; font-weight: 700;">Romance</span>
+        </div>
+        <div class="estante-category-item" style="background: rgba(0, 0, 0, 0.05); border-radius: 20px; padding: 20px 15px; text-align: center;">
+          <i class="fas fa-skull" style="font-size: 2.5rem; color: #000;"></i>
+          <span style="display: block; font-weight: 700;">Suspense</span>
+        </div>
+        <div class="estante-category-item" style="background: rgba(0, 0, 0, 0.05); border-radius: 20px; padding: 20px 15px; text-align: center;">
+          <i class="fas fa-rocket" style="font-size: 2.5rem; color: #000;"></i>
+          <span style="display: block; font-weight: 700;">Ficção Científica</span>
+        </div>
+        <div class="estante-category-item" style="background: rgba(0, 0, 0, 0.05); border-radius: 20px; padding: 20px 15px; text-align: center;">
+          <i class="fas fa-user-tie" style="font-size: 2.5rem; color: #000;"></i>
+          <span style="display: block; font-weight: 700;">Biografias</span>
+        </div>
+        <div class="estante-category-item" style="background: rgba(0, 0, 0, 0.05); border-radius: 20px; padding: 20px 15px; text-align: center;">
+          <i class="fas fa-brain" style="font-size: 2.5rem; color: #000;"></i>
+          <span style="display: block; font-weight: 700;">Autoajuda</span>
+        </div>
+        <div class="estante-category-item" style="background: rgba(0, 0, 0, 0.05); border-radius: 20px; padding: 20px 15px; text-align: center;">
+          <i class="fas fa-scroll" style="font-size: 2.5rem; color: #000;"></i>
+          <span style="display: block; font-weight: 700;">Clássicos</span>
+        </div>
+        <div class="estante-category-item" style="background: rgba(0, 0, 0, 0.05); border-radius: 20px; padding: 20px 15px; text-align: center;">
+          <i class="fas fa-flask" style="font-size: 2.5rem; color: #000;"></i>
+          <span style="display: block; font-weight: 700;">Ciência</span>
+        </div>
+        <div class="estante-category-item" style="background: rgba(0, 0, 0, 0.05); border-radius: 20px; padding: 20px 15px; text-align: center;">
+          <i class="fas fa-child" style="font-size: 2.5rem; color: #000;"></i>
+          <span style="display: block; font-weight: 700;">Infantil</span>
+        </div>
+      </div>
+
+      <!-- VANTAGENS - GRID DE FEATURES -->
+      <h2 class="ecosystem-title" style="margin: 60px auto 30px; text-align: center;">
+        🚀 POR QUE A <span class="price-fire" style="color: #f24f00;">ESTANTE DIGITAL</span> VAI
+        TRANSFORMAR SUA ROTINA?
+      </h2>
+
+      <div class="estante-features-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 60px 0;">
+        <div class="estante-feature-card" style="background: rgba(255, 215, 0, 0.2); backdrop-filter: blur(10px); border: 2px solid rgba(255, 208, 0, 0.5); border-radius: 25px; padding: 35px 25px; text-align: center;">
+          <i class="fas fa-weight" style="font-size: 3.5rem; color: #ffd000;"></i>
+          <h3 style="font-size: 1.6rem; color: #000;">Peso Zero na Mochila</h3>
+          <p style="font-size: 1rem; color: #333;">
+            Leve centenas de livros para o trabalho, faculdade ou viagem sem
+            ocupar um milímetro de espaço físico.
+          </p>
+        </div>
+
+        <div class="estante-feature-card" style="background: rgba(255, 215, 0, 0.2); backdrop-filter: blur(10px); border: 2px solid rgba(255, 208, 0, 0.5); border-radius: 25px; padding: 35px 25px; text-align: center;">
+          <i class="fas fa-search" style="font-size: 3.5rem; color: #ffd000;"></i>
+          <h3 style="font-size: 1.6rem; color: #000;">Descobertas sem Esforço</h3>
+          <p style="font-size: 1rem; color: #333;">
+            Navegue pelo acervo organizado por categorias e encontre sua próxima
+            leitura em segundos.
+          </p>
+        </div>
+
+        <div class="estante-feature-card" style="background: rgba(255, 215, 0, 0.2); backdrop-filter: blur(10px); border: 2px solid rgba(255, 208, 0, 0.5); border-radius: 25px; padding: 35px 25px; text-align: center;">
+          <i class="fas fa-home" style="font-size: 3.5rem; color: #ffd000;"></i>
+          <h3 style="font-size: 1.6rem; color: #000;">Casa mais Organizada</h3>
+          <p style="font-size: 1rem; color: #333;">
+            Adeus, pilhas de livros ocupando espaço. Seu acervo fica guardado na
+            nuvem, sempre acessível.
+          </p>
+        </div>
+
+        <div class="estante-feature-card" style="background: rgba(255, 215, 0, 0.2); backdrop-filter: blur(10px); border: 2px solid rgba(255, 208, 0, 0.5); border-radius: 25px; padding: 35px 25px; text-align: center;">
+          <i class="fas fa-eye-slash" style="font-size: 3.5rem; color: #ffd000;"></i>
+          <h3 style="font-size: 1.6rem; color: #000;">Leitura sem Julgamentos</h3>
+          <p style="font-size: 1rem; color: #333;">
+            Leia o que quiser, onde quiser. A capa do livro é só sua — ninguém
+            precisa saber o que você está lendo.
+          </p>
+        </div>
+
+        <div class="estante-feature-card" style="background: rgba(255, 215, 0, 0.2); backdrop-filter: blur(10px); border: 2px solid rgba(255, 208, 0, 0.5); border-radius: 25px; padding: 35px 25px; text-align: center;">
+          <i class="fas fa-coins" style="font-size: 3.5rem; color: #ffd000;"></i>
+          <h3 style="font-size: 1.6rem; color: #000;">Economia Garantida</h3>
+          <p style="font-size: 1rem; color: #333;">
+            Um único e-book custa em média R$ 30. Com a Estante Digital, você
+            tem acesso a milhares por R$ 0 adicional.
+          </p>
+        </div>
+
+        <div class="estante-feature-card" style="background: rgba(255, 215, 0, 0.2); backdrop-filter: blur(10px); border: 2px solid rgba(255, 208, 0, 0.5); border-radius: 25px; padding: 35px 25px; text-align: center;">
+          <i class="fas fa-tachometer-alt" style="font-size: 3.5rem; color: #ffd000;"></i>
+          <h3 style="font-size: 1.6rem; color: #000;">Velocidade Netmax</h3>
+          <p style="font-size: 1rem; color: #333;">
+            Baixe livros inteiros em segundos com a potência da nossa fibra
+            óptica.
+          </p>
+        </div>
+      </div>
+
+      <!-- SEÇÃO: VANTAGENS EXCLUSIVAS EM FORMATO DE CARDS INTERATIVOS (CORRIGIDA) -->
+      <div
+        style="
+          background: linear-gradient(145deg, #000000 0%, #1a1a1a 100%);
+          border-radius: 50px;
+          padding: 70px 60px;
+          margin: 60px 0;
+          box-shadow: 0 30px 60px rgba(255, 208, 0, 0.25);
+          border: 3px solid #ffd000;
+          position: relative;
+          overflow: hidden;
+        "
+      >
+        <!-- ELEMENTOS DECORATIVOS DE FUNDO -->
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -30px;
+            font-size: 280px;
+            opacity: 0.03;
+            transform: rotate(20deg);
+            color: #ffd000;
+            pointer-events: none;
+          "
+          class="desktop-only-bg"
+        >
+          ⭐
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -50px;
+            left: -40px;
+            font-size: 250px;
+            opacity: 0.03;
+            transform: rotate(-15deg);
+            color: #ffd000;
+            pointer-events: none;
+          "
+          class="desktop-only-bg"
+        >
+          ✨
+        </div>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <div style="position: relative; z-index: 2">
+          <!-- HEADER REFORMULADO -->
+          <div style="text-align: center; margin-bottom: 50px">
+            <!-- Badge de "EXCLUSIVO" -->
+            <a
+              href="https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
+              target="_blank"
+              style="display: inline-block; text-decoration: none"
+            >
+              <div
+                style="
+                  background: #ffd000;
+                  color: #000;
+                  font-weight: 900;
+                  padding: 8px 35px;
+                  border-radius: 60px;
+                  font-size: 1.2rem;
+                  letter-spacing: 3px;
+                  margin-bottom: 20px;
+                  border: 2px solid #fff;
+                  box-shadow: 0 5px 0 #000;
+                  cursor: pointer;
+                "
+              >
+                ⚡ SÓ PARA ASSINANTES NETMAX
+              </div>
+            </a>
+
+            <!-- Título principal -->
+            <h2
+              style="
+                font-size: 3.5rem;
+                font-weight: 900;
+                color: white;
+                margin: 0 0 15px 0;
+                text-transform: uppercase;
+                text-shadow:
+                  0 0 15px #ffd000,
+                  0 0 30px rgba(255, 208, 0, 0.5);
+              "
+            >
+              VANTAGENS QUE
+              <span
+                style="
+                  color: #ffd000;
+                  font-size: 4rem;
+                  display: block;
+                  margin-top: 5px;
+                  animation: glowPulse 2s infinite;
+                "
+                >TRANSFORMAM</span
+              >
+            </h2>
+
+            <!-- Subtítulo -->
+            <p
+              style="
+                font-size: 1.3rem;
+                color: #ccc;
+                max-width: 700px;
+                margin: 0 auto;
+              "
+            >
+              Cada benefício foi pensado para tornar sua experiência de leitura
+              única. Descubra por que a Estante Digital é muito mais que um
+              simples acervo.
+            </p>
+          </div>
+
+          <!-- GRID DE CARDS DE BENEFÍCIOS (3 COLUNAS) - responsivo com classe -->
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 25px;
+            "
+            class="vantagens-grid"
+          >
+            <!-- CARD 1 - PESO ZERO -->
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.05);
+                backdrop-filter: blur(10px);
+                border-radius: 30px;
+                padding: 30px 25px;
+                border: 1px solid rgba(255, 208, 0, 0.3);
+                transition: all 0.4s ease;
+                position: relative;
+                overflow: hidden;
+              "
+              onmouseover="
+                this.style.transform = 'translateY(-15px)';
+                this.style.borderColor = '#FFD000';
+                this.style.boxShadow = '0 20px 40px rgba(255,208,0,0.3)';
+              "
+              onmouseout="
+                this.style.transform = 'translateY(0)';
+                this.style.borderColor = 'rgba(255,208,0,0.3)';
+                this.style.boxShadow = 'none';
+              "
+            >
+              <div
+                style="
+                  position: absolute;
+                  bottom: -10px;
+                  right: -10px;
+                  font-size: 100px;
+                  opacity: 0.1;
+                  color: #ffd000;
+                  transform: rotate(10deg);
+                "
+              >
+                🎒
+              </div>
+
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 15px;
+                  margin-bottom: 20px;
+                "
+              >
+                <div
+                  style="
+                    background: #ffd000;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transform: rotate(-3deg);
+                    box-shadow: 0 8px 0 #b38f00;
+                  "
+                >
+                  <i
+                    class="fas fa-backpack"
+                    style="color: #000; font-size: 2rem"
+                  ></i>
+                </div>
+                <div>
+                  <span
+                    style="
+                      background: rgba(255, 208, 0, 0.2);
+                      color: #ffd000;
+                      padding: 5px 15px;
+                      border-radius: 30px;
+                      font-size: 0.8rem;
+                      font-weight: 700;
+                    "
+                    >BENEFÍCIO #1</span
+                  >
+                  <h3
+                    style="
+                      margin: 8px 0 0 0;
+                      color: white;
+                      font-size: 1.8rem;
+                      font-weight: 800;
+                    "
+                  >
+                    Peso Zero
+                  </h3>
+                </div>
+              </div>
+
+              <p
+                style="
+                  color: #ddd;
+                  font-size: 1.1rem;
+                  line-height: 1.6;
+                  margin-bottom: 20px;
+                "
+              >
+                Leve centenas de livros no bolso sem ocupar um grama na mochila.
+                Sua biblioteca inteira pesa menos que um e-reader.
+              </p>
+
+              <div
+                style="
+                  background: rgba(0, 0, 0, 0.3);
+                  border-radius: 15px;
+                  padding: 12px;
+                  border-left: 3px solid #ffd000;
+                "
+              >
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    color: #ccc;
+                    font-size: 0.9rem;
+                  "
+                >
+                  <span>📚 500 livros</span>
+                  <span>⚖️ 0 kg</span>
+                </div>
+                <div
+                  style="
+                    height: 6px;
+                    background: rgba(255, 208, 0, 0.2);
+                    border-radius: 10px;
+                    margin-top: 8px;
+                  "
+                >
+                  <div
+                    style="
+                      width: 100%;
+                      height: 6px;
+                      background: #ffd000;
+                      border-radius: 10px;
+                    "
+                  ></div>
+                </div>
+                <p
+                  style="
+                    margin: 8px 0 0 0;
+                    color: #ffd000;
+                    font-size: 0.85rem;
+                    font-weight: 600;
+                  "
+                >
+                  VS 500 livros físicos ≈ 250kg
+                </p>
+              </div>
+            </div>
+
+            <!-- CARD 2 - ECONOMIA -->
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.05);
+                backdrop-filter: blur(10px);
+                border-radius: 30px;
+                padding: 30px 25px;
+                border: 1px solid rgba(255, 208, 0, 0.3);
+                transition: all 0.4s ease;
+                position: relative;
+                overflow: hidden;
+              "
+              onmouseover="
+                this.style.transform = 'translateY(-15px)';
+                this.style.borderColor = '#FFD000';
+                this.style.boxShadow = '0 20px 40px rgba(255,208,0,0.3)';
+              "
+              onmouseout="
+                this.style.transform = 'translateY(0)';
+                this.style.borderColor = 'rgba(255,208,0,0.3)';
+                this.style.boxShadow = 'none';
+              "
+            >
+              <div
+                style="
+                  position: absolute;
+                  bottom: -10px;
+                  right: -10px;
+                  font-size: 100px;
+                  opacity: 0.1;
+                  color: #ffd000;
+                  transform: rotate(10deg);
+                "
+              >
+                💰
+              </div>
+
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 15px;
+                  margin-bottom: 20px;
+                "
+              >
+                <div
+                  style="
+                    background: #ffd000;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transform: rotate(3deg);
+                    box-shadow: 0 8px 0 #b38f00;
+                  "
+                >
+                  <i
+                    class="fas fa-coins"
+                    style="color: #000; font-size: 2rem"
+                  ></i>
+                </div>
+                <div>
+                  <span
+                    style="
+                      background: rgba(255, 208, 0, 0.2);
+                      color: #ffd000;
+                      padding: 5px 15px;
+                      border-radius: 30px;
+                      font-size: 0.8rem;
+                      font-weight: 700;
+                    "
+                    >BENEFÍCIO #2</span
+                  >
+                  <h3
+                    style="
+                      margin: 8px 0 0 0;
+                      color: white;
+                      font-size: 1.8rem;
+                      font-weight: 800;
+                    "
+                  >
+                    Economia
+                  </h3>
+                </div>
+              </div>
+
+              <p
+                style="
+                  color: #ddd;
+                  font-size: 1.1rem;
+                  line-height: 1.6;
+                  margin-bottom: 20px;
+                "
+              >
+                Um único e-book custa em média R$ 30. Com a Estante Digital,
+                você tem acesso a
+                <strong style="color: #ffd000"
+                  >milhares por R$ 0 adicional</strong
+                >.
+              </p>
+
+              <div
+                style="
+                  background: rgba(0, 0, 0, 0.3);
+                  border-radius: 15px;
+                  padding: 15px;
+                "
+              >
+                <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
+                  <div
+                    style="
+                      background: #ffd000;
+                      color: #000;
+                      font-weight: 900;
+                      padding: 8px 12px;
+                      border-radius: 15px;
+                      font-size: 1.5rem;
+                    "
+                  >
+                    R$ 0
+                  </div>
+                  <div style="color: #ccc; font-size: 0.95rem">
+                    <span style="display: block">Você economiza</span>
+                    <span style="color: #ffd000; font-weight: 700"
+                      >até R$ 3.000/ano</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 3 - PRIVACIDADE -->
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.05);
+                backdrop-filter: blur(10px);
+                border-radius: 30px;
+                padding: 30px 25px;
+                border: 1px solid rgba(255, 208, 0, 0.3);
+                transition: all 0.4s ease;
+                position: relative;
+                overflow: hidden;
+              "
+              onmouseover="
+                this.style.transform = 'translateY(-15px)';
+                this.style.borderColor = '#FFD000';
+                this.style.boxShadow = '0 20px 40px rgba(255,208,0,0.3)';
+              "
+              onmouseout="
+                this.style.transform = 'translateY(0)';
+                this.style.borderColor = 'rgba(255,208,0,0.3)';
+                this.style.boxShadow = 'none';
+              "
+            >
+              <div
+                style="
+                  position: absolute;
+                  bottom: -10px;
+                  right: -10px;
+                  font-size: 100px;
+                  opacity: 0.1;
+                  color: #ffd000;
+                  transform: rotate(10deg);
+                "
+              >
+                🙈
+              </div>
+
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 15px;
+                  margin-bottom: 20px;
+                "
+              >
+                <div
+                  style="
+                    background: #ffd000;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transform: rotate(-3deg);
+                    box-shadow: 0 8px 0 #b38f00;
+                  "
+                >
+                  <i
+                    class="fas fa-incognito"
+                    style="color: #000; font-size: 2rem"
+                  ></i>
+                </div>
+                <div>
+                  <span
+                    style="
+                      background: rgba(255, 208, 0, 0.2);
+                      color: #ffd000;
+                      padding: 5px 15px;
+                      border-radius: 30px;
+                      font-size: 0.8rem;
+                      font-weight: 700;
+                    "
+                    >BENEFÍCIO #3</span
+                  >
+                  <h3
+                    style="
+                      margin: 8px 0 0 0;
+                      color: white;
+                      font-size: 1.8rem;
+                      font-weight: 800;
+                    "
+                  >
+                    Privacidade
+                  </h3>
+                </div>
+              </div>
+
+              <p
+                style="
+                  color: #ddd;
+                  font-size: 1.1rem;
+                  line-height: 1.6;
+                  margin-bottom: 20px;
+                "
+              >
+                Leia o que quiser, onde quiser. A capa do livro é só sua —
+                ninguém precisa saber o que você está lendo.
+              </p>
+
+              <div
+                style="
+                  background: rgba(0, 0, 0, 0.3);
+                  border-radius: 15px;
+                  padding: 15px;
+                "
+              >
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    color: #ffd000;
+                    flex-wrap: wrap;
+                  "
+                >
+                  <i class="fas fa-check-circle"></i>
+                  <span style="color: white">Sem olhares curiosos</span>
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    color: #ffd000;
+                    margin-top: 8px;
+                    flex-wrap: wrap;
+                  "
+                >
+                  <i class="fas fa-check-circle"></i>
+                  <span style="color: white">100% discreto</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 4 - DESCOBERTAS -->
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.05);
+                backdrop-filter: blur(10px);
+                border-radius: 30px;
+                padding: 30px 25px;
+                border: 1px solid rgba(255, 208, 0, 0.3);
+                transition: all 0.4s ease;
+                position: relative;
+                overflow: hidden;
+              "
+              onmouseover="
+                this.style.transform = 'translateY(-15px)';
+                this.style.borderColor = '#FFD000';
+                this.style.boxShadow = '0 20px 40px rgba(255,208,0,0.3)';
+              "
+              onmouseout="
+                this.style.transform = 'translateY(0)';
+                this.style.borderColor = 'rgba(255,208,0,0.3)';
+                this.style.boxShadow = 'none';
+              "
+            >
+              <div
+                style="
+                  position: absolute;
+                  bottom: -10px;
+                  right: -10px;
+                  font-size: 100px;
+                  opacity: 0.1;
+                  color: #ffd000;
+                  transform: rotate(10deg);
+                "
+              >
+                🔍
+              </div>
+
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 15px;
+                  margin-bottom: 20px;
+                "
+              >
+                <div
+                  style="
+                    background: #ffd000;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transform: rotate(3deg);
+                    box-shadow: 0 8px 0 #b38f00;
+                  "
+                >
+                  <i
+                    class="fas fa-search"
+                    style="color: #000; font-size: 2rem"
+                  ></i>
+                </div>
+                <div>
+                  <span
+                    style="
+                      background: rgba(255, 208, 0, 0.2);
+                      color: #ffd000;
+                      padding: 5px 15px;
+                      border-radius: 30px;
+                      font-size: 0.8rem;
+                      font-weight: 700;
+                    "
+                    >BENEFÍCIO #4</span
+                  >
+                  <h3
+                    style="
+                      margin: 8px 0 0 0;
+                      color: white;
+                      font-size: 1.8rem;
+                      font-weight: 800;
+                    "
+                  >
+                    Descobertas
+                  </h3>
+                </div>
+              </div>
+
+              <p
+                style="
+                  color: #ddd;
+                  font-size: 1.1rem;
+                  line-height: 1.6;
+                  margin-bottom: 20px;
+                "
+              >
+                Navegue pelo acervo organizado por categorias e encontre sua
+                próxima leitura em segundos.
+              </p>
+
+              <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                <span
+                  style="
+                    background: rgba(255, 208, 0, 0.2);
+                    color: #ffd000;
+                    padding: 5px 12px;
+                    border-radius: 20px;
+                    font-size: 0.85rem;
+                  "
+                  >Romance</span
+                >
+                <span
+                  style="
+                    background: rgba(255, 208, 0, 0.2);
+                    color: #ffd000;
+                    padding: 5px 12px;
+                    border-radius: 20px;
+                    font-size: 0.85rem;
+                  "
+                  >Suspense</span
+                >
+                <span
+                  style="
+                    background: rgba(255, 208, 0, 0.2);
+                    color: #ffd000;
+                    padding: 5px 12px;
+                    border-radius: 20px;
+                    font-size: 0.85rem;
+                  "
+                  >Ficção</span
+                >
+                <span
+                  style="
+                    background: rgba(255, 208, 0, 0.2);
+                    color: #ffd000;
+                    padding: 5px 12px;
+                    border-radius: 20px;
+                    font-size: 0.85rem;
+                  "
+                  >Biografia</span
+                >
+              </div>
+            </div>
+
+            <!-- CARD 5 - VELOCIDADE NETMAX -->
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.05);
+                backdrop-filter: blur(10px);
+                border-radius: 30px;
+                padding: 30px 25px;
+                border: 1px solid rgba(255, 208, 0, 0.3);
+                transition: all 0.4s ease;
+                position: relative;
+                overflow: hidden;
+              "
+              onmouseover="
+                this.style.transform = 'translateY(-15px)';
+                this.style.borderColor = '#FFD000';
+                this.style.boxShadow = '0 20px 40px rgba(255,208,0,0.3)';
+              "
+              onmouseout="
+                this.style.transform = 'translateY(0)';
+                this.style.borderColor = 'rgba(255,208,0,0.3)';
+                this.style.boxShadow = 'none';
+              "
+            >
+              <div
+                style="
+                  position: absolute;
+                  bottom: -10px;
+                  right: -10px;
+                  font-size: 100px;
+                  opacity: 0.1;
+                  color: #ffd000;
+                  transform: rotate(10deg);
+                "
+              >
+                ⚡
+              </div>
+
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 15px;
+                  margin-bottom: 20px;
+                "
+              >
+                <div
+                  style="
+                    background: #ffd000;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transform: rotate(-3deg);
+                    box-shadow: 0 8px 0 #b38f00;
+                  "
+                >
+                  <i
+                    class="fas fa-bolt"
+                    style="color: #000; font-size: 2rem"
+                  ></i>
+                </div>
+                <div>
+                  <span
+                    style="
+                      background: rgba(255, 208, 0, 0.2);
+                      color: #ffd000;
+                      padding: 5px 15px;
+                      border-radius: 30px;
+                      font-size: 0.8rem;
+                      font-weight: 700;
+                    "
+                    >BENEFÍCIO #5</span
+                  >
+                  <h3
+                    style="
+                      margin: 8px 0 0 0;
+                      color: white;
+                      font-size: 1.8rem;
+                      font-weight: 800;
+                    "
+                  >
+                    Velocidade
+                  </h3>
+                </div>
+              </div>
+
+              <p
+                style="
+                  color: #ddd;
+                  font-size: 1.1rem;
+                  line-height: 1.6;
+                  margin-bottom: 20px;
+                "
+              >
+                Baixe livros inteiros em segundos com a potência da nossa fibra
+                óptica.
+              </p>
+
+              <div
+                style="
+                  background: rgba(0, 0, 0, 0.3);
+                  border-radius: 15px;
+                  padding: 15px;
+                "
+              >
+                <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                  <i class="fas fa-download" style="color: #ffd000"></i>
+                  <span style="color: white">Livro de 5MB</span>
+                  <span style="color: #ffd000; margin-left: auto"
+                    >0.4 segundos</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 6 - MULTIPLATAFORMA -->
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.05);
+                backdrop-filter: blur(10px);
+                border-radius: 30px;
+                padding: 30px 25px;
+                border: 1px solid rgba(255, 208, 0, 0.3);
+                transition: all 0.4s ease;
+                position: relative;
+                overflow: hidden;
+              "
+              onmouseover="
+                this.style.transform = 'translateY(-15px)';
+                this.style.borderColor = '#FFD000';
+                this.style.boxShadow = '0 20px 40px rgba(255,208,0,0.3)';
+              "
+              onmouseout="
+                this.style.transform = 'translateY(0)';
+                this.style.borderColor = 'rgba(255,208,0,0.3)';
+                this.style.boxShadow = 'none';
+              "
+            >
+              <div
+                style="
+                  position: absolute;
+                  bottom: -10px;
+                  right: -10px;
+                  font-size: 100px;
+                  opacity: 0.1;
+                  color: #ffd000;
+                  transform: rotate(10deg);
+                "
+              >
+                📱
+              </div>
+
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 15px;
+                  margin-bottom: 20px;
+                "
+              >
+                <div
+                  style="
+                    background: #ffd000;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transform: rotate(3deg);
+                    box-shadow: 0 8px 0 #b38f00;
+                  "
+                >
+                  <i
+                    class="fas fa-sync-alt"
+                    style="color: #000; font-size: 2rem"
+                  ></i>
+                </div>
+                <div>
+                  <span
+                    style="
+                      background: rgba(255, 208, 0, 0.2);
+                      color: #ffd000;
+                      padding: 5px 15px;
+                      border-radius: 30px;
+                      font-size: 0.8rem;
+                      font-weight: 700;
+                    "
+                    >BENEFÍCIO #6</span
+                  >
+                  <h3
+                    style="
+                      margin: 8px 0 0 0;
+                      color: white;
+                      font-size: 1.8rem;
+                      font-weight: 800;
+                    "
+                  >
+                    Multiplataforma
+                  </h3>
+                </div>
+              </div>
+
+              <p
+                style="
+                  color: #ddd;
+                  font-size: 1.1rem;
+                  line-height: 1.6;
+                  margin-bottom: 20px;
+                "
+              >
+                Comece a ler no celular no ônibus e continue no tablet em casa —
+                o app sincroniza automaticamente.
+              </p>
+
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-around;
+                  margin-top: 15px;
+                  flex-wrap: wrap;
+                  gap: 15px;
+                "
+              >
+                <i
+                  class="fas fa-mobile-alt"
+                  style="color: #ffd000; font-size: 2rem"
+                ></i>
+                <i
+                  class="fas fa-tablet-alt"
+                  style="color: #ffd000; font-size: 2rem"
+                ></i>
+                <i
+                  class="fas fa-laptop"
+                  style="color: #ffd000; font-size: 2rem"
+                ></i>
+              </div>
+            </div>
+
+            <!-- CARD 7 - CASA ORGANIZADA (OCUPA AS 3 COLUNAS) -->
+            <div
+              style="
+                grid-column: span 3;
+                background: linear-gradient(
+                  90deg,
+                  rgba(255, 208, 0, 0.1) 0%,
+                  rgba(0, 0, 0, 0.3) 100%
+                );
+                border-radius: 30px;
+                padding: 30px;
+                border: 2px solid #ffd000;
+                display: flex;
+                align-items: center;
+                gap: 30px;
+                flex-wrap: wrap;
+              "
+              onmouseover="
+                this.style.boxShadow = '0 15px 30px rgba(255,208,0,0.2)'
+              "
+              onmouseout="this.style.boxShadow = 'none'"
+            >
+              <div
+                style="
+                  background: #ffd000;
+                  width: 80px;
+                  height: 80px;
+                  border-radius: 30px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  transform: rotate(-3deg);
+                "
+              >
+                <i class="fas fa-home" style="color: #000; font-size: 3rem"></i>
+              </div>
+
+              <div style="flex: 1">
+                <span
+                  style="
+                    background: rgba(255, 208, 0, 0.3);
+                    color: #ffd000;
+                    padding: 5px 20px;
+                    border-radius: 30px;
+                    font-size: 0.9rem;
+                    font-weight: 700;
+                  "
+                  >BENEFÍCIO EXTRA 🏆</span
+                >
+                <h3 style="color: white; font-size: 2rem; margin: 10px 0">
+                  Casa mais organizada
+                </h3>
+                <p style="color: #ddd; font-size: 1.2rem; margin: 0">
+                  Adeus, pilhas de livros ocupando espaço. Seu acervo fica
+                  guardado na nuvem, sempre acessível.
+                </p>
+              </div>
+
+              <div
+                style="
+                  background: rgba(255, 255, 255, 0.1);
+                  padding: 15px 25px;
+                  border-radius: 30px;
+                  border: 1px dashed #ffd000;
+                "
+              >
+                <span style="color: #ffd000; font-weight: 700"
+                  >+10m² de espaço livre</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- RODAPÉ DA SEÇÃO COM CTA -->
+          <div style="margin-top: 50px; text-align: center">
+            <div
+              style="
+                display: inline-block;
+                background: rgba(255, 255, 255, 0.05);
+                padding: 20px 40px;
+                border-radius: 60px;
+                border: 1px solid rgba(255, 208, 0, 0.3);
+              "
+            >
+              <p style="margin: 0; color: #ffd000; font-size: 1.2rem; text-align: center;">
+                <i class="fas fa-check-circle" style="margin-right: 10px"></i>
+                Todos os benefícios já estão ativos no seu plano.
+                <a
+                  href="https://netmax.estante.app/login"
+                  target="_blank"
+                  style="
+                    color: white;
+                    font-weight: 700;
+                    text-decoration: none;
+                    border-bottom: 2px solid #ffd000;
+                    margin-left: 10px;
+                  "
+                >
+                  ACESSAR AGORA →
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ONDE ACESSAR -->
+      <h2 class="ecosystem-title" style="margin: 60px auto 30px; text-align: center;">
+        📱 ONDE QUISER, <span class="price-fire" style="color: #f24f00;">QUANDO QUISER</span>
+      </h2>
+
+      <div class="estante-devices" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 50px; margin: 50px 0; padding: 40px; background: rgba(255, 215, 0, 0.15); backdrop-filter: blur(10px); border-radius: 50px; border: 2px solid rgba(255, 208, 0, 0.5);">
+        <div class="estante-device-item" style="text-align: center; width: 150px;">
+          <i class="fas fa-mobile-alt" style="font-size: 4.5rem; background: linear-gradient(135deg, #000, #ffd000); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+          <span style="display: block; margin-top: 15px; font-weight: 700;">Smartphone</span>
+          <small style="display: block; color: #666;">No ônibus, na fila, no intervalo</small>
+        </div>
+        <div class="estante-device-item" style="text-align: center; width: 150px;">
+          <i class="fas fa-tablet-alt" style="font-size: 4.5rem; background: linear-gradient(135deg, #000, #ffd000); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+          <span style="display: block; margin-top: 15px; font-weight: 700;">Tablet</span>
+          <small style="display: block; color: #666;">Leitura confortável no sofá</small>
+        </div>
+        <div class="estante-device-item" style="text-align: center; width: 150px;">
+          <i class="fas fa-laptop" style="font-size: 4.5rem; background: linear-gradient(135deg, #000, #ffd000); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+          <span style="display: block; margin-top: 15px; font-weight: 700;">Computador</span>
+          <small style="display: block; color: #666;">Estudos e pesquisas</small>
+        </div>
+      </div>
+
+      <!-- PARA QUEM É -->
+      <div
+        style="
+          background: rgba(255, 215, 0, 0.15);
+          backdrop-filter: blur(10px);
+          border-radius: 30px;
+          padding: 40px;
+          margin: 50px 0;
+          border: 2px solid rgba(255, 208, 0, 0.5);
+        "
+      >
+        <h3
+          style="
+            font-size: 2rem;
+            color: #000;
+            margin-bottom: 30px;
+            text-align: center;
+          "
+        >
+          <i
+            class="fas fa-users"
+            style="color: #ffd000; margin-right: 10px"
+          ></i>
+          PARA QUEM É A ESTANTE DIGITAL?
+        </h3>
+
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 15px;
+              background: rgba(255, 255, 255, 0.5);
+              padding: 15px;
+              border-radius: 15px;
+            "
+          >
+            <i
+              class="fas fa-graduation-cap"
+              style="color: #ffd000; font-size: 2rem"
+            ></i>
+            <span style="font-weight: 600">Estudantes universitários</span>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 15px;
+              background: rgba(255, 255, 255, 0.5);
+              padding: 15px;
+              border-radius: 15px;
+            "
+          >
+            <i
+              class="fas fa-briefcase"
+              style="color: #ffd000; font-size: 2rem"
+            ></i>
+            <span style="font-weight: 600">Profissionais em atualização</span>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 15px;
+              background: rgba(255, 255, 255, 0.5);
+              padding: 15px;
+              border-radius: 15px;
+            "
+          >
+            <i class="fas fa-heart" style="color: #ffd000; font-size: 2rem"></i>
+            <span style="font-weight: 600">Pais que incentivam a leitura</span>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 15px;
+              background: rgba(255, 255, 255, 0.5);
+              padding: 15px;
+              border-radius: 15px;
+            "
+          >
+            <i
+              class="fas fa-user-clock"
+              style="color: #ffd000; font-size: 2rem"
+            ></i>
+            <span style="font-weight: 600">Aposentados</span>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 15px;
+              background: rgba(255, 255, 255, 0.5);
+              padding: 15px;
+              border-radius: 15px;
+            "
+          >
+            <i class="fas fa-plane" style="color: #ffd000; font-size: 2rem"></i>
+            <span style="font-weight: 600">Viajantes</span>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 15px;
+              background: rgba(255, 255, 255, 0.5);
+              padding: 15px;
+              border-radius: 15px;
+            "
+          >
+            <i
+              class="fas fa-question-circle"
+              style="color: #ffd000; font-size: 2rem"
+            ></i>
+            <span style="font-weight: 600">Curiosos por natureza</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEÇÃO: GUIA INTERATIVO DE ATIVAÇÃO EM 3 PASSOS (CORRIGIDA) -->
+      <div
+        style="
+          background: linear-gradient(145deg, #000000 0%, #1a1a1a 100%);
+          border-radius: 50px;
+          padding: 70px 60px;
+          margin: 60px 0;
+          box-shadow: 0 30px 60px rgba(255, 208, 0, 0.25);
+          border: 3px solid #ffd000;
+          position: relative;
+          overflow: hidden;
+        "
+      >
+        <!-- ELEMENTOS DECORATIVOS DE FUNDO -->
+        <div
+          style="
+            position: absolute;
+            top: -30px;
+            right: -20px;
+            font-size: 200px;
+            opacity: 0.03;
+            transform: rotate(15deg);
+            color: #ffd000;
+            pointer-events: none;
+          "
+          class="desktop-only-bg"
+        >
+          📱
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -40px;
+            left: -30px;
+            font-size: 180px;
+            opacity: 0.03;
+            transform: rotate(-10deg);
+            color: #ffd000;
+            pointer-events: none;
+          "
+          class="desktop-only-bg"
+        >
+          🔑
+        </div>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <div style="position: relative; z-index: 2">
+          <!-- HEADER REFORMULADO -->
+          <div style="text-align: center; margin-bottom: 50px">
+            <!-- Badge de "ATIVAÇÃO SIMPLES" -->
+            <a
+              href="https://netmax.estante.app/login"
+              target="_blank"
+              style="display: inline-block; text-decoration: none"
+            >
+              <div
+                style="
+                  background: #ffd000;
+                  color: #000;
+                  font-weight: 900;
+                  padding: 8px 35px;
+                  border-radius: 60px;
+                  font-size: 1.2rem;
+                  letter-spacing: 2px;
+                  margin-bottom: 20px;
+                  border: 2px solid #fff;
+                  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.3);
+                  cursor: pointer;
+                "
+              >
+                ⚡ ATIVAÇÃO EM MINUTOS
+              </div>
+            </a>
+
+            <!-- Título principal -->
+            <h2
+              style="
+                font-size: 3.2rem;
+                font-weight: 900;
+                color: white;
+                margin: 0 0 15px 0;
+                text-transform: uppercase;
+              "
+            >
+              COMO ACESSAR SUA
+              <span style="color: #ffd000; display: block; margin-top: 5px"
+                >ESTANTE DIGITAL</span
+              >
+            </h2>
+
+            <!-- Subtítulo -->
+            <p
+              style="
+                font-size: 1.3rem;
+                color: #ccc;
+                max-width: 700px;
+                margin: 20px auto 0;
+              "
+            >
+              Mais fácil do que pegar um livro na estante. Em 3 passos você já
+              está lendo.
+            </p>
+          </div>
+
+          <!-- PASSO A PASSO EM 3 COLUNAS - responsivo com classe -->
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 30px;
+              margin-bottom: 40px;
+            "
+            class="passos-grid"
+          >
+            <!-- PASSO 1 - CONECTE-SE -->
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.03);
+                border-radius: 40px;
+                padding: 40px 30px;
+                border: 1px solid rgba(255, 208, 0, 0.2);
+                backdrop-filter: blur(10px);
+                transition: all 0.4s ease;
+                position: relative;
+              "
+              onmouseover="
+                this.style.transform = 'translateY(-15px) scale(1.02)';
+                this.style.borderColor = '#FFD000';
+                this.style.boxShadow = '0 20px 40px rgba(255,208,0,0.2)';
+              "
+              onmouseout="
+                this.style.transform = 'translateY(0) scale(1)';
+                this.style.borderColor = 'rgba(255,208,0,0.2)';
+                this.style.boxShadow = 'none';
+              "
+            >
+              <div
+                style="
+                  position: absolute;
+                  bottom: 10px;
+                  right: 20px;
+                  font-size: 120px;
+                  font-weight: 900;
+                  color: rgba(255, 208, 0, 0.05);
+                  line-height: 1;
+                "
+              >
+                1
+              </div>
+
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 20px;
+                  margin-bottom: 25px;
+                  flex-wrap: wrap;
+                "
+              >
+                <div
+                  style="
+                    background: #ffd000;
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transform: rotate(-3deg);
+                    box-shadow: 0 10px 0 #b38f00;
+                  "
+                >
+                  <span style="color: #000; font-size: 2.5rem; font-weight: 900"
+                    >1</span
+                  >
+                </div>
+                <i
+                  class="fas fa-wifi"
+                  style="color: #ffd000; font-size: 3rem; opacity: 0.7"
+                ></i>
+              </div>
+
+              <h3
+                style="
+                  color: white;
+                  font-size: 2.2rem;
+                  font-weight: 800;
+                  margin: 0 0 15px 0;
+                "
+              >
+                Conecte-se
+              </h3>
+
+              <p
+                style="
+                  color: #ddd;
+                  font-size: 1.2rem;
+                  line-height: 1.6;
+                  margin-bottom: 25px;
+                "
+              >
+                À sua rede Wi-Fi Netmax. Aquela mesma de 1000 megas que já
+                transformou sua casa.
+              </p>
+
+              <div
+                style="
+                  background: rgba(255, 208, 0, 0.1);
+                  border-radius: 20px;
+                  padding: 15px;
+                  border-left: 3px solid #ffd000;
+                "
+              >
+                <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                  <i class="fas fa-check-circle" style="color: #ffd000"></i>
+                  <span style="color: #ffd000; font-weight: 600"
+                    >Já está conectado?</span
+                  >
+                </div>
+                <p style="color: #ccc; margin: 8px 0 0 0; font-size: 0.95rem">
+                  Se você está lendo isso, já completou o passo 1!
+                </p>
+              </div>
+            </div>
+
+            <!-- PASSO 2 - ACESSE -->
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.03);
+                border-radius: 40px;
+                padding: 40px 30px;
+                border: 1px solid rgba(255, 208, 0, 0.2);
+                backdrop-filter: blur(10px);
+                transition: all 0.4s ease;
+                position: relative;
+              "
+              onmouseover="
+                this.style.transform = 'translateY(-15px) scale(1.02)';
+                this.style.borderColor = '#FFD000';
+                this.style.boxShadow = '0 20px 40px rgba(255,208,0,0.2)';
+              "
+              onmouseout="
+                this.style.transform = 'translateY(0) scale(1)';
+                this.style.borderColor = 'rgba(255,208,0,0.2)';
+                this.style.boxShadow = 'none';
+              "
+            >
+              <div
+                style="
+                  position: absolute;
+                  bottom: 10px;
+                  right: 20px;
+                  font-size: 120px;
+                  font-weight: 900;
+                  color: rgba(255, 208, 0, 0.05);
+                  line-height: 1;
+                "
+              >
+                2
+              </div>
+
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 20px;
+                  margin-bottom: 25px;
+                  flex-wrap: wrap;
+                "
+              >
+                <div
+                  style="
+                    background: #ffd000;
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transform: rotate(3deg);
+                    box-shadow: 0 10px 0 #b38f00;
+                  "
+                >
+                  <span style="color: #000; font-size: 2.5rem; font-weight: 900"
+                    >2</span
+                  >
+                </div>
+                <i
+                  class="fas fa-user-circle"
+                  style="color: #ffd000; font-size: 3rem; opacity: 0.7"
+                ></i>
+              </div>
+
+              <h3
+                style="
+                  color: white;
+                  font-size: 2.2rem;
+                  font-weight: 800;
+                  margin: 0 0 15px 0;
+                "
+              >
+                Acesse
+              </h3>
+
+              <p
+                style="
+                  color: #ddd;
+                  font-size: 1.2rem;
+                  line-height: 1.6;
+                  margin-bottom: 25px;
+                "
+              >
+                O portal do assinante com seu login e senha. Ou clique no botão
+                abaixo para acesso direto.
+              </p>
+
+              <div style="display: flex; gap: 10px; flex-wrap: wrap">
+                <div
+                  style="
+                    background: rgba(255, 208, 0, 0.15);
+                    padding: 10px 15px;
+                    border-radius: 30px;
+                    border: 1px solid rgba(255, 208, 0, 0.3);
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                  "
+                >
+                  <i class="fas fa-globe" style="color: #ffd000"></i>
+                  <span style="color: #ffd000">Portal</span>
+                </div>
+                <div
+                  style="
+                    background: rgba(255, 208, 0, 0.15);
+                    padding: 10px 15px;
+                    border-radius: 30px;
+                    border: 1px solid rgba(255, 208, 0, 0.3);
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                  "
+                >
+                  <i class="fas fa-mobile-alt" style="color: #ffd000"></i>
+                  <span style="color: #ffd000">App</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- PASSO 3 - EXPLORE -->
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.03);
+                border-radius: 40px;
+                padding: 40px 30px;
+                border: 1px solid rgba(255, 208, 0, 0.2);
+                backdrop-filter: blur(10px);
+                transition: all 0.4s ease;
+                position: relative;
+              "
+              onmouseover="
+                this.style.transform = 'translateY(-15px) scale(1.02)';
+                this.style.borderColor = '#FFD000';
+                this.style.boxShadow = '0 20px 40px rgba(255,208,0,0.2)';
+              "
+              onmouseout="
+                this.style.transform = 'translateY(0) scale(1)';
+                this.style.borderColor = 'rgba(255,208,0,0.2)';
+                this.style.boxShadow = 'none';
+              "
+            >
+              <div
+                style="
+                  position: absolute;
+                  bottom: 10px;
+                  right: 20px;
+                  font-size: 120px;
+                  font-weight: 900;
+                  color: rgba(255, 208, 0, 0.05);
+                  line-height: 1;
+                "
+              >
+                3
+              </div>
+
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 20px;
+                  margin-bottom: 25px;
+                  flex-wrap: wrap;
+                "
+              >
+                <div
+                  style="
+                    background: #ffd000;
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transform: rotate(-3deg);
+                    box-shadow: 0 10px 0 #b38f00;
+                  "
+                >
+                  <span style="color: #000; font-size: 2.5rem; font-weight: 900"
+                    >3</span
+                  >
+                </div>
+                <i
+                  class="fas fa-book-open"
+                  style="color: #ffd000; font-size: 3rem; opacity: 0.7"
+                ></i>
+              </div>
+
+              <h3
+                style="
+                  color: white;
+                  font-size: 2.2rem;
+                  font-weight: 800;
+                  margin: 0 0 15px 0;
+                "
+              >
+                Explore!
+              </h3>
+
+              <p
+                style="
+                  color: #ddd;
+                  font-size: 1.2rem;
+                  line-height: 1.6;
+                  margin-bottom: 25px;
+                "
+              >
+                Todo o acervo com mais de 10 mil títulos disponível
+                gratuitamente. Sem limites, sem surpresas.
+              </p>
+
+              <div style="display: flex; gap: 10px; flex-wrap: wrap">
+                <span
+                  style="
+                    background: rgba(255, 208, 0, 0.1);
+                    color: #ffd000;
+                    padding: 5px 12px;
+                    border-radius: 20px;
+                    font-size: 0.85rem;
+                  "
+                  >📖 Romance</span
+                >
+                <span
+                  style="
+                    background: rgba(255, 208, 0, 0.1);
+                    color: #ffd000;
+                    padding: 5px 12px;
+                    border-radius: 20px;
+                    font-size: 0.85rem;
+                  "
+                  >🔪 Suspense</span
+                >
+                <span
+                  style="
+                    background: rgba(255, 208, 0, 0.1);
+                    color: #ffd000;
+                    padding: 5px 12px;
+                    border-radius: 20px;
+                    font-size: 0.85rem;
+                  "
+                  >🚀 Ficção</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- BARRA DE PROGRESSO VISUAL - responsiva -->
+          <div
+            style="
+              background: rgba(255, 255, 255, 0.05);
+              border-radius: 60px;
+              padding: 25px 30px;
+              margin: 40px 0 30px;
+              border: 1px solid rgba(255, 208, 0, 0.2);
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                flex-wrap: wrap;
+              "
+            >
+              <div
+                style="
+                  background: #ffd000;
+                  padding: 12px 25px;
+                  border-radius: 40px;
+                  font-weight: 800;
+                  color: #000;
+                "
+              >
+                <i class="fas fa-clock" style="margin-right: 8px"></i> TEMPO
+                MÉDIO: 2 MINUTOS
+              </div>
+              <div
+                style="
+                  flex: 1;
+                  height: 10px;
+                  background: rgba(255, 255, 255, 0.1);
+                  border-radius: 10px;
+                  min-width: 150px;
+                "
+              >
+                <div
+                  style="
+                    width: 100%;
+                    height: 10px;
+                    background: linear-gradient(90deg, #ffd000, #ffaa00);
+                    border-radius: 10px;
+                    position: relative;
+                  "
+                >
+                  <div
+                    style="
+                      position: absolute;
+                      right: -5px;
+                      top: -8px;
+                      background: #ffd000;
+                      width: 25px;
+                      height: 25px;
+                      border-radius: 50%;
+                      border: 3px solid white;
+                      box-shadow: 0 0 15px #ffd000;
+                    "
+                  ></div>
+                </div>
+              </div>
+              <span style="color: #ffd000; font-weight: 700"
+                >100% concluído</span
+              >
+            </div>
+          </div>
+
+          <!-- CALL TO ACTION PRINCIPAL -->
+          <div style="text-align: center; margin-top: 30px">
+            <a
+              href="https://netmax.estante.app/login"
+              target="_blank"
+              style="
+                display: inline-flex;
+                align-items: center;
+                gap: 20px;
+                background: #ffd000;
+                color: #000;
+                text-decoration: none;
+                font-weight: 900;
+                font-size: 1.8rem;
+                padding: 20px 50px;
+                border-radius: 60px;
+                border: 3px solid white;
+                box-shadow: 0 15px 30px rgba(255, 208, 0, 0.3);
+                transition: all 0.3s ease;
+                flex-wrap: wrap;
+                justify-content: center;
+              "
+              onmouseover="
+                this.style.transform = 'scale(1.05)';
+                this.style.background = 'white';
+                this.style.color = '#000';
+                this.style.borderColor = '#FFD000';
+              "
+              onmouseout="
+                this.style.transform = 'scale(1)';
+                this.style.background = '#FFD000';
+                this.style.color = '#000';
+                this.style.borderColor = 'white';
+              "
+            >
+              <i class="fas fa-book-open" style="font-size: 2rem"></i>
+              <span>ACESSAR MINHA ESTANTE AGORA</span>
+              <i class="fas fa-arrow-right" style="font-size: 2rem"></i>
+            </a>
+
+            <p style="color: #999; margin-top: 20px; font-size: 1rem">
+              <i
+                class="fas fa-lock"
+                style="color: #ffd000; margin-right: 5px"
+              ></i>
+              Acesso seguro · Disponível 24/7 · Sem custo adicional
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PERGUNTAS FREQUENTES -->
+      <h2 class="ecosystem-title" style="margin: 40px auto; text-align: center;">
+        ❓ <span class="price-fire" style="color: #f24f00;">DÚVIDAS FREQUENTES</span>
+      </h2>
+
+      <div class="estante-faq" style="max-width: 900px; margin: 60px auto;">
+        <div class="estante-faq-item" onclick="this.classList.toggle('active')" style="background: rgba(255, 255, 255, 0.7); border-radius: 20px; margin-bottom: 15px; padding: 20px 30px; border-left: 5px solid #ffd000; cursor: pointer;">
+          <h4 style="font-size: 1.3rem; color: #000; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;">
+            Preciso pagar alguma coisa extra?
+            <i class="fas fa-chevron-down" style="color: #ffd000;"></i>
+          </h4>
+          <p style="display: none; font-size: 1.1rem; color: #333;">
+            Não! A Estante Digital já está 100% inclusa no seu plano de
+            internet. Você não paga nada a mais por isso.
+          </p>
+        </div>
+        <div class="estante-faq-item" onclick="this.classList.toggle('active')" style="background: rgba(255, 255, 255, 0.7); border-radius: 20px; margin-bottom: 15px; padding: 20px 30px; border-left: 5px solid #ffd000; cursor: pointer;">
+          <h4 style="font-size: 1.3rem; color: #000; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;">
+            Quantos livros posso baixar por mês?
+            <i class="fas fa-chevron-down" style="color: #ffd000;"></i>
+          </h4>
+          <p style="display: none; font-size: 1.1rem; color: #333;">
+            Não há limite! Você pode ler quantos livros quiser, quando quiser.
+            Todo o acervo está disponível sem restrições.
+          </p>
+        </div>
+        <div class="estante-faq-item" onclick="this.classList.toggle('active')" style="background: rgba(255, 255, 255, 0.7); border-radius: 20px; margin-bottom: 15px; padding: 20px 30px; border-left: 5px solid #ffd000; cursor: pointer;">
+          <h4 style="font-size: 1.3rem; color: #000; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;">
+            Posso ler no computador?
+            <i class="fas fa-chevron-down" style="color: #ffd000;"></i>
+          </h4>
+          <p style="display: none; font-size: 1.1rem; color: #333;">
+            Sim! A Estante Digital funciona em celulares, tablets e
+            computadores. Basta acessar com seu login de assinante.
+          </p>
+        </div>
+        <div class="estante-faq-item" onclick="this.classList.toggle('active')" style="background: rgba(255, 255, 255, 0.7); border-radius: 20px; margin-bottom: 15px; padding: 20px 30px; border-left: 5px solid #ffd000; cursor: pointer;">
+          <h4 style="font-size: 1.3rem; color: #000; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;">
+            Os livros ficam para sempre comigo?
+            <i class="fas fa-chevron-down" style="color: #ffd000;"></i>
+          </h4>
+          <p style="display: none; font-size: 1.1rem; color: #333;">
+            Enquanto você for assinante Netmax, todo o acervo fica disponível.
+            Seu progresso de leitura é salvo automaticamente.
+          </p>
+        </div>
+        <div class="estante-faq-item" onclick="this.classList.toggle('active')" style="background: rgba(255, 255, 255, 0.7); border-radius: 20px; margin-bottom: 15px; padding: 20px 30px; border-left: 5px solid #ffd000; cursor: pointer;">
+          <h4 style="font-size: 1.3rem; color: #000; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;">
+            Tem livros infantis?
+            <i class="fas fa-chevron-down" style="color: #ffd000;"></i>
+          </h4>
+          <p style="display: none; font-size: 1.1rem; color: #333;">
+            Temos uma seção dedicada ao público infantil, com títulos educativos
+            e divertidos para todas as idades.
+          </p>
+        </div>
+        <div class="estante-faq-item" onclick="this.classList.toggle('active')" style="background: rgba(255, 255, 255, 0.7); border-radius: 20px; margin-bottom: 15px; padding: 20px 30px; border-left: 5px solid #ffd000; cursor: pointer;">
+          <h4 style="font-size: 1.3rem; color: #000; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;">
+            Preciso instalar algum aplicativo?
+            <i class="fas fa-chevron-down" style="color: #ffd000;"></i>
+          </h4>
+          <p style="display: none; font-size: 1.1rem; color: #333;">
+            Recomendamos o aplicativo Digi Livros para a melhor experiência, mas
+            você também pode acessar diretamente pelo navegador.
+          </p>
+        </div>
+      </div>
+
+      <script>
+        // Script simples para FAQ
+        document.querySelectorAll(".estante-faq-item").forEach((item) => {
+          item.addEventListener("click", function () {
+            const p = this.querySelector("p");
+            const icon = this.querySelector("i");
+            if (p.style.display === "none" || p.style.display === "") {
+              p.style.display = "block";
+              icon.style.transform = "rotate(180deg)";
+            } else {
+              p.style.display = "none";
+              icon.style.transform = "rotate(0deg)";
+            }
+          });
+        });
+      </script>
+
+      <!-- CTA PRINCIPAL -->
+      <div id="como-acessar" class="estante-cta-box" style="background: linear-gradient(135deg, #000, #1a1a1a); border-radius: 40px; padding: 60px 40px; margin: 60px 0; border: 3px solid #ffd000; text-align: center; position: relative; overflow: hidden;">
+        <h2 style="font-size: 2.8rem; color: #ffd000; margin-bottom: 30px; font-weight: 900;">🎁 E O MELHOR: TUDO INCLUSO NO SEU PLANO!</h2>
+        <p style="font-size: 1.4rem; color: white; max-width: 800px; margin: 0 auto 40px;">
+          Não é uma assinatura extra, não é um custo adicional. A
+          <strong>Estante Digital Digi Livros</strong> é mais um presente da
+          Netmax para você, que já faz parte da nossa família.
+        </p>
+        <p
+          style="
+            font-size: 1.8rem;
+            color: #ffd000;
+            margin-bottom: 40px;
+            font-weight: bold;
+          "
+        >
+          Se você já é assinante, a sua nova biblioteca particular te espera.
+        </p>
+        <button
+          class="btn-primary pulse-btn"
+          style="
+            font-size: 2rem;
+            padding: 25px 60px;
+            background: #f24f00;
+            color: #000;
+            font-weight: 800;
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 30px rgba(255, 208, 0, 0.5);
+          "
+          onmouseover="
+            this.style.background = '#FFD000';
+            this.style.transform = 'scale(1.05)';
+          "
+          onmouseout="
+            this.style.background = '#f24f00';
+            this.style.transform = 'scale(1)';
+          "
+          onclick="window.open('https://netmax.estante.app/login', '_blank')"
+        >
+          📚 ACESSAR ESTANTE DIGITAL AGORA
+        </button>
+      </div>
+
+      <!-- CHAMADA PARA ASSINATURA -->
+      <div
+        style="
+          background: rgba(0, 0, 0, 0.05);
+          padding: 50px;
+          border-radius: 30px;
+          margin: 40px 0;
+          text-align: center;
+        "
+      >
+        <h2 style="font-size: 2.2rem; color: #000; margin-bottom: 20px">
+          Ainda não é assinante Netmax?
+        </h2>
+        <p style="font-size: 1.5rem; color: #333; margin-bottom: 30px">
+          Assine agora o plano de 1000 megas por apenas
+          <strong style="color: #f24f00; font-size: 2rem">R$ 114,90</strong> e
+          leve todos os benefícios inclusos: Netmax TV, Estante Digital, JornalZ
+          e NEWS Periódicos!
+        </p>
+        <a
+          href="https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
+          target="_blank"
+          class="btn-primary pulse-btn"
+          style="
+            font-size: 1.8rem;
+            padding: 20px 50px;
+            text-decoration: none;
+            display: inline-block;
+          "
+        >
+          🔥 QUERO ASSINAR AGORA
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER PADRÃO -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-text">
+          <p>© 2024 Netmax Fibra - Todos os Direitos Reservados</p>
+          <p>Telefone/WhatsApp: 43 9 9914-9922</p>
+          <p>
+            Rua Rio Grande do Sul, 1460 - Bairro Santuário - Siqueira Campos -
+            PR
+          </p>
+          <p>CNPJ: 53.458.225/0001-52</p>
+        </div>
+
+        <div class="footer-social">
+          <a
+            href="https://instagram.com/netmaxfibra"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/instagram.svg"
+              alt="Instagram"
+              width="20"
+              height="20"
+            />
+            <span>Instagram</span>
+          </a>
+          <a
+            href="https://facebook.com/netmaxfibra"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/facebook.svg"
+              alt="Facebook"
+              width="20"
+              height="20"
+            />
+            <span>Facebook</span>
+          </a>
+          <a
+            href="https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/whatsapp.svg"
+              alt="WhatsApp"
+              width="20"
+              height="20"
+            />
+            <span>Fale Conosco</span>
+          </a>
+        </div>
+
+        <div class="footer-copyright">
+          <p>
+            Netmax Fibra - A velocidade que conecta você ao mundo e ao
+            conhecimento.
+          </p>
+          <p>Desenvolvido com 💛 para nossos clientes</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

@@ -378,59 +378,11 @@ body {
   overflow: hidden;
 }
 
-.estante-hero::before {
-  content: "📚";
-  position: absolute;
-  top: -50px;
-  right: -50px;
-  font-size: 300px;
-  opacity: 0.1;
-  transform: rotate(15deg);
-  color: #000;
-  pointer-events: none;
-}
-
-.estante-hero::after {
-  content: "📖";
-  position: absolute;
-  bottom: -80px;
-  left: -40px;
-  font-size: 280px;
-  opacity: 0.08;
-  transform: rotate(-10deg);
-  color: #000;
-  pointer-events: none;
-}
-
 /* Hero Específico - JornalZ */
 .jornalz-hero {
   background: linear-gradient(135deg, #000, #ffd000, #ffea80);
   position: relative;
   overflow: hidden;
-}
-
-.jornalz-hero::before {
-  content: "📰";
-  position: absolute;
-  top: -50px;
-  right: -50px;
-  font-size: 300px;
-  opacity: 0.1;
-  transform: rotate(15deg);
-  color: #000;
-  pointer-events: none;
-}
-
-.jornalz-hero::after {
-  content: "⚡";
-  position: absolute;
-  bottom: -80px;
-  left: -40px;
-  font-size: 280px;
-  opacity: 0.08;
-  transform: rotate(-10deg);
-  color: #000;
-  pointer-events: none;
 }
 
 /* Hero Específico - NETMAX TV */
@@ -440,55 +392,11 @@ body {
   overflow: hidden;
 }
 
-.tv-hero::before {
-  content: "📺";
-  position: absolute;
-  top: -50px;
-  right: -50px;
-  font-size: 300px;
-  opacity: 0.1;
-  transform: rotate(15deg);
-  color: #fff;
-}
-
-.tv-hero::after {
-  content: "📱";
-  position: absolute;
-  bottom: -80px;
-  left: -30px;
-  font-size: 250px;
-  opacity: 0.1;
-  transform: rotate(-10deg);
-  color: #fff;
-}
-
 /* Hero Específico - News */
 .news-hero {
   background: linear-gradient(135deg, #000, #0a2f44, #1b4f6e);
   position: relative;
   overflow: hidden;
-}
-
-.news-hero::before {
-  content: "📚";
-  position: absolute;
-  top: -50px;
-  right: -50px;
-  font-size: 300px;
-  opacity: 0.1;
-  transform: rotate(15deg);
-  color: #fff;
-}
-
-.news-hero::after {
-  content: "🔍";
-  position: absolute;
-  bottom: -80px;
-  left: -30px;
-  font-size: 250px;
-  opacity: 0.1;
-  transform: rotate(-10deg);
-  color: #ffd000;
 }
 
 /* Animação de rotação (usada em vários lugares) */
@@ -722,18 +630,17 @@ body {
 
 /* Garantir que o elemento .super-price mantenha todas as animações e estilos quando estiver dentro de um link */
 a > .super-price {
-  display: inline-block; /* Mantém o comportamento de bloco inline para a animação */
+  display: inline-block;
   animation:
     pricePulse 2.8s ease-in-out infinite,
-    borderShine 6s linear infinite; /* Reaplica as animações */
-  /* Os estilos de background, padding, etc., já estão definidos na classe .super-price e serão herdados */
+    borderShine 6s linear infinite;
 }
 
 /* Estilizar o link que envolve o .super-price para não interferir visualmente */
 a:has(.super-price) {
   text-decoration: none;
   color: inherit;
-  display: inline-block; /* Para que o link se comporte como o elemento que ele envolve */
+  display: inline-block;
 }
 
 @keyframes borderShine {
@@ -1250,950 +1157,6 @@ a:has(.super-price) {
 }
 
 /* ------------------------------ */
-/* JORNALZ - ESPECÍFICOS */
-/* ------------------------------ */
-.jornalz-features-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  margin: 60px 0;
-}
-
-.jornalz-feature-card {
-  background: rgba(255, 215, 0, 0.15);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 208, 0, 0.5);
-  border-radius: 25px;
-  padding: 35px 25px;
-  text-align: left;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-}
-
-.jornalz-feature-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(255, 208, 0, 0.3);
-  background: rgba(255, 215, 0, 0.25);
-  border-color: #ffd000;
-}
-
-.jornalz-feature-icon {
-  background: #000;
-  min-width: 70px;
-  height: 70px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid #ffd000;
-  box-shadow: 0 0 20px rgba(255, 208, 0, 0.3);
-}
-
-.jornalz-feature-icon i {
-  font-size: 2.5rem;
-  color: #ffd000;
-}
-
-.jornalz-feature-content h3 {
-  font-size: 1.6rem;
-  color: #000;
-  font-weight: 800;
-  margin-bottom: 10px;
-}
-
-.jornalz-feature-content p {
-  font-size: 1rem;
-  color: #333;
-  line-height: 1.6;
-}
-
-.jornalz-devices {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 50px;
-  margin: 50px 0;
-  background: rgba(255, 215, 0, 0.15);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 40px;
-  border-radius: 50px;
-  border: 2px solid rgba(255, 208, 0, 0.5);
-}
-
-.jornalz-device-item {
-  text-align: center;
-  width: 150px;
-}
-
-.jornalz-device-item i {
-  font-size: 5rem;
-  color: #000;
-  background: linear-gradient(135deg, #ffd000, #ffaa00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  transition: transform 0.3s ease;
-}
-
-.jornalz-device-item:hover i {
-  transform: translateY(-10px) scale(1.1);
-}
-
-.jornalz-device-item span {
-  display: block;
-  margin-top: 15px;
-  font-weight: 700;
-  color: #000;
-  font-size: 1.2rem;
-}
-
-.jornalz-device-item small {
-  display: block;
-  color: #666;
-  font-size: 0.9rem;
-  margin-top: 5px;
-}
-
-.jornalz-cta-box {
-  background: linear-gradient(135deg, #000, #1a1a1a);
-  border-radius: 40px;
-  padding: 60px 40px;
-  margin: 60px 0;
-  border: 3px solid #ffd000;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-.jornalz-cta-box::before {
-  content: "✨";
-  position: absolute;
-  top: -30px;
-  left: -30px;
-  font-size: 150px;
-  opacity: 0.1;
-  transform: rotate(-20deg);
-  color: #ffd000;
-}
-
-.jornalz-cta-box::after {
-  content: "📰";
-  position: absolute;
-  bottom: -30px;
-  right: -30px;
-  font-size: 150px;
-  opacity: 0.1;
-  transform: rotate(15deg);
-  color: #ffd000;
-}
-
-.jornalz-cta-box h2 {
-  font-size: 2.8rem;
-  color: #ffd000;
-  margin-bottom: 30px;
-  font-weight: 900;
-  text-shadow: 0 0 20px rgba(255, 208, 0, 0.3);
-}
-
-.jornalz-cta-box p {
-  font-size: 1.4rem;
-  color: white;
-  max-width: 800px;
-  margin: 0 auto 40px;
-  line-height: 1.6;
-}
-
-.jornalz-partner-showcase {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
-  margin: 40px 0;
-  background: rgba(255, 215, 0, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 30px 50px;
-  border-radius: 60px;
-  border: 2px solid rgba(255, 208, 0, 0.5);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.jornalz-partner-showcase img {
-  width: 120px;
-  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
-  transition: transform 0.3s ease;
-}
-
-.jornalz-partner-showcase img:hover {
-  transform: scale(1.1);
-}
-
-.jornalz-partner-showcase span {
-  font-size: 3rem;
-  color: #ffd000;
-  font-weight: 300;
-  text-shadow: 0 0 10px rgba(255, 208, 0, 0.5);
-}
-
-.jornalz-explicativo-box {
-  background: rgba(255, 215, 0, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 30px;
-  padding: 40px;
-  margin: 40px 0;
-  border: 2px solid rgba(255, 208, 0, 0.5);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-}
-
-.jornalz-explicativo-box p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: #333;
-}
-
-.jornalz-explicativo-box p:first-child {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: #000;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.jornalz-stats {
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-  margin: 50px 0;
-  flex-wrap: wrap;
-}
-
-.jornalz-stat-item {
-  text-align: center;
-  background: rgba(0, 0, 0, 0.05);
-  padding: 25px 35px;
-  border-radius: 30px;
-  border: 2px dashed #ffd000;
-}
-
-.jornalz-stat-item .numero {
-  font-size: 3.5rem;
-  font-weight: 900;
-  color: #f24f00;
-  text-shadow: 0 0 20px rgba(255, 208, 0, 0.5);
-  line-height: 1;
-}
-
-.jornalz-stat-item .rotulo {
-  font-size: 1.1rem;
-  color: #000;
-  font-weight: 600;
-  margin-top: 10px;
-}
-
-/* ------------------------------ */
-/* NETMAX TV - ESPECÍFICOS */
-/* ------------------------------ */
-.tv-features-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
-  margin: 60px 0;
-}
-
-.tv-feature-card {
-  background: rgba(255, 215, 0, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 208, 0, 0.5);
-  border-radius: 25px;
-  padding: 30px 20px;
-  text-align: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  min-height: 280px;
-  display: flex;
-  flex-direction: column;
-}
-
-.tv-feature-card:hover {
-  transform: translateY(-15px);
-  box-shadow: 0 20px 40px rgba(255, 208, 0, 0.3);
-  background: rgba(255, 215, 0, 0.3);
-  border-color: #ffd000;
-}
-
-.tv-feature-card i {
-  font-size: 4rem;
-  color: #ffd000;
-  margin-bottom: 20px;
-  text-shadow: 0 0 20px rgba(255, 208, 0, 0.5);
-}
-
-.tv-feature-card h3 {
-  font-size: 1.5rem;
-  color: #000;
-  font-weight: 800;
-  margin-bottom: 15px;
-}
-
-.tv-feature-card p {
-  font-size: 1rem;
-  color: #333;
-  line-height: 1.5;
-}
-
-.tv-devices {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 40px;
-  margin: 50px 0;
-  background: rgba(0, 0, 0, 0.03);
-  padding: 40px;
-  border-radius: 50px;
-}
-
-.tv-device-item {
-  text-align: center;
-  width: 150px;
-}
-
-.tv-device-item i {
-  font-size: 5rem;
-  background: linear-gradient(135deg, #ffd000, #ffaa00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  transition: transform 0.3s ease;
-}
-
-.tv-device-item:hover i {
-  transform: scale(1.15);
-}
-
-.tv-device-item span {
-  display: block;
-  margin-top: 15px;
-  font-weight: 700;
-  color: #000;
-  font-size: 1.1rem;
-}
-
-.tv-device-item small {
-  display: block;
-  color: #666;
-  font-size: 0.9rem;
-  margin-top: 5px;
-}
-
-.tv-channels-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 15px;
-  margin: 40px 0 60px;
-}
-
-.tv-channel-category {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 208, 0, 0.3);
-  border-radius: 20px;
-  padding: 20px 10px;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.tv-channel-category:hover {
-  background: rgba(255, 208, 0, 0.2);
-  transform: scale(1.05);
-  border-color: #ffd000;
-}
-
-.tv-channel-category i {
-  font-size: 2.5rem;
-  color: #000;
-  margin-bottom: 10px;
-}
-
-.tv-channel-category h4 {
-  font-size: 1.2rem;
-  color: #000;
-  font-weight: 800;
-  margin-bottom: 5px;
-}
-
-.tv-channel-category p {
-  font-size: 0.9rem;
-  color: #333;
-}
-
-.tv-highlight-badge {
-  background: linear-gradient(135deg, #ffd000, #ffaa00);
-  color: #000;
-  padding: 15px 30px;
-  border-radius: 50px;
-  font-weight: 800;
-  font-size: 1.3rem;
-  display: inline-block;
-  margin: 30px 0;
-  box-shadow: 0 10px 25px rgba(255, 208, 0, 0.3);
-  border: 2px solid #fff;
-}
-
-.tv-tech-box {
-  background: rgba(0, 0, 0, 0.03);
-  border-radius: 30px;
-  padding: 40px;
-  margin: 50px 0;
-  border-left: 5px solid #ffd000;
-}
-
-.tv-tech-box h3 {
-  font-size: 2rem;
-  color: #000;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.tv-tech-box h3 i {
-  color: #ffd000;
-  font-size: 2.5rem;
-}
-
-.tv-tech-box p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: #333;
-}
-
-.tv-testimonial {
-  background: linear-gradient(135deg, #000, #222);
-  color: white;
-  padding: 50px;
-  border-radius: 30px;
-  margin: 60px 0;
-  position: relative;
-  border: 2px solid #ffd000;
-}
-
-.tv-testimonial::before {
-  content: '"';
-  position: absolute;
-  top: -20px;
-  left: 30px;
-  font-size: 100px;
-  color: rgba(255, 208, 0, 0.2);
-  font-family: serif;
-}
-
-.tv-testimonial p {
-  font-size: 1.5rem;
-  line-height: 1.6;
-  font-style: italic;
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.tv-testimonial .autor {
-  margin-top: 30px;
-  color: #ffd000;
-  font-weight: bold;
-  text-align: center;
-  font-size: 1.2rem;
-}
-
-.tv-faq {
-  max-width: 900px;
-  margin: 60px auto;
-  text-align: left;
-}
-
-.tv-faq-item {
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 20px;
-  margin-bottom: 15px;
-  padding: 20px 30px;
-  border-left: 5px solid #ffd000;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.tv-faq-item:hover {
-  background: rgba(255, 208, 0, 0.1);
-  transform: translateX(10px);
-}
-
-.tv-faq-item h4 {
-  font-size: 1.3rem;
-  color: #000;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.tv-faq-item h4 i {
-  color: #ffd000;
-  transition: transform 0.3s ease;
-}
-
-.tv-faq-item:hover h4 i {
-  transform: rotate(90deg);
-}
-
-.tv-faq-item p {
-  font-size: 1.1rem;
-  color: #333;
-  line-height: 1.6;
-  display: none;
-}
-
-.tv-faq-item.active p {
-  display: block !important;
-}
-
-.tv-faq-item.active i {
-  transform: rotate(180deg);
-}
-
-.tv-cta-giant {
-  background: linear-gradient(135deg, #000, #ffd000);
-  padding: 80px 40px;
-  border-radius: 50px;
-  margin: 60px 0;
-  text-align: center;
-  box-shadow: 0 20px 50px rgba(255, 208, 0, 0.4);
-}
-
-.tv-cta-giant h2 {
-  font-size: 3rem;
-  color: white;
-  margin-bottom: 30px;
-  text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-.tv-cta-giant .btn-primary {
-  font-size: 2rem;
-  padding: 25px 60px;
-  background: #000;
-  color: #ffd000;
-  border: 3px solid #ffd000;
-  border-radius: 60px;
-  box-shadow: 0 0 30px rgba(255, 208, 0, 0.5);
-}
-
-.tv-cta-giant .btn-primary:hover {
-  background: #ffd000;
-  color: #000;
-  transform: scale(1.1);
-}
-
-/* ------------------------------ */
-/* NEWS PERIÓDICOS - ESPECÍFICOS */
-/* ------------------------------ */
-.news-features-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  margin: 60px 0;
-}
-
-.news-feature-card {
-  background: rgba(255, 215, 0, 0.15);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 208, 0, 0.5);
-  border-radius: 25px;
-  padding: 35px 25px;
-  text-align: left;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-}
-
-.news-feature-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(255, 208, 0, 0.3);
-  background: rgba(255, 215, 0, 0.25);
-  border-color: #ffd000;
-}
-
-.news-feature-icon {
-  background: #000;
-  min-width: 70px;
-  height: 70px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid #ffd000;
-  box-shadow: 0 0 20px rgba(255, 208, 0, 0.3);
-}
-
-.news-feature-icon i {
-  font-size: 2.5rem;
-  color: #ffd000;
-}
-
-.news-feature-content h3 {
-  font-size: 1.6rem;
-  color: #000;
-  font-weight: 800;
-  margin-bottom: 10px;
-}
-
-.news-feature-content p {
-  font-size: 1rem;
-  color: #333;
-  line-height: 1.6;
-}
-
-.news-devices {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 50px;
-  margin: 50px 0;
-  padding: 40px;
-  background: rgba(0, 0, 0, 0.02);
-  border-radius: 50px;
-}
-
-.news-device-item {
-  text-align: center;
-  width: 140px;
-}
-
-.news-device-item i {
-  font-size: 4rem;
-  background: linear-gradient(135deg, #000, #1b4f6e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  transition: transform 0.3s ease;
-}
-
-.news-device-item:hover i {
-  transform: translateY(-10px);
-}
-
-.news-device-item span {
-  display: block;
-  margin-top: 15px;
-  font-weight: 700;
-  color: #000;
-}
-
-.news-cta-box {
-  background: linear-gradient(135deg, #000, #0a2f44);
-  border-radius: 40px;
-  padding: 60px 40px;
-  margin: 60px 0;
-  border: 3px solid #ffd000;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.news-cta-box::before {
-  content: "✨";
-  position: absolute;
-  top: -30px;
-  left: -30px;
-  font-size: 150px;
-  opacity: 0.1;
-  transform: rotate(-20deg);
-}
-
-.news-cta-box h2 {
-  font-size: 2.8rem;
-  color: #ffd000;
-  margin-bottom: 30px;
-  font-weight: 900;
-}
-
-.news-cta-box p {
-  font-size: 1.4rem;
-  color: white;
-  max-width: 800px;
-  margin: 0 auto 40px;
-  line-height: 1.6;
-}
-
-.news-partner-showcase {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
-  margin: 40px 0;
-  background: rgba(255, 255, 255, 0.7);
-  padding: 30px;
-  border-radius: 60px;
-  border: 2px solid #ffd000;
-}
-
-.news-partner-showcase img {
-  width: 120px;
-  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
-}
-
-.news-partner-showcase span {
-  font-size: 3rem;
-  color: #ffd000;
-  font-weight: 300;
-}
-
-/* ------------------------------ */
-/* NOSSO PROPÓSITO - ESPECÍFICOS */
-/* ------------------------------ */
-.proposito-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-.irmaos-image {
-  width: 100%;
-  max-width: 900px;
-  height: 400px;
-  margin: 30px auto;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #000, #ffd000);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  border: 3px solid #ffd000;
-}
-
-.irmaos-image::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 208, 0, 0.2) 0%,
-    transparent 50%
-  );
-  animation: rotate 20s linear infinite;
-}
-
-.irmaos-image::after {
-  content: "👥 Juliano, Julio Cesar & Isaac Vilas Boas";
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-shadow: 2px 2px 4px #000;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(0, 0, 0, 0.7),
-    transparent
-  );
-  padding: 15px;
-  z-index: 2;
-}
-
-.irmaos-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
-}
-
-.irmaos-image:hover img {
-  opacity: 0.9;
-}
-
-.irmaos-image .overlay-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 2rem;
-  font-weight: 900;
-  text-align: center;
-  text-shadow:
-    0 0 20px #ffd000,
-    0 0 40px #000;
-  z-index: 3;
-  width: 100%;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(5px);
-}
-
-.proposito-highlight {
-  background: rgba(255, 215, 0, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 30px;
-  padding: 40px;
-  margin: 40px 0;
-  border: 2px solid rgba(255, 208, 0, 0.5);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-}
-
-.proposito-highlight p {
-  font-size: 1.3rem;
-  line-height: 1.8;
-  color: #000;
-  font-weight: 500;
-}
-
-.proposito-highlight p:first-child {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: #000;
-  text-align: center;
-  margin-bottom: 30px;
-  text-shadow: 2px 2px 4px rgba(255, 208, 0, 0.5);
-}
-
-.diferenciais-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  margin: 50px 0;
-}
-
-.diferencial-card {
-  background: rgba(255, 215, 0, 0.2) !important;
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
-  border: 2px solid rgba(255, 208, 0, 0.5) !important;
-  border-left: 5px solid #ffd000 !important;
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.diferencial-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(255, 208, 0, 0.3);
-  background: rgba(255, 215, 0, 0.3) !important;
-}
-
-.diferencial-card h3 {
-  font-size: 1.8rem;
-  color: #000;
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.diferencial-card h3 i {
-  color: #ffd000;
-  font-size: 2rem;
-  transition: transform 0.3s ease;
-}
-
-.diferencial-card:hover h3 i {
-  transform: scale(1.1);
-}
-
-.diferencial-card p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #333;
-}
-
-.missao-box {
-  background: linear-gradient(135deg, #000, #1a1a1a);
-  color: white;
-  padding: 50px;
-  border-radius: 30px;
-  margin: 60px 0;
-  text-align: center;
-  border: 2px solid #ffd000;
-  position: relative;
-  overflow: hidden;
-}
-
-.missao-box::before {
-  content: '"';
-  position: absolute;
-  top: -50px;
-  left: 20px;
-  font-size: 200px;
-  color: rgba(255, 208, 0, 0.1);
-  font-family: serif;
-}
-
-.missao-box::after {
-  content: '"';
-  position: absolute;
-  bottom: -100px;
-  right: 20px;
-  font-size: 200px;
-  color: rgba(255, 208, 0, 0.1);
-  font-family: serif;
-}
-
-.missao-box p {
-  font-size: 1.8rem;
-  line-height: 1.5;
-  font-weight: 600;
-  position: relative;
-  z-index: 2;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.missao-box .autor {
-  margin-top: 30px;
-  color: #ffd000;
-  font-size: 1.2rem;
-  font-style: italic;
-}
-
-.rodape-proposito {
-  background: linear-gradient(135deg, #000, #222);
-  color: white;
-  padding: 30px;
-  border-radius: 20px;
-  margin: 40px 0 20px;
-  text-align: center;
-  border: 1px solid #ffd000;
-}
-
-.rodape-proposito p {
-  margin: 10px 0;
-  font-size: 1.2rem;
-}
-
-.rodape-proposito p:first-child {
-  color: #ffd000;
-  font-weight: bold;
-  font-size: 1.4rem;
-}
-
-/* ------------------------------ */
 /* FOOTER (GLOBAL) */
 /* ------------------------------ */
 .footer {
@@ -2333,36 +1296,6 @@ a:has(.super-price) {
     grid-template-columns: 1fr;
     gap: 10px;
   }
-
-  /* JornalZ */
-  .jornalz-features-grid {
-    grid-template-columns: 1fr;
-  }
-  .jornalz-cta-box h2 {
-    font-size: 2.2rem;
-  }
-  .jornalz-cta-box p {
-    font-size: 1.2rem;
-  }
-
-  /* NETMAX TV */
-  .tv-features-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .tv-channels-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  /* News */
-  .news-features-grid {
-    grid-template-columns: 1fr;
-  }
-  .news-cta-box h2 {
-    font-size: 2.2rem;
-  }
-  .news-cta-box p {
-    font-size: 1.2rem;
-  }
 }
 
 @media (max-width: 768px) {
@@ -2409,15 +1342,15 @@ a:has(.super-price) {
 
   /* LOGO - CORREÇÃO PRINCIPAL DE RESPONSIVIDADE */
   .logo-netmax-big {
-    height: auto; /* Remove a altura fixa */
-    max-height: 120px; /* Define uma altura máxima menor para mobile */
-    width: auto; /* Mantém a proporção */
+    height: auto;
+    max-height: 120px;
+    width: auto;
   }
   .logo-area-highlight {
-    padding: 30px 0 20px; /* Reduz o padding vertical */
+    padding: 30px 0 20px;
   }
   .slogan-top {
-    font-size: 1.2rem; /* Reduz o tamanho do texto */
+    font-size: 1.2rem;
     margin-top: 10px;
   }
 
@@ -2519,104 +1452,6 @@ a:has(.super-price) {
   .estante-feature-card {
     min-height: auto;
   }
-
-  /* JornalZ */
-  .jornalz-devices {
-    gap: 20px;
-    padding: 30px 20px;
-  }
-  .jornalz-device-item {
-    width: 120px;
-  }
-  .jornalz-device-item i {
-    font-size: 3.5rem;
-  }
-  .jornalz-partner-showcase {
-    flex-direction: column;
-    gap: 20px;
-    padding: 30px 20px;
-  }
-  .jornalz-partner-showcase span {
-    display: none;
-  }
-  .jornalz-feature-card {
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-  }
-  .jornalz-stats {
-    gap: 20px;
-  }
-  .jornalz-stat-item {
-    padding: 15px 25px;
-  }
-  .jornalz-stat-item .numero {
-    font-size: 2.5rem;
-  }
-
-  /* NETMAX TV */
-  .tv-features-grid {
-    grid-template-columns: 1fr;
-  }
-  .tv-channels-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .tv-devices {
-    gap: 20px;
-  }
-  .tv-device-item {
-    width: 120px;
-  }
-  .tv-cta-giant h2 {
-    font-size: 2rem;
-  }
-  .tv-cta-giant .btn-primary {
-    font-size: 1.5rem;
-    padding: 20px 40px;
-  }
-  .tv-testimonial p {
-    font-size: 1.2rem;
-  }
-  .tv-feature-card {
-    min-height: auto;
-  }
-
-  /* News */
-  .news-devices {
-    gap: 30px;
-  }
-  .news-device-item {
-    width: 120px;
-  }
-  .news-partner-showcase {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .news-partner-showcase span {
-    display: none;
-  }
-  .news-feature-card {
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-  }
-
-  /* Propósito */
-  .diferenciais-grid {
-    grid-template-columns: 1fr;
-  }
-  .irmaos-image {
-    height: 300px;
-  }
-  .missao-box p {
-    font-size: 1.4rem;
-  }
-  .proposito-highlight p:first-child {
-    font-size: 1.5rem;
-  }
-  .proposito-highlight p {
-    font-size: 1.1rem;
-  }
 }
 
 @media (max-width: 480px) {
@@ -2655,7 +1490,7 @@ a:has(.super-price) {
 
   /* LOGO - CORREÇÃO PARA TELAS PEQUENAS */
   .logo-netmax-big {
-    max-height: 100px; /* Altura máxima ainda menor para telas muito pequenas */
+    max-height: 100px;
   }
   .slogan-top {
     font-size: 1rem;
@@ -2709,167 +1544,6 @@ a:has(.super-price) {
     padding: 40px 20px;
   }
   .estante-cta-box h2 {
-    font-size: 1.8rem;
-  }
-
-  /* JornalZ */
-  .jornalz-devices {
-    gap: 15px;
-  }
-  .jornalz-device-item {
-    width: 100px;
-  }
-  .jornalz-device-item i {
-    font-size: 3rem;
-  }
-  .jornalz-cta-box {
-    padding: 40px 20px;
-  }
-  .jornalz-cta-box h2 {
-    font-size: 1.8rem;
-  }
-  .jornalz-explicativo-box {
-    padding: 25px;
-  }
-  .jornalz-explicativo-box p {
-    font-size: 1rem;
-  }
-  .jornalz-explicativo-box p:first-child {
-    font-size: 1.4rem;
-  }
-
-  /* NETMAX TV */
-  .tv-channels-grid {
-    grid-template-columns: 1fr;
-  }
-  .tv-device-item {
-    width: 100px;
-  }
-  .tv-device-item i {
-    font-size: 3.5rem;
-  }
-
-  /* News */
-  .news-devices {
-    gap: 20px;
-  }
-  .news-device-item {
-    width: 100px;
-  }
-  .news-device-item i {
-    font-size: 3rem;
-  }
-  .news-cta-box {
-    padding: 40px 20px;
-  }
-  .news-cta-box h2 {
-    font-size: 2rem;
-  }
-  .news-cta-box p {
-    font-size: 1.2rem;
-  }
-
-  /* Propósito */
-  .irmaos-image {
-    height: 250px;
-  }
-  .missao-box {
-    padding: 30px 20px;
-  }
-  .missao-box p {
-    font-size: 1.2rem;
-  }
-  .diferencial-card h3 {
-    font-size: 1.5rem;
-  }
-  .rodape-proposito {
-    padding: 20px;
-  }
-  .rodape-proposito p {
-    font-size: 1rem;
-  }
-}
-
-/* ------------------------------ */
-/* IMAGEM PLACEHOLDER PARA NOSSO PROPÓSITO */
-/* ------------------------------ */
-.proposito-imagem-container img[onerror] {
-  object-fit: contain;
-  background: linear-gradient(135deg, #000, #333);
-}
-
-/* ------------------------------ */
-/* ANIMAÇÕES ADICIONAIS DO SCRIPT.JS */
-/* ------------------------------ */
-.promo-counter {
-  text-align: center;
-  margin-top: 30px;
-  padding: 20px;
-  background: linear-gradient(135deg, #ffd000, #ffa500);
-  border-radius: 50px;
-  box-shadow: 0 10px 30px rgba(255, 208, 0, 0.3);
-  animation: pulse-glow 2s infinite;
-}
-
-.promo-counter h3 {
-  color: #000;
-  margin-bottom: 15px;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.counter-timer {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.counter-unit {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 15px 25px;
-  border-radius: 15px;
-  min-width: 100px;
-}
-
-.counter-unit span:first-child {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #ffd000;
-  line-height: 1;
-}
-
-.counter-unit span:last-child {
-  font-size: 0.9rem;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-@keyframes pulse-glow {
-  0% {
-    box-shadow: 0 10px 30px rgba(255, 208, 0, 0.3);
-  }
-  50% {
-    box-shadow: 0 10px 50px rgba(255, 208, 0, 0.6);
-  }
-  100% {
-    box-shadow: 0 10px 30px rgba(255, 208, 0, 0.3);
-  }
-}
-
-@media (max-width: 768px) {
-  .counter-timer {
-    gap: 10px;
-  }
-  .counter-unit {
-    padding: 10px 15px;
-    min-width: 70px;
-  }
-  .counter-unit span:first-child {
     font-size: 1.8rem;
   }
 }
@@ -3207,10 +1881,10 @@ a:has(.super-price) {
 }
 
 .instruction-item span {
-  font-size: 1.15rem; /* Ajustado de 0.95rem para 1.15rem (cerca de 21% de aumento) */
+  font-size: 1.15rem;
   color: #333;
-  line-height: 1.6; /* Aumentado ligeiramente para melhor legibilidade */
-  font-weight: 500; /* Adicionado um peso de fonte médio para mais nitidez */
+  line-height: 1.6;
+  font-weight: 500;
 }
 
 .instruction-item strong {
@@ -3317,9 +1991,8 @@ a:has(.super-price) {
     padding: 15px 20px;
   }
 
-  /* Ajuste responsivo para o texto da instrução */
   .instruction-item span {
-    font-size: 1.05rem; /* Reduz ligeiramente em tablets, mas mantém o aumento */
+    font-size: 1.05rem;
   }
 }
 
@@ -3342,62 +2015,55 @@ a:has(.super-price) {
     border-radius: 30px;
   }
 
-  /* Ajuste responsivo para o texto da instrução em dispositivos móveis */
   .instruction-item span {
-    font-size: 1rem; /* Ainda maior que o original (0.95rem), mas ajustado para telas pequenas */
+    font-size: 1rem;
   }
 }
 
 /* ============================== */
-/* REDUÇÃO DE 5% NO MODAL DA NETMAX TV (AJUSTADO PARA 0.7125) */
+/* REDUÇÃO DE 5% NO MODAL DA NETMAX TV */
 /* ============================== */
 #tvModal .modal-container {
-  transform: scale(0.7125); /* 5% menor que 0.75 */
+  transform: scale(0.7125);
   transition: transform 0.3s ease;
 }
 
 #tvModal.show .modal-container {
-  transform: scale(0.7125); /* Mantém a escala mesmo quando visível */
+  transform: scale(0.7125);
 }
 
-/* Ajuste para não reduzir duplamente no hover/transitions */
 #tvModal .modal-card {
   transform-origin: center;
 }
 
-/* Ajuste fino para manter a proporção em mobile */
 @media (max-width: 768px) {
   #tvModal .modal-container {
-    transform: scale(0.6625); /* 5% menor que 0.7 */
+    transform: scale(0.6625);
   }
 }
 
 /* ============================== */
-/* NOVO MODAL DE ATIVAÇÃO - REDUÇÃO DE 20% E REORGANIZADO */
+/* NOVO MODAL DE ATIVAÇÃO - REDUÇÃO DE 20% */
 /* ============================== */
 #tvAtivacaoModal .modal-container {
-  transform: scale(0.8); /* 20% de redução */
+  transform: scale(0.8);
   transition: transform 0.3s ease;
-  max-width: 950px; /* Ajuste para manter a legibilidade */
-  margin: 20px; /* Ajuste para dar mais espaço nas bordas */
+  max-width: 950px;
+  margin: 20px;
 }
 
 #tvAtivacaoModal.show .modal-container {
-  transform: scale(0.8); /* Mantém a escala mesmo quando visível */
+  transform: scale(0.8);
 }
 
-/* Ajuste fino para manter a proporção em mobile */
 @media (max-width: 768px) {
   #tvAtivacaoModal .modal-container {
-    transform: scale(
-      0.75
-    ); /* 20% de redução em relação ao tamanho base para mobile */
+    transform: scale(0.75);
     max-width: 95%;
     margin: 15px;
   }
 }
 
-/* Estilo para o novo card de destaque no modal de ativação */
 .highlight-card {
   background: linear-gradient(145deg, #ffd000, #ffaa00);
   border: 2px solid #000;
@@ -3423,90 +2089,4 @@ a:has(.super-price) {
 .highlight-card p:last-of-type {
   color: #333;
   font-size: 0.95rem;
-}
-
-/* ================================================== */
-/* ESTILOS ADICIONAIS PARA A PÁGINA 404 (TRANSFERIDOS) */
-/* ================================================== */
-.container {
-  max-width: 800px;
-  margin: 50px auto;
-  text-align: center;
-  padding: 40px 20px;
-  background: linear-gradient(135deg, #fff9e6, #ffffff);
-  border-radius: 30px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  border: 2px solid #ffd000;
-}
-
-.logo {
-  width: 200px;
-  margin-bottom: 30px;
-}
-
-.titulo {
-  font-size: 5rem;
-  color: #f24f00;
-  text-shadow: 0 0 20px #ffaa00;
-  margin-bottom: 20px;
-  animation: firePulse 1.2s infinite ease-in-out;
-}
-
-.mensagem {
-  font-size: 1.4rem;
-  color: #333;
-  line-height: 1.6;
-  margin-bottom: 30px;
-}
-
-.btn {
-  background: #f24f00;
-  color: #000;
-  border: none;
-  padding: 15px 40px;
-  font-size: 1.3rem;
-  font-weight: 800;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin: 10px;
-  box-shadow: 0 5px 15px rgba(255, 208, 0, 0.3);
-}
-
-.btn:hover {
-  background: #ffd000;
-  transform: scale(1.05);
-}
-
-.btn2 {
-  background: #000;
-  color: #ffd000;
-  border: 2px solid #ffd000;
-  padding: 12px 30px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin: 10px;
-}
-
-.btn2:hover {
-  background: #ffd000;
-  color: #000;
-}
-
-.piadinha {
-  font-size: 1.1rem;
-  color: #666;
-  margin: 30px 0 20px;
-  font-style: italic;
-}
-
-.resultado {
-  font-size: 1.3rem;
-  color: #f24f00;
-  font-weight: bold;
-  margin-top: 20px;
-  min-height: 40px;
 }
