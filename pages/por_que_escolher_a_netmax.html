@@ -1,267 +1,147 @@
 <!doctype html>
 <!--
     ===================================================================
-        NETMAX FIBRA - POR QUE ESCOLHER A NETMAX (COM BOOTSTRAP)
+        NETMAX FIBRA - PÁGINA 
     ===================================================================
-    Objetivo: Página que lista os principais motivos para escolher a 
-              Netmax Fibra como provedor de internet, destacando 
-              benefícios, diferenciais e chamada para ação.
+    Objetivo: Página institucional para apresentar os motivos e benefícios 
+              de escolher a Netmax Fibra como provedor de internet, 
+              destacando diferenciais, preços e chamadas para ação.
     Autor : Rodrigo Barbosa
     Data  : 23/02/2026
     ===================================================================
 -->
-
 <html lang="pt-BR">
   <head>
+    <!-- Define o conjunto de caracteres como UTF-8 para suporte a acentos e caracteres especiais -->
     <meta charset="UTF-8" />
+
+    <!-- Configura a viewport para tornar o site responsivo em dispositivos móveis -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Título da página exibido na aba do navegador -->
     <title>Netmax Fibra - Por que escolher a Netmax</title>
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../assets/images/outros/favicon_netmax.png" />
-    <link rel="shortcut icon" type="image/png" href="../assets/images/outros/favicon_netmax.png" />
+
+    <!-- Favicon da Netmax (ícone da página) - Formatos PNG para compatibilidade -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="../assets/images/outros/favicon_netmax.png"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="../assets/images/outros/favicon_netmax.png"
+    />
+
+    <!-- Folha de estilos principal da Netmax (CSS customizado) -->
     <link rel="stylesheet" href="../assets/css/styles.css" />
+
+    <!-- Font Awesome 6 (biblioteca de ícones) para ícones como WhatsApp, usuário, etc. -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <style>
-      /* Estilos adicionais específicos para garantir responsividade da página Por Que Escolher a Netmax */
-      @media (max-width: 1024px) {
-        .benefits-grid.big-cards {
-          grid-template-columns: repeat(2, 1fr) !important;
-          gap: 30px !important;
-        }
-
-        .super-price {
-          font-size: 2.2rem !important;
-          padding: 25px 40px !important;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .hero .hero-title {
-          font-size: 2rem !important;
-        }
-
-        .hero .subtitle-premium {
-          font-size: 1.3rem !important;
-          padding: 20px !important;
-        }
-
-        .ecosystem {
-          padding: 60px 20px !important;
-        }
-
-        .ecosystem-title {
-          font-size: 1.8rem !important;
-          padding: 20px 15px !important;
-          margin-bottom: 30px !important;
-        }
-
-        .benefits-grid.big-cards {
-          grid-template-columns: 1fr !important;
-          gap: 25px !important;
-          margin: 40px 0 !important;
-        }
-
-        .benefit-card {
-          padding: 30px 20px !important;
-          min-height: auto !important;
-        }
-
-        .benefit-card i {
-          font-size: 3rem !important;
-          margin-bottom: 15px !important;
-        }
-
-        .benefit-card h3 {
-          font-size: 1.3rem !important;
-          margin-bottom: 10px !important;
-        }
-
-        .benefit-card p {
-          font-size: 0.95rem !important;
-          line-height: 1.5 !important;
-        }
-
-        .super-price {
-          font-size: 1.8rem !important;
-          padding: 20px 30px !important;
-          margin-top: 40px !important;
-        }
-
-        .super-price p:first-child {
-          font-size: 1.3rem !important;
-        }
-
-        .super-price p:first-of-type {
-          font-size: 1.3rem !important;
-        }
-
-        .super-price p:nth-child(2) {
-          font-size: 2.5rem !important;
-        }
-
-        .super-price .btn-primary {
-          font-size: 1.3rem !important;
-          padding: 15px 30px !important;
-        }
-
-        .sobre,
-        .parceiros {
-          padding: 40px 25px !important;
-          margin: 20px !important;
-        }
-
-        .sobre h2,
-        .parceiros h2 {
-          font-size: 1.8rem !important;
-          margin-bottom: 30px !important;
-        }
-
-        .sobre p,
-        .parceiros p {
-          font-size: 1rem !important;
-          line-height: 1.6 !important;
-          margin-bottom: 20px !important;
-        }
-
-        .partner-logos {
-          gap: 25px !important;
-        }
-
-        .partner-logo {
-          width: 100px !important;
-        }
-
-        [style*="margin-top: 60px"] .btn-primary {
-          font-size: 1.3rem !important;
-          padding: 15px 30px !important;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .hero .hero-title {
-          font-size: 1.6rem !important;
-        }
-
-        .hero .subtitle-premium {
-          font-size: 1.1rem !important;
-          padding: 15px !important;
-        }
-
-        .ecosystem-title {
-          font-size: 1.5rem !important;
-          padding: 15px !important;
-        }
-
-        .benefit-card h3 {
-          font-size: 1.2rem !important;
-        }
-
-        .benefit-card p {
-          font-size: 0.9rem !important;
-        }
-
-        .super-price {
-          font-size: 1.5rem !important;
-          padding: 15px 20px !important;
-        }
-
-        .super-price p:first-of-type {
-          font-size: 1.1rem !important;
-        }
-
-        .super-price p:nth-child(2) {
-          font-size: 2rem !important;
-        }
-
-        .sobre h2,
-        .parceiros h2 {
-          font-size: 1.5rem !important;
-        }
-
-        .partner-logo {
-          width: 80px !important;
-        }
-
-        [style*="margin-top: 60px"] .btn-primary {
-          font-size: 1.1rem !important;
-          padding: 12px 25px !important;
-        }
-      }
-    </style>
   </head>
   <body>
-    <!-- WHATSAPP FLOATING BUTTON -->
+    <!-- ========================================= -->
+    <!-- BOTÃO FLUTUANTE DO WHATSAPP (ATENDIMENTO) -->
+    <!-- ========================================= -->
+    <!-- Link que abre o WhatsApp diretamente com uma mensagem pré-definida -->
     <a
       href="https://wa.me/554399149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
       class="whatsapp-float"
       target="_blank"
       rel="noopener noreferrer"
     >
+      <!-- Ícone do WhatsApp da biblioteca Font Awesome -->
       <i class="fab fa-whatsapp"></i>
+      <!-- Tooltip (texto que aparece ao passar o mouse) -->
       <span class="whatsapp-tooltip">Fale conosco!</span>
     </a>
 
-    <!-- LOGO DESTACADO -->
+    <!-- ========================================= -->
+    <!-- CABEÇALHO PRINCIPAL (HEADER)               -->
+    <!-- ========================================= -->
     <header class="header">
+      <!-- Área de destaque do logo e slogan -->
       <div class="logo-area-highlight">
+        <!-- Logo da Netmax em formato JPG -->
         <img
           src="../assets/images/logos/logo_netmax.jpg"
           alt="Logo Netmax"
           class="logo-netmax-big"
         />
+        <!-- Slogan da empresa -->
         <h1 class="slogan-top">
           A velocidade que conecta você ao mundo e ao conhecimento.
         </h1>
       </div>
 
-      <!-- CENTRAL DO ASSINANTE -->
+      <!-- ========================================= -->
+      <!-- CENTRAL DO ASSINANTE (ÁREA DO CLIENTE)    -->
+      <!-- ========================================= -->
       <div class="assinante-container">
+        <!-- Link externo para a central do assinante (site Netmax) -->
         <a
           href="https://netmax.net.br/"
           class="assinante-link"
           target="_blank"
           rel="noopener noreferrer"
         >
+          <!-- Ícone de usuário -->
           <div class="assinante-icon">
             <i class="fas fa-user-circle"></i>
           </div>
+          <!-- Texto do link (com quebra de linha) -->
           <span class="assinante-text">CENTRAL DO<br />ASSINANTE</span>
         </a>
       </div>
 
+      <!-- ========================================= -->
+      <!-- MENU DE NAVEGAÇÃO PRINCIPAL               -->
+      <!-- ========================================= -->
       <nav class="nav-menu">
+        <!-- Links para as principais seções do site (index e demais páginas) -->
         <a href="../index.html">PÁGINA INICIAL</a>
         <a href="estante_digital.html">ESTANTE DIGITAL NETMAX</a>
         <a href="jornalz.html">JORNALZ</a>
         <a href="news_periodicos.html">NEWS PERIÓDICOS</a>
         <a href="netmax_tv.html">NETMAX TV</a>
         <a href="nosso_proposito.html">NOSSO PROPÓSITO</a>
+        <!-- Página atual (destacada com cor e negrito) -->
         <a href="#" style="color: #ffd000; font-weight: bold"
           >POR QUE ESCOLHER A NETMAX</a
         >
       </nav>
     </header>
 
-    <!-- HERO -->
+    <!-- ========================================= -->
+    <!-- SEÇÃO HERO (BANNER PRINCIPAL)              -->
+    <!-- ========================================= -->
     <section class="hero hero-boosted">
+      <!-- Título principal da seção -->
       <h1 class="hero-title">
         POR QUE ESCOLHER A <span class="price-fire">NETMAX</span> ?
       </h1>
+      <!-- Subtítulo / descrição de apoio -->
       <p class="subtitle subtitle-premium">
         Não é só internet. É liberdade, conexão real e um mundo de
         possibilidades dentro de casa. Descubra por que somos a escolha certa.
       </p>
     </section>
 
-    <!-- SEÇÃO DE MOTIVOS -->
+    <!-- ========================================= -->
+    <!-- SEÇÃO DE MOTIVOS (BENEFÍCIOS)              -->
+    <!-- ========================================= -->
     <section class="ecosystem">
+      <!-- Título da seção de motivos -->
       <h2 class="ecosystem-title">MOTIVOS PARA VOCÊ ASSINAR A NETMAX</h2>
 
+      <!-- Grid de cartões de benefícios (cards) -->
       <div class="benefits-grid big-cards">
+        <!-- CARD 1: Sinal forte e estável -->
         <div class="benefit-card">
+          <!-- Ícone de Wi-Fi (tamanho 4rem, cor amarela) -->
           <i
             class="fas fa-wifi"
             style="font-size: 4rem; color: #ffd000; margin-bottom: 20px"
@@ -273,6 +153,7 @@
           </p>
         </div>
 
+        <!-- CARD 2: Proprietários com a mão na massa -->
         <div class="benefit-card">
           <i
             class="fas fa-handshake"
@@ -285,6 +166,7 @@
           </p>
         </div>
 
+        <!-- CARD 3: Equipe técnica qualificada -->
         <div class="benefit-card">
           <i
             class="fas fa-tools"
@@ -297,6 +179,7 @@
           </p>
         </div>
 
+        <!-- CARD 4: Tecnologia de ponta -->
         <div class="benefit-card">
           <i
             class="fas fa-microchip"
@@ -309,6 +192,7 @@
           </p>
         </div>
 
+        <!-- CARD 5: Benefícios exclusivos -->
         <div class="benefit-card">
           <i
             class="fas fa-gem"
@@ -325,6 +209,9 @@
         </div>
       </div>
 
+      <!-- ========================================= -->
+      <!-- SEÇÃO DE PREÇO E OFERTA (DESTAQUE)        -->
+      <!-- ========================================= -->
       <div class="super-price" style="margin-top: 60px">
         <p style="font-size: 1.8rem; margin-bottom: 15px">
           TUDO ISSO POR APENAS
@@ -332,6 +219,7 @@
         <p style="font-size: 4rem; font-weight: 900; line-height: 1.2">
           R$ 114,90
         </p>
+        <!-- Selo de brinde (Netmax TV) -->
         <p
           style="
             font-size: 1.4rem;
@@ -345,18 +233,24 @@
         >
           🎁 NETMAX TV DE BRINDE INCLUSO 🎁
         </p>
+        <!-- Descrição do plano (velocidade) -->
         <p style="font-size: 1.2rem; margin-top: 20px">
           1000 megas + benefícios exclusivos
         </p>
       </div>
 
+      <!-- ========================================= -->
+      <!-- BOTÃO DE CALL TO ACTION (ASSINE AGORA)    -->
+      <!-- ========================================= -->
       <div style="text-align: center; margin: 50px 0 20px">
+        <!-- Link que direciona para o WhatsApp com mensagem personalizada -->
         <a
           href="https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
           target="_blank"
           rel="noopener noreferrer"
           style="text-decoration: none"
         >
+          <!-- Botão principal com animação de pulsar (pulse-btn) -->
           <button
             class="btn-primary pulse-btn"
             style="font-size: 2rem; padding: 20px 50px"
@@ -367,7 +261,9 @@
       </div>
     </section>
 
-    <!-- SOBRE A NETMAX -->
+    <!-- ========================================= -->
+    <!-- SEÇÃO "SOBRE A NETMAX" (HISTÓRIA)          -->
+    <!-- ========================================= -->
     <section class="sobre highlight-section">
       <h2>Sobre a Netmax</h2>
       <p>
@@ -386,9 +282,12 @@
       </p>
     </section>
 
-    <!-- PARCEIROS -->
+    <!-- ========================================= -->
+    <!-- SEÇÃO DE PARCEIROS / CONTEÚDOS EXCLUSIVOS  -->
+    <!-- ========================================= -->
     <section class="parceiros highlight-section">
       <h2>Nossos Conteúdos Exclusivos</h2>
+      <!-- Logos dos parceiros (links) -->
       <div class="partner-logos">
         <a href="#"
           ><img
@@ -411,72 +310,85 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- ========================================= -->
+    <!-- RODAPÉ (FOOTER)                            -->
+    <!-- ========================================= -->
     <footer class="footer">
       <div class="footer-content">
         <div class="footer-content">
-        <div class="footer-text">
-          <p>© 2024 Netmax Fibra - Todos os Direitos Reservados</p>
-          <p>Telefone/WhatsApp: 43 9 9914-9922</p>
-          <p>
-            Rua Rio Grande do Sul, 1460 - Bairro Santuário - Siqueira Campos -
-            PR
-          </p>
-          <p>CNPJ: 53.458.225/0001-52</p>
-        </div>
+          <!-- Div duplicada propositalmente? Preservando estrutura original -->
+          <!-- Informações institucionais e contato -->
+          <div class="footer-text">
+            <p>© 2024 Netmax Fibra - Todos os Direitos Reservados</p>
+            <p>Telefone/WhatsApp: 43 9 9914-9922</p>
+            <p>
+              Rua Rio Grande do Sul, 1460 - Bairro Santuário - Siqueira Campos -
+              PR
+            </p>
+            <p>CNPJ: 53.458.225/0001-52</p>
+          </div>
 
-        <div class="footer-social">
-          <a
-            href="https://instagram.com/netmaxscm"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/instagram.svg"
-              alt="Instagram"
-              width="20"
-              height="20"
-            />
-            <span>Instagram</span>
-          </a>
-          <a
-            href="https://facebook.com/netmax.siq"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/facebook.svg"
-              alt="Facebook"
-              width="20"
-              height="20"
-            />
-            <span>Facebook</span>
-          </a>
-          <a
-            href="https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/whatsapp.svg"
-              alt="WhatsApp"
-              width="20"
-              height="20"
-            />
-            <span>Fale Conosco</span>
-          </a>
-        </div>
+          <!-- Redes sociais (links com ícones SVG via simple-icons CDN) -->
+          <div class="footer-social">
+            <!-- Instagram -->
+            <a
+              href="https://instagram.com/netmaxscm"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/instagram.svg"
+                alt="Instagram"
+                width="20"
+                height="20"
+              />
+              <span>Instagram</span>
+            </a>
+            <!-- Facebook -->
+            <a
+              href="https://facebook.com/netmax.siq"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/facebook.svg"
+                alt="Facebook"
+                width="20"
+                height="20"
+              />
+              <span>Facebook</span>
+            </a>
+            <!-- WhatsApp -->
+            <a
+              href="https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/whatsapp.svg"
+                alt="WhatsApp"
+                width="20"
+                height="20"
+              />
+              <span>Fale Conosco</span>
+            </a>
+          </div>
 
-        <div class="footer-copyright">
-          <p>
-            Netmax Fibra - A velocidade que conecta você ao mundo e ao
-            conhecimento.
-          </p>
-          <p>Desenvolvido com 💛 para nossos clientes</p>
+          <!-- Mensagem final de copyright e slogan -->
+          <div class="footer-copyright">
+            <p>
+              Netmax Fibra - A velocidade que conecta você ao mundo e ao
+              conhecimento.
+            </p>
+            <p>Desenvolvido com 💛 para nossos clientes</p>
+          </div>
         </div>
       </div>
     </footer>
 
+    <!-- ========================================= -->
+    <!-- SCRIPT PRINCIPAL (comportamentos JS)       -->
+    <!-- ========================================= -->
     <script src="../assets/js/script.js"></script>
   </body>
 </html>

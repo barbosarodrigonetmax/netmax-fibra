@@ -1,464 +1,635 @@
-// ===================================================================
-// 		NETMAX FIBRA - PÁGINA 
-// ===================================================================
-// 		Objetivo: Controlar todas as funcionalidades interativas do site
-//                da Netmax Fibra, incluindo modais, contador promocional,
-//                animações, integração com WhatsApp, analytics e 
-//                menu mobile.
-// 		Autor : Rodrigo Barbosa
-// 		Data  : 23/02/2026
-// ===================================================================
+/* ===================================================================
+   NETMAX FIBRA - PÁGINA 
+   ===================================================================
+   Objetivo: Gerenciar todas as interações do site Netmax Fibra, incluindo FAQ, 
+             modais, scroll suave, contadores, animações e funcionalidades das 
+             páginas de produtos (Netmax TV, JornalZ, NEWS Periódicos).
+   Autor    : Rodrigo Barbosa
+   Data     : 23/02/2026
+   =================================================================== */
 
-// ============================================
-// NETMAX FIBRA - SCRIPT PRINCIPAL
-// ============================================
+// Aguarda o DOM (Document Object Model) ser completamente carregado antes de executar qualquer script
+// Isso garante que todos os elementos HTML estejam disponíveis para manipulação
+document.addEventListener("DOMContentLoaded", function () {
+  /* ============================================ */
+  /* 1. INICIALIZAÇÃO DO FAQ ACCORDION (ESTANTE DIGITAL E TV) */
+  /* ============================================ */
+  // Função responsável por configurar o comportamento de acordeão (accordion) para perguntas frequentes
+  function initFaq() {
+    // Seleciona todos os elementos que possuem as classes 'estante-faq-item' ou 'tv-faq-item'
+    // O seletor CSS com vírgula permite buscar múltiplas classes simultaneamente
+    const faqItems = document.querySelectorAll(
+      ".estante-faq-item, .tv-faq-item",
+    );
 
-console.log("🚀 Netmax Website - Carregado com sucesso!");
+    // Itera sobre cada item encontrado para configurar o evento de clique
+    faqItems.forEach((item) => {
+      // Remove event listeners duplicados clonando o nó (elemento)
+      // cloneNode(true) cria uma cópia profunda do elemento (inclui todos os filhos)
+      const newItem = item.cloneNode(true);
+      // Substitui o elemento antigo pelo novo clone, removendo eventos anteriores
+      item.parentNode.replaceChild(newItem, item);
 
-// ============================================
-// 1. WHATSAPP - CONFIGURAÇÃO CENTRALIZADA
-// ============================================
-const CONFIG = {
-    whatsapp: {
-        number: "554399149922",
-        message: "Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
-    }
-};
+      // Adiciona evento de clique ao novo elemento
+      newItem.addEventListener("click", function (e) {
+        // Previne que o evento se propague para elementos pai
+        e.stopPropagation();
+        // Alterna (adiciona se não existir, remove se existir) a classe 'active'
+        // Essa classe controla a exibição da resposta no CSS
+        this.classList.toggle("active");
 
-// Função para gerar link do WhatsApp
-function getWhatsAppLink(message = null) {
-    const baseUrl = `https://wa.me/${CONFIG.whatsapp.number}`;
-    if (message) {
-        return `${baseUrl}?text=${encodeURIComponent(message)}`;
-    }
-    return baseUrl;
-}
-
-// ============================================
-// 2. ANIMAÇÕES DE SCROLL (REVEAL) - OTIMIZADO PARA MOBILE
-// ============================================
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // Elementos que aparecem conforme rolam a página
-    const revealElements = document.querySelectorAll('.benefit-card, .highlight-section, .partner-logo');
-    
-    // Adicionar classe CSS para animação
-    const style = document.createElement('style');
-    style.textContent = `
-        .benefit-card, .highlight-section, .partner-logo {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease-out;
-        }
-        
-        .revealed {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Desativa animações em dispositivos com preferência por menos movimento */
-        @media (prefers-reduced-motion: reduce) {
-            .benefit-card, .highlight-section, .partner-logo {
-                transition: none;
-                opacity: 1;
-                transform: none;
-            }
-        }
-        
-        /* Em telas muito pequenas, reduz o efeito para melhor performance */
-        @media (max-width: 480px) {
-            .benefit-card, .highlight-section, .partner-logo {
-                transition: all 0.3s ease-out;
-            }
-        }
-    `;
-    document.head.appendChild(style);
-    
-    // Função para revelar elementos no scroll
-    const revealOnScroll = function() {
-        const windowHeight = window.innerHeight;
-        // Ajusta o threshold para dispositivos móveis
-        const revealThreshold = window.innerWidth <= 768 ? 100 : 150;
-        
-        revealElements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            
-            if (elementTop < windowHeight - revealThreshold) {
-                element.classList.add('revealed');
-            }
-        });
-    };
-    
-    // Inicializar e adicionar evento de scroll com throttle para melhor performance
-    let ticking = false;
-    window.addEventListener('scroll', function() {
-        if (!ticking) {
-            requestAnimationFrame(function() {
-                revealOnScroll();
-                ticking = false;
-            });
-            ticking = true;
-        }
+        // Código comentado que permitiria fechar outros itens ao abrir um novo
+        // Mantém apenas o item atual aberto (funcionalidade exclusiva)
+      });
     });
-    window.addEventListener('load', revealOnScroll);
-    revealOnScroll(); // Chamar imediatamente
-});
+  }
 
-// ============================================
-// 3. CONTADOR REGRESSIVO PARA PROMOÇÃO - OTIMIZADO
-// ============================================
-(function criarContadorPromocao() {
-    // Verificar se já existe um contador
-    if (document.querySelector('.promo-counter')) return;
-    
-    // Verificar se estamos na página inicial (opcional)
-    const heroSection = document.querySelector('.hero');
-    if (!heroSection) return;
-    
-    // Data alvo: 7 dias a partir de agora
-    const dataAlvo = new Date();
-    dataAlvo.setDate(dataAlvo.getDate() + 7);
-    
-    const counterHTML = `
-        <div class="promo-counter">
-            <h3>🔥 OFERTA POR TEMPO LIMITADO!</h3>
-            <div class="counter-timer">
-                <div class="counter-unit">
-                    <span class="counter-days">00</span>
-                    <span>Dias</span>
-                </div>
-                <div class="counter-unit">
-                    <span class="counter-hours">00</span>
-                    <span>Horas</span>
-                </div>
-                <div class="counter-unit">
-                    <span class="counter-minutes">00</span>
-                    <span>Min</span>
-                </div>
-                <div class="counter-unit">
-                    <span class="counter-seconds">00</span>
-                    <span>Seg</span>
-                </div>
-            </div>
-        </div>
-    `;
-    
-    // Inserir após o botão
-    const heroButtons = document.querySelector('.hero-buttons');
-    if (heroButtons) {
-        heroButtons.insertAdjacentHTML('afterend', counterHTML);
-    }
-    
-    // Estilo do contador já existe no CSS principal, mas garantimos que está presente
-    // Função para atualizar o contador
-    function atualizarContador() {
-        const agora = new Date().getTime();
-        const distancia = dataAlvo - agora;
-        
-        if (distancia < 0) {
-            // Se passou da data, reiniciar para +7 dias
-            dataAlvo.setDate(dataAlvo.getDate() + 7);
-            return atualizarContador();
-        }
-        
-        const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-        const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-        const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
-        
-        const daysEl = document.querySelector('.counter-days');
-        const hoursEl = document.querySelector('.counter-hours');
-        const minutesEl = document.querySelector('.counter-minutes');
-        const secondsEl = document.querySelector('.counter-seconds');
-        
-        if (daysEl) daysEl.textContent = String(dias).padStart(2, '0');
-        if (hoursEl) hoursEl.textContent = String(horas).padStart(2, '0');
-        if (minutesEl) minutesEl.textContent = String(minutos).padStart(2, '0');
-        if (secondsEl) secondsEl.textContent = String(segundos).padStart(2, '0');
-    }
-    
-    // Atualizar a cada segundo
-    setInterval(atualizarContador, 1000);
-    atualizarContador();
-})();
+  // Executa a função de inicialização do FAQ
+  initFaq();
 
-// ============================================
-// 4. TOOLTIP MELHORADO PARA WHATSAPP - ADAPTADO PARA MOBILE
-// ============================================
-const whatsappTooltip = document.querySelector('.whatsapp-tooltip');
-if (whatsappTooltip) {
-    const originalText = whatsappTooltip.textContent;
-    
-    // Em dispositivos móveis, não exibir tooltip no hover (não existe hover)
-    if (window.innerWidth > 768) {
-        whatsappTooltip.addEventListener('mouseenter', function() {
-            this.textContent = 'Fale com um consultor! 📱';
-        });
-        
-        whatsappTooltip.addEventListener('mouseleave', function() {
-            this.textContent = originalText;
-        });
-    }
-}
+  /* ============================================ */
+  /* 2. CONFIGURAÇÃO ESPECÍFICA DO FAQ DA NETMAX TV (COM TOGGLE MANUAL) */
+  /* ============================================ */
+  // Função dedicada para o FAQ da TV, com controle manual de exibição (display)
+  function initTvFaq() {
+    // Seleciona apenas os itens de FAQ específicos da Netmax TV
+    const tvFaqItems = document.querySelectorAll(".tv-faq-item");
 
-// ============================================
-// 5. REGISTRO DE CLIQUES (ANALYTICS) - OTIMIZADO
-// ============================================
-function registrarClique(elemento, acao) {
-    console.log(`📊 Analytics: ${acao} - ${new Date().toLocaleString()}`);
-    // Aqui você poderia enviar para um servidor de analytics
-}
+    // Itera sobre cada item de FAQ da TV
+    tvFaqItems.forEach((item) => {
+      // Busca o parágrafo dentro do item (contém a resposta)
+      const p = item.querySelector("p");
+      // Busca o ícone (elemento i) para animação de rotação
+      const icon = item.querySelector("i");
 
-// Registrar cliques em elementos importantes com debounce para evitar múltiplos registros
-let ultimoRegistro = {};
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.btn-primary, .whatsapp-float, .assinante-link').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            const acao = this.classList.contains('btn-primary') ? 'Botão Assinar' :
-                        this.classList.contains('whatsapp-float') ? 'WhatsApp Float' : 'Central Assinante';
-            
-            // Evitar registros duplicados muito próximos
-            const agora = Date.now();
-            const chave = `${acao}_${this.textContent}`;
-            if (!ultimoRegistro[chave] || (agora - ultimoRegistro[chave] > 1000)) {
-                registrarClique(this, acao);
-                ultimoRegistro[chave] = agora;
-            }
-        });
-    });
-});
+      // Garante que o estado inicial esteja correto (resposta oculta)
+      if (p && !item.classList.contains("active")) {
+        p.style.display = "none"; // Esconde o parágrafo
+        if (icon) icon.style.transform = "rotate(0deg)"; // Ícone sem rotação
+      }
 
-// ============================================
-// 6. VALIDAÇÃO DE IMAGENS CARREGADAS - OTIMIZADA
-// ============================================
-document.addEventListener('DOMContentLoaded', function() {
-    const imagens = document.querySelectorAll('img');
-    let imagensCarregadas = 0;
-    let imagensComErro = 0;
-    let totalImagens = imagens.length;
-    
-    // Função para verificar se todas as imagens foram processadas
-    function verificarConclusao() {
-        if (imagensCarregadas + imagensComErro === totalImagens) {
-            console.log(`📸 Total de imagens: ${totalImagens} | Carregadas: ${imagensCarregadas} | Erros: ${imagensComErro}`);
-        }
-    }
-    
-    imagens.forEach(img => {
-        // Se a imagem já estiver carregada
-        if (img.complete) {
-            if (img.naturalWidth === 0) {
-                imagensComErro++;
-                console.warn(`⚠️ Imagem não carregou: ${img.src}`);
-            } else {
-                imagensCarregadas++;
-            }
-            verificarConclusao();
+      // Adiciona evento de clique para cada item
+      item.addEventListener("click", function (e) {
+        e.stopPropagation(); // Impede propagação do evento
+
+        // Busca novamente o parágrafo e ícone (garantia de atualização)
+        const p = this.querySelector("p");
+        const icon = this.querySelector("i");
+
+        // Verifica se o parágrafo está oculto (display none ou vazio)
+        if (p.style.display === "none" || p.style.display === "") {
+          p.style.display = "block"; // Exibe a resposta
+          if (icon) icon.style.transform = "rotate(180deg)"; // Rotaciona ícone
+          this.classList.add("active"); // Marca item como ativo
         } else {
-            img.addEventListener('error', function() {
-                imagensComErro++;
-                console.warn(`⚠️ Imagem não carregou: ${this.src}`);
-                verificarConclusao();
-            });
-            
-            img.addEventListener('load', function() {
-                imagensCarregadas++;
-                console.log(`✅ Imagem carregada: ${this.alt || 'sem descrição'}`);
-                verificarConclusao();
-            });
+          p.style.display = "none"; // Esconde a resposta
+          if (icon) icon.style.transform = "rotate(0deg)"; // Rotaciona ícone de volta
+          this.classList.remove("active"); // Remove marcação de ativo
         }
+      });
     });
-});
+  }
 
-// ============================================
-// 7. SCROLL SUAVE PARA LINKS INTERNOS - OTIMIZADO
-// ============================================
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const targetId = this.getAttribute('href');
-            // Evitar links vazios ou apenas "#"
-            if (targetId === '#' || targetId === '') return;
-            
-            const target = document.querySelector(targetId);
-            if (target) {
-                e.preventDefault();
-                // Ajustar o offset para dispositivos móveis (considerando header fixo)
-                const headerOffset = window.innerWidth <= 768 ? 80 : 100;
-                const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-});
+  // Executa a configuração específica do FAQ da TV
+  initTvFaq();
 
-// ============================================
-// 8. DETECÇÃO DE DISPOSITIVO MÓVEL - MELHORADA
-// ============================================
-function isMobileDevice() {
-    return (window.innerWidth <= 768) || 
-           ('ontouchstart' in window) || 
-           (navigator.maxTouchPoints > 0) ||
-           (navigator.userAgent.match(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i));
-}
+  /* ============================================ */
+  /* 3. MODAIS NETMAX TV - GERENCIAMENTO DE JANELAS MODAIS */
+  /* ============================================ */
 
-function isTabletDevice() {
-    return (window.innerWidth > 768 && window.innerWidth <= 1024) || 
-           (navigator.userAgent.match(/iPad|Android(?!.*Mobile)/i));
-}
+  // Referência para o modal principal da TV
+  const tvModal = document.getElementById("tvModal");
+  // Referência para o modal de ativação da TV
+  const tvAtivacaoModal = document.getElementById("tvAtivacaoModal");
 
-// Adicionar classes ao body para estilos específicos
-document.body.classList.add(isMobileDevice() ? 'mobile-device' : 'desktop-device');
-if (isTabletDevice()) {
-    document.body.classList.add('tablet-device');
-}
+  // Função global para abrir o modal principal
+  window.abrirModal = function () {
+    if (tvModal) {
+      // Verifica se o modal existe no DOM
+      tvModal.style.display = "flex"; // Exibe o modal (display flex para centralização)
+      // setTimeout com 10ms permite que o display seja aplicado antes da animação
+      setTimeout(() => {
+        tvModal.classList.add("show"); // Adiciona classe para animação de fade-in
+      }, 10);
+      document.body.style.overflow = "hidden"; // Impede scroll da página de fundo
+    }
+  };
 
-console.log(`${isMobileDevice() ? '📱 Dispositivo móvel' : '💻 Desktop'} detectado - Otimizações ativadas`);
+  // Função global para abrir o modal de ativação
+  window.abrirModalAtivacao = function () {
+    if (tvAtivacaoModal) {
+      tvAtivacaoModal.style.display = "flex";
+      setTimeout(() => {
+        tvAtivacaoModal.classList.add("show");
+      }, 10);
+      document.body.style.overflow = "hidden";
+    }
+  };
 
-// ============================================
-// 9. MENSAGEM DE BOAS-VINDAS NO CONSOLE
-// ============================================
-console.log('%c🎯 Netmax Fibra - Conectando você ao conhecimento', 'color: #FFD000; font-size: 16px; font-weight: bold;');
-console.log('%c📱 WhatsApp configurado: 43 99914-9922', 'color: #25D366; font-size: 14px;');
-console.log('%c💡 Dica: Pressione F12 para mais informações', 'color: #888; font-size: 12px;');
+  // Função global para fechar o modal principal
+  window.fecharModal = function () {
+    if (tvModal) {
+      tvModal.classList.remove("show"); // Remove classe de animação
+      // Aguarda a animação terminar (300ms) antes de ocultar completamente
+      setTimeout(() => {
+        tvModal.style.display = "none";
+        document.body.style.overflow = ""; // Restaura o scroll da página
+      }, 300);
+    }
+  };
 
-// ============================================
-// 10. MODAL DA NETMAX TV - CONTROLE (ORIGINAL)
-// ============================================
-function abrirModal() {
-    const modal = document.getElementById('tvModal');
+  // Função global para fechar o modal de ativação
+  window.fecharModalAtivacao = function () {
+    if (tvAtivacaoModal) {
+      tvAtivacaoModal.classList.remove("show");
+      setTimeout(() => {
+        tvAtivacaoModal.style.display = "none";
+        document.body.style.overflow = "";
+      }, 300);
+    }
+  };
+
+  // Função auxiliar para fechar modal ao clicar no overlay (fundo escuro)
+  const closeModalOnOverlay = function (modal, closeFn) {
     if (modal) {
-        modal.style.display = 'flex';
-        setTimeout(() => {
-            modal.classList.add('show');
-        }, 10);
-        document.body.style.overflow = 'hidden';
-        // Prevenir scroll do fundo no iOS
-        if (isMobileDevice()) {
-            document.body.style.position = 'fixed';
-            document.body.style.width = '100%';
+      modal.addEventListener("click", function (e) {
+        // Verifica se o clique foi exatamente no modal (overlay) e não no conteúdo interno
+        if (e.target === modal) {
+          closeFn(); // Chama a função de fechamento específica
         }
+      });
     }
-}
+  };
 
-function fecharModal() {
-    const modal = document.getElementById('tvModal');
-    if (modal) {
-        modal.classList.remove('show');
-        setTimeout(() => {
-            modal.style.display = 'none';
-        }, 300);
-        document.body.style.overflow = '';
-        // Restaurar scroll no iOS
-        if (isMobileDevice()) {
-            document.body.style.position = '';
-            document.body.style.width = '';
-        }
-    }
-}
+  // Configura o fechamento por overlay para ambos os modais
+  closeModalOnOverlay(tvModal, fecharModal);
+  closeModalOnOverlay(tvAtivacaoModal, fecharModalAtivacao);
 
-// ============================================
-// 11. NOVO MODAL DE ATIVAÇÃO - CONTROLE
-// ============================================
-function abrirModalAtivacao() {
-    const modal = document.getElementById('tvAtivacaoModal');
-    if (modal) {
-        modal.style.display = 'flex';
-        setTimeout(() => {
-            modal.classList.add('show');
-        }, 10);
-        document.body.style.overflow = 'hidden';
-        // Prevenir scroll do fundo no iOS
-        if (isMobileDevice()) {
-            document.body.style.position = 'fixed';
-            document.body.style.width = '100%';
-        }
-    }
-}
-
-function fecharModalAtivacao() {
-    const modal = document.getElementById('tvAtivacaoModal');
-    if (modal) {
-        modal.classList.remove('show');
-        setTimeout(() => {
-            modal.style.display = 'none';
-        }, 300);
-        document.body.style.overflow = '';
-        // Restaurar scroll no iOS
-        if (isMobileDevice()) {
-            document.body.style.position = '';
-            document.body.style.width = '';
-        }
-    }
-}
-
-// ============================================
-// 12. FECHAR MODAIS CLICANDO NA ÁREA ESCURA
-// ============================================
-window.addEventListener('click', function(event) {
-    // Fechar modal original
-    const modalOriginal = document.getElementById('tvModal');
-    if (event.target === modalOriginal) {
-        fecharModal();
-    }
-    
-    // Fechar novo modal de ativação
-    const modalAtivacao = document.getElementById('tvAtivacaoModal');
-    if (event.target === modalAtivacao) {
+  // Configura o fechamento dos modais pressionando a tecla ESC
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      // Verifica se a tecla pressionada é ESC
+      if (tvModal && tvModal.style.display === "flex") fecharModal();
+      if (tvAtivacaoModal && tvAtivacaoModal.style.display === "flex")
         fecharModalAtivacao();
     }
-});
+  });
 
-// ============================================
-// 13. OTIMIZAÇÃO PARA REDIMENSIONAMENTO DE TELA
-// ============================================
-let resizeTimer;
-window.addEventListener('resize', function() {
-    // Debounce para não executar muitas vezes
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function() {
-        // Atualizar classes de dispositivo
-        document.body.classList.remove('mobile-device', 'desktop-device', 'tablet-device');
-        document.body.classList.add(isMobileDevice() ? 'mobile-device' : 'desktop-device');
-        if (isTabletDevice()) {
-            document.body.classList.add('tablet-device');
-        }
-        
-        // Recalcular animações
-        const revealElements = document.querySelectorAll('.benefit-card, .highlight-section, .partner-logo');
-        revealElements.forEach(el => {
-            el.classList.remove('revealed');
-        });
-        
-        // Reaplicar reveal
-        setTimeout(() => {
-            const event = new Event('scroll');
-            window.dispatchEvent(event);
-        }, 100);
-        
-        console.log(`🔄 Tela redimensionada: ${window.innerWidth}x${window.innerHeight}`);
-    }, 250);
-});
+  /* ============================================ */
+  /* 4. SCROLL SUAVE PARA ÂNCORAS - NAVEGAÇÃO FLUIDA */
+  /* ============================================ */
 
-// ============================================
-// 14. PREVENIR CLIQUE EM BOTÕES DUPLICADOS (TOUCH DEVICES)
-// ============================================
-document.querySelectorAll('button, .btn-primary, .btn-secondary, .action-card').forEach(el => {
-    let isClicked = false;
-    el.addEventListener('click', function(e) {
-        if (isClicked) {
-            e.preventDefault();
-            e.stopPropagation();
-            return false;
+  // Função global para rolagem suave até uma seção específica
+  window.scrollToSection = function (elementId) {
+    // Tenta encontrar o elemento pelo ID
+    const element = document.getElementById(elementId);
+    if (element) {
+      const offset = 80; // Deslocamento para compensar o header fixo
+      // Obtém a posição do elemento relativa à viewport
+      const elementPosition = element.getBoundingClientRect().top;
+      // Calcula a posição absoluta considerando o scroll atual e o offset
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      // Executa a rolagem suave
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth", // Comportamento suave (navegadores modernos)
+      });
+    }
+  };
+
+  // Configura scroll suave para todos os links que começam com #
+  // O seletor exclui links que são apenas "#" (vazios)
+  document
+    .querySelectorAll('a[href^="#"]:not([href="#"])')
+    .forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        // Extrai o ID alvo removendo o caractere '#'
+        const targetId = this.getAttribute("href").substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        // Se o elemento alvo existe, previne o comportamento padrão e faz scroll suave
+        if (targetElement) {
+          e.preventDefault(); // Impede o salto brusco padrão
+          const offset = 80;
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
         }
-        isClicked = true;
-        setTimeout(() => {
-            isClicked = false;
-        }, 500);
+      });
     });
+
+  /* ============================================ */
+  /* 5. PÁGINA 404 - FUNÇÃO DE SURPRESA (HUMOR) */
+  /* ============================================ */
+
+  // Função global para exibir mensagens humorísticas na página de erro 404
+  window.surpresa = function () {
+    const resultado = document.getElementById("resultado");
+    if (resultado) {
+      // Array com mensagens engraçadas relacionadas ao universo Netmax
+      const piadas = [
+        "📚 Achou que ia encontrar a página? Está na fila do pão!",
+        "💻 A página fugiu com a sua conexão!",
+        "🚀 404: O erro mais rápido da Netmax!",
+        "🔍 Página não encontrada. Tentou reiniciar o modem?",
+        "📖 A página está lendo um livro na Estante Digital. Aguarde...",
+        "📺 A página está assistindo Netmax TV. Volte mais tarde!",
+        "⚡ 1000 megas de velocidade, mas a página não alcançou!",
+        "🎁 É o benefício secreto! Brincadeira, é só erro 404 mesmo.",
+        "🔄 Página em manutenção. Ou não. Nunca saberemos.",
+        "💛 Desenvolvido com amor, mas essa página não.",
+      ];
+      // Seleciona aleatoriamente uma mensagem do array
+      const piadaAleatoria = piadas[Math.floor(Math.random() * piadas.length)];
+      resultado.innerHTML = piadaAleatoria; // Insere a mensagem no elemento
+      resultado.style.opacity = "0"; // Reseta opacidade para animação
+      setTimeout(() => {
+        resultado.style.opacity = "1"; // Aplica fade-in na mensagem
+      }, 50);
+    }
+  };
+
+  // Função global para voltar à página inicial
+  window.voltar = function () {
+    window.location.href = "index.html"; // Redireciona para o index
+  };
+
+  /* ============================================ */
+  /* 6. CONTADOR PROMOCIONAL (TIMER PARA OFERTAS) */
+  /* ============================================ */
+
+  function initPromoCounter() {
+    // Busca o elemento que deve conter o contador
+    const counterElement = document.querySelector(
+      ".promo-counter .counter-timer",
+    );
+    if (!counterElement) return; // Sai da função se o contador não existir
+
+    // Define a data alvo: 30 dias a partir da data/hora atual
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 30);
+
+    // Função que atualiza o display do contador a cada segundo
+    function updateCounter() {
+      const now = new Date(); // Data/hora atual
+      const diff = targetDate - now; // Diferença em milissegundos
+
+      // Se a promoção já expirou, exibe mensagem de encerramento
+      if (diff <= 0) {
+        counterElement.innerHTML =
+          '<div class="counter-unit"><span>PROMOÇÃO</span><span>ENCERRADA!</span></div>';
+        return;
+      }
+
+      // Cálculos para converter milissegundos em dias, horas, minutos e segundos
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+      );
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      // Atualiza o HTML do contador com os valores calculados
+      counterElement.innerHTML = `
+                <div class="counter-unit"><span>${days}</span><span>DIAS</span></div>
+                <div class="counter-unit"><span>${hours}</span><span>HORAS</span></div>
+                <div class="counter-unit"><span>${minutes}</span><span>MIN</span></div>
+                <div class="counter-unit"><span>${seconds}</span><span>SEG</span></div>
+            `;
+    }
+
+    updateCounter(); // Executa imediatamente para não esperar 1 segundo
+    setInterval(updateCounter, 1000); // Configura atualização a cada segundo
+  }
+
+  initPromoCounter();
+
+  /* ============================================ */
+  /* 7. HEADER RESPONSIVO - OCULTAR/MOSTRAR NO SCROLL */
+  /* ============================================ */
+
+  let lastScrollTop = 0; // Armazena a última posição do scroll
+  const header = document.querySelector(".header"); // Referência ao header
+
+  if (header) {
+    window.addEventListener("scroll", function () {
+      // Obtém a posição atual do scroll (compatível com diferentes navegadores)
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      // Aplica o comportamento apenas em dispositivos móveis (largura até 768px)
+      if (window.innerWidth <= 768) {
+        // Se rolou para baixo e passou de 100px, esconde o header
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+          header.style.transform = "translateY(-100%)"; // Move para fora da tela
+        } else {
+          header.style.transform = "translateY(0)"; // Mostra novamente
+        }
+      }
+      lastScrollTop = scrollTop; // Atualiza a última posição
+    });
+  }
+
+  /* ============================================ */
+  /* 8. ANIMAÇÃO DE ENTRADA (FADE-IN) PARA CARDS */
+  /* ============================================ */
+
+  function initFadeInAnimation() {
+    // Seleciona todos os elementos que devem ter animação de entrada
+    const elements = document.querySelectorAll(
+      ".benefit-card, .estante-feature-card, .tv-feature-card, .jornalz-feature-card, .news-feature-card, .diferencial-card",
+    );
+
+    // Cria um observer que monitora quando os elementos entram na viewport
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // Quando o elemento se torna visível na tela
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1"; // Torna visível
+            entry.target.style.transform = "translateY(0)"; // Remove deslocamento
+            observer.unobserve(entry.target); // Para de observar este elemento
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "50px" }, // Dispara quando 10% visível ou com margem de 50px
+    );
+
+    // Aplica estilos iniciais (invisível e deslocado) e inicia observação
+    elements.forEach((el) => {
+      el.style.opacity = "0";
+      el.style.transform = "translateY(20px)";
+      el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+      observer.observe(el);
+    });
+  }
+
+  initFadeInAnimation();
+
+  /* ============================================ */
+  /* 9. TRATAMENTO DE IMAGENS QUEBRADAS (FALLBACK) */
+  /* ============================================ */
+
+  function handleBrokenImages() {
+    const images = document.querySelectorAll("img"); // Todas as imagens da página
+    images.forEach((img) => {
+      // Adiciona evento 'error' que dispara quando a imagem não carrega
+      img.addEventListener("error", function () {
+        // Verifica se já tentou o fallback para evitar loop infinito
+        if (!this.hasAttribute("data-fallback-tried")) {
+          this.setAttribute("data-fallback-tried", "true"); // Marca como tentado
+          this.style.display = "none"; // Oculta a imagem quebrada
+          console.warn("Imagem não carregou:", this.src); // Log de aviso
+        }
+      });
+    });
+  }
+
+  handleBrokenImages();
+
+  /* ============================================ */
+  /* 10. PREVENÇÃO DE CLICK DUPLICADO EM BOTÕES */
+  /* ============================================ */
+
+  const buttons = document.querySelectorAll(".btn-primary, .btn-secondary");
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      // Se o botão já possui o atributo 'data-clicked', bloqueia novo clique
+      if (this.hasAttribute("data-clicked")) {
+        e.preventDefault(); // Impede ação do botão
+        return;
+      }
+      this.setAttribute("data-clicked", "true"); // Marca como clicado
+      // Após 3 segundos, libera o botão para novo clique
+      setTimeout(() => {
+        this.removeAttribute("data-clicked");
+      }, 3000);
+    });
+  });
+
+  /* ============================================ */
+  /* 11. JORNALZ - CONFIGURAÇÃO DE BOTÕES E SCROLL */
+  /* ============================================ */
+
+  // Botão "ACESSAR JORNALZ" da seção hero
+  const acessarJornalzHero = document.querySelector(
+    '.jornalz-hero-buttons .btn-primary[onclick*="jornalz.com.br"]',
+  );
+  if (acessarJornalzHero) {
+    acessarJornalzHero.removeAttribute("onclick"); // Remove onclick inline
+    acessarJornalzHero.addEventListener("click", function () {
+      window.open("https://www.jornalz.com.br/", "_blank"); // Abre em nova aba
+    });
+  }
+
+  // Botão "ACESSAR JORNALZ AGORA" da seção CTA
+  const acessarJornalzCta = document.querySelector(
+    '.jornalz-cta-box .btn-primary[onclick*="jornalz.com.br"]',
+  );
+  if (acessarJornalzCta) {
+    acessarJornalzCta.removeAttribute("onclick");
+    acessarJornalzCta.addEventListener("click", function () {
+      window.open("https://www.jornalz.com.br/", "_blank");
+    });
+  }
+
+  // Botão "SAIBA MAIS" do JornalZ - scroll suave
+  const saibaMaisJornalzBtn = document.querySelector(
+    ".jornalz-hero-buttons .btn-secondary",
+  );
+  if (saibaMaisJornalzBtn) {
+    saibaMaisJornalzBtn.removeAttribute("onclick");
+    saibaMaisJornalzBtn.addEventListener("click", function () {
+      const element = document.getElementById("saiba-mais");
+      if (element) {
+        const offset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    });
+  }
+
+  /* ============================================ */
+  /* 12. NEWS PERIÓDICOS - BOTÕES E INTERAÇÕES */
+  /* ============================================ */
+
+  // Botão "ACESSAR AGORA" do hero de NEWS
+  const acessarNewsHero = document.querySelector(".btn-access-news");
+  if (acessarNewsHero) {
+    acessarNewsHero.addEventListener("click", function () {
+      window.open("https://www.jornalz.com.br/", "_blank");
+    });
+  }
+
+  // Botão "ACESSAR NEWS PERIÓDICOS AGORA" do CTA
+  const acessarNewsCta = document.querySelector(".btn-access-news-cta");
+  if (acessarNewsCta) {
+    acessarNewsCta.addEventListener("click", function () {
+      window.open("https://www.jornalz.com.br/", "_blank");
+    });
+  }
+
+  // Scroll suave para botão "SAIBA MAIS" do NEWS
+  const saibaMaisNewsBtn = document.querySelector(".btn-saiba-mais-news");
+  if (saibaMaisNewsBtn) {
+    saibaMaisNewsBtn.addEventListener("click", function () {
+      const element = document.getElementById("saiba-mais-target");
+      if (element) {
+        const offset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    });
+  }
+
+  // Efeito hover animado no botão do CTA de NEWS
+  const newsCtaBtn = document.querySelector(".news-cta-box .btn-primary");
+  if (newsCtaBtn) {
+    newsCtaBtn.addEventListener("mouseover", function () {
+      this.style.background = "#FFD000"; // Muda para amarelo no hover
+      this.style.transform = "scale(1.05)"; // Aumenta levemente
+    });
+    newsCtaBtn.addEventListener("mouseout", function () {
+      this.style.background = "#f24f00"; // Volta à cor original (laranja)
+      this.style.transform = "scale(1)"; // Restaura tamanho
+    });
+  }
+
+  /* ============================================ */
+  /* 13. BOTÃO "QUERO ASSINAR AGORA" (GERAL) */
+  /* ============================================ */
+
+  const assinarAgoraBtn = document.querySelector(".estante-assinatura-button");
+  if (assinarAgoraBtn && !assinarAgoraBtn.hasAttribute("data-event-set")) {
+    assinarAgoraBtn.setAttribute("data-event-set", "true"); // Evita dupla configuração
+    console.log("Botão de assinatura configurado");
+  }
+
+  // Botão de assinatura do JornalZ (se existir)
+  const assinarJornalzBtn = document.querySelector(
+    '.ecosystem .btn-primary[href*="wa.me"]',
+  );
+  if (assinarJornalzBtn && !assinarJornalzBtn.hasAttribute("data-event-set")) {
+    assinarJornalzBtn.setAttribute("data-event-set", "true");
+  }
+
+  /* ============================================ */
+  /* 14. LOG DE DESENVOLVIMENTO (AMBIENTE LOCAL) */
+  /* ============================================ */
+
+  // Verifica se está em ambiente local (localhost ou 127.0.0.1)
+  if (
+    window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1"
+  ) {
+    console.log("🚀 Netmax Fibra - Site carregado com sucesso!");
+    console.log("📱 Versão otimizada - Desenvolvido para nossos clientes");
+    console.log("📰 Página NEWS Periódicos - Conhecimento Ilimitado");
+    console.log("📚 Benefício exclusivo incluso no plano!");
+  }
+
+  /* ============================================ */
+  /* 15. ANIMAÇÃO FIRE PULSE PARA TÍTULOS PROMOCIONAIS */
+  /* ============================================ */
+
+  const fireTitles = document.querySelectorAll(
+    ".news-hero-title-highlight, .price-fire",
+  );
+  fireTitles.forEach((title) => {
+    // Verifica se a animação já não está aplicada para não duplicar
+    if (title.style.animation !== "firePulse 1.2s infinite ease-in-out") {
+      title.style.animation = "firePulse 1.2s infinite ease-in-out";
+    }
+  });
+
+  /* ============================================ */
+  /* 16. NETMAX TV - BOTÕES "VER COMO ATIVAR" E LINKS */
+  /* ============================================ */
+
+  // Botão "VER COMO ATIVAR" - scroll suave para seção de ativação
+  const verComoAtivarBtn = document.querySelector(".tv-world-link");
+  if (verComoAtivarBtn) {
+    verComoAtivarBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      const element = document.getElementById("como-ativar");
+      if (element) {
+        const offset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    });
+  }
+
+  // Botão "QUERO ASSISTIR NETMAX TV AGORA" (CTA gigante)
+  const assistirAgoraBtn = document.querySelector("#como-ativar .btn-primary");
+  if (assistirAgoraBtn) {
+    assistirAgoraBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      window.abrirModal(); // Abre o modal principal da TV
+    });
+  }
+
+  // Hover effects nos itens de benefício do painel direito da TV
+  const tvWorldBenefitItems = document.querySelectorAll(
+    ".tv-world-benefit-item",
+  );
+  tvWorldBenefitItems.forEach((item) => {
+    item.addEventListener("mouseenter", function () {
+      this.style.transform = "translateX(10px)"; // Move 10px para a direita
+      this.style.transition = "transform 0.3s ease";
+    });
+    item.addEventListener("mouseleave", function () {
+      this.style.transform = "translateX(0)"; // Volta à posição original
+    });
+  });
+
+  // Hover effects nos itens de feature do CDNTV
+  const tvCdntvFeatures = document.querySelectorAll(".tv-cdntv-feature-item");
+  tvCdntvFeatures.forEach((item) => {
+    item.addEventListener("mouseenter", function () {
+      this.style.transform = "translateX(10px)";
+      this.style.background = "rgba(255,208,0,0.2)"; // Fundo amarelo translúcido
+    });
+    item.addEventListener("mouseleave", function () {
+      this.style.transform = "translateX(0)";
+      this.style.background = "rgba(255,208,0,0.1)"; // Fundo mais suave
+    });
+  });
+
+  /* ============================================ */
+  /* 17. GARANTIA DE FECHAMENTO DE MODAIS COM ESC */
+  /* ============================================ */
+
+  // Reforça o fechamento dos modais com tecla ESC (redundante com o anterior, mas garante)
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      const tvModalElement = document.getElementById("tvModal");
+      const tvAtivacaoModalElement = document.getElementById("tvAtivacaoModal");
+      if (tvModalElement && tvModalElement.style.display === "flex") {
+        window.fecharModal();
+      }
+      if (
+        tvAtivacaoModalElement &&
+        tvAtivacaoModalElement.style.display === "flex"
+      ) {
+        window.fecharModalAtivacao();
+      }
+    }
+  });
 });

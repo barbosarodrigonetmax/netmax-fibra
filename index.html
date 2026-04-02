@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- ===================================================================
-     NETMAX FIBRA - PÁGINA INICIAL (COM BOOTSTRAP)
+     NETMAX FIBRA - PÁGINA INICIAL
      ===================================================================
      Objetivo: Página institucional da Netmax Fibra, apresentando 
                planos de internet, benefícios e conteúdos exclusivos
@@ -8,118 +8,123 @@
      Data  : 23/02/2026
      ===================================================================
 -->
-<!-- Declaração do tipo de documento e idioma principal da página -->
-<!doctype html>
+<!-- Declaração do tipo de documento HTML5, informando ao navegador que este é um arquivo HTML na versão 5 -->
 <html lang="pt-BR">
+  <!-- Início do elemento head: contém metadados e links para recursos externos, não visíveis na página -->
   <head>
-    <!-- Define a codificação de caracteres como UTF-8 para suporte a acentos e caracteres especiais -->
+    <!-- Define a codificação de caracteres como UTF-8, essencial para exibir corretamente acentos e caracteres especiais como 'ç' e 'ã' -->
     <meta charset="UTF-8" />
-    <!-- Configura a viewport para garantir responsividade em dispositivos móveis, ajustando a escala inicial -->
+    <!-- Configura a viewport para garantir que a página seja responsiva em dispositivos móveis; 'width=device-width' ajusta a largura à tela do dispositivo, 'initial-scale=1.0' define o zoom inicial como 100% -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Título exibido na aba do navegador -->
+    <!-- Define o título da página que aparece na aba do navegador e nos resultados de busca -->
     <title>Netmax Fibra - Página Inicial</title>
-    <!-- Favicon para a aba do navegador, utilizando imagem PNG armazenada localmente -->
+    <!-- Define o favicon (ícone) da página, exibido na aba do navegador ao lado do título; o atributo 'href' aponta para o caminho da imagem do favicon -->
     <link
       rel="icon"
       type="image/png"
       href="assets/images/outros/favicon_netmax.png"
     />
-    <!-- Favicon alternativo para compatibilidade com diferentes navegadores -->
+    <!-- Favicon alternativo para garantir compatibilidade com versões mais antigas de navegadores que podem não reconhecer o atributo 'rel="icon"' corretamente -->
     <link
       rel="shortcut icon"
       type="image/png"
       href="assets/images/outros/favicon_netmax.png"
     />
-    <!-- Arquivo de estilos CSS personalizado para a página -->
+    <!-- Link para o arquivo CSS externo que contém todos os estilos personalizados da página, como cores, fontes, layout e responsividade -->
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <!-- Biblioteca Font Awesome para ícones vetoriais (versão 6.0.0-beta3) -->
+    <!-- Importa a biblioteca Font Awesome na versão 6.0.0-beta3, que fornece ícones vetoriais escaláveis (como WhatsApp, usuário, etc.) para uso na interface -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
   </head>
+  <!-- Fim do cabeçalho e início do corpo da página, onde todo o conteúdo visível ao usuário é inserido -->
   <body>
-    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
-    <!-- Link âncora que funciona como botão fixo na tela para contato direto via WhatsApp -->
+    <!-- Link âncora que funciona como um botão flutuante fixo no canto inferior direito da tela, sempre visível ao rolar a página; ao clicar, abre o WhatsApp com uma mensagem pré-definida -->
     <a
       href="https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
       class="whatsapp-float"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <!-- Ícone do WhatsApp da biblioteca Font Awesome -->
+      <!-- Ícone do WhatsApp fornecido pela biblioteca Font Awesome, exibindo o símbolo característico do aplicativo -->
       <i class="fab fa-whatsapp"></i>
-      <!-- Tooltip (texto auxiliar) que aparece ao passar o mouse sobre o botão -->
+      <!-- Span que contém um texto de tooltip (dica) que aparece ao passar o mouse sobre o botão, indicando a ação "Fale conosco!" -->
       <span class="whatsapp-tooltip">Fale conosco!</span>
     </a>
 
-    <!-- CABEÇALHO PRINCIPAL -->
+    <!-- CABEÇALHO PRINCIPAL DA PÁGINA: contém logotipo, slogan, acesso à central do assinante e menu de navegação -->
     <header class="header">
-      <!-- Área de destaque para o logotipo principal da empresa -->
+      <!-- Área de destaque para exibir o logotipo principal da empresa e seu slogan institucional -->
       <div class="logo-area-highlight">
-        <!-- Imagem do logotipo da Netmax -->
+        <!-- Imagem do logotipo da Netmax, carregada a partir do diretório assets/images/logos/; o atributo 'alt' fornece texto alternativo para acessibilidade e SEO -->
         <img
           src="assets/images/logos/logo_netmax.jpg"
           alt="Logo Netmax"
           class="logo-netmax-big"
         />
-        <!-- Slogan institucional exibido abaixo do logotipo -->
+        <!-- Título de nível 1 (h1) que exibe o slogan da empresa; este é o título principal da página em termos de SEO, embora visualmente abaixo do logotipo -->
         <h1 class="slogan-top">
           A velocidade que conecta você ao mundo e ao conhecimento.
         </h1>
       </div>
 
-      <!-- ÁREA DO ASSINANTE (link para acesso da central) -->
+      <!-- Área dedicada a exibir o link de acesso à central do assinante, permitindo que clientes acessem sua conta -->
       <div class="assinante-container">
-        <!-- Link externo para a central do assinante, abre em nova aba -->
+        <!-- Link externo que redireciona para o site da central do assinante (netmax.net.br); 'target="_blank"' faz o link abrir em uma nova aba -->
         <a
           href="https://netmax.net.br/"
           class="assinante-link"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <!-- Ícone de usuário do Font Awesome -->
+          <!-- Container para o ícone de usuário, utilizando o ícone 'fa-user-circle' do Font Awesome -->
           <div class="assinante-icon">
             <i class="fas fa-user-circle"></i>
           </div>
-          <!-- Texto descritivo do link, com quebra de linha -->
+          <!-- Texto descritivo do link, com quebra de linha manual usando '<br>' para formatar "CENTRAL DO<br />ASSINANTE" em duas linhas -->
           <span class="assinante-text">CENTRAL DO<br />ASSINANTE</span>
         </a>
       </div>
 
-      <!-- MENU DE NAVEGAÇÃO PRINCIPAL -->
+      <!-- Menu de navegação principal do site, contendo links para todas as seções/páginas do portal -->
       <nav class="nav-menu">
-        <!-- Link para a página inicial (página atual) com destaque visual -->
+        <!-- Link para a página inicial (página atual); '#' indica o próprio arquivo, com estilos inline que definem cor amarela e negrito para destacar que é a página atual -->
         <a href="#" style="color: #ffd000; font-weight: bold">PÁGINA INICIAL</a>
-        <!-- Links para as demais seções do site, cada um apontando para um arquivo HTML específico na pasta pages -->
+        <!-- Link para a página da Estante Digital Netmax, apontando para o arquivo 'estante_digital.html' dentro da pasta 'pages' -->
         <a href="pages/estante_digital.html">ESTANTE DIGITAL NETMAX</a>
+        <!-- Link para a página do JornalZ, um serviço de curadoria de notícias -->
         <a href="pages/jornalz.html">JORNALZ</a>
+        <!-- Link para a página de News Periódicos, que contém artigos e conteúdos acadêmicos -->
         <a href="pages/news_periodicos.html">NEWS PERIÓDICOS</a>
+        <!-- Link para a página da Netmax TV, serviço de streaming com canais de TV -->
         <a href="pages/netmax_tv.html">NETMAX TV</a>
+        <!-- Link para a página "Nosso Propósito", explicando a missão e visão da empresa -->
         <a href="pages/nosso_proposito.html">NOSSO PROPÓSITO</a>
+        <!-- Link para a página "Por que escolher a Netmax", destacando os diferenciais competitivos da empresa -->
         <a href="pages/por_que_escolher_a_netmax.html"
           >POR QUE ESCOLHER A NETMAX</a
         >
       </nav>
     </header>
 
-    <!-- SEÇÃO HERO (DESTAQUE PRINCIPAL) -->
+    <!-- SEÇÃO HERO: área de destaque principal da página, com a oferta promocional e chamada para ação -->
     <section class="hero hero-boosted">
-      <!-- Título principal com destaque para a oferta de 1000 Megas -->
+      <!-- Título principal da hero com um emoji de fogo e destaque para o plano de 1000 Megas; utiliza uma tag 'span' com classe específica para destacar o preço -->
       <h1 class="hero-title">
         🔥 1000 MEGAS POR APENAS
         <span class="price price-fire">R$ 114,90</span>
       </h1>
 
-      <!-- Subtítulo que descreve o plano e seus benefícios -->
+      <!-- Subtítulo que descreve o plano e seus benefícios de forma atrativa, reforçando a transformação da casa em um centro de entretenimento e conhecimento -->
       <p class="subtitle subtitle-premium">
         O plano completo que transforma sua casa em um centro de entretenimento
         e conhecimento.
       </p>
 
-      <!-- Botões de ação na hero -->
+      <!-- Container que agrupa os botões de ação da seção hero, permitindo um layout flexível -->
       <div class="hero-buttons">
-        <!-- Botão principal que redireciona para o WhatsApp com mensagem pré-definida -->
+        <!-- Botão principal com classe 'btn-primary' e 'pulse-btn' (para efeito de animação de pulsação); redireciona para o WhatsApp com mensagem pré-definida para assinatura do plano -->
         <a
           href="https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
           class="btn-primary pulse-btn"
@@ -131,29 +136,29 @@
       </div>
     </section>
 
-    <!-- SEÇÃO DE ECOSSISTEMA / BENEFÍCIOS -->
+    <!-- SEÇÃO DE ECOSSISTEMA / BENEFÍCIOS: mostra os diferenciais do plano único da Netmax, indo além da velocidade -->
     <section class="ecosystem">
-      <!-- Título que questiona a importância de ir além da velocidade, destacando o diferencial do plano único -->
+      <!-- Título que questiona a importância de ir além da velocidade, destacando que o plano único da Netmax inclui um pacote completo de benefícios; usa '<br>' para quebra de linha -->
       <h2 class="ecosystem-title">
         POR QUE SÓ VELOCIDADE?<br />
         NO PLANO ÚNICO DA NETMAX, VOCÊ VAI ALÉM DOS 1000 MEGAS E AINDA LEVA UM
         PACOTE COMPLETO DE BENEFÍCIOS
       </h2>
 
-      <!-- Segundo título com chamada para a cesta de produtos e benefícios -->
+      <!-- Segundo título com uma chamada mais direta e entusiasmada ("title-fire") para convidar o usuário a conhecer a cesta de produtos e benefícios -->
       <h2 class="ecosystem-title title-fire">
         CONHEÇA NOSSA CESTA DE PRODUTOS E BENEFÍCIOS
       </h2>
 
-      <!-- Área para exibição de banners promocionais -->
+      <!-- Área para exibição de dois banners promocionais lado a lado (em linha) -->
       <div class="banner-area">
-        <!-- Banner ilustrativo sobre internet fibra -->
+        <!-- Banner ilustrativo sobre internet fibra, carregado do diretório de banners -->
         <img
           src="assets/images/banners/internet_banner.png"
           alt="Banner Internet Fibra"
           class="big-banner"
         />
-        <!-- Banner ilustrativo sobre Netmax TV -->
+        <!-- Banner ilustrativo sobre Netmax TV, também carregado do diretório de banners -->
         <img
           src="assets/images/banners/netmaxtv_banner.png"
           alt="Banner Netmax TV"
@@ -161,102 +166,117 @@
         />
       </div>
 
-      <!-- Grade de cards representando os benefícios incluídos no plano -->
+      <!-- Grade de cards que representam os benefícios incluídos no plano; utiliza a classe 'benefits-grid big-cards' para layout em grid -->
       <div class="benefits-grid big-cards">
-        <!-- Card estático para a Internet Fibra (não é link) -->
+        <!-- Card estático para o serviço de Internet Fibra (não é um link clicável, apenas informativo) -->
         <div class="benefit-card">
-          <!-- Logotipo específico do serviço Fibra -->
+          <!-- Logotipo específico do serviço Netmax Fibra, exibido dentro do card -->
           <img
             src="assets/images/logos/logo_netmaxFIBRA.png"
             class="mini-logo"
             alt="Netmax Fibra"
           />
+          <!-- Título do card: Internet Fibra 1000 Megas -->
           <h3>Internet Fibra 1000 Megas</h3>
+          <!-- Descrição resumida do benefício: velocidade simétrica, estável e com o melhor sinal -->
           <p>Velocidade simétrica, estável e com o melhor sinal.</p>
         </div>
 
-        <!-- Card com link para a página da Estante Digital -->
+        <!-- Link que envolve o card da Estante Digital, tornando todo o card clicável; redireciona para a página 'estante_digital.html' -->
         <a href="pages/estante_digital.html" class="benefit-card-link">
           <div class="benefit-card">
+            <!-- Logotipo da Digi Livro (Estante Digital) -->
             <img
               src="assets/images/logos/logo_digi_livro.png"
               class="mini-logo"
               alt="Digi Livro"
             />
+            <!-- Título do card: Estante Digital -->
             <h3>Estante Digital</h3>
+            <!-- Descrição: Milhares de e-books na palma da sua mão -->
             <p>Milhares de e-books na palma da sua mão.</p>
           </div>
         </a>
 
-        <!-- Card com link para a página do JornalZ -->
+        <!-- Link que envolve o card do JornalZ, tornando todo o card clicável; redireciona para a página 'jornalz.html' -->
         <a href="pages/jornalz.html" class="benefit-card-link">
           <div class="benefit-card">
+            <!-- Logotipo do JornalZ -->
             <img
               src="assets/images/logos/logo_jornalz.png"
               class="mini-logo"
               alt="JornalZ"
             />
+            <!-- Título do card: JornalZ -->
             <h3>JornalZ</h3>
+            <!-- Descrição: Curadoria inteligente das principais notícias do dia -->
             <p>Curadoria inteligente das principais notícias do dia.</p>
           </div>
         </a>
 
-        <!-- Card com link para a página de News Periódicos -->
+        <!-- Link que envolve o card de News Periódicos, tornando todo o card clicável; redireciona para a página 'news_periodicos.html' -->
         <a href="pages/news_periodicos.html" class="benefit-card-link">
           <div class="benefit-card">
+            <!-- Logotipo da Estante Virtual (News Periódicos) -->
             <img
               src="assets/images/logos/logo_estante_virtual.png"
               class="mini-logo"
               alt="News Periódicos"
             />
+            <!-- Título do card: News Periódicos -->
             <h3>News Periódicos</h3>
+            <!-- Descrição: Artigos especializados e conteúdo acadêmico aprofundado -->
             <p>Artigos especializados e conteúdo acadêmico aprofundado.</p>
           </div>
         </a>
 
-        <!-- Card com link para a página da Netmax TV -->
+        <!-- Link que envolve o card da Netmax TV, tornando todo o card clicável; redireciona para a página 'netmax_tv.html' -->
         <a href="pages/netmax_tv.html" class="benefit-card-link">
           <div class="benefit-card">
+            <!-- Logotipo da Netmax TV -->
             <img
               src="assets/images/logos/logo_netmaxTV.png"
               class="mini-logo"
               alt="Netmax TV"
             />
+            <!-- Título do card: Netmax TV -->
             <h3>Netmax TV</h3>
+            <!-- Descrição: Mais de 100 canais para toda a família -->
             <p>Mais de 100 canais para toda a família.</p>
           </div>
         </a>
       </div>
 
-      <!-- Link que direciona ao WhatsApp exibindo o preço final do pacote completo -->
+      <!-- Link que envolve o parágrafo com o preço final do pacote completo; ao clicar, redireciona para o WhatsApp com a mensagem de interesse nos planos -->
       <a
         href="https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
         target="_blank"
         rel="noopener noreferrer"
         style="text-decoration: none; display: inline-block"
       >
-        <!-- Parágrafo que apresenta o valor mensal do plano -->
+        <!-- Parágrafo que apresenta o valor mensal do plano com destaque visual, utilizando a classe 'price-final super-price' para estilização -->
         <p class="price-final super-price">
           Tudo isso por apenas <strong>R$ 114,90 mensais</strong>
         </p>
       </a>
     </section>
 
-    <!-- SEÇÃO SOBRE A NETMAX (HISTÓRIA E PROPÓSITO) -->
+    <!-- SEÇÃO SOBRE A NETMAX: apresenta a história da empresa, seus fundadores e diferenciais -->
     <section class="sobre highlight-section">
+      <!-- Título da seção "Sobre a Netmax" -->
       <h2>Sobre a Netmax</h2>
-      <!-- Parágrafo apresentando a origem da empresa e os fundadores -->
+      <!-- Primeiro parágrafo apresentando a origem da empresa na cidade de Siqueira Campos (PR) e mencionando os três irmãos fundadores: Juliano, Julio Cesar e Isaac Vilas Boas -->
       <p>
         Na cidade de Siqueira Campos, no coração do Paraná, a Netmax nasceu de
         um sonho compartilhado por três irmãos:
         <strong>Juliano, Julio Cesar e Isaac Vilas Boas</strong>.
       </p>
-      <!-- Descrição do porte da empresa e seu propósito principal -->
+      <!-- Segundo parágrafo descrevendo o porte da empresa (médio porte) e seu propósito gigante: entregar a melhor internet fibra óptica da região -->
       <p>
         Somos uma empresa de médio porte com um propósito gigante: entregar a
         melhor internet fibra óptica da região.
       </p>
-      <!-- Diferenciais competitivos: equipamentos modernos, equipe própria e atendimento humano -->
+      <!-- Terceiro parágrafo listando os diferenciais competitivos: equipamentos modernos, equipe própria, responsabilidade real e atendimento humano, reforçando o compromisso com a qualidade do sinal -->
       <p>
         Com equipamentos modernos, equipe própria, responsabilidade real e
         atendimento humano porque quando o sinal chega forte na sua casa,
@@ -264,26 +284,27 @@
       </p>
     </section>
 
-    <!-- SEÇÃO DE PARCEIROS / CONTEÚDOS EXCLUSIVOS -->
+    <!-- SEÇÃO DE PARCEIROS / CONTEÚDOS EXCLUSIVOS: exibe logotipos dos parceiros que fornecem conteúdo para a Netmax -->
     <section class="parceiros highlight-section">
+      <!-- Título da seção "Nossos Conteúdos Exclusivos" -->
       <h2>Nossos Conteúdos Exclusivos</h2>
-      <!-- Container para os logotipos dos parceiros -->
+      <!-- Container flexível para exibir os logotipos dos parceiros lado a lado -->
       <div class="partner-logos">
-        <!-- Link com logotipo da Digi Livro (aponta para a mesma página inicial por padrão) -->
+        <!-- Link com logotipo da Digi Livro; atualmente aponta para '#' (a própria página), mas pode ser atualizado futuramente -->
         <a href="#"
           ><img
             src="assets/images/logos/logo_digi_livro.png"
             class="partner-logo"
             alt="Digi Livro"
         /></a>
-        <!-- Link com logotipo da Estante Digital -->
+        <!-- Link com logotipo da Estante Digital; atualmente aponta para '#' (a própria página) -->
         <a href="#"
           ><img
             src="assets/images/logos/logo_estante_virtual.png"
             class="partner-logo"
             alt="Estante Digital"
         /></a>
-        <!-- Link com logotipo do JornalZ -->
+        <!-- Link com logotipo do JornalZ; atualmente aponta para '#' (a própria página) -->
         <a href="#"
           ><img
             src="assets/images/logos/logo_jornalz.png"
@@ -293,79 +314,92 @@
       </div>
     </section>
 
-    <!-- RODAPÉ (FOOTER) -->
+    <!-- RODAPÉ (FOOTER): contém informações institucionais, links para redes sociais e mensagem de copyright -->
     <footer class="footer">
+      <!-- Container principal do conteúdo do rodapé, agrupando textos e links sociais -->
       <div class="footer-content">
-        <!-- Bloco de texto com informações institucionais e de contato -->
+        <!-- Bloco de texto com informações institucionais e de contato da empresa -->
         <div class="footer-text">
+          <!-- Copyright indicando o ano e a titularidade dos direitos -->
           <p>© 2024 Netmax Fibra - Todos os Direitos Reservados</p>
+          <!-- Telefone e WhatsApp para contato -->
           <p>Telefone/WhatsApp: 43 9 9914-9922</p>
+          <!-- Endereço físico da empresa -->
           <p>
             Rua Rio Grande do Sul, 1460 - Bairro Santuário - Siqueira Campos -
             PR
           </p>
+          <!-- CNPJ da empresa -->
           <p>CNPJ: 53.458.225/0001-52</p>
         </div>
 
-        <!-- Redes sociais e links externos -->
+        <!-- Bloco de redes sociais e links externos do rodapé -->
         <div class="footer-social">
-          <!-- Link para o Instagram da Netmax -->
+          <!-- Link para o perfil do Instagram da Netmax, abrindo em nova aba -->
           <a
             href="https://instagram.com/netmaxscm"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <!-- Ícone do Instagram obtido via CDN simple-icons -->
+            <!-- Ícone do Instagram carregado via CDN simple-icons, um SVG que exibe o logotipo do Instagram -->
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/instagram.svg"
               alt="Instagram"
               width="20"
               height="20"
             />
+            <!-- Texto descritivo "Instagram" ao lado do ícone -->
             <span>Instagram</span>
           </a>
-          <!-- Link para o Facebook da Netmax -->
+          <!-- Link para o perfil do Facebook da Netmax, abrindo em nova aba -->
           <a
             href="https://facebook.com/netmax.siq"
             target="_blank"
             rel="noopener noreferrer"
           >
+            <!-- Ícone do Facebook carregado via CDN simple-icons -->
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/facebook.svg"
               alt="Facebook"
               width="20"
               height="20"
             />
+            <!-- Texto descritivo "Facebook" ao lado do ícone -->
             <span>Facebook</span>
           </a>
-          <!-- Link para contato via WhatsApp -->
+          <!-- Link para contato via WhatsApp, abrindo em nova aba com mensagem pré-definida -->
           <a
             href="https://wa.me/5543999149922?text=Olá! Gostaria de saber mais sobre os planos da Netmax Fibra."
             target="_blank"
             rel="noopener noreferrer"
           >
+            <!-- Ícone do WhatsApp carregado via CDN simple-icons -->
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/whatsapp.svg"
               alt="WhatsApp"
               width="20"
               height="20"
             />
+            <!-- Texto descritivo "Fale Conosco" ao lado do ícone -->
             <span>Fale Conosco</span>
           </a>
         </div>
 
-        <!-- Bloco de copyright e mensagem final -->
+        <!-- Bloco de copyright e mensagem final do rodapé, reforçando o slogan da empresa e um agradecimento aos clientes -->
         <div class="footer-copyright">
+          <!-- Repetição do slogan institucional da Netmax -->
           <p>
             Netmax Fibra - A velocidade que conecta você ao mundo e ao
             conhecimento.
           </p>
+          <!-- Mensagem de desenvolvimento com um coração (💛) para transmitir carinho e dedicação aos clientes -->
           <p>Desenvolvido com 💛 para nossos clientes</p>
         </div>
       </div>
     </footer>
 
-    <!-- Inclusão do arquivo JavaScript personalizado para comportamentos dinâmicos da página -->
+    <!-- Inclusão do arquivo JavaScript personalizado que adiciona comportamentos dinâmicos à página, como animações, interações ou validações -->
     <script src="assets/js/script.js"></script>
   </body>
+  <!-- Fim do corpo do documento HTML -->
 </html>

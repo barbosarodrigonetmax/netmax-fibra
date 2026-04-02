@@ -13,238 +13,117 @@
     Data    : 23/02/2026
     ===================================================================
 -->
+<!-- Declaração do tipo de documento HTML5 -->
 <html lang="pt-BR">
+  <!-- Início do elemento raiz HTML com idioma português do Brasil -->
   <head>
+    <!--
+      ===================================================================
+      CABEÇALHO DA PÁGINA - METADADOS E RECURSOS EXTERNOS
+      ===================================================================
+    -->
+    <!-- Define o conjunto de caracteres como UTF-8 para suporte a acentos e caracteres especiais -->
     <meta charset="UTF-8" />
+    <!-- Configura a viewport para garantir responsividade em dispositivos móveis (escala inicial = 1) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Título exibido na aba do navegador (página de erro 404 amigável) -->
     <title>Ops! Página não encontrada</title>
-    <!-- Favicon -->
+    <!-- Favicon principal (ícone da aba do navegador) - versão PNG -->
     <link rel="icon" type="image/png" href="favicon_netmax.png" />
+    <!-- Favicon alternativo com caminho mais específico dentro de assets (para compatibilidade) -->
     <link
       rel="shortcut icon"
       type="image/png"
       href="assets/images/outros/favicon_netmax.png"
     />
-    <!-- Link para o CSS principal (caminho corrigido) -->
-    <link rel="stylesheet" href="assets/images/outros/favicon_netmax.png" />
-    <!-- Estilo adicional específico para a página 404 com responsividade -->
-    <style>
-      /* Estilos específicos para a página 404 */
-      .container {
-        max-width: 800px;
-        margin: 50px auto;
-        text-align: center;
-        padding: 40px 20px;
-        background: linear-gradient(135deg, #fff9e6, #ffffff);
-        border-radius: 30px;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        border: 2px solid #ffd000;
-      }
-      .logo {
-        width: 200px;
-        margin-bottom: 30px;
-        max-width: 100%;
-        height: auto;
-      }
-      .titulo {
-        font-size: 5rem;
-        color: #f24f00;
-        text-shadow: 0 0 20px #ffaa00;
-        margin-bottom: 20px;
-        animation: firePulse 1.2s infinite ease-in-out;
-      }
-      .mensagem {
-        font-size: 1.4rem;
-        color: #333;
-        line-height: 1.6;
-        margin-bottom: 30px;
-      }
-      .btn {
-        background: #f24f00;
-        color: #000;
-        border: none;
-        padding: 15px 40px;
-        font-size: 1.3rem;
-        font-weight: 800;
-        border-radius: 50px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        margin: 10px;
-        box-shadow: 0 5px 15px rgba(255, 208, 0, 0.3);
-      }
-      .btn:hover {
-        background: #ffd000;
-        transform: scale(1.05);
-      }
-      .btn2 {
-        background: #000;
-        color: #ffd000;
-        border: 2px solid #ffd000;
-        padding: 12px 30px;
-        font-size: 1.1rem;
-        font-weight: 600;
-        border-radius: 50px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        margin: 10px;
-      }
-      .btn2:hover {
-        background: #ffd000;
-        color: #000;
-      }
-      .piadinha {
-        font-size: 1.1rem;
-        color: #666;
-        margin: 30px 0 20px;
-        font-style: italic;
-      }
-      .resultado {
-        font-size: 1.3rem;
-        color: #f24f00;
-        font-weight: bold;
-        margin-top: 20px;
-        min-height: 40px;
-      }
-
-      /* Media Queries para responsividade da página 404 */
-      @media (max-width: 768px) {
-        .container {
-          margin: 30px 20px;
-          padding: 30px 15px;
-        }
-
-        .logo {
-          width: 150px;
-          margin-bottom: 20px;
-        }
-
-        .titulo {
-          font-size: 3.5rem;
-        }
-
-        .mensagem {
-          font-size: 1.2rem;
-        }
-
-        .btn {
-          padding: 12px 30px;
-          font-size: 1.1rem;
-        }
-
-        .btn2 {
-          padding: 10px 25px;
-          font-size: 1rem;
-        }
-
-        .piadinha {
-          font-size: 1rem;
-        }
-
-        .resultado {
-          font-size: 1.1rem;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .container {
-          margin: 20px 15px;
-          padding: 25px 12px;
-        }
-
-        .logo {
-          width: 120px;
-          margin-bottom: 15px;
-        }
-
-        .titulo {
-          font-size: 2.5rem;
-        }
-
-        .mensagem {
-          font-size: 1rem;
-        }
-
-        .btn {
-          padding: 10px 25px;
-          font-size: 1rem;
-        }
-
-        .btn2 {
-          padding: 8px 20px;
-          font-size: 0.9rem;
-        }
-
-        .piadinha {
-          font-size: 0.9rem;
-          margin: 20px 0 15px;
-        }
-
-        .resultado {
-          font-size: 1rem;
-          margin-top: 15px;
-        }
-      }
-    </style>
+    <!-- Link para o arquivo CSS principal que contém todos os estilos da marca Netmax -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
+  <!-- Fim do cabeçalho e início do corpo da página (conteúdo visível) -->
   <body>
-    <!-- CONTEÚDO DA PÁGINA 404 -->
+    <!--
+      ===================================================================
+      CONTEÚDO PRINCIPAL DA PÁGINA 404
+      ===================================================================
+    -->
+    <!-- Container principal para centralizar e estilizar o conteúdo da página de erro -->
     <div class="container">
-      <!-- Logo da Netmax -->
+      <!--
+        LOGO DA NETMAX
+        Exibe a logomarca da empresa para manter a identidade visual
+        Atributo src: caminho da imagem dentro da pasta assets
+        alt: texto alternativo para acessibilidade e SEO
+        class: aplica estilos CSS definidos para a classe "logo"
+      -->
       <img
         src="assets/images/logos/logo_netmax.jpg"
         alt="Netmax Tecnologia"
         class="logo"
       />
 
+      <!--
+        TÍTULO PRINCIPAL DO ERRO
+        Exibe o código do erro HTTP (404) de forma destacada
+        class: aplica estilos CSS para o título (fonte grande, cor da marca, etc.)
+      -->
       <h1 class="titulo">Error 404</h1>
 
+      <!--
+        MENSAGEM AMIGÁVEL E HUMORÍSTICA
+        Parágrafo com texto explicativo e tom descontraído para reduzir frustração do usuário
+        Utiliza <strong> para dar ênfase em "Mas fique tranquilo!"
+        Emoji de café e computador para tornar a mensagem mais leve
+      -->
       <p class="mensagem">
         Parece que você tentou acessar uma página que fugiu da Internet...
         <br /><strong>Mas fique tranquilo!</strong> Ela deve estar em algum
         lugar... <br />Provavelmente tomando café. ☕💻
       </p>
 
-      <!-- Botão para voltar à página inicial -->
+      <!--
+        BOTÃO PARA VOLTAR À PÁGINA INICIAL
+        onclick: chama a função JavaScript "voltar()" definida no arquivo externo
+        class: estilo CSS para botão primário (btn)
+      -->
       <button onclick="voltar()" class="btn">Voltar para o início</button>
 
+      <!--
+        TEXTO DE APOIO PARA O BOTÃO SURPRESA
+        Parágrafo simples que convida o usuário a interagir com o botão abaixo
+        class: aplica estilo específico para "piadinha" (texto menor e divertido)
+      -->
       <p class="piadinha">
         Enquanto isso, aproveite esse botão totalmente funcional 👇
       </p>
 
-      <!-- Botão de surpresa interativo -->
+      <!--
+        BOTÃO DE SURPRESA INTERATIVO
+        onclick: chama a função JavaScript "surpresa()" que exibe uma mensagem ou ação divertida
+        class: estilo CSS para botão secundário (btn2) com cores diferentes ou animação
+      -->
       <button onclick="surpresa()" class="btn2">Clique aqui 😄</button>
 
-      <!-- Área para exibir o resultado da surpresa -->
+      <!--
+        ÁREA PARA EXIBIR O RESULTADO DA SURPRESA
+        Parágrafo vazio inicialmente, mas será preenchido dinamicamente pelo JavaScript
+        id "resultado" permite que o script localize e modifique o conteúdo deste elemento
+        class: aplica estilos CSS para a área de resultado (margem, cor, etc.)
+      -->
       <p id="resultado" class="resultado"></p>
     </div>
+    <!-- Fim do container principal -->
 
-    <!-- Script específico para a página 404 -->
-    <script>
-      // Função para voltar à página inicial
-      function voltar() {
-        window.location.href = "index.html";
-      }
-
-      // Função de surpresa (exibe uma mensagem aleatória)
-      function surpresa() {
-        const frases = [
-          "🎉 Parabéns! Você achou o botão secreto!",
-          "📚 Já leu um livro hoje? A Estante Digital te espera!",
-          "📰 Que tal ler as notícias no JornalZ?",
-          "📺 E a Netmax TV? Já ativou a sua?",
-          "⚡ 1000 megas de velocidade esperando por você!",
-          "💛 Obrigado por visitar nosso site!",
-          "☕ Achou que ia sair algo? Era só uma pausa pro café!",
-        ];
-        const randomIndex = Math.floor(Math.random() * frases.length);
-        document.getElementById("resultado").textContent = frases[randomIndex];
-      }
-
-      // Também é possível registrar no console
-      console.log("🚀 Página 404 carregada - Usuário perdido encontrado!");
-    </script>
-
-    <!-- Script principal (opcional) -->
+    <!--
+      ===================================================================
+      SCRIPT PRINCIPAL (ARQUIVO EXTERNO)
+      ===================================================================
+      Importa o arquivo script.js que contém as funções:
+      - voltar(): redireciona o usuário para a página inicial (geralmente "/" ou "index.html")
+      - surpresa(): gera uma mensagem inesperada ou interação divertida no parágrafo #resultado
+      O arquivo está localizado em assets/js/script.js conforme a estrutura de pastas do projeto
+    -->
     <script src="assets/js/script.js"></script>
   </body>
+  <!-- Fim do corpo da página -->
 </html>
+<!-- Fim do documento HTML -->
